@@ -1,0 +1,25 @@
+%% Comments
+
+\usepackage{color}
+
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{blue}{SS}{#1}}
+\newcommand{\ds}[1]{\authornote{red}{DS}{#1}}
+\newcommand{\mj}[1]{\authornote{red}{MSN}{#1}}
+\newcommand{\cm}[1]{\authornote{red}{CM}{#1}}
+\newcommand{\mh}[1]{\authornote{red}{MH}{#1}}
+
+% team members should be added for each team, like the following
+% all comments left by the TAs or the instructor should be addressed
+% by a corresponding comment from the Team
+
+\newcommand{\tm}[1]{\authornote{magenta}{Team}{#1}}
