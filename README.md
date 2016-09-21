@@ -1,11 +1,11 @@
 # Project Name
 
-Team Name: ?
+Team Name: 8
 
-Team Members: ?, ?, ?
+Team Members: Kelvin Lin, Eric Chaput, Jin Liu
 
 
-This project is a reimplementation of ...
+This project is a reimplementation of Generic Cars by rednuht.org
 
 The folders and files for this project are as follows:
 
