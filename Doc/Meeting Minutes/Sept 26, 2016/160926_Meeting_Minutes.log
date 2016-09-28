@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  25 SEP 2016 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  27 SEP 2016 21:03
 entering extended mode
 **160926_Meeting_Minutes.tex
 (160926_Meeting_Minutes.tex
@@ -196,36 +196,36 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] [3]
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 203.
+[2] [3] [4]
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 234.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 203.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 234.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 203
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 234
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 203.
+(Font)              <10.95> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 203.
+(Font)              <8> on input line 234.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 203.
- [4] [5]
+(Font)              <6> on input line 234.
+ [5] [6]
 (160926_Meeting_Minutes.aux) ) 
 Here is how much of TeX's memory you used:
  1627 strings out of 493698
  22948 string characters out of 3144413
- 85095 words of memory out of 3000000
+ 84095 words of memory out of 3000000
  4952 multiletter control sequences out of 15000+200000
  31983 words of font info for 31 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -236,9 +236,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><C:/Program Files/MiKTeX
 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/lm/lmbxi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on 160926_Meeting_Minutes.pdf (5 pages, 112467 bytes).
+Output written on 160926_Meeting_Minutes.pdf (6 pages, 114609 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
