@@ -26,6 +26,7 @@
 September 26, 2016 & Eric Chaput & Created Draft 1\\
 September 27, 2016 & Kelvin Lin & Modified Team Meeting Plan for Draft 2\\
 September 28, 2016 & Kelvin Lin & Added Team Member Roles for Draft 2\\
+September 28, 2016 & Kelvin Lin & Added Git Workflow Plan for Draft 2\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -241,6 +242,36 @@ responsible for reporting any results to the group and making recommendations
 based on the results to improve the project.
 
 \section{Git Workflow Plan}
+Team 8 will utilize a feature-branch workflow plan. 
+
+\subsection{Feature-branch Overview}
+The feature-branch workflow branch is a Git workflow plan that utilizes 
+different branches to implement different feature of the programs. Once a 
+particular feature of the program is completed, its branch will be merged with 
+the master branch. Labels will be used to tag submission files, while milestones 
+will be used in order to signal any major revisions on the master branch.
+
+\subsection{Rationale}
+In selecting a Git workflow plan, Team 8 wanted a workflow that would provide 
+maximum support for separation of concerns, while guaranteeing that there will 
+always be a working version of the project easily assessable. Such workflow 
+would simplify both the development, testing, and deployment efforts of the 
+team. A high level of separations of concerns would allow multiple members to 
+code concurrently without interference from code changes from other members. 
+Members can also test their code using the master branch as a driver. This is a 
+valid approach as any functional code on the master branch would have already 
+been tested. The second requirement of the Team's desired workflow plan 
+guarantees this by specifying that only functional versions of the project are 
+to be committed to the master branch. 
+
+The feature-branch workflow plan fully satisfies the requirements mentioned 
+above. It supports separation of concerns by placing each feature of the program 
+on a separate branch. Each branch will stem from a node on the master branch, 
+allowing each branch to have an independent copy of the previously functional 
+code. This will allow members to write new features in isolation, without having 
+to account for continuous changes made by other members. The master branch can 
+also serve as a driver for unit testing, and for regression testing. 
+Accordingly, the feature-branch workflow was chosen.
 
 \section{Proof of Concept Demonstration Plan}
 
