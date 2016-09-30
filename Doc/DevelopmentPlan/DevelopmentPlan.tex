@@ -2,6 +2,7 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{hyperref}
 
 \title{SE 3XA3: Development Plan\\Genetic Cars}
 
@@ -298,42 +299,101 @@ also serve as a driver for unit testing, and for regression testing.
 Accordingly, the feature-branch workflow was chosen.
 
 \section{Proof of Concept Demonstration Plan}
-The proof of concept demonstration will consist of three independent components that resemble simplified versions of the final product: the car model, the genetic algorithm (GA) module, and the graphics simulation. 
+The proof of concept demonstration will consist of three independent components 
+that resemble simplified versions of the final product: the car model, the 
+genetic algorithm (GA) module, and the graphics simulation. 
 
 \subsection{The Car Model}
-The Car Model will be a JavaScript module that demonstrates two things: the car is representable as a data structure, and the Box2D API can be integrated into the project. 
+The Car Model will be a JavaScript module that demonstrates two things: the car 
+is representable as a data structure, and the Box2D API can be integrated into 
+the project. 
 
 \subsubsection{The Car}
-The car in genetic car is composed of 8 vectors attached to a central point. The tips of the vectors are connected to form triangles. Each car contains 8 vectors. In addition, each car can have up to 8 wheels. Each wheel has a radius, an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car will also have mass, which will be a randomly generated value between two predetermined numbers.
+The car in genetic car is composed of 8 vectors attached to a central point. The 
+tips of the vectors are connected to form triangles. Each car contains 8 
+vectors. In addition, each car can have up to 8 wheels. Each wheel has a radius, 
+an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car 
+will also have mass, which will be a randomly generated value between two 
+predetermined numbers.
 
 \subsubsection{The Deliverable}
-The Car Model will likely be modelled as a JSON object, or a customized equivalent, with properties such as the coordinates for each of its 8 vectors; the vertex, axle angle, and radius of each of its 8 wheels; a boolean for each of its wheels to indicate whether the wheel exists. A script to test the JSON model will also be created. This script will access each field of the car and output its value in text to the console. The script will also use the Box2D API to create the corresponding vectors for the car, and if it is successful, then it will print "true" to the console.
+The Car Model will likely be modelled as a JSON object, or a customized 
+equivalent, with properties such as the coordinates for each of its 8 vectors; 
+the vertex, axle angle, and radius of each of its 8 wheels; a boolean for each 
+of its wheels to indicate whether the wheel exists. A script to test the JSON 
+model will also be created. This script will access each field of the car and 
+output its value in text to the console. The script will also use the Box2D API 
+to create the corresponding vectors for the car, and if it is successful, then 
+it will print "true" to the console.
 
 \subsubsection{The Risks}
 The most significant risk implementing the basic car model is...
 
 \subsection{The Genetic Algorithm}
-The purpose for implementing the GA will be to demonstrate its practicality to the project. In order for this portion to succeed, it must be able to select for the top n cars given an array of cars, n, and fitness scores as input; crossover genes genes of these cars; and mutate the genes of the offsprings.
+The purpose for implementing the GA will be to demonstrate its practicality to 
+the project. In order for this portion to succeed, it must be able to select for 
+the top n cars given an array of cars, n, and fitness scores as input; crossover 
+genes genes of these cars; and mutate the genes of the offsprings.
 
 \subsubsection{Genetic Algorithm Overview}
-GAs attempt to find near-optimal solutions to problems with incomplete or imperfect information by emulating the process of natural solution. In this project, the GA will be used in order to find the best car in terms of the distance driven on an predetermined road. First, the GA will select for the top n cars based on their fitness scores. Then, the GA will use the fields of the car as genes, and swapping them in order to simulate reproduction. This project will do this by randomly selecting two fields and two cars, and swapping those two fields such that the first car will have the two fields from the second car and the second car will have two fields from the first car. Finally, to finish creating the offsprings, the GA will randomly change some of the fields at a frequency based on a mutation likelihood between 0\% and 100\%. 
+GAs attempt to find near-optimal solutions to problems with incomplete or 
+imperfect information by emulating the process of natural solution. In this 
+project, the GA will be used in order to find the best car in terms of the 
+distance driven on an predetermined road. First, the GA will select for the top 
+n cars based on their fitness scores. Then, the GA will use the fields of the 
+car as genes, and swapping them in order to simulate reproduction. This project 
+will do this by randomly selecting two fields and two cars, and swapping those 
+two fields such that the first car will have the two fields from the second car 
+and the second car will have two fields from the first car. Finally, to finish 
+creating the offsprings, the GA will randomly change some of the fields at a 
+frequency based on a mutation likelihood between 0\% and 100\%. 
 
 \subsubsection{The Deliverable}
-The deliverable will consist of a JavaScript file that consists of at least three functions: selectNextGeneration(cars:Car[], fitnessScores: Integer, n: Integer), crossoverOffsprings(cars: Car[], population: Integer, n:Integer), and mutateOffsprings(cars: Car[], mutationFactor: Integer, n: Integer). The selectNextGeneration function will take an array of cars and their fitness scores, and return an array containing the top n cars. The crossoverOffsprings function will take an array of cars, and randomly select parent cars (from the first n element in the cars array) to cross over their genes, such that the number of cars in the cars array equals the population. The mutateOffsprings function will randomly mutate the fields of the offsprings by a given mutation factor.
+The deliverable will consist of a JavaScript file that consists of at least 
+three functions: selectNextGeneration(cars:Car[], fitnessScores: Integer, n: 
+Integer), crossoverOffsprings(cars: Car[], population: Integer, n:Integer), and 
+mutateOffsprings(cars: Car[], mutationFactor: Integer, n: Integer). The 
+selectNextGeneration function will take an array of cars and their fitness 
+scores, and return an array containing the top n cars. The crossoverOffsprings 
+function will take an array of cars, and randomly select parent cars (from the 
+first n element in the cars array) to cross over their genes, such that the 
+number of cars in the cars array equals the population. The mutateOffsprings 
+function will randomly mutate the fields of the offsprings by a given mutation 
+factor.
 
-This file will be demonstrated using another script with hardcoded values for cars. The script will first run the selectNextGeneration function, and print the fields of the top n cars to the console. Then, the script will crossover the top n cars using the crossoverOffsprings function, and print their fields to the console, as well as which fields and cars were used to make the swap. Finally, the mutateOffsprings method will be used to mutate the cars and then the fields of the cars that mutated as well as their previous fields on separate lines.
+This file will be demonstrated using another script with hardcoded values for 
+cars. The script will first run the selectNextGeneration function, and print the 
+fields of the top n cars to the console. Then, the script will crossover the top 
+n cars using the crossoverOffsprings function, and print their fields to the 
+console, as well as which fields and cars were used to make the swap. Finally, 
+the mutateOffsprings method will be used to mutate the cars and then the fields 
+of the cars that mutated as well as their previous fields on separate lines.
 
 \subsubsection{The Risks}
 The most significant risk for implementing the GA is...
 
 \subsection{The Graphics}
-The purpose of the graphics demonstration is to show competency in the technologies required to create the graphical interface for the project. The final deliverable will consist of a simple 3-vector car moving horizontally across the screen over a dynamically generated road, with a camera centred on the car.
+The purpose of the graphics demonstration is to show competency in the 
+technologies required to create the graphical interface for the project. The 
+final deliverable will consist of a simple 3-vector car moving horizontally 
+across the screen over a dynamically generated road, with a camera centred on 
+the car.
 
 \subsubsection{Graphics Overview}
-The graphics for this project consists of multiple cars displayed on the screen, moving horizontally over a road, with the camera focused on the fastest car in the population. The user interface also allows users to modify certain parameters of the GA, and view the improvement of the cars over several generations. 
+The graphics for this project consists of multiple cars displayed on the screen, 
+moving horizontally over a road, with the camera focused on the fastest car in 
+the population. The user interface also allows users to modify certain 
+parameters of the GA, and view the improvement of the cars over several 
+generations. 
 
 \subsubsection{The Deliverable}
-The deliverable for the proof of concept demonstration will be a simplified version of the final user interface. It will consist of a HTML5 canvas with a dynamically generated line representing the road near the bottom of the canvas. A random car will be generated with 3 vectors (1 triangle) and 2 wheels (2 circles). The car will move horizontally across the screen indefinitely. A camera will also focus on the car, so that the center of the car will always be at the center of the screen.
+The deliverable for the proof of concept demonstration will be a simplified 
+version of the final user interface. It will consist of a HTML5 canvas with a 
+dynamically generated line representing the road near the bottom of the canvas. 
+A random car will be generated with 3 vectors (1 triangle) and 2 wheels (2 
+circles). The car will move horizontally across the screen indefinitely. A 
+camera will also focus on the car, so that the center of the car will always be 
+at the center of the screen.
 
 \subsubsection{The Risks}
 The most significant risk for implementing the graphics is...
@@ -369,11 +429,15 @@ inspiration and trouble shooting for this reason.
 %%
 %%While Team 8 is very familiar with JavaScript, it is possible that JavaScript 
 %%may reveal itself to be unsuitable for this project. In the event that this 
-%%occurs, Team 8 is well prepared to transition to the Java programming language, 
+%%occurs, Team 8 is well prepared to transition to the Java programming 
+language, 
 %%as it is one with which we are more familiar. Java was chosen as a back-up 
-%%language as it is the programming language that team 8 is the most familiar with 
-%%and is very easy to convert to from Java Script so that we do not lose progress 
-%%already made. The need for a switch from the Java Script programming language is 
+%%language as it is the programming language that team 8 is the most familiar 
+with 
+%%and is very easy to convert to from Java Script so that we do not lose 
+progress 
+%%already made. The need for a switch from the Java Script programming language 
+is 
 %%believed to be highly unlikely however, and this is merely a back-up 
 %%contingency.
 %%
@@ -413,11 +477,14 @@ this project. Specific guidelines can be found on the Mozilla Developer Network
 website.
 
 \section{Project Schedule}
+Please find the project schedule at 
 
-Provide a pointer to your Gantt Chart.
+\href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule} 
+{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule}.
 
 \section{Project Review}
 To be completed in revision 1.
 
 \end{document}
+
 
