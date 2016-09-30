@@ -38,7 +38,9 @@ September 29 2016 & Eric Chaput & Added to Sections 3,6, and 7\\
 
 
 %TODO: INSERT MORE HERE
-Having stated the problem to be solved in the problem statement document, Team 8 will develop the Genetic Cars project to solve it. The following document details the development plan for Team 8's Genetic Cars project..
+Having stated the problem to be solved in the problem statement document, Team 8 
+will develop the Genetic Cars project to solve it. The following document 
+details the development plan for Team 8's Genetic Cars project..
 
 \section{Team Meeting Plan}
 
@@ -156,13 +158,25 @@ be used as the primary means of communication, and all group members are aware
 of fellow members’ e-mails and phone numbers if those are necessary.
 
 \subsubsection{Facebook}
-Facebook serves as an ideal means of instant communication with group members when non technical communication is required. It also allows for a more informal communication enviroment then the other communication platforms. Group chat is to be used to communicate sudden updates to the group, and person to person messaging will be used to coordinate with individual group members.
+Facebook serves as an ideal means of instant communication with group members 
+when non technical communication is required. It also allows for a more informal 
+communication enviroment then the other communication platforms. Group chat is 
+to be used to communicate sudden updates to the group, and person to person 
+messaging will be used to coordinate with individual group members.
 
 \subsubsection{GitLab}
-GitLab is to be used for formal communications that need to be archived for the purposes of this project. This includes the storing of meeting minutes but also the storing of comments in documents. GitLab is Team 8's primary method of document sharing between group memebers and its primary method of communicaition with McMaster staff.
+GitLab is to be used for formal communications that need to be archived for the 
+purposes of this project. This includes the storing of meeting minutes but also 
+the storing of comments in documents. GitLab is Team 8's primary method of 
+document sharing between group memebers and its primary method of communicaition 
+with McMaster staff.
 
 \subsubsection{Phone}
-While phone numbers have been exchanged between group members, it has been made clear that this method of communication is to be used only in the event of an emergency (i.e. a home power outage that disables online methods of communications), or in the event of a very sudden need (i.e. a last minute change in meeting location).
+While phone numbers have been exchanged between group members, it has been made 
+clear that this method of communication is to be used only in the event of an 
+emergency (i.e. a home power outage that disables online methods of 
+communications), or in the event of a very sudden need (i.e. a last minute 
+change in meeting location).
 
 \section{Team Member Roles}
 Team 8 will have the following roles: team lead, technology expert, graphics 
@@ -284,36 +298,102 @@ also serve as a driver for unit testing, and for regression testing.
 Accordingly, the feature-branch workflow was chosen.
 
 \section{Proof of Concept Demonstration Plan}
+The proof of concept demonstration will consist of three independent components that resemble simplified versions of the final product: the car model, the genetic algorithm (GA) module, and the graphics simulation. 
+
+\subsection{The Car Model}
+The Car Model will be a JavaScript module that demonstrates two things: the car is representable as a data structure, and the Box2D API can be integrated into the project. 
+
+\subsubsection{The Car}
+The car in genetic car is composed of 8 vectors attached to a central point. The tips of the vectors are connected to form triangles. Each car contains 8 vectors. In addition, each car can have up to 8 wheels. Each wheel has a radius, an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car will also have mass, which will be a randomly generated value between two predetermined numbers.
+
+\subsubsection{The Deliverable}
+The Car Model will likely be modelled as a JSON object, or a customized equivalent, with properties such as the coordinates for each of its 8 vectors; the vertex, axle angle, and radius of each of its 8 wheels; a boolean for each of its wheels to indicate whether the wheel exists. A script to test the JSON model will also be created. This script will access each field of the car and output its value in text to the console. The script will also use the Box2D API to create the corresponding vectors for the car, and if it is successful, then it will print "true" to the console.
+
+\subsubsection{The Risks}
+The most significant risk implementing the basic car model is...
+
+\subsection{The Genetic Algorithm}
+The purpose for implementing the GA will be to demonstrate its practicality to the project. In order for this portion to succeed, it must be able to select for the top n cars given an array of cars, n, and fitness scores as input; crossover genes genes of these cars; and mutate the genes of the offsprings.
+
+\subsubsection{Genetic Algorithm Overview}
+GAs attempt to find near-optimal solutions to problems with incomplete or imperfect information by emulating the process of natural solution. In this project, the GA will be used in order to find the best car in terms of the distance driven on an predetermined road. First, the GA will select for the top n cars based on their fitness scores. Then, the GA will use the fields of the car as genes, and swapping them in order to simulate reproduction. This project will do this by randomly selecting two fields and two cars, and swapping those two fields such that the first car will have the two fields from the second car and the second car will have two fields from the first car. Finally, to finish creating the offsprings, the GA will randomly change some of the fields at a frequency based on a mutation likelihood between 0\% and 100\%. 
+
+\subsubsection{The Deliverable}
+The deliverable will consist of a JavaScript file that consists of at least three functions: selectNextGeneration(cars:Car[], fitnessScores: Integer, n: Integer), crossoverOffsprings(cars: Car[], population: Integer, n:Integer), and mutateOffsprings(cars: Car[], mutationFactor: Integer, n: Integer). The selectNextGeneration function will take an array of cars and their fitness scores, and return an array containing the top n cars. The crossoverOffsprings function will take an array of cars, and randomly select parent cars (from the first n element in the cars array) to cross over their genes, such that the number of cars in the cars array equals the population. The mutateOffsprings function will randomly mutate the fields of the offsprings by a given mutation factor.
+
+This file will be demonstrated using another script with hardcoded values for cars. The script will first run the selectNextGeneration function, and print the fields of the top n cars to the console. Then, the script will crossover the top n cars using the crossoverOffsprings function, and print their fields to the console, as well as which fields and cars were used to make the swap. Finally, the mutateOffsprings method will be used to mutate the cars and then the fields of the cars that mutated as well as their previous fields on separate lines.
+
+\subsubsection{The Risks}
+The most significant risk for implementing the GA is...
+
+\subsection{The Graphics}
+The purpose of the graphics demonstration is to show competency in the technologies required to create the graphical interface for the project. The final deliverable will consist of a simple 3-vector car moving horizontally across the screen over a dynamically generated road, with a camera centred on the car.
+
+\subsubsection{Graphics Overview}
+The graphics for this project consists of multiple cars displayed on the screen, moving horizontally over a road, with the camera focused on the fastest car in the population. The user interface also allows users to modify certain parameters of the GA, and view the improvement of the cars over several generations. 
+
+\subsubsection{The Deliverable}
+The deliverable for the proof of concept demonstration will be a simplified version of the final user interface. It will consist of a HTML5 canvas with a dynamically generated line representing the road near the bottom of the canvas. A random car will be generated with 3 vectors (1 triangle) and 2 wheels (2 circles). The car will move horizontally across the screen indefinitely. A camera will also focus on the car, so that the center of the car will always be at the center of the screen.
+
+\subsubsection{The Risks}
+The most significant risk for implementing the graphics is...
 
 \section{Technology}
 
 This project will use technology that all group members are already familiar 
 with on a basic level. The project itself will be coded in Java Script, however 
-all group members understand that Java may be used if Java Script proves too 
+all group members understand that Java may be used if JavaScript proves too 
 difficult to use for this project. All group members are familiar with both of 
 these languages and no further learning will be required. Grate’s graphics 
-expert is also adept at creating graphics in Java Script. Written reports and 
+expert is also adept at creating graphics in JavaScript. Written reports and 
 documents will be generated through Latex, a technology being taught in the 3xa3 
 course, and documents and reports will be shared through Git, another technology 
 being taught in the 3xa3 course. The technology expert will ensure that all 
 group members are aware of how to use these technologies. Testing will be aided 
 by the use of Java’s built in unit test functionality.
 
-\subsection{Java Script}
+\subsection{JavaScript}
 
-Java Script as a programming language is most often used for web applications, but not always. Java Script is the ideal programming language for this project for several reasons. Member's of team 8 are very familiar with Java Script as a language, and it is one of the few programming languages that team 8's graphics expert feels will work for this project. Our final project will also closely resemble a standard web page in design, (indeed the original source of our project is evidently suited for Java Script. Finally, the original basis for the project is also written in Java Script and this code can be more easily used for inspiration and trouble shooting for this reason.
+JavaScript as a programming language is most often used for web applications, 
+but not always. JavaScript is the ideal programming language for this project 
+for several reasons. Member's of team 8 are very familiar with JavaScript as a 
+language, and it is one of the few programming languages that Team 8's graphics 
+expert feels will work for this project. Our final project will also closely 
+resemble a standard web page in design, (indeed the original source of our 
+project is evidently suited for JavaScript. Finally, the original basis for the 
+project is also written in JavaScript and this code can be more easily used for 
+inspiration and trouble shooting for this reason.
 
-\subsubsection{Possible switch to Java}
-
-While team 8 is very familiar with Java Script, it is possible that Java Script may reveal itself to be unsuitable for this project. In the event that this occurs, team 8 is well prepared to transition to the Java programming language, as it is one with which we are more familiar. java was chosen as a back-up language as it is the programming language that team 8 is the most familiar with and is very easy to convert to from Java Script so that we do not lose progress already made. The need for a switch from the Java Script programming language is believed to be highly unlikely however, and this is merely a back-up contingency.
+%%
+%%\subsubsection{Possible switch to Java}
+%%
+%%While Team 8 is very familiar with JavaScript, it is possible that JavaScript 
+%%may reveal itself to be unsuitable for this project. In the event that this 
+%%occurs, Team 8 is well prepared to transition to the Java programming language, 
+%%as it is one with which we are more familiar. Java was chosen as a back-up 
+%%language as it is the programming language that team 8 is the most familiar with 
+%%and is very easy to convert to from Java Script so that we do not lose progress 
+%%already made. The need for a switch from the Java Script programming language is 
+%%believed to be highly unlikely however, and this is merely a back-up 
+%%contingency.
+%%
 
 \subsection{Latex}
 
-Latex will be used to generate documents for this project. Latex's ability for multiple team members to effect changes simultaneously and its versatility across platforms makes it ideal for this project. As of September 28 2016 all team members have aquired a working knowledge of how Latex functions, and it is believed that no further education will be required. If any such education is necessary TAs and the Latex tutorial found online will be team 8's go-to instructors. 
+Latex will be used to generate documents for this project. Latex's ability for 
+multiple team members to effect changes simultaneously and its versatility 
+across platforms makes it ideal for this project. As of September 28 2016 all 
+team members have aquired a working knowledge of how Latex functions, and it is 
+believed that no further education will be required. If any such education is 
+necessary TAs and the Latex tutorial found online will be team 8's go-to 
+instructors. 
 
 \subsection{GitLab}
 
-GitLab will be used to share and store documents for this project. More information on GitLab and how it will be used for this project can be found in sections 2.1.2 and in the Git Workflow Plan found in section 4. All team 8 members are familiar with GitLab and how it functions. 
+GitLab will be used to share and store documents for this project. More 
+information on GitLab and how it will be used for this project can be found in 
+sections 2.1.2 and in the Git Workflow Plan found in section 4. All team 8 
+members are familiar with GitLab and how it functions. 
 
 \section{Coding Style}
 
@@ -325,14 +405,19 @@ here. All code is to be well commented, with comments being placed before the
 code. Comments are to be written with the understanding that they should be 
 concise and easy to comprehend by outside parties. 
 
-\subsection{Mozilla developer network}
+\subsection{Mozilla Developer Network}
 
-Our formal coding style will be the Mozilla developer network, which contains subsections specifically for Java Script, our programming language of choice for this project. Specific guidelines can be found on the Mozilla developer network website.
+Our formal coding style will be the Mozilla Developer Network, which contains 
+subsections specifically for JavaScript, our programming language of choice for 
+this project. Specific guidelines can be found on the Mozilla Developer Network 
+website.
 
 \section{Project Schedule}
 
 Provide a pointer to your Gantt Chart.
 
 \section{Project Review}
+To be completed in revision 1.
 
 \end{document}
+
