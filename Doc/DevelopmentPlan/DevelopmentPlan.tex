@@ -29,6 +29,7 @@ September 27, 2016 & Kelvin Lin & Modified Team Meeting Plan for Draft 2\\
 September 28, 2016 & Kelvin Lin & Added Team Member Roles for Draft 2\\
 September 28, 2016 & Kelvin Lin & Added Git Workflow Plan for Draft 2\\
 September 29 2016 & Eric Chaput & Added to Sections 3,6, and 7\\
+September 30 2016 & All team members & Spelling and Grrammer edits\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -66,8 +67,7 @@ The meetings on Mondays will be used to aggregate the achievements and
 difficulties of the previous week, and to plan for the upcoming week. Members 
 will be presented with the opportunity to discuss any achievements and 
 difficulties they encountered while working on their tasks. A list of 
-difficulties 
-will be created; however, there will not be an in-depth investigation or 
+difficulties will be created; however, there will not be an in-depth investigation or 
 resolution of the aforementioned difficulty. For each issue mentioned, a list of 
 team members who are qualified to solve the problem will be created, and a 
 member from that list will be chosen to investigate that problem. A meeting will 
@@ -109,7 +109,7 @@ will be the chair of the meetings.
 The agenda is a written document to be written in \LaTeX. It details the topics 
 to be covered in an upcoming meeting. At a minimum, it must provide a numbered 
 list of topics to be covered, as well as a brief summary of each topic. The 
-summary can be a point list. The agenda should be released to all team members 
+summary can be as simple as a point list. The agenda should be released to all team members 
 before each meeting.
 
 \subsubsection{The Scribe}
@@ -192,8 +192,8 @@ The following table shows the assignment of roles in Team 8.
 	\begin{tabular}{ll}
 		Team Member & Role                                        \\
 		Kelvin Lin  & Team Lead, Technology Expert                \\
-		Eric Chaput & Theory Expert, Quantitative Testing Expert  \\
-		Jin Liu     & Graphics Expert, Qualitative Testing Expert
+		Eric Chaput & Theory Expert, Qualitative Testing Expert  \\
+		Jin Liu     & Graphics Expert, Quantitative Testing Expert
 	\end{tabular}
 
 	\caption{Team 8 Role Assignments}
@@ -203,7 +203,7 @@ The following table shows the assignment of roles in Team 8.
 
 \subsubsection{Team Lead}
 The team lead is responsible for the overall management of the project. The team 
-lead will be responsible for ensuring that all deliverables are made to 
+lead is responsible for ensuring that all deliverables are made to 
 specification and on time. To accomplish this, the team lead must be sensitive 
 to the member's skills and abilities, and partition tasks to allow all of the 
 other members to succeed and to develop new skills. The team lead shall ensure 
@@ -247,8 +247,7 @@ knowledge of qualitative testing methodologies within the scope of the project.
 The qualitative testing expert will be responsible for leading any qualitative 
 tests including but not limited to market research and observation, in-person 
 and online surveys, discussion/focus groups, and code review sessions. Such 
-tasks may 
-involve partitioning tasks for each initiative and assigning the tasks to the 
+tasks may involve partitioning tasks for each initiative and assigning the tasks to the 
 appropriate member. Moreover, the qualitative testing expert will be responsible 
 for reporting any results to the group and making recommendations based on the 
 results to improve the projects.
@@ -309,7 +308,7 @@ is representable as a data structure, and the Box2D API can be integrated into
 the project. 
 
 \subsubsection{The Car}
-The car in genetic car is composed of 8 vectors attached to a central point. The 
+The car in this project is composed of 8 vectors attached to a central point. The 
 tips of the vectors are connected to form triangles. Each car contains 8 
 vectors. In addition, each car can have up to 8 wheels. Each wheel has a radius, 
 an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car 
@@ -327,13 +326,13 @@ to create the corresponding vectors for the car, and if it is successful, then
 it will print "true" to the console.
 
 \subsubsection{The Risks}
-The Box2D API poses the most significant risk for the car model. The Box2D API defines the car entity in terms that can be used with many physics equations, which are important for calculating the fitness function of the car. In the event that the Box2D API prooves to be infeasible for Team 8, alternate arrangemets will have to be made in order to complete the project: the team will resort to using basic kinematics equations to calculate the fitness function instead of using the API. A possible drawback to this approach would be that the members of Team 8 are generally unfamiliar with Newtonian mechanics, so external assistance would be required. Tentatively, the team plans to consult with Dr. Spencer Smith during his office hours should this assistance be required.
+The Box2D API poses the most significant risk for the car model. The Box2D API defines the car entity in terms that can be used with many physics equations, which is important for calculating the fitness function of the car. In the event that the Box2D API prooves to be infeasible for Team 8, alternate arrangemets will have to be made in order to complete the project: the team will resort to using basic kinematics equations to calculate the fitness function instead of using the API. A possible drawback to this approach would be that the members of Team 8 are generally unfamiliar with Newtonian mechanics, so external assistance would be required. Tentatively, the team plans to consult with Dr. Spencer Smith during his office hours should this assistance be required.
 
 \subsection{The Genetic Algorithm}
-The purpose for implementing the GA will be to demonstrate its practicality to 
+The purpose for implementing the GA is to demonstrate its practicality to 
 the project. In order for this portion to succeed, it must be able to select for 
 the top n cars given an array of cars, n, and fitness scores as input; crossover 
-genes genes of these cars; and mutate the genes of the offsprings.
+the genes of these cars; and mutate the genes of the offspring.
 
 \subsubsection{Genetic Algorithm Overview}
 GAs attempt to find near-optimal solutions to problems with incomplete or 
@@ -370,9 +369,7 @@ the mutateOffsprings method will be used to mutate the cars and then the fields
 of the cars that mutated as well as their previous fields on separate lines.
 
 \subsubsection{The Risks}
-The most significant risk for implementing the GA is about the alogorithm 
-itself. If any errors occurs through the whole GA code, the result will be 
-effected. To avoid this risk, the GA should be carefully programmed.
+The adaptation of algorithm itself presents a significant risk for this project. Any assumptions made in the original algorithm will carry over to our project where those assumptions may not hold to be true.  Furhtermore, if any errors exist in the GA code, the final result will be negatively effected. To avoid this risk, the original algorithm will be tested in an isolated enviroment to ensure its general accuracy. The coded algorithm will also be tested in isolation of the program's other components to ensure it is properly implemented in Javascript. This is feasible due to Team 8's object oriented programming approach to this project.
 
 \subsection{The Graphics}
 The purpose of the graphics demonstration is to show competency in the 
@@ -398,11 +395,7 @@ camera will also focus on the car, so that the center of the car will always be
 at the center of the screen.
 
 \subsubsection{The Risks}
-The most significant risk for implementing the graphics is about the Javascript 
-graphics language. Javascript is a entirely new coding language compared to C++ 
-and Java, where its relatived graphics language is different as well. Problems 
-or bugs may occur everywhere in the graphics parts so this could be a major 
-risk.
+The implementation of the Javascript graphics language will present a significant risk for this project. Team 8 has more experience with C++ and Java graphics packages, and it is possible that the adaptation of Javascript will prove more difficult then initially believed. Team 8's graphics and technology experts have arranged to minimize this risk by educating themselves on Javascript's graphics functionality extensively through online resources and peers familiar with Javascript.
 
 \section{Technology}
 
