@@ -29,6 +29,10 @@ September 27, 2016 & Kelvin Lin & Modified Team Meeting Plan for Draft 2\\
 September 28, 2016 & Kelvin Lin & Added Team Member Roles for Draft 2\\
 September 28, 2016 & Kelvin Lin & Added Git Workflow Plan for Draft 2\\
 September 29 2016 & Eric Chaput & Added to Sections 3,6, and 7\\
+September 29, 2016 & Kelvin Lin & Added Reference to Gantt Project\\
+September 29, 2016 & Kelvin Lin & Added Proof of Concept Plan\\
+September 29, 2016 & Jin Liu & Added Risks to Proof of Concept Plan\\
+September 30, 2016 & Kelvin Lin & Edited Risks in Proof of Concept Plan\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -327,10 +331,7 @@ to create the corresponding vectors for the car, and if it is successful, then
 it will print "true" to the console.
 
 \subsubsection{The Risks}
-The most significant risk implementing the basic car model is about the the Java
-Script physics library. Mass and its related acceleration play important roles 
-in this whole project so it would be very risky if the physics library does not 
-work as it is expected.
+The Box2D API poses the most significant risk for the car model. The Box2D API defines the car entity in terms that can be used with many physics equations, which are important for calculating the fitness function of the car. In the event that the Box2D API proves to be infeasible for Team 8, alternate arrangements will have to be made in order to complete the project: the team will resort to using basic kinematics equations to calculate the fitness function instead of using the API. A possible drawback to this approach would be that the members of Team 8 are generally unfamiliar with Newtonian mechanics, so external assistance would be required. Tentatively, the team plans to consult with Dr. Spencer Smith during his office hours should this assistance be required. 
 
 \subsection{The Genetic Algorithm}
 The purpose for implementing the GA will be to demonstrate its practicality to 
