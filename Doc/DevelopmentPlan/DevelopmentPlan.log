@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  30 SEP 2016 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  30 SEP 2016 21:00
 entering extended mode
 **DevelopmentPlan.tex
 (DevelopmentPlan.tex
@@ -191,7 +191,7 @@ Package color Info: Driver file: pdftex.def on input line 137.
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count102
 )))
-No file DevelopmentPlan.aux.
+(DevelopmentPlan.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
@@ -208,6 +208,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 \AtBeginShipoutBox=\box26
 Package hyperref Info: Link coloring OFF on input line 19.
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -270,40 +271,33 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
  [11]
-Overfull \hbox (16.82019pt too wide) in paragraph at lines 458--459
+Overfull \hbox (74.74153pt too wide) in paragraph at lines 457--461
+\OT1/cmr/m/n/10 this project. The guide-lines for this cod-ing style can be fou
+nd at []https://developer.mozilla.org/en-
+ []
+
+
+Overfull \hbox (16.82019pt too wide) in paragraph at lines 466--467
 [][]\OT1/cmr/m/n/10 https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/
 ProjectSchedule[]. 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 463.
-[12]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 463.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
+[12] [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
  (DevelopmentPlan.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 463.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 463.
-
-
-Package rerunfilecheck Warning: File `DevelopmentPlan.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `DevelopmentPlan.out':
-(rerunfilecheck)             Before: C35BF71231E1A104A9DC7BC021AE4D73;3138
-(rerunfilecheck)             After:  8AC63909947275B987803E461D55F6C4;3185.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 463.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
+Package rerunfilecheck Info: File `DevelopmentPlan.out' has not changed.
+(rerunfilecheck)             Checksum: C1D6A2593E6FF092241E3454AA7DFA60;3295.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 471.
  ) 
 Here is how much of TeX's memory you used:
- 5093 strings out of 493698
- 74904 string characters out of 3144413
- 156530 words of memory out of 3000000
- 8354 multiletter control sequences out of 15000+200000
+ 5101 strings out of 493698
+ 75027 string characters out of 3144413
+ 156582 words of memory out of 3000000
+ 8357 multiletter control sequences out of 15000+200000
  8204 words of font info for 29 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  29i,10n,28p,798b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -314,9 +308,9 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
 sfonts/cm/cmr7.pfb>
-Output written on DevelopmentPlan.pdf (12 pages, 150470 bytes).
+Output written on DevelopmentPlan.pdf (13 pages, 154449 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 62 named destinations out of 1000 (max. 500000)
- 377 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 307 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
 
