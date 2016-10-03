@@ -1,0 +1,198 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: requirements Document\\Genetic Cars}
+
+\author{Team 8, Grate
+		\\ Kelvin Lin (linkk4)
+		\\ Eric Chaput (chaputem)
+		\\ Jin Liu (liu456)
+}
+
+\date{\today}
+
+\input{../Comments}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+This document describes the requirements for ....  The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
+to the template, you should explicity state what modifications were made.
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+
+\subsection{The Stakeholders}
+
+\subsubsection{The Client}
+
+\subsubsection{The Customers}
+
+\subsubsection{Other Stakeholders}
+
+\subsection{Mandated Constraints}
+
+\subsection{Naming Conventions and Terminology}
+
+\subsection{Relevant Facts and Assumptions}
+
+User characteristics should go under assumptions.
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+
+\subsubsection{Work Partitioning}
+
+\subsubsection{Individual Product Use Cases}
+
+\subsection{Functional Requirements}
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+
+As discussed in section 1.2 of this document, the users of this product include students and others interested in learning about genetic algorithms. With this in mind, the Genetic Cars project must be accessible to those without a background in mathematics or computer science. This accessibility begins with the look and feel of the project. The Genetic Cars project should appear aesthetically pleasing while still presenting its functions in as clean a manner as possible.
+
+\subsubsection{Appearance Requirements}
+
+The product shall be attractive to a student audience, with an emphasis on secondary and post-secondary students. A sampling of representative users shall, without prompting or enticement, be able to comprehend and use the product within sixty seconds of their first encounter with it. This same sampling shall also rate the appearance of the product on a scale from 1 to 10, and this rating shall be used to evaluate and refine the product's appearance. All licensing shall also be clear for the user to observe upon use of the product.
+
+\subsubsection{Style Requirements}
+
+The product shall appear inviting and educational and professional. After their first encounter with the product, a majority of representative users shall, without enticement, agree that they feel they would want to utilize the product and that they would learn about Genetic Algorithms by using the product. Representative users should also feel that they can trust the product.
+
+\subsection{Usability and Humanity Requirements}
+
+\subsubsection{Ease of Use Requirements}
+
+The product shall be easy for anybody over the age of 6 to use. The product shall not expect the user to remember anything about the product given multiple uses. The product shall make the user want to use it and to show the product to their friends/family/etc.. The product shall be used by people with no training or education except for a basic knowledge of the English language and the most very basic functions of a computer, such as how to navigate to a web-site and how to enter inputs when prompted to do so. A representative sample of users shall be able to successfully complete a given set of tasks with the product within a specified period of time to be determined at the time of the sample. The representative sample shall also show a willingness to show the product to others.
+
+\subsubsection{Personalization Requirements}
+
+The product shall allow the user to make simple adjustments to the product to allow for a variable length and amount of trials depending on user input. 
+
+\subsubsection{Learning Requirements}
+
+The product shall be easy for an intended user of the product to learn. The product shall be able to be used by these users with no training before use. A representative sample of users shall be able to successfully complete a given set of tasks with the product within a specified period of time to be determined at the time of the sample.
+
+\subsection{Performance Requirements}
+
+\subsubsection{Speed and Latency Requirements}
+
+The response time of the product shall be fast enough to avoid a loss of interest by the user following an input, which shall be a period of time no longer then five seconds. The initialization of the product shall be no longer then one minute.
+
+\subsubsection{Precision and Reliability Requirements}
+
+The product shall always converge towards a more optimal car. The product shall achieve 99 percent uptime. The product display shall be accurate to two decimal places.
+
+\subsubsection{Longevity Requirements}
+
+The product shall be easy to update and upgrade following its initial public release. 
+
+\subsection{Operational and Environmental Requirements}
+
+\subsubsection{Productization Requirements}
+
+\subsection{Maintainability and Support Requirements}
+
+\subsubsection{Maintenance Requirements}
+
+\subsubsection{Supportability Requirements}
+
+\subsubsection{Adaptability Requirements}
+
+\subsection{Security Requirements}
+
+\subsubsection{Access Requirements}
+
+\subsubsection{Integrity Requirements}
+
+\subsubsection{Privacy Requirements}
+
+\subsection{Cultural Requirements}
+
+\subsection{Legal Requirements}
+
+\subsection{Health and Safety Requirements}
+
+This section is not in the original Volere template, but health and safety are
+issues that should be considered for every engineering project.
+
+\section{Project Issues}
+
+\subsection{Open Issues}
+
+\subsection{Off-the-Shelf Solutions}
+
+\subsection{New Problems}
+
+\subsection{Tasks}
+
+\subsection{Migration to the New Product}
+
+\subsection{Risks}
+
+\subsection{Costs}
+
+\subsection{User Documentation and Training}
+
+\subsection{Waiting Room}
+
+\subsection{Ideas for Solutions}
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This section has been added to the Volere template.  This is where you can place
+additional information.
+
+\subsection{Symbolic Parameters}
+
+The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.
+
+
+\end{document}
