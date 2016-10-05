@@ -10,6 +10,7 @@
     linkcolor=red,
     urlcolor=blue
 }
+
 \usepackage[round]{natbib}
 
 \title{SE 3XA3: Requirements Document\\Genetic Cars}
@@ -21,6 +22,12 @@
 }
 
 \date{\today}
+
+%The follow 2 lines of code below were obtained from: 
+%https://gitlab.cas.mcmaster.ca/ThisTooShallParse/3XA3_CParser/blob/master/Req_Update/L01_Group7_Requirements_Rev0.tex
+\usepackage{mdframed}
+\newmdenv[linecolor=black]{reqbox}
+
 
 \input{../Comments}
 
@@ -84,8 +91,31 @@ User characteristics should go under assumptions.
 
 \subsubsection{Individual Product Use Cases}
 
+\newpage
 \subsection{Functional Requirements}
 
+%Box formatting template adapted from: 
+%https://gitlab.cas.mcmaster.ca/ThisTooShallParse/3XA3_CParser/blob/master/Req_Update/L01_Group7_Requirements_Rev0.tex
+\begin{reqbox}
+%---
+\begin{tabular}{ccc}
+Requirement \#: & Requirement Type:  & Event/Use case \#: \\
+\end{tabular} \\
+%---
+\textbf{Description:}   \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} \\
+\textbf{Fit Criterion:}  \\
+%---
+\begin{tabular}{ll}
+\textbf{Customer Satisfaction:}  & \textbf{Customer Dissatisfaction:}  \\
+\textbf{Priority:}  & \textbf{Conflicts:} \\
+\end{tabular} \\
+%---  
+\textbf{Supporting Materials:}  \\
+\textbf{History:} Created 
+%--
+\end{reqbox}
 
 
 %KELVIN'S PART ENDS HERE
@@ -94,43 +124,80 @@ User characteristics should go under assumptions.
 
 \subsection{Look and Feel Requirements}
 
-As discussed in section 1.2 of this document, the users of this product include students and others interested in learning about genetic algorithms. With this in mind, the Genetic Cars project must be accessible to those without a background in mathematics or computer science. This accessibility begins with the look and feel of the project. The Genetic Cars project should appear aesthetically pleasing while still presenting its functions in as clean a manner as possible.
+As discussed in section 1.2 of this document, the users of this product include 
+students and others interested in learning about genetic algorithms. With this 
+in mind, the Genetic Cars project must be accessible to those without a 
+background in mathematics or computer science. This accessibility begins with 
+the look and feel of the project. The Genetic Cars project should appear 
+aesthetically pleasing while still presenting its functions in as clean a manner 
+as possible.
 
 \subsubsection{Appearance Requirements}
 
-The product shall be attractive to a student audience, with an emphasis on secondary and post-secondary students. A sampling of representative users shall, without prompting or enticement, be able to comprehend and use the product within sixty seconds of their first encounter with it. This same sampling shall also rate the appearance of the product on a scale from 1 to 10, and this rating shall be used to evaluate and refine the product's appearance. All licensing shall also be clear for the user to observe upon use of the product.
+The product shall be attractive to a student audience, with an emphasis on 
+secondary and post-secondary students. A sampling of representative users shall, 
+without prompting or enticement, be able to comprehend and use the product 
+within sixty seconds of their first encounter with it. This same sampling shall 
+also rate the appearance of the product on a scale from 1 to 10, and this rating 
+shall be used to evaluate and refine the product's appearance. All licensing 
+shall also be clear for the user to observe upon use of the product.
 
 \subsubsection{Style Requirements}
 
-The product shall appear inviting and educational and professional. After their first encounter with the product, a majority of representative users shall, without enticement, agree that they feel they would want to utilize the product and that they would learn about Genetic Algorithms by using the product. Representative users should also feel that they can trust the product.
+The product shall appear inviting and educational and professional. After their 
+first encounter with the product, a majority of representative users shall, 
+without enticement, agree that they feel they would want to utilize the product 
+and that they would learn about Genetic Algorithms by using the product. 
+Representative users should also feel that they can trust the product.
 
 \subsection{Usability and Humanity Requirements}
 
 \subsubsection{Ease of Use Requirements}
 
-The product shall be easy for anybody over the age of 6 to use. The product shall not expect the user to remember anything about the product given multiple uses. The product shall make the user want to use it and to show the product to their friends/family/etc.. The product shall be used by people with no training or education except for a basic knowledge of the English language and the most very basic functions of a computer, such as how to navigate to a web-site and how to enter inputs when prompted to do so. A representative sample of users shall be able to successfully complete a given set of tasks with the product within a specified period of time to be determined at the time of the sample. The representative sample shall also show a willingness to show the product to others.
+The product shall be easy for anybody over the age of 6 to use. The product 
+shall not expect the user to remember anything about the product given multiple 
+uses. The product shall make the user want to use it and to show the product to 
+their friends/family/etc.. The product shall be used by people with no training 
+or education except for a basic knowledge of the English language and the most 
+very basic functions of a computer, such as how to navigate to a web-site and 
+how to enter inputs when prompted to do so. A representative sample of users 
+shall be able to successfully complete a given set of tasks with the product 
+within a specified period of time to be determined at the time of the sample. 
+The representative sample shall also show a willingness to show the product to 
+others.
 
 \subsubsection{Personalization Requirements}
 
-The product shall allow the user to make simple adjustments to the product to allow for a variable length and amount of trials depending on user input. 
+The product shall allow the user to make simple adjustments to the product to 
+allow for a variable length and amount of trials depending on user input. 
 
 \subsubsection{Learning Requirements}
 
-The product shall be easy for an intended user of the product to learn. The product shall be able to be used by these users with no training before use. A representative sample of users shall be able to successfully complete a given set of tasks with the product within a specified period of time to be determined at the time of the sample.
+The product shall be easy for an intended user of the product to learn. The 
+product shall be able to be used by these users with no training before use. A 
+representative sample of users shall be able to successfully complete a given 
+set of tasks with the product within a specified period of time to be determined 
+at the time of the sample.
 
 \subsection{Performance Requirements}
 
 \subsubsection{Speed and Latency Requirements}
 
-The response time of the product shall be fast enough to avoid a loss of interest by the user following an input, which shall be a period of time no longer then five seconds. The initialization of the product shall be no longer then one minute.
+The response time of the product shall be fast enough to avoid a loss of 
+interest by the user following an input, which shall be a period of time no 
+longer then five seconds. The initialization of the product shall be no longer 
+then one minute.
 
 \subsubsection{Precision and Reliability Requirements}
 
-The product shall always converge towards a more optimal car. The product shall achieve 99 percent uptime. The product display shall be accurate to two decimal places.
+The product shall always converge towards a more optimal car. The product shall 
+achieve 99 percent uptime. The product display shall be accurate to two decimal 
+places.
 
 \subsubsection{Longevity Requirements}
 
-The product shall be easy to update and upgrade following its initial public release. 
+The product shall be easy to update and upgrade following its initial public 
+release. 
 
 \subsection{Operational and Environmental Requirements}
 
@@ -191,7 +258,8 @@ issues that should be considered for every engineering project.
 
 \section{Appendix}
 
-%%This section has been added to the Volere template.  This is where you can place
+%%This section has been added to the Volere template.  This is where you can 
+place
 %%additional information.
 
 \subsection{List of Figures}
