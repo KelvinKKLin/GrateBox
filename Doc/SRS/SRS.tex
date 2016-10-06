@@ -96,27 +96,93 @@ User characteristics should go under assumptions.
 
 %Box formatting template adapted from: 
 %https://gitlab.cas.mcmaster.ca/ThisTooShallParse/3XA3_CParser/blob/master/Req_Update/L01_Group7_Requirements_Rev0.tex
+
+%REQUIREMENT #1
 \begin{reqbox}
-%---
-\begin{tabular}{ccc}
-Requirement \#: & Requirement Type:  & Event/Use case \#: \\
+%
+\begin{tabular}{cc}
+Requirement \#: 1 & Requirement Type: Functional \\
 \end{tabular} \\
-%---
-\textbf{Description:}   \\
-\textbf{Rationale:}  \\
-\textbf{Originator:} \\
-\textbf{Fit Criterion:}  \\
-%---
-\begin{tabular}{ll}
-\textbf{Customer Satisfaction:}  & \textbf{Customer Dissatisfaction:}  \\
-\textbf{Priority:}  & \textbf{Conflicts:} \\
-\end{tabular} \\
-%---  
-\textbf{Supporting Materials:}  \\
-\textbf{History:} Created 
-%--
+%
+\textbf{Description:} The product must generate at least \textit{s} samples per generation. \\
+\textbf{Rationale:}  GAs improve by having a large number of samples (representing members in a population) intermix traits. This requirement allows the GA to work by guaranteeing that a sufficient sample will be present at all times.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} Given a user generated input, \textit{s}, the program should generate \textit{s} cars for each generation.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
 \end{reqbox}
 
+%REQUIREMENT #2
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 2 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} Each car must be composed of at least \textit{v} vectors. \\
+\textbf{Rationale:}  This requirement manages the complexity of the car model, allowing for realistic distribution of traits among members of a population. That is, this prevents large cars from being generated and using an excessive amount of memory. \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} No car generated within population \textit{p} shall be composed of more than \textit{v} vectors.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #3
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 3 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} Each car may not have more than \textit{number\_of\_vertices} wheels. \\
+\textbf{Rationale:}  The wheels must be attached to the car via a vertex between two connecting vectors. This requirement ensures that no redundant or unused wheels will be generated.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} No car generated within population \textit{p} shall be composed of more than \textit{number\_of\_vertices} wheels.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #4
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 4 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The center of each wheel generated must be attached to a vertex formed by connecting vectors. \\
+\textbf{Rationale:}  Wheels cannot be floating on or around the car. This requirement ensures visual coherency by requiring wheels to be attached to the car model. Knowing the center of the wheel will also allow the physics engine to calculate the torque and distance that the car travelled.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} Each wheel displayed on the screen is attached to a vertex formed by connecting vectors.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #5
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 5 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The radius of each wheel must be at most \textit{r} units. \\
+\textbf{Rationale:}  This requirement manages the complexity of the car model, allowing for realistic distribution of traits among members of a population. That is, cars with unrealistically sized wheels will not be generated.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} No cars generated will have wheels with a radius larger than \textit{r}.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 %KELVIN'S PART ENDS HERE
 
@@ -301,8 +367,10 @@ place
 \label{LOF}
 \begin{tabular}{ll}
 Symbol & Definition \\
-SOMERANDOMCONSTANT & SOMERANDOMDEFINITION  \\
-ONEMORETIME & YES\\ 
+\textit{s} & The number of samples in a generation  \\
+\textit{v} & The number of vectors in a car  \\
+\textit{number\_of\_vertices} & The number of vertices formed by connecting vectors in a car model \\
+\textit{r} & The radius of a wheel
 \end{tabular}
 \caption{List of Figures}
 \end{table}
