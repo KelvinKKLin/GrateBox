@@ -51,6 +51,7 @@ October 7, 2016 & 1.0 & Started Functional Requirements\\
 October 10, 2016 & 1.1 & Updated Functional Requirements\\
 October 11, 2016 & 1.2 & Added Context Diagram\\
 October 11, 2016 & 1.3 & Added Work Partitioning Table\\
+October 11, 2016 & 1.4 & Added Off-the-Shelf Solutions\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -712,7 +713,33 @@ issues that should be considered for every engineering project.
 Not applicable for this project.
 
 \subsection{Off-the-Shelf Solutions}
-Not applicable for this project.
+
+\subsubsection{Ready-Made Product}
+Similar solutions to Grate's Genetic Cars already exists, notably BoxCar2D 
+(boxcar2d.com/) and Rednuht's Genetic Cars (rednuht.org/genetic\_cars\_2/). Both 
+products demonstrate the effect of genetic algorithms through evolving cars by 
+selecting for the longest distance travel. They differ in that BoxCar2D displays 
+one car at a time, whereas Rednuht's Genetic Cars displays all of the cars in 
+one generation at once. They both allow users to adjust parameters of the 
+genetic algorithm in order to observe the effects of the algorithm. They both 
+show the performance of the cars over time.
+
+\subsubsection{Reusable Components}
+The Box2D API and the D3 API can both be reused in Grate's Genetic Cars. The 
+Box2D API provides functionality such as Vectors and Polygons that can be used 
+to model the car. The D3 API provides visualization functionality that can be 
+used to visualize the performance of cars over time. These APIs provide 
+functionality external to the core functionality of Grate's Genetic Cars, which 
+will make them valuable assets as Grate will not have to reimplement these APIs.
+
+\subsubsection{Products That Can Be Copied}
+Rednuht's Genetic Cars is licensed under the author's custom license which 
+grants others the right to reuse his code as part of their solution. 
+Furthermore, both BoxCar2D and Rednuht's Genetic Cars have released their 
+algorithms in some form: BoxCar2D through visuals and text, and Rednuht's 
+Genetic Cars through source code. Grate's Genetic Cars can draw inspiration from 
+these sources in implementing a new innovative solution to teaching genetic 
+algorithms.
 
 \subsection{New Problems}
 There is a risk that the copyright holder of Box Car 2D does not let anyone
@@ -801,6 +828,7 @@ generation\\
 
 
 \end{document}
+
 
 
 
