@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  10 OCT 2016 23:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 00:07
 entering extended mode
 **SRS.tex
 (SRS.tex
@@ -181,12 +181,33 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
 
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count102
+))
+\Gin@req@height=\dimen127
+\Gin@req@width=\dimen128
+)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip46
 \bibsep=\skip47
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count102
+\c@NAT@ctr=\count103
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\mdframed\mdframed.sty"
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -201,7 +222,7 @@ L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
 Package: etex 2015/03/02 v2.1 eTeX basic definition package (PEB,DPC)
-\et@xins=\count103
+\et@xins=\count104
 )
 L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
 L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
@@ -210,31 +231,31 @@ L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
 L3 Module: l3str 2015/03/01 v5545 L3 Strings
 L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
 L3 Module: l3int 2015/02/21 v5529 L3 Integers
-\c_max_int=\count104
-\l_tmpa_int=\count105
-\l_tmpb_int=\count106
-\g_tmpa_int=\count107
-\g_tmpb_int=\count108
+\c_max_int=\count105
+\l_tmpa_int=\count106
+\l_tmpb_int=\count107
+\g_tmpa_int=\count108
+\g_tmpb_int=\count109
 L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
 L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
-\g__prg_map_int=\count109
+\g__prg_map_int=\count110
 L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
 L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
 L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
 L3 Module: l3msg 2015/02/26 v5537 L3 Messages
 L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
-\l_iow_line_count_int=\count110
-\l__iow_target_count_int=\count111
-\l__iow_current_line_int=\count112
-\l__iow_current_word_int=\count113
-\l__iow_current_indentation_int=\count114
+\l_iow_line_count_int=\count111
+\l__iow_target_count_int=\count112
+\l__iow_current_line_int=\count113
+\l__iow_current_word_int=\count114
+\l__iow_current_indentation_int=\count115
 L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
-\c_zero_dim=\dimen127
-\c_max_dim=\dimen128
-\l_tmpa_dim=\dimen129
-\l_tmpb_dim=\dimen130
-\g_tmpa_dim=\dimen131
-\g_tmpb_dim=\dimen132
+\c_zero_dim=\dimen129
+\c_max_dim=\dimen130
+\l_tmpa_dim=\dimen131
+\l_tmpb_dim=\dimen132
+\g_tmpa_dim=\dimen133
+\g_tmpb_dim=\dimen134
 \c_zero_skip=\skip48
 \c_max_skip=\skip49
 \l_tmpa_skip=\skip50
@@ -248,18 +269,18 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \g_tmpa_muskip=\muskip15
 \g_tmpb_muskip=\muskip16
 L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
-\g__keyval_level_int=\count115
-\l_keys_choice_int=\count116
+\g__keyval_level_int=\count116
+\l_keys_choice_int=\count117
 L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
-\c__fp_leading_shift_int=\count117
-\c__fp_middle_shift_int=\count118
-\c__fp_trailing_shift_int=\count119
-\c__fp_big_leading_shift_int=\count120
-\c__fp_big_middle_shift_int=\count121
-\c__fp_big_trailing_shift_int=\count122
-\c__fp_Bigg_leading_shift_int=\count123
-\c__fp_Bigg_middle_shift_int=\count124
-\c__fp_Bigg_trailing_shift_int=\count125
+\c__fp_leading_shift_int=\count118
+\c__fp_middle_shift_int=\count119
+\c__fp_trailing_shift_int=\count120
+\c__fp_big_leading_shift_int=\count121
+\c__fp_big_middle_shift_int=\count122
+\c__fp_big_trailing_shift_int=\count123
+\c__fp_Bigg_leading_shift_int=\count124
+\c__fp_Bigg_middle_shift_int=\count125
+\c__fp_Bigg_trailing_shift_int=\count126
 L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \c_empty_box=\box26
 \l_tmpa_box=\box27
@@ -268,13 +289,13 @@ L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
 \g_tmpb_box=\box30
 L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_internal_box=\box31
-\l__coffin_internal_dim=\dimen133
-\l__coffin_offset_x_dim=\dimen134
-\l__coffin_offset_y_dim=\dimen135
-\l__coffin_x_dim=\dimen136
-\l__coffin_y_dim=\dimen137
-\l__coffin_x_prime_dim=\dimen138
-\l__coffin_y_prime_dim=\dimen139
+\l__coffin_internal_dim=\dimen135
+\l__coffin_offset_x_dim=\dimen136
+\l__coffin_offset_y_dim=\dimen137
+\l__coffin_x_dim=\dimen138
+\l__coffin_y_dim=\dimen139
+\l__coffin_x_prime_dim=\dimen140
+\l__coffin_y_prime_dim=\dimen141
 \c_empty_coffin=\box32
 \l__coffin_aligned_coffin=\box33
 \l__coffin_aligned_internal_coffin=\box34
@@ -283,45 +304,45 @@ L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_display_coffin=\box37
 \l__coffin_display_coord_coffin=\box38
 \l__coffin_display_pole_coffin=\box39
-\l__coffin_display_offset_dim=\dimen140
-\l__coffin_display_x_dim=\dimen141
-\l__coffin_display_y_dim=\dimen142
+\l__coffin_display_offset_dim=\dimen142
+\l__coffin_display_x_dim=\dimen143
+\l__coffin_display_y_dim=\dimen144
 L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
 L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
-\l__box_top_dim=\dimen143
-\l__box_bottom_dim=\dimen144
-\l__box_left_dim=\dimen145
-\l__box_right_dim=\dimen146
-\l__box_top_new_dim=\dimen147
-\l__box_bottom_new_dim=\dimen148
-\l__box_left_new_dim=\dimen149
-\l__box_right_new_dim=\dimen150
+\l__box_top_dim=\dimen145
+\l__box_bottom_dim=\dimen146
+\l__box_left_dim=\dimen147
+\l__box_right_dim=\dimen148
+\l__box_top_new_dim=\dimen149
+\l__box_bottom_new_dim=\dimen150
+\l__box_left_new_dim=\dimen151
+\l__box_right_new_dim=\dimen152
 \l__box_internal_box=\box40
-\l__coffin_bounding_shift_dim=\dimen151
-\l__coffin_left_corner_dim=\dimen152
-\l__coffin_right_corner_dim=\dimen153
-\l__coffin_bottom_corner_dim=\dimen154
-\l__coffin_top_corner_dim=\dimen155
-\l__coffin_scaled_total_height_dim=\dimen156
-\l__coffin_scaled_width_dim=\dimen157
+\l__coffin_bounding_shift_dim=\dimen153
+\l__coffin_left_corner_dim=\dimen154
+\l__coffin_right_corner_dim=\dimen155
+\l__coffin_bottom_corner_dim=\dimen156
+\l__coffin_top_corner_dim=\dimen157
+\l__coffin_scaled_total_height_dim=\dimen158
+\l__coffin_scaled_width_dim=\dimen159
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3unicode-data.def"
 File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
 File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count126
+\l__driver_color_stack_int=\count127
 ))
 Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count127
-\l__xparse_m_args_int=\count128
-\l__xparse_mandatory_args_int=\count129
-\l__xparse_processor_int=\count130
-\l__xparse_v_nesting_int=\count131
+\l__xparse_current_arg_int=\count128
+\l__xparse_m_args_int=\count129
+\l__xparse_mandatory_args_int=\count130
+\l__xparse_processor_int=\count131
+\l__xparse_v_nesting_int=\count132
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2015/03/10 v2.1b e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count132
+\etb@tempcnta=\count133
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\zref-abspage.sty"
 Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
@@ -332,7 +353,7 @@ Package zref Info: New property list: main on input line 759.
 Package zref Info: New property: default on input line 760.
 Package zref Info: New property: page on input line 761.
 )
-\c@abspage=\count133
+\c@abspage=\count134
 Package zref Info: New property: abspage on input line 62.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\needspace\needspace.sty"
@@ -345,11 +366,7 @@ Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 137.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-\Gread@gobject=\count134
-))
+)
 \mdf@templength=\skip54
 \c@mdf@globalstyle@cnt=\count135
 \mdf@skipabove@length=\skip55
@@ -450,22 +467,22 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 (../Comments.tex) (SRS.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 \AtBeginShipoutBox=\box46
-Package hyperref Info: Link coloring ON on input line 34.
+Package hyperref Info: Link coloring ON on input line 35.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -475,30 +492,30 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (SRS.out) (SRS.out)
 \@outlinefile=\write3
  ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count142
-\scratchdimen=\dimen158
+\scratchdimen=\dimen160
 \scratchbox=\box47
 \nofMPsegments=\count143
 \nofMParguments=\count144
 \everyMPshowfont=\toks17
 \MPscratchCnt=\count145
-\MPscratchDim=\dimen159
+\MPscratchDim=\dimen161
 \MPnumerator=\count146
 \makeMPintoPDFobject=\count147
 \everyMPtoPDFconversion=\toks18
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 37.
+(Font)              <14.4> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 37.
+(Font)              <7> on input line 38.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (SRS.toc
@@ -515,35 +532,49 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lot=\write5
  (SRS.lof)
 \tf@lof=\write6
- [2]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2]
 
 Package natbib Warning: Citation `RobertsonAndRobertson2012' on page 1 undefine
-d on input line 60.
+d on input line 61.
+
+<ContextDiagram.png, id=298, 582.0144pt x 424.7067pt>
+File: ContextDiagram.png Graphic file (type png)
+ <use ContextDiagram.png>
+Package pdftex.def Info: ContextDiagram.png used on input line 93.
+(pdftex.def)             Requested size: 390.0pt x 284.59088pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.94 \newpage
-              [1] [2]
-Package mdframed Info: Not enough space on this page on input line 165.
- [3]
-Package mdframed Info: Not enough space on this page on input line 210.
-Package mdframed Info: Not enough space on this page on input line 274.
+l.101 \newpage
+               [1] [2 <./ContextDiagram.png>] [3]
+Package mdframed Info: Not enough space on this page on input line 172.
  [4]
-Package mdframed Info: Not enough space on this page on input line 274.
+Package mdframed Info: Not enough space on this page on input line 217.
+Package mdframed Info: Not enough space on this page on input line 281.
  [5]
-Package mdframed Info: Not enough space on this page on input line 320.
+Package mdframed Info: Not enough space on this page on input line 281.
  [6]
-Package mdframed Info: Not enough space on this page on input line 366.
+Package mdframed Info: Not enough space on this page on input line 327.
  [7]
-Package mdframed Info: Not enough space on this page on input line 411.
+Package mdframed Info: Not enough space on this page on input line 373.
  [8]
-Package mdframed Info: Not enough space on this page on input line 474.
-Package mdframed Info: Not enough space on this page on input line 536.
+Package mdframed Info: Not enough space on this page on input line 418.
  [9]
-Package mdframed Info: Not enough space on this page on input line 536.
- [10] [11] [12] [13]
+Package mdframed Info: Not enough space on this page on input line 481.
+Package mdframed Info: Not enough space on this page on input line 543.
+
+[10]
+Package mdframed Info: Not enough space on this page on input line 543.
+ [11] [12] [13] [14]
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
@@ -556,31 +587,31 @@ Missing character: There is no  in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
- [14]
+ [15]
 No file SRS.bbl.
-[15]
-Overfull \hbox (80.45398pt too wide) in paragraph at lines 721--729
+[16]
+Overfull \hbox (80.45398pt too wide) in paragraph at lines 728--736
  [][] 
  []
 
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 733.
-[16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 733.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
+[17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 740.
  (SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 733.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 733.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 740.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 740.
 Package rerunfilecheck Info: File `SRS.out' has not changed.
 (rerunfilecheck)             Checksum: A69E18FD7652795F8332C316BAA4B2C4;4078.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 733.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 740.
  ) 
 Here is how much of TeX's memory you used:
- 12483 strings out of 493698
- 220996 string characters out of 3144413
- 294147 words of memory out of 3000000
- 15670 multiletter control sequences out of 15000+200000
+ 12642 strings out of 493698
+ 223186 string characters out of 3144413
+ 297391 words of memory out of 3000000
+ 15814 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,10n,39p,10426b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -589,9 +620,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmti12.pfb>
-Output written on SRS.pdf (19 pages, 135847 bytes).
+Output written on SRS.pdf (20 pages, 522319 bytes).
 PDF statistics:
- 400 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
- 433 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 410 PDF objects out of 1000 (max. 8388607)
+ 80 named destinations out of 1000 (max. 500000)
+ 438 words of extra memory for PDF output out of 10000 (max. 10000000)
 
