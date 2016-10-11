@@ -57,6 +57,8 @@
 \contentsline {subsection}{\numberline {4.6}Risks}{20}{subsection.4.6}
 \contentsline {subsection}{\numberline {4.7}Costs}{20}{subsection.4.7}
 \contentsline {subsection}{\numberline {4.8}User Documentation and Training}{21}{subsection.4.8}
+\contentsline {subsubsection}{\numberline {4.8.1}User Documentation Requirements}{21}{subsubsection.4.8.1}
+\contentsline {subsubsection}{\numberline {4.8.2}Training Requirements}{21}{subsubsection.4.8.2}
 \contentsline {subsection}{\numberline {4.9}Waiting Room}{21}{subsection.4.9}
 \contentsline {subsection}{\numberline {4.10}Ideas for Solutions}{21}{subsection.4.10}
 \contentsline {section}{\numberline {5}Appendix}{22}{section.5}
