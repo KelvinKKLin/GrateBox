@@ -104,7 +104,7 @@ User characteristics should go under assumptions.
 Requirement \#: 1 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:} The product must generate at least \textit{s} samples per generation. \\
+\textbf{Description:} The product must generate at least \textit{s} car samples per generation. \\
 \textbf{Rationale:}  GAs improve by having a large number of samples (representing members in a population) intermix traits. This requirement allows the GA to work by guaranteeing that a sufficient sample will be present at all times.\\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} Given a user generated input, \textit{s}, the program should generate \textit{s} cars for each generation.\\
@@ -193,7 +193,7 @@ Requirement \#: 5 & Requirement Type: Functional \\
 Requirement \#: 6 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:}  \\
+\textbf{Description:} The mass of each car must not be less than \textit{min\_weight}. \\
 \textbf{Rationale:}  \\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} \\
@@ -212,7 +212,7 @@ Requirement \#: 6 & Requirement Type: Functional \\
 Requirement \#: 7 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:}  \\
+\textbf{Description:} The mass of each car must not exceed \textit{max\_weight}. \\
 \textbf{Rationale:}  \\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} \\
@@ -229,7 +229,7 @@ Requirement \#: 7 & Requirement Type: Functional \\
 Requirement \#: 8 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:}  \\
+\textbf{Description:} A car that stalls for more than \textit{max\_secs} shall be deemed non-moving. \\
 \textbf{Rationale:}  \\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} \\
@@ -248,7 +248,7 @@ Requirement \#: 8 & Requirement Type: Functional \\
 Requirement \#: 9 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:}  \\
+\textbf{Description:} The fitness of a car shall not be calculated until a car is deemed to be non-moving. \\
 \textbf{Rationale:}  \\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} \\
@@ -265,7 +265,187 @@ Requirement \#: 9 & Requirement Type: Functional \\
 Requirement \#: 10 & Requirement Type: Functional \\
 \end{tabular} \\
 %
-\textbf{Description:}  \\
+\textbf{Description:} The program shall display each generation of cars traversing the road. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #11
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 11 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The program shall display the fitness of the top \textit{n} cars. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #12
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 12 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The program shall allow the user to enter a random seed to generate cars from in lieu of a randomly generated seed. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #13
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 13 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The user shall be allowed to modify the mutation rate, \textit{mutation\_rate}. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #14
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 14 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The user shall be allowed to change the number of cars per generation \textit{s} in lieu of the default value. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #15
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 15 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The number of cars per generation \textit{s} shall not be less than \textit{min\_cars\_per\_gen}. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #16
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 16 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The number of chars per generation \textit{s} shall not exceed \textit{max\_cars\_per\_gen}. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #17
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 17 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The program shall use the top \textit{t} cars to generate offsprings. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #18
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 18 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The top \textit{t} cars shall not exceed \textit{t\_max}. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
+
+%REQUIREMENT #19
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 19 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The top \textit{t} cars shall not be less than \textit{t\_min}. \\
+\textbf{Rationale:}  \\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} \\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 10\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+%REQUIREMENT #20
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 20 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The user shall be able to specify \textit{t} in lieu of the default value. \\
 \textbf{Rationale:}  \\
 \textbf{Originator:} Kelvin Lin\\
 \textbf{Fit Criterion:} \\

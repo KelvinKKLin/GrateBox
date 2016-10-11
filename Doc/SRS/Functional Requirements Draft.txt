@@ -1,0 +1,39 @@
+The product must generate at least \textit{s} car samples per generation.
+
+Each car must be composed of at least \textit{v} vectors.
+
+Each car may not have more than \textit{number\_of\_vertices} wheels.
+
+The center of each wheel generated must be attached to a vertex formed by connecting vectors.
+
+The radius of each wheel must be at most \textit{r} units.
+
+The mass of each car must not be less than \textit{min_weight}.
+
+The mass of each car must not exceed \textit{max_weight}.
+
+A car that stalls for more than \textit{max_secs} shall be deemed non-moving.
+
+The fitness of a car shall not be calculated until a car is deemed to be non-moving.
+
+The program shall display the fitness of the top \textit{n} cars.
+
+The program shall allow the user to enter a random seed to generate cars from.
+
+If the user does not specify a seed, then the program shall randomly generate a seed.
+
+The user shall be allowed to modify the mutation rate, \textit{mutation_rate}.
+
+The user shall be allowed to change the number of cars per generation \textit{s} in lieu of the default value.
+
+The number of cars per generation \textit{s} shall not be less than \textit{min_cars_per_gen}.
+
+The number of chars per generation \textit{s} shall not exceed \textit{max_cars_per_gen}.
+
+The program shall use the top \textit{t} cars to generate offsprings.
+
+The top \textit{t} cars shall not exceed \textit{t_max}.
+
+The top \textit{t} cars shall not be less than \textit{t_min}.
+
+The user shall be able to specify \textit{t} in lieu of the default value.
