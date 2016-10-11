@@ -190,7 +190,8 @@ offspring.}
 	%
 	\textbf{Description:} Each car may not have more than 
 	\textit{number\_of\_vertices} wheels. \\
-	\textbf{Rationale:}  The wheels must be attached to the car via a vertex between 
+	\textbf{Rationale:}  The wheels must be attached to the car via a vertex 
+between 
 	two connecting vectors. This requirement ensures that no redundant or unused 
 	wheels will be generated.\\
 	\textbf{Originator:} Kelvin Lin\\
@@ -209,7 +210,8 @@ offspring.}
 		Requirement \#: 3 & Requirement Type: Functional \\
 	\end{tabular} \\
 	%
-	\textbf{Description:} The radius of each wheel must be at most \textit{r} units. 
+	\textbf{Description:} The radius of each wheel must be at most \textit{r} 
+units. 
 	\\
 	\textbf{Rationale:}  This requirement manages the complexity of the car model, 
 	allowing for realistic distribution of traits among members of a population. 
@@ -236,7 +238,8 @@ offspring.}
 	vertex formed by connecting vectors. \\
 	\textbf{Rationale:}  Wheels cannot be floating on or around the car. This 
 	requirement ensures visual coherency by requiring wheels to be attached to the 
-	car model. Knowing the center of the wheel will also allow the physics engine to 
+	car model. Knowing the center of the wheel will also allow the physics engine 
+to 
 	calculate the torque and distance that the car travelled.\\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} Each wheel displayed on the screen is attached to a 
@@ -277,7 +280,8 @@ offspring.}
 		Requirement \#: 6 & Requirement Type: Functional \\
 	\end{tabular} \\
 	%
-	\textbf{Description:} The mass of each car must not exceed \textit{max\_weight}. 
+	\textbf{Description:} The mass of each car must not exceed 
+\textit{max\_weight}. 
 	\\
 	\textbf{Rationale:} In order to have realistic physical simulations of car 
 	models, the mass of each car must have an upper limit. An upper limit reduces 
@@ -301,12 +305,14 @@ offspring.}
 	%
 	\textbf{Description:} The program shall display each generation of cars 
 	traversing the road. \\
-	\textbf{Rationale:} The purpose of this program is to show its users the effects 
+	\textbf{Rationale:} The purpose of this program is to show its users the 
+effects 
 	of genetic algorithms in an interesting and engaging manner. If the program did 
 	not display each generation of cars traversing the road, then the program would 
 	fail in accomplishing its original objective. \\
 	\textbf{Originator:} Kelvin Lin\\
-	\textbf{Fit Criterion:} Each generation of cars can be seen traversing a road on 
+	\textbf{Fit Criterion:} Each generation of cars can be seen traversing a road 
+on 
 	the medium of output.\\
 	%  
 	\textbf{Supporting Materials:} JavaScript \\
@@ -345,10 +351,12 @@ offspring.}
 		Requirement \#: 9 & Requirement Type: Functional \\
 	\end{tabular} \\
 	%
-	\textbf{Description:} The program shall allow the user to enter a random seed to 
+	\textbf{Description:} The program shall allow the user to enter a random seed 
+to 
 	generate cars from in lieu of a randomly generated seed. \\
 	\textbf{Rationale:} The ability to enter a random seed allows the results of 
-	cars to be compared and to be run on multiple computers: results are not lost as 
+	cars to be compared and to be run on multiple computers: results are not lost 
+as 
 	a result of restarting the application. \\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} The user can input a random seed into the program 
@@ -391,7 +399,8 @@ offspring.}
 		Requirement \#: 11 & Requirement Type: Functional \\
 	\end{tabular} \\
 	%
-	\textbf{Description:} The user shall be allowed to change the number of cars per 
+	\textbf{Description:} The user shall be allowed to change the number of cars 
+per 
 	generation \textit{s} in lieu of the default value. \\
 	\textbf{Rationale:} Allowing the user to change the number of cars per 
 	generation \textit{s} will allow the user to see how the size of a generation 
@@ -418,7 +427,8 @@ offspring.}
 	generations. \\
 	\textbf{Rationale:} Using the same road for each generation allows for 
 	comparability of performance between each generation. That is, since every car 
-	will traverse the same course, their fitness and performance can be compared. \\
+	will traverse the same course, their fitness and performance can be compared. 
+\\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} The road for all simulations is the same. \\
 	%  
@@ -505,7 +515,8 @@ offspring.}
 	\\
 	\textbf{Rationale:} This restriction prevents \textit{t} from exceeding 
 	\textit{s} or take on an unreasonable value. It ensures that the program can 
-	always run by setting an upper limit to the number of cars that can reproduce in 
+	always run by setting an upper limit to the number of cars that can reproduce 
+in 
 	a given generation. \\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} The number of cars to choose from during reproduction 
@@ -547,7 +558,8 @@ offspring.}
 	%
 	\textbf{Description:} A car that stalls for more than \textit{max\_secs} shall 
 	be deemed non-moving. \\
-	\textbf{Rationale:} A time limit needs to be imposed on the simulations in order 
+	\textbf{Rationale:} A time limit needs to be imposed on the simulations in 
+order 
 	to prevent the cars from running indefinitely without making progress. \\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} All cars that say in the same spot for 
@@ -573,7 +585,8 @@ offspring.}
 	Therefore, the fitness of a car cannot be determined until the car is 
 	non-moving. \\
 	\textbf{Originator:} Kelvin Lin\\
-	\textbf{Fit Criterion:} After a car is deemed non-moving, it's fitness value can 
+	\textbf{Fit Criterion:} After a car is deemed non-moving, it's fitness value 
+can 
 	be assessed.\\
 	%  
 	\textbf{Supporting Materials:} JavaScript \\
@@ -794,13 +807,44 @@ be converted to new standards as they arise.
 
 \subsection{Tasks}
 \subsubsection{Project Planning}
-The V-Model of Software Development will be used in the development of this project. The V-Model to be followed is depicted below:
+The V-Model of Software Development will be used in the development of this 
+project. The V-Model to be followed is depicted below:
 
-%The following figure was adapted from Dr. Smith's Lecture 5 Slides, available at https://gitlab.cas.mcmaster.ca/smiths/se3xa3/tree/master/Lectures/05-TestPlan
+%The following figure was adapted from Dr. Smith's Lecture 5 Slides, available 
+%at https://gitlab.cas.mcmaster.ca/smiths/se3xa3/tree/master/Lectures/05-TestPlan
 \begin{figure}[h]
   \includegraphics[width=\linewidth]{OverviewOfProcess.pdf}
   \caption{The V-Model of Software Development}
 \end{figure}
+
+Grate is dedicated to writing high quality code through the application of 
+strong software engineering principles. In order to meet that standard, the 
+project will begin separated into 3 main stages. First, an extensive design and 
+documentation phase before any part of the system is implemented. Once the 
+project has been designed, then coding can commence. At the conclusion of 
+coding, there will be an extensive testing and validation phase in order to 
+build confidence in the functionality of the final product. The total time 
+anticipated for this project is 4 months.
+
+The design phase contains 6 deliverables: the problem statement, the development 
+plan, the requirements specifications, the verification and validation plan, and 
+the design specification. Creating the problem statement and the development 
+plan should both take about 1 week. Creating the requirements specification, the 
+verification and validation plan, and the design specification will all take 
+about 2 weeks.
+
+The coding phase involves implementing the project following the design 
+specifications. The implementation of the project will take about 3 weeks.
+
+Verification and Validation involves testing the project following the 
+Verification and Validation Plan. The verification and validation of the project 
+will take about 2 weeks.
+
+Note that, despite the arrows in the diagram, this is an iterative process. This 
+means that processes can happen more than once during the development process, 
+with each iteration making improvements upon the previous iteration. Steps can 
+also be skipped within iterations, or be performed out of order if deemed 
+necessary. 
 
 \subsubsection{Planning of the Development Phases}
 
@@ -878,3 +922,4 @@ generation\\
 
 
 \end{document}
+
