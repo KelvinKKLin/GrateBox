@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 14:08
 entering extended mode
 **SRS.tex
 (SRS.tex
@@ -536,12 +536,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1])
 \tf@toc=\write4
 
-(SRS.lot)
+(SRS.lot [2])
 \tf@lot=\write5
  (SRS.lof)
 \tf@lof=\write6
- [2] [3pdfTeX warning (ext4): destination with the same identifier (name{table.
-1}) has been already used, duplicate ignored
+ [3pdfTeX warning (ext4): destination with the same identifier (name{table.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -551,7 +551,7 @@ l.59 \newpage
 Package natbib Warning: Citation `RobertsonAndRobertson2012' on page 1 undefine
 d on input line 65.
 
-<ContextDiagram.png, id=345, 582.0144pt x 467.5869pt>
+<ContextDiagram.png, id=355, 582.0144pt x 467.5869pt>
 File: ContextDiagram.png Graphic file (type png)
  <use ContextDiagram.png>
 Package pdftex.def Info: ContextDiagram.png used on input line 97.
@@ -626,40 +626,6 @@ Package mdframed Info: Not enough space on this page on input line 556.
  [11]
 Package mdframed Info: Not enough space on this page on input line 556.
  [12] [13] [14] [15] [16]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.754 http://www.nintendo.com/consumer/info/en_
-                                               na/docs.jsp?menu=3ds&submenu=...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Misplaced alignment tab character &.
-l.754 ...om/consumer/info/en_na/docs.jsp?menu=3ds&
-                                                  submenu=ctr-doc-health-safety
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.755 \subsubsection
-                    {Potential User Problems}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (68.8084pt too wide) in paragraph at lines 753--755
-[]\OT1/cmr/m/n/12 XL: http://www.nintendo.com/consumer/info/en$[]\OML/cmm/m/it/
-12 a=docs:jsp\OT1/cmr/m/n/12 ?\OML/cmm/m/it/12 menu \OT1/cmr/m/n/12 = 3\OML/cmm
-/m/it/12 dssubmenu \OT1/cmr/m/n/12 =$
- []
-
-
 Overfull \hbox (1.59315pt too wide) in paragraph at lines 765--775
 []\OT1/cmr/m/n/12 Users with epilepsy or prior his-tory of seizures may also ex
 -pe-ri-ence seizures
@@ -684,51 +650,49 @@ Missing character: There is no Å in font cmr12!
 Missing character: There is no Ô in font cmr12!
 Missing character: There is no ¨ in font cmr12!
 Missing character: There is no Å in font cmr12!
- [18]
+
 No file SRS.bbl.
-[19]
-Overfull \hbox (80.45398pt too wide) in paragraph at lines 843--862
+[18] [19]
+Overfull \hbox (80.45398pt too wide) in paragraph at lines 844--863
  [][] 
  []
 
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 866.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 867.
 [20pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.866 \end{document}
+l.867 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 866.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 867.
  (SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 866.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 866.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 867.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 867.
 Package rerunfilecheck Info: File `SRS.out' has not changed.
-(rerunfilecheck)             Checksum: 4BF850132BE0FF3E8E269AE3CB214130;4827.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 866.
+(rerunfilecheck)             Checksum: D94035C2824F829223B20B51E407E3C1;4999.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 867.
  ) 
 Here is how much of TeX's memory you used:
- 12740 strings out of 493698
- 224595 string characters out of 3144413
- 302761 words of memory out of 3000000
- 15890 multiletter control sequences out of 15000+200000
+ 12744 strings out of 493698
+ 224675 string characters out of 3144413
+ 298764 words of memory out of 3000000
+ 15892 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,10n,39p,10426b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
-/cmti12.pfb>
-Output written on SRS.pdf (24 pages, 542059 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb>
+Output written on SRS.pdf (24 pages, 521818 bytes).
 PDF statistics:
- 485 PDF objects out of 1000 (max. 8388607)
- 95 named destinations out of 1000 (max. 500000)
- 502 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 488 PDF objects out of 1000 (max. 8388607)
+ 97 named destinations out of 1000 (max. 500000)
+ 518 words of extra memory for PDF output out of 10000 (max. 10000000)
 
