@@ -52,6 +52,7 @@ October 10, 2016 & 1.1 & Updated Functional Requirements\\
 October 11, 2016 & 1.2 & Added Context Diagram\\
 October 11, 2016 & 1.3 & Added Work Partitioning Table\\
 October 11, 2016 & 1.4 & Added Off-the-Shelf Solutions\\
+October 11, 2016 & 1.5 & Added to Non-Functional Reqs and Section 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -69,21 +70,84 @@ to the template, you should explicity state what modifications were made.
 
 \subsection{The Purpose of the Project}
 
+\subsubsection{Project Background}
+
+Genetic algorithms serve as useful tools to search for near-optimal solutions to a wide variety of problems with incomplete or imperfect information by emulating the process of natural selection. The driving force for this project was the observed lack of genetic algorithm teaching tools. 
+
+\subsubsection{Project Goals}
+
+The primary goal of this project is to create a product that will teach users about the uses and theory behind genetic algorithms. The product must be engaging enough to maintain user interest while also bestowing them with practical knowledge about genetic algorithms. The success of this project will therefore be measured by both the engagement of the user and the increase in the user's practical knowledge of genetic algorithms.
+
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
 
+The primary client of the Genetic Cars project is also the project's target audience, those with an academic interest in learning about genetic algorithms. This target audience is estimated to fall in the aged 16-24 student demographic. Since the Genetic Cars project does not have one formal client with whom to discuss the project's requirements, all project requirements are derived from the requirements of the project's target audience. These requirements were elicated via anonymous interviews with perspective users inititally, however long term testing and user feedback shall serve to further specify and clarify requirements.
+
 \subsubsection{The Customers}
+
+The customers for the Genetic Cars project are the users outlined above. Assumptions about these user are listed in section 1.5.1 of this document.
 
 \subsubsection{Other Stakeholders}
 
+Other stakeholders for this project include:\\
+
+-Testers: Those individuals who will aid in the testing of our product, by filling out surveys and providing feedback on the project. Significant crossover with our target audience for obvious reasons. Will provide the primary means of communication with our customers for this reason.\\
+
+-Third-party technology experts: Those individuals who will help Grate learn about the technologies necessary for this project, as outlined in the design document and during team meetings. While not officially members of Grate, their aid will proove invaluable to learning the technologies necessary for this project ot function, and they will be credited in final documentation.\\
+
+-McMaster University library staff and faculty: Those individuals and services that will be interacted with to facilitate group meetings as outlined in the design document.
+
 \subsection{Mandated Constraints}
+
+\subsubsection{Scheduling Constraints}
+
+This project shall adhere to the scheduling constrains outlined in below, with deliverables mandated to be completed by the dates outlined there.
+
+\begin{tabular}{ p{6.7cm} l}
+
+  Team Formation & Week of September 12\\
+
+  Project Approval & Week of September 19\\
+
+  Problem Statement & September 23\\
+
+  Development Plan & September 30\\
+
+  Requirements Document Revision 0 & October 7\\
+
+  Proof of Concept Demonstration & Week of October 17\\
+
+  Test Plan Revision 0 & October 28\\
+
+  Design Document Revision 0 & November 11\\
+
+  Revision 0 Demonstration & Week of November 14\\
+
+  Lab Exercises & Throughout Term\\
+
+  Final Demonstration (Revision 1) & Week of November 28\\
+
+  Peer Evaluation of Other Team & Week of November 28\\
+
+  Final Documentation (Revision 1) & December 8\\
+
+\end{tabular}
+
+\subsubsection{Budgetary and Technology Constraints}
+This project shall not allow for the purchase of any third party product or service, as this project has no budget with which to aquire these. The product must also be compatible to technology that can be used freely by the users of the product without legal or monetary recourse.
 
 \subsection{Naming Conventions and Terminology}
 
 \subsection{Relevant Facts and Assumptions}
 
-User characteristics should go under assumptions.
+\subsubsection{User Assumptions}
+
+The user base for this product consists of those wishing to learn more about genetic algorithms. It is assumed that this demographic consists primarily of secondary school and post-secondary students aged 16-24. This demographic is assumed to be very familiar with software applications and especially web-based software applications. This demographic is also assumed to have some preliminary background in both secondary school level evolutionary biology and basic mathematics. Finally, the users of this product are assumed to possess a level of maturity required to appreciate the academic portions of the product.
+
+\subsubsection{Other Assumptions}
+
+Grate assumes that all software tools listed in the development document will be available for use throughout the project. It is also assumed that the physics library being used is fully complete, although this assumption will be tested thoroughly throughout the lifetime of this project.
 
 %KELVIN'S PART STARTS HERE
 \section{Functional Requirements}
@@ -633,100 +697,197 @@ as possible.
 
 \subsubsection{Appearance Requirements}
 
-The product shall be attractive to a student audience, with an emphasis on 
-secondary and post-secondary students. A sampling of representative users shall, 
-without prompting or enticement, be able to comprehend and use the product 
-within sixty seconds of their first encounter with it. This same sampling shall 
-also rate the appearance of the product on a scale from 1 to 10, and this rating 
-shall be used to evaluate and refine the product's appearance. All licensing 
-shall also be clear for the user to observe upon use of the product.
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 21 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The product shall be attractive to a student audience. \\
+\textbf{Rationale:}  Part of the learning process is maintaining the attention of the users of the product. If users do not want to look at the product, it will be impossible to teach them anything.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:} A sampling of respective users shall, without prompting or enticement, be able to comprehend and use the product within sixty seconds of their first encounter with it. This same sampling shall also rate the appearance of the product on a scale from 1 to 10, and this rating shall be used to evaluate the requirement.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
 
 \subsubsection{Style Requirements}
 
-The product shall appear inviting and educational and professional. After their 
-first encounter with the product, a majority of representative users shall, 
-without enticement, agree that they feel they would want to utilize the product 
-and that they would learn about Genetic Algorithms by using the product. 
-Representative users should also feel that they can trust the product.
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 22 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The product shall appear inviting, educational, and professional. \\
+\textbf{Rationale:}  If users do not believe our product contains a certain style, they will not respect it, and therefore, they will not use it.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}A majority of representative users shall agree that they feel they would want to use the product bassed on the profssional and inviting style it contains. This majority should also agree that they can trust the product.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 \subsection{Usability and Humanity Requirements}
 
 \subsubsection{Ease of Use Requirements}
-
-The product shall be easy for anybody over the age of 6 to use. The product 
-shall not expect the user to remember anything about the product given multiple 
-uses. The product shall make the user want to use it and to show the product to 
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 23 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The product shall be easy for anybody over the age of 6 to use. The product shall make the user want to use it and to show the product to 
 their friends/family/etc.. The product shall be used by people with no training 
 or education except for a basic knowledge of the English language and the most 
 very basic functions of a computer, such as how to navigate to a web-site and 
-how to enter inputs when prompted to do so. A representative sample of users 
+how to enter inputs when prompted to do so. \\
+\textbf{Rationale:}  In order for our product to reach a wide audience, it must be usable by a wide audience.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}A representative sample of users 
 shall be able to successfully complete a given set of tasks with the product 
 within a specified period of time to be determined at the time of the sample. 
 The representative sample shall also show a willingness to show the product to 
-others.
+others.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
 
 \subsubsection{Personalization Requirements}
 
-The product shall allow the user to make simple adjustments to the product to 
-allow for a variable length and amount of trials depending on user input. 
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 24 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The product shall allow the user to make simple adjustments to the product to 
+allow for a variable length and amount of trials depending on user input.  \\
+\textbf{Rationale:}  Interactivity is key to the learning process. The more interactive a product is the more likely a user is to maintain interest in it.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}A simple check can be made to see if this possible.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 \subsubsection{Learning Requirements}
 
-The product shall be easy for an intended user of the product to learn. The 
-product shall be able to be used by these users with no training before use. A 
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 25 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} The product shall be easy for an intended user of the product to learn. The 
+product shall be able to be used by these users with no training before use.  \\
+\textbf{Rationale:}  The user should be focusing on learning about genetic algorithms, not on learning how to use the product.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}A 
 representative sample of users shall be able to successfully complete a given 
 set of tasks with the product within a specified period of time to be determined 
-at the time of the sample.
+at the time of the sample.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
 
 \subsection{Performance Requirements}
 
 \subsubsection{Speed and Latency Requirements}
 
-The response time of the product shall be fast enough to avoid a loss of 
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 26 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:}The response time of the product shall be fast enough to avoid a loss of 
 interest by the user following an input, which shall be a period of time no 
-longer then five seconds. The initialization of the product shall be no longer 
-then one minute.
+longer then five seconds. The initialization of the product shall be rapid.  \\
+\textbf{Rationale:}  The user should be focusing on learning about genetic algorithms, not on waiting to use the product.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}Initialization shall be no longer then one minute. A majority representation of users shall be surveyed about the reaction time and requested to lable their satisfaction with this time on a scale from one to ten. This survey data will then be analyzed for feedack.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 \subsubsection{Precision and Reliability Requirements}
 
-The product shall always converge towards a more optimal car. The product shall 
-achieve 99 percent uptime. The product display shall be accurate to two decimal 
-places.
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 27 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:}The product shall always converge towards a more optimal car. The product shall achieve near-optimal uptime. The product's numerical values shall be accurate.  \\
+\textbf{Rationale:}  A learning product that is not accurate and reliable will not be taken seriously.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}The product shall achieve 99 percent uptime. The product display of numerical values shall be accurate to two decimal places.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\newpage
 
 \subsubsection{Longevity Requirements}
 
-The product shall be easy to update and upgrade following its initial public 
-release. 
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 28 & Requirement Type: Non-Functional \\
+\end{tabular} \\
+%
+\textbf{Description:}The product shall be easy to update and upgrade following its initial public 
+release.\\
+\textbf{Rationale:}  Long term sustainability will allow our product to reach more people over time.\\
+\textbf{Originator:} Eric Chaput\\
+\textbf{Fit Criterion:}The creation of the product will consist of a series of updates, so Grate shall determine by internal surveys the difficulty of updating the product.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 7\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 \subsection{Operational and Environmental Requirements}
 
-\subsubsection{Productization Requirements}
+The Genetic Cars project does not possess any operational and enviromental requirements of note.
 
 \subsection{Maintainability and Support Requirements}
 
-\subsubsection{Maintenance Requirements}
-
-\subsubsection{Supportability Requirements}
-
-\subsubsection{Adaptability Requirements}
+See longeivity requirements (Section 3.3.3) for more on this.
 
 \subsection{Security Requirements}
 
-\subsubsection{Access Requirements}
-
-\subsubsection{Integrity Requirements}
-
-\subsubsection{Privacy Requirements}
+This product requires no disclosure of sensitive information by either the user or the software program itself so there are no security requirements beyond what one would expect of any software program.
 
 \subsection{Cultural Requirements}
 
+This product requires no tailoring to meet specific cultural needs so that are no cultural requirements beyond what one would expect of any software program.
+
 \subsection{Legal Requirements}
+
+The Genetic Cars project does not possess any legal requirements of note as licensing is a non-issue for this project.
 
 \subsection{Health and Safety Requirements}
 
-This section is not in the original Volere template, but health and safety are
-issues that should be considered for every engineering project.
-
+The Genetic Cars project does not possess any Health and Safety requirements of note beyond those that would be expected of any software program.
 \section{Project Issues}
 
 \subsection{Open Issues}
