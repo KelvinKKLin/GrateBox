@@ -157,442 +157,453 @@ offspring.}
 %Box formatting template adapted from: 
 %https://gitlab.cas.mcmaster.ca/ThisTooShallParse/3XA3_CParser/blob/master/Req_Update/L01_Group7_Requirements_Rev0.tex
 
+
+
+
+
 %REQUIREMENT #1
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 1 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The product must generate at least \textit{s} car samples 
-per generation. \\
-\textbf{Rationale:}  GAs improve by having a large number of samples 
-(representing members in a population) intermix traits. This requirement allows 
-the GA to work by guaranteeing that a sufficient sample will be present at all 
-times.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} Given a user generated input, \textit{s}, the program 
-should generate \textit{s} cars for each generation.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 7\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 1 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} Each car must be composed of at least \textit{v} vectors. 
+	\\
+	\textbf{Rationale:}  This requirement manages the complexity of the car model, 
+	allowing for realistic distribution of traits among members of a population. 
+	That is, this prevents large cars from being generated and using an excessive 
+	amount of memory. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
+	composed of more than \textit{v} vectors.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 7\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 \newpage
 
 %REQUIREMENT #2
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 2 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} Each car must be composed of at least \textit{v} vectors. 
-\\
-\textbf{Rationale:}  This requirement manages the complexity of the car model, 
-allowing for realistic distribution of traits among members of a population. 
-That is, this prevents large cars from being generated and using an excessive 
-amount of memory. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
-composed of more than \textit{v} vectors.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 7\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 2 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} Each car may not have more than 
+	\textit{number\_of\_vertices} wheels. \\
+	\textbf{Rationale:}  The wheels must be attached to the car via a vertex between 
+	two connecting vectors. This requirement ensures that no redundant or unused 
+	wheels will be generated.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
+	composed of more than \textit{number\_of\_vertices} wheels.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 7\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 %REQUIREMENT #3
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 3 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} Each car may not have more than 
-\textit{number\_of\_vertices} wheels. \\
-\textbf{Rationale:}  The wheels must be attached to the car via a vertex between 
-two connecting vectors. This requirement ensures that no redundant or unused 
-wheels will be generated.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
-composed of more than \textit{number\_of\_vertices} wheels.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 7\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 3 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The radius of each wheel must be at most \textit{r} units. 
+	\\
+	\textbf{Rationale:}  This requirement manages the complexity of the car model, 
+	allowing for realistic distribution of traits among members of a population. 
+	That is, cars with unrealistically sized wheels will not be generated.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} No cars generated will have wheels with a radius larger 
+	than \textit{r}.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 7\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 \newpage
 
 %REQUIREMENT #4
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 4 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The center of each wheel generated must be attached to a 
-vertex formed by connecting vectors. \\
-\textbf{Rationale:}  Wheels cannot be floating on or around the car. This 
-requirement ensures visual coherency by requiring wheels to be attached to the 
-car model. Knowing the center of the wheel will also allow the physics engine to 
-calculate the torque and distance that the car travelled.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} Each wheel displayed on the screen is attached to a 
-vertex formed by connecting vectors.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 7\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 4 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The center of each wheel generated must be attached to a 
+	vertex formed by connecting vectors. \\
+	\textbf{Rationale:}  Wheels cannot be floating on or around the car. This 
+	requirement ensures visual coherency by requiring wheels to be attached to the 
+	car model. Knowing the center of the wheel will also allow the physics engine to 
+	calculate the torque and distance that the car travelled.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} Each wheel displayed on the screen is attached to a 
+	vertex formed by connecting vectors.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 7\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 %REQUIREMENT #5
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 5 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The radius of each wheel must be at most \textit{r} units. 
-\\
-\textbf{Rationale:}  This requirement manages the complexity of the car model, 
-allowing for realistic distribution of traits among members of a population. 
-That is, cars with unrealistically sized wheels will not be generated.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} No cars generated will have wheels with a radius larger 
-than \textit{r}.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 7\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 5 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The mass of each car must not be less than 
+	\textit{min\_weight}. \\
+	\textbf{Rationale:} In order to have realistic physical simulations of car 
+	models, the mass of the car must have a lower limit. The lower limit will 
+	guarantee the simulations to work as expected. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The mass of any car models generated are greater than 
+	\textit{min\_weight}.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #6
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 6 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The mass of each car must not be less than 
-\textit{min\_weight}. \\
-\textbf{Rationale:} In order to have realistic physical simulations of car 
-models, the mass of the car must have a lower limit. The lower limit will 
-guarantee the simulations to work as expected. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The mass of any car models generated are greater than 
-\textit{min\_weight}.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 6 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The mass of each car must not exceed \textit{max\_weight}. 
+	\\
+	\textbf{Rationale:} In order to have realistic physical simulations of car 
+	models, the mass of each car must have an upper limit. An upper limit reduces 
+	the possibility of type incompatibility with certain APIs. Additionally, it 
+	ensures that the mass of each car is encoded using a known number of bits.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The mass of any car models generated do not exceed 
+	\textit{max\_weight}.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 %REQUIREMENT #7
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 7 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The mass of each car must not exceed \textit{max\_weight}. 
-\\
-\textbf{Rationale:} In order to have realistic physical simulations of car 
-models, the mass of each car must have an upper limit. An upper limit reduces 
-the possibility of type incompatibility with certain APIs. Additionally, it 
-ensures that the mass of each car is encoded using a known number of bits.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The mass of any car models generated do not exceed 
-\textit{max\_weight}.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 7 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The program shall display each generation of cars 
+	traversing the road. \\
+	\textbf{Rationale:} The purpose of this program is to show its users the effects 
+	of genetic algorithms in an interesting and engaging manner. If the program did 
+	not display each generation of cars traversing the road, then the program would 
+	fail in accomplishing its original objective. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} Each generation of cars can be seen traversing a road on 
+	the medium of output.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #8
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 8 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} A car that stalls for more than \textit{max\_secs} shall 
-be deemed non-moving. \\
-\textbf{Rationale:} A time limit needs to be imposed on the simulations in order 
-to prevent the cars from running indefinitely without making progress. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} All cars that say in the same spot for 
-\textit{max\_secs} are marked as non-moving and the simulation for that car is 
-stopped.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 8 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The program shall display the fitness of the top 
+	\textit{n} cars. \\
+	\textbf{Rationale:} The ability to compare the performance of cars during each 
+	generation is useful for observing the effects of genetic algorithms because it 
+	shows the users the improvement and regression of the car's performance over 
+	time.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} A medium of output exists to provide the fitness of the 
+	car on the medium of display.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #9
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 9 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The fitness of a car shall not be calculated until a car 
-is deemed to be non-moving. \\
-\textbf{Rationale:} The fitness of a car is determined by distance it moves 
-during the simulation, and the simulation runs while the car is moving. 
-Therefore, the fitness of a car cannot be determined until the car is 
-non-moving. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} After a car is deemed non-moving, it's fitness value can 
-be assessed.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 9 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The program shall allow the user to enter a random seed to 
+	generate cars from in lieu of a randomly generated seed. \\
+	\textbf{Rationale:} The ability to enter a random seed allows the results of 
+	cars to be compared and to be run on multiple computers: results are not lost as 
+	a result of restarting the application. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The user can input a random seed into the program 
+	through an input device, and the random seed is used to dictate the random 
+	behaviours of the program.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #10
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 10 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The program shall display each generation of cars 
-traversing the road. \\
-\textbf{Rationale:} The purpose of this program is to show its users the effects 
-of genetic algorithms in an interesting and engaging manner. If the program did 
-not display each generation of cars traversing the road, then the program would 
-fail in accomplishing its original objective. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} Each generation of cars can be seen traversing a road on 
-the medium of output.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 10 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The user shall be allowed to modify the mutation rate, 
+	\textit{mutation\_rate}. \\
+	\textbf{Rationale:} Allowing the users to modify the mutation rate allows the 
+	program to fulfil its objective by showing the users how the mutation rate can 
+	impact the performance of the cars. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The user can input a mutation rate into the program 
+	through an input device, and the mutation rate is used to produce offspring in 
+	the program.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #11
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 11 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The program shall display the fitness of the top 
-\textit{n} cars. \\
-\textbf{Rationale:} The ability to compare the performance of cars during each 
-generation is useful for observing the effects of genetic algorithms because it 
-shows the users the improvement and regression of the car's performance over 
-time.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} A medium of output exists to provide the fitness of the 
-car on the medium of display.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 11 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The user shall be allowed to change the number of cars per 
+	generation \textit{s} in lieu of the default value. \\
+	\textbf{Rationale:} Allowing the user to change the number of cars per 
+	generation \textit{s} will allow the user to see how the size of a generation 
+	affects the genetic algorithm. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} \textit{s} is equal to the user's input for every 
+	generation produced by the program.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #12
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 12 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The program shall allow the user to enter a random seed to 
-generate cars from in lieu of a randomly generated seed. \\
-\textbf{Rationale:} The ability to enter a random seed allows the results of 
-cars to be compared and to be run on multiple computers: results are not lost as 
-a result of restarting the application. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The user can input a random seed into the program 
-through an input device, and the random seed is used to dictate the random 
-behaviours of the program.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 12 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The road generated must be the same across all 
+	generations. \\
+	\textbf{Rationale:} Using the same road for each generation allows for 
+	comparability of performance between each generation. That is, since every car 
+	will traverse the same course, their fitness and performance can be compared. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The road for all simulations is the same. \\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #13
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 13 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The user shall be allowed to modify the mutation rate, 
-\textit{mutation\_rate}. \\
-\textbf{Rationale:} Allowing the users to modify the mutation rate allows the 
-program to fulfil its objective by showing the users how the mutation rate can 
-impact the performance of the cars. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The user can input a mutation rate into the program 
-through an input device, and the mutation rate is used to produce offspring in 
-the program.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
-\end{reqbox}
-
-%REQUIREMENT #14
-\begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 14 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The user shall be allowed to change the number of cars per 
-generation \textit{s} in lieu of the default value. \\
-\textbf{Rationale:} Allowing the user to change the number of cars per 
-generation \textit{s} will allow the user to see how the size of a generation 
-affects the genetic algorithm. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} \textit{s} is equal to the user's input for every 
-generation produced by the program.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 13 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The product must generate at least \textit{s} car samples 
+	per generation. \\
+	\textbf{Rationale:}  GAs improve by having a large number of samples 
+	(representing members in a population) intermix traits. This requirement allows 
+	the GA to work by guaranteeing that a sufficient sample will be present at all 
+	times.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} Given a user generated input, \textit{s}, the program 
+	should generate \textit{s} cars for each generation.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 7\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 \newpage
 
+%REQUIREMENT #14
+\begin{reqbox}
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 14 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The number of cars per generation \textit{s} shall not 
+	exceed \textit{max\_cars\_per\_gen}. \\
+	\textbf{Rationale:} Having a maximum number of cars per generation prevents 
+	memory overflow from generating too many cars per generation.\\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The number of cars generated per generation does not 
+	exceed \textit{max\_cars\_per\_gen}.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
+\end{reqbox}
+
 %REQUIREMENT #15
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 15 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The road generated must be the same across all 
-generations. \\
-\textbf{Rationale:} Using the same road for each generation allows for 
-comparability of performance between each generation. That is, since every car 
-will traverse the same course, their fitness and performance can be compared. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The road for all simulations is the same. \\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 15 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The program shall use the top \textit{t} cars to generate 
+	offsprings. \\
+	\textbf{Rationale:} The number of cars allowed to reproduce needs to be 
+	specified; otherwise, no improvement can be made in car performance over the 
+	generations. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The parent cars of the offspring are within the top 
+	\textit{t} cars.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #16
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 16 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The number of cars per generation \textit{s} shall not 
-exceed \textit{max\_cars\_per\_gen}. \\
-\textbf{Rationale:} Having a maximum number of cars per generation prevents 
-memory overflow from generating too many cars per generation.\\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The number of cars generated per generation does not 
-exceed \textit{max\_cars\_per\_gen}.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 16 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The top \textit{t} cars shall not exceed \textit{t\_max}. 
+	\\
+	\textbf{Rationale:} This restriction prevents \textit{t} from exceeding 
+	\textit{s} or take on an unreasonable value. It ensures that the program can 
+	always run by setting an upper limit to the number of cars that can reproduce in 
+	a given generation. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} The number of cars to choose from during reproduction 
+	does not exceed \textit{t\_max}.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 %REQUIREMENT #17
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 17 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The program shall use the top \textit{t} cars to generate 
-offsprings. \\
-\textbf{Rationale:} The number of cars allowed to reproduce needs to be 
-specified; otherwise, no improvement can be made in car performance over the 
-generations. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The parent cars of the offspring are within the top 
-\textit{t} cars.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 17 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The top \textit{t} cars shall not be less than 
+	\textit{t\_min}. \\
+	\textbf{Rationale:} This requirement ensures that there will be a sufficient 
+	number of cars to produce offspring in the subsequent generations. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} In each generation, there are at least \textit{t\_min} 
+	parents to generate offspring.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #18
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 18 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The top \textit{t} cars shall not exceed \textit{t\_max}. 
-\\
-\textbf{Rationale:} This restriction prevents \textit{t} from exceeding 
-\textit{s} or take on an unreasonable value. It ensures that the program can 
-always run by setting an upper limit to the number of cars that can reproduce in 
-a given generation. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} The number of cars to choose from during reproduction 
-does not exceed \textit{t\_max}.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 18 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} A car that stalls for more than \textit{max\_secs} shall 
+	be deemed non-moving. \\
+	\textbf{Rationale:} A time limit needs to be imposed on the simulations in order 
+	to prevent the cars from running indefinitely without making progress. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} All cars that say in the same spot for 
+	\textit{max\_secs} are marked as non-moving and the simulation for that car is 
+	stopped.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 %REQUIREMENT #19
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 19 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The top \textit{t} cars shall not be less than 
-\textit{t\_min}. \\
-\textbf{Rationale:} This requirement ensures that there will be a sufficient 
-number of cars to produce offspring in the subsequent generations. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} In each generation, there are at least \textit{t\_min} 
-parents to generate offspring.\\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 19 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The fitness of a car shall not be calculated until a car 
+	is deemed to be non-moving. \\
+	\textbf{Rationale:} The fitness of a car is determined by distance it moves 
+	during the simulation, and the simulation runs while the car is moving. 
+	Therefore, the fitness of a car cannot be determined until the car is 
+	non-moving. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} After a car is deemed non-moving, it's fitness value can 
+	be assessed.\\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
+
 
 %REQUIREMENT #20
 \begin{reqbox}
-%
-\begin{tabular}{cc}
-Requirement \#: 20 & Requirement Type: Functional \\
-\end{tabular} \\
-%
-\textbf{Description:} The user shall be able to specify \textit{t} in lieu of 
-the default value. \\
-\textbf{Rationale:} This will allow users to see the effect of changing the 
-selectivity of the genetic algorithm. \\
-\textbf{Originator:} Kelvin Lin\\
-\textbf{Fit Criterion:} In each generation, \textit{t} cars are chosen to 
-generate offspring. \\
-%  
-\textbf{Supporting Materials:} JavaScript \\
-\textbf{History:} Created October 10\textsuperscript{th}, 2016
-%
+	%
+	\begin{tabular}{cc}
+		Requirement \#: 20 & Requirement Type: Functional \\
+	\end{tabular} \\
+	%
+	\textbf{Description:} The user shall be able to specify \textit{t} in lieu of 
+	the default value. \\
+	\textbf{Rationale:} This will allow users to see the effect of changing the 
+	selectivity of the genetic algorithm. \\
+	\textbf{Originator:} Kelvin Lin\\
+	\textbf{Fit Criterion:} In each generation, \textit{t} cars are chosen to 
+	generate offspring. \\
+	%  
+	\textbf{Supporting Materials:} JavaScript \\
+	\textbf{History:} Created October 10\textsuperscript{th}, 2016
+	%
 \end{reqbox}
 
 \newpage

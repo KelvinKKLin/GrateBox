@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Robertson and Robertson(2012)]{RobertsonAndRobertson2012}
+James Robertson and Suzanne Robertson.
+\newblock \emph{Volere Requirements Specification Template}.
+\newblock Atlantic Systems Guild Limited, 16 edition, 2012.
+
+\end{thebibliography}
