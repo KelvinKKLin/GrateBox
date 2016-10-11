@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{float}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -48,6 +49,7 @@
 \midrule
 October 7, 2016 & 1.0 & Started Functional Requirements\\
 October 10, 2016 & 1.1 & Updated Functional Requirements\\
+October 11, 2016 & 1.2 & Added Context Diagram\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -95,6 +97,19 @@ The following depicts a context diagram for Grate's Genetic Cars:
 \end{figure}
 
 \subsubsection{Work Partitioning}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{p{4cm}p{4cm}X}
+\toprule {\bf Event Name} & {\bf Input and Output} & {\bf Summary}\\
+\midrule
+1. Physics Simulation simulates generation & Car Offspring (in), Fitness Scores (out) & Calculate parents for the next generation\\
+& & \\
+2. Canvas displays car results & Car model (in), Road simulation (in), Graphical Display (out) & Draw car model, Track top cars, Restart at the end of the generation\\
+& & \\
+3. Genetic algorithm generates new generation & Fitness Scores (in), Car Offspring (out) & Selects parents from fitness scores, Cross over genes, Mutate genes\\
+\bottomrule
+\end{tabularx}
+\caption{\bf Work Partitioning Table}
+\end{table}
 
 \subsubsection{Individual Product Use Cases}
 
