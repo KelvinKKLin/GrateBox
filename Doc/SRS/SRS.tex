@@ -50,6 +50,7 @@
 October 7, 2016 & 1.0 & Started Functional Requirements\\
 October 10, 2016 & 1.1 & Updated Functional Requirements\\
 October 11, 2016 & 1.2 & Added Context Diagram\\
+October 11, 2016 & 1.3 & Added Work Partitioning Table\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -101,19 +102,55 @@ The following depicts a context diagram for Grate's Genetic Cars:
 \begin{tabularx}{\textwidth}{p{4cm}p{4cm}X}
 \toprule {\bf Event Name} & {\bf Input and Output} & {\bf Summary}\\
 \midrule
-1. Physics Simulation simulates generation & Car Offspring (in), Fitness Scores (out) & Calculate parents for the next generation\\
+1. Physics Simulation simulates generation & Car Offspring (in), Fitness Scores 
+(out) & Calculate parents for the next generation\\
 & & \\
-2. Canvas displays car results & Car model (in), Road simulation (in), Graphical Display (out) & Draw car model, Track top cars, Restart at the end of the generation\\
+2. Canvas displays car results & Car model (in), Road simulation (in), Graphical 
+Display (out) & Draw car model, Track top cars, Restart at the end of the 
+generation\\
 & & \\
-3. Genetic algorithm generates new generation & Fitness Scores (in), Car Offspring (out) & Selects parents from fitness scores, Cross over genes, Mutate genes\\
+3. Genetic algorithm generates new generation & Fitness Scores (in), Car 
+Offspring (out) & Selects parents from fitness scores, Cross over genes, Mutate 
+genes\\
 \bottomrule
 \end{tabularx}
 \caption{\bf Work Partitioning Table}
 \end{table}
 
 \subsubsection{Individual Product Use Cases}
+\begin{enumerate}
 
-\newpage
+\item{Normal Operation}
+
+\begin{itemize}
+\item{User launches program.}
+\item{The Genetic Algorithm generates a random seed.}
+\item{The random seed is used to generate offspring using the default 
+parameters.}
+\item{The Physics Simulation takes the offspring (Car Model) and performs 
+physics simulations to determine their fitness score.}
+\item{The results are sent to the Canvas, which displays the results 
+graphically.}
+\item{The fitness scores are sent back to the Genetic Algorithm to generate new 
+offspring.}
+\end{itemize}
+
+\item{User Modifies Any Parameter}
+\begin{itemize}
+\item{User launches program.}
+\item{User modifies fields in the program that pertain to the Genetic 
+Algorithm's attributes.}
+\item{The Genetic Algorithm generates offspring based on the user's input.}
+\item{The Physics Simulation takes the offspring (Car Model) and performs 
+physics simulations to determine their fitness score.}
+\item{The results are sent to the Canvas, which displays the results 
+graphically.}
+\item{The fitness scores are sent back to the Genetic Algorithm to generate new 
+offspring.}
+\end{itemize}
+
+\end{enumerate}
+
 \subsection{Functional Requirements}
 
 %Box formatting template adapted from: 
@@ -141,6 +178,8 @@ should generate \textit{s} cars for each generation.\\
 %
 \end{reqbox}
 
+\newpage
+
 %REQUIREMENT #2
 \begin{reqbox}
 %
@@ -163,8 +202,6 @@ composed of more than \textit{v} vectors.\\
 %
 \end{reqbox}
 
-\newpage
-
 %REQUIREMENT #3
 \begin{reqbox}
 %
@@ -185,6 +222,8 @@ composed of more than \textit{number\_of\_vertices} wheels.\\
 \textbf{History:} Created October 7\textsuperscript{th}, 2016
 %
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #4
 \begin{reqbox}
@@ -207,8 +246,6 @@ vertex formed by connecting vectors.\\
 \textbf{History:} Created October 7\textsuperscript{th}, 2016
 %
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #5
 \begin{reqbox}
@@ -295,6 +332,8 @@ stopped.\\
 %
 \end{reqbox}
 
+\newpage
+
 %REQUIREMENT #9
 \begin{reqbox}
 %
@@ -316,8 +355,6 @@ be assessed.\\
 \textbf{History:} Created October 10\textsuperscript{th}, 2016
 %
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #10
 \begin{reqbox}
@@ -341,6 +378,8 @@ the medium of output.\\
 %
 \end{reqbox}
 
+\newpage
+
 %REQUIREMENT #11
 \begin{reqbox}
 %
@@ -362,8 +401,6 @@ car on the medium of display.\\
 \textbf{History:} Created October 10\textsuperscript{th}, 2016
 %
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #12
 \begin{reqbox}
@@ -387,6 +424,8 @@ behaviours of the program.\\
 %
 \end{reqbox}
 
+\newpage
+
 %REQUIREMENT #13
 \begin{reqbox}
 %
@@ -409,8 +448,6 @@ the program.\\
 %
 \end{reqbox}
 
-\newpage
-
 %REQUIREMENT #14
 \begin{reqbox}
 %
@@ -431,6 +468,8 @@ generation produced by the program.\\
 \textbf{History:} Created October 10\textsuperscript{th}, 2016
 %
 \end{reqbox}
+
+\newpage
 
 %REQUIREMENT #15
 \begin{reqbox}
@@ -471,8 +510,6 @@ exceed \textit{max\_cars\_per\_gen}.\\
 \textbf{History:} Created October 10\textsuperscript{th}, 2016
 %
 \end{reqbox}
-
-\newpage
 
 %REQUIREMENT #17
 \begin{reqbox}
@@ -753,4 +790,5 @@ vectors in a car model \\
 
 
 \end{document}
+
 
