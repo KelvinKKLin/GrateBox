@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 11:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 13:32
 entering extended mode
 **SRS.tex
 (SRS.tex
@@ -540,32 +540,27 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@lot=\write5
  (SRS.lof)
 \tf@lof=\write6
+ [2] [3pdfTeX warning (ext4): destination with the same identifier (name{table.
+1}) has been already used, duplicate ignored
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2]
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.59 \newpage
+             ]
 
 Package natbib Warning: Citation `RobertsonAndRobertson2012' on page 1 undefine
 d on input line 65.
 
-<ContextDiagram.png, id=305, 582.0144pt x 467.5869pt>
+<ContextDiagram.png, id=340, 582.0144pt x 467.5869pt>
 File: ContextDiagram.png Graphic file (type png)
  <use ContextDiagram.png>
 Package pdftex.def Info: ContextDiagram.png used on input line 97.
 (pdftex.def)             Requested size: 390.0pt x 313.3244pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.99 \end{figure}
-                  [1pdfTeX warning (ext4): destination with the same identifier
- (name{table.1}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.99 \end{figure}
-                 ]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 117--117
 []|\OT1/cmr/m/n/12 Car Off-spring (in),
  []
@@ -585,8 +580,13 @@ Underfull \hbox (badness 5847) in paragraph at lines 117--117
 []|\OT1/cmr/m/n/12 Fitness Scores (in),
  []
 
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.120 
+       [1] [2pdfTeX warning (ext4): destination with the same identifier (name{
+figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -626,6 +626,17 @@ Package mdframed Info: Not enough space on this page on input line 556.
  [11]
 Package mdframed Info: Not enough space on this page on input line 556.
  [12] [13] [14] [15] [16]
+Overfull \hbox (1.59315pt too wide) in paragraph at lines 756--757
+[]\OT1/cmr/m/n/12 Users with epilepsy or prior his-tory of seizures may also ex
+-pe-ri-ence seizures
+ []
+
+
+Overfull \hbox (2.39444pt too wide) in paragraph at lines 758--758
+[]\OT1/cmr/bx/n/12 Limitations in the An-tic-i-pated Im-ple-men-ta-tion En-vi-r
+on-ment
+ []
+
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
@@ -638,28 +649,28 @@ Missing character: There is no  in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
- [17]
+[17]
 No file SRS.bbl.
 [18]
-Overfull \hbox (80.45398pt too wide) in paragraph at lines 789--808
+Overfull \hbox (80.45398pt too wide) in paragraph at lines 817--836
  [][] 
  []
 
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 812.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 840.
 [19pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.812 \end{document}
+l.840 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 812.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 840.
  (SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 812.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 812.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 840.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 840.
 
 
 Package rerunfilecheck Warning: File `SRS.out' has changed.
@@ -667,18 +678,15 @@ Package rerunfilecheck Warning: File `SRS.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `SRS.out':
-(rerunfilecheck)             Before: 57E824F9F6CD85D680DE6E4403C8AEC8;4157
-(rerunfilecheck)             After:  905C4A1534AD0F077603F309AB1F5442;4325.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 812.
+(rerunfilecheck)             Before: DCD342DBADBB9615AF45653E5A444F7D;4748
+(rerunfilecheck)             After:  4BF850132BE0FF3E8E269AE3CB214130;4827.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 840.
  ) 
 Here is how much of TeX's memory you used:
- 12726 strings out of 493698
- 224338 string characters out of 3144413
- 300758 words of memory out of 3000000
- 15883 multiletter control sequences out of 15000+200000
+ 12738 strings out of 493698
+ 224567 string characters out of 3144413
+ 301761 words of memory out of 3000000
+ 15889 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,10n,39p,10426b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -688,9 +696,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb>
-Output written on SRS.pdf (22 pages, 513702 bytes).
+Output written on SRS.pdf (23 pages, 519216 bytes).
 PDF statistics:
- 434 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 446 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 469 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
+ 494 words of extra memory for PDF output out of 10000 (max. 10000000)
 
