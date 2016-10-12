@@ -891,7 +891,7 @@ The Genetic Cars project does not possess any operational and enviromental requi
 
 \subsection{Maintainability and Support Requirements}
 
-See longeivity requirements (Section 3.3.3) for more on this.
+See longevity requirements (Section 3.3.3) for more on this.
 
 \subsection{Security Requirements}
 
@@ -1080,13 +1080,61 @@ The user manual will detail the operation procedures for Grate's Genetic Cars. I
 \end{enumerate}
 
 \subsubsection{Training Requirements}
+No specific training beyond what is listed under assumptions will be required of the user.
+
+\newpage
 
 \subsection{Waiting Room}
-Audio effect is expected to be add to this project.
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 29 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} Users shall be able to replay any previous generations.\\
+\textbf{Rationale:}  This requirement will allow users to compare the performance of cars between generations.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} The user can elect to see graphical output of a previous generation's cars.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 11\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 30 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} Users shall be able to skip to any future generation.\\
+\textbf{Rationale:}  This requirement will allow users to compare the performance of cars between generations.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} The user can elect to see graphical output of a future generation's cars.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 11\textsuperscript{th}, 2016
+%
+\end{reqbox}
+
+\begin{reqbox}
+%
+\begin{tabular}{cc}
+Requirement \#: 31 & Requirement Type: Functional \\
+\end{tabular} \\
+%
+\textbf{Description:} Users shall be able to seeds that generated the top \textit{st} cars. \\
+\textbf{Rationale:}  This requirement will allow users to compare the performance of cars evolved from different starting points.\\
+\textbf{Originator:} Kelvin Lin\\
+\textbf{Fit Criterion:} The user can see a list of seeds that generated the top \textit{st} cars.\\
+%  
+\textbf{Supporting Materials:} JavaScript \\
+\textbf{History:} Created October 11\textsuperscript{th}, 2016
+%
+\end{reqbox}
 
 \subsection{Ideas for Solutions}
-Good structure and design for this project.
-
+Please refer to \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/Wireframes}{the ideas for solutions}.
 
 \bibliographystyle{plainnat}
 
@@ -1122,6 +1170,7 @@ spot\\
 \textit{mutation\_rate} & The rate at which genes mutate\\
 \textit{max\_cars\_per\_gen} & The maximum number of cars in a given 
 generation\\
+\textit{st} & The top random seeds \\
 \textit{t} & The number of parents in a generation\\
 \textit{t\_max} & The maximum number of parents\\
 \textit{t\_min} & The minimum number of parents\\

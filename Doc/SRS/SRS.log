@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 20:28
 entering extended mode
 **SRS.tex
 (SRS.tex
@@ -720,31 +720,31 @@ Missing character: There is no  in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
- [25] [26] (SRS.bbl) [27]
-Overfull \hbox (80.45398pt too wide) in paragraph at lines 1110--1129
+ [25] [26] [27] (SRS.bbl [28]) [29]
+Overfull \hbox (80.45398pt too wide) in paragraph at lines 1158--1178
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1133.
-[28pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1182.
+[30pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1133 \end{document}
+l.1182 \end{document}
                      ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1133.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1182.
  (SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1133.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1133.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1182.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1182.
 
 Package rerunfilecheck Info: File `SRS.out' has not changed.
 (rerunfilecheck)             Checksum: 5BA5D5C0EFC0DB7F852C9B577D87ABB7;5070.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1133.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1182.
  ) 
 Here is how much of TeX's memory you used:
- 12774 strings out of 493698
- 225078 string characters out of 3144413
+ 12776 strings out of 493698
+ 225092 string characters out of 3144413
  298809 words of memory out of 3000000
  15901 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
@@ -756,9 +756,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb>
-Output written on SRS.pdf (32 pages, 582443 bytes).
+Output written on SRS.pdf (34 pages, 584976 bytes).
 PDF statistics:
- 554 PDF objects out of 1000 (max. 8388607)
- 115 named destinations out of 1000 (max. 500000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 117 named destinations out of 1000 (max. 500000)
  531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
