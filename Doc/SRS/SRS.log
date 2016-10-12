@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.2.5)  11 OCT 2016 21:06
 entering extended mode
 **SRS.tex
 (SRS.tex
@@ -616,7 +616,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-<ContextDiagram.png, id=377, 582.0144pt x 467.5869pt>
+<ContextDiagram.png, id=380, 582.0144pt x 467.5869pt>
 File: ContextDiagram.png Graphic file (type png)
  <use ContextDiagram.png>
 Package pdftex.def Info: ContextDiagram.png used on input line 181.
@@ -684,29 +684,29 @@ Package mdframed Info: Not enough space on this page on input line 612.
 Package mdframed Info: Not enough space on this page on input line 656.
  [16] [17] [18] [19] [20] [21]
 [22]
-Overfull \hbox (1.59315pt too wide) in paragraph at lines 966--976
+Overfull \hbox (1.59315pt too wide) in paragraph at lines 965--975
 []\OT1/cmr/m/n/12 Users with epilepsy or prior his-tory of seizures may also ex
 -pe-ri-ence seizures
  []
 
 [23]
-Overfull \hbox (2.39444pt too wide) in paragraph at lines 978--978
+Overfull \hbox (2.39444pt too wide) in paragraph at lines 977--977
 []\OT1/cmr/bx/n/12 Limitations in the An-tic-i-pated Im-ple-men-ta-tion En-vi-r
 on-ment
  []
 
-<OverviewOfProcess.pdf, id=468, 459.41206pt x 263.3019pt>
+<OverviewOfProcess.pdf, id=484, 459.41206pt x 263.3019pt>
 File: OverviewOfProcess.pdf Graphic file (type pdf)
 
 <use OverviewOfProcess.pdf>
-Package pdftex.def Info: OverviewOfProcess.pdf used on input line 997.
+Package pdftex.def Info: OverviewOfProcess.pdf used on input line 996.
 (pdftex.def)             Requested size: 339.96661pt x 194.84436pt.
  [24pdfTeX warning (ext4): destination with the same identifier (name{figure.2}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1009 
+l.1008 
         <./OverviewOfProcess.pdf>]
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
@@ -720,33 +720,51 @@ Missing character: There is no  in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no  in font cmr12!
- [25] [26] [27] (SRS.bbl [28]) [29]
-Overfull \hbox (80.45398pt too wide) in paragraph at lines 1158--1178
+ [25] [26] [27] (SRS.bbl
+Overfull \hbox (57.78784pt too wide) in paragraph at lines 9--14
+\OT1/cmr/m/n/12 http://www.nintendo.com/consumer/info/en[]na/docs.jsp?menu=3ds&
+submenu=ctr-
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 21--26
+[]\OT1/cmr/m/n/12 Dr. Spencer Smith.  \OT1/cmr/m/it/12 Test Plan\OT1/cmr/m/n/12
+ .  Sfwr Eng 3XA3,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--26
+\OT1/cmr/m/n/12 https://gitlab.cas.mcmaster.ca/smiths/se3xa3/blob/master/Lectur
+es/05-
+ []
+
+) [29]
+Overfull \hbox (80.45398pt too wide) in paragraph at lines 1157--1177
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1182.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1181.
 [30pdfTeX warning (ext4): destination with the same identifier (name{table.3}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1182 \end{document}
+l.1181 \end{document}
                      ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1182.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1181.
  (SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1182.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1181.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1181.
 
 Package rerunfilecheck Info: File `SRS.out' has not changed.
 (rerunfilecheck)             Checksum: 5BA5D5C0EFC0DB7F852C9B577D87ABB7;5070.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1181.
  ) 
 Here is how much of TeX's memory you used:
- 12776 strings out of 493698
- 225092 string characters out of 3144413
- 298809 words of memory out of 3000000
- 15901 multiletter control sequences out of 15000+200000
+ 12784 strings out of 493698
+ 225206 string characters out of 3144413
+ 298860 words of memory out of 3000000
+ 15907 multiletter control sequences out of 15000+200000
  9155 words of font info for 32 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  45i,10n,39p,10426b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -756,9 +774,9 @@ es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX
  2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb>
-Output written on SRS.pdf (34 pages, 584976 bytes).
+Output written on SRS.pdf (34 pages, 591697 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
+ 581 PDF objects out of 1000 (max. 8388607)
+ 119 named destinations out of 1000 (max. 500000)
  531 words of extra memory for PDF output out of 10000 (max. 10000000)
 
