@@ -165,31 +165,29 @@ the product without legal or monetary recourse.
 \subsection{Naming Conventions and Terminology}
 
 Gene: A unit of heredity that is transferred from a parent to offspring and is 
-held to determine some characteristic of the offspring.\\
+held to determine some characteristic of the offspring. In this program a 'gene' will possses some variable of the car (number of wheels, size of each wheel, etc.) that is passed on to the next generation of car using genetic algorithms.\\
 
-Population: A community of animals, plants, or humans (or in this case cars) 
-among whose members interbreeding occurs.\\
+Population: The total amount of cars in the program. The genes available for the next generation are limited to the combinations of genes possible. Each car in the next generation is comprised of the genes of two cars in the population.\\
 
 Sample: A portion drawn from a population, the study of which is intended to 
 lead to statistical estimates of the attributes of the whole population.\\
 
-Generation: The propagation of living organisms; procreation.\\
+Generation: The current iteration of cars in the program. Each new generation is composed of the mutation of the previous generation's genes.\\
 
-Trait: A genetically determined characteristic (i.e. the position of the wheels 
+Trait: A characteristic of the car determined by the genes a car possesses (i.e. the position of the wheels 
 for one of the cars).\\
 
 Attribute: Same as trait (used interchangeably with trait).\\
 
-Mutate: To undergo or cause to undergo change in a gene or genes.\\
+Mutate: To undergo or cause to undergo change in a gene or genes. This occurs after each generation of cars to varying extents determined by the mutation rate.\\
 
-Mutation Rate: The rate at which mutations (seen above) occur.\\
+Mutation Rate: The rate at which mutations (seen above) occur. Can be varied in the program to increase or decrease the speed of convergence towards a more fit car.\\
 
-Crossover: The exchange of genetic material between organism (or cars).\\
+Crossover: The exchange of genes between cars as part of how two cars reproduce in the program.\\
 
-Reproduce: To produce one or more other individuals by means of genetic 
-propagation.\\
+Reproduce: To produce a new car in a new generation by means of genetic propogation between two cars of the previous generation.\\
 
-Random Seed: A number used to initialize a pseudorandom number generator. Will be used here to generate a pseudorandom member of the population.\\
+Random Seed: A number used to initialize a pseudorandom number generator. Will be used here to generate a pseudorandom member of the initial population for example.\\
 
 \subsection{Relevant Facts and Assumptions}
 
