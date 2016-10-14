@@ -14,6 +14,7 @@ function Car(cartMagnitude, cartAngle, wheelVertex, wheelRadius, axleAngle, mass
     this.mass = mass;
 }
 
+
 Car.prototype = {
     getCartMagnitude : function(){
         return this.cartMagnitude;
@@ -40,7 +41,7 @@ Car.prototype = {
      },
 
      getFitness : function(){
-        return this.cartMagnitude[0];
+        return this.cartMagnitude[0]; //TODO: Update this
      }
 
 };
@@ -49,7 +50,6 @@ Car.prototype = {
 * Genetic Algorithm
 **/
 function selectNextGeneration(cars, n) {
-
     var cars = cars;
     var n = n;
     var topCars = [];
@@ -68,6 +68,42 @@ function selectNextGeneration(cars, n) {
     return topCars;
 };
 
+function crossoverOffspring(cars, topCars){
+    var cars2 = [];
+
+    for(var i = 0; i < topCars.length; i++){
+        if(cars2.length < cars.length){
+            cars2.push(topCars[i]);
+        }
+    }
+
+    for(var i = topCars.length; i < cars.length; i++){
+        //Mutate Car
+        do{
+            var parent1Index = getRandomArbitrary(0, topCars.length);
+            var parent2Index = getRandomArbitrary(0, topCars.length);
+        } while (parent1Index === parent2Index);
+
+        var parent1 = topCars[parent1Index].getChromosome();
+        var parent2 = topCars[parent2Index].getChromosome();
+
+        var geneIndex = getRandomArbitrary(0, 41);
+
+        parent1[geneIndex] = parent2[geneIndex];
+
+        //Push Mutated Car into cars2
+        cars2.push( new Car(parent1) );
+    }
+
+    return cars2;
+
+}
+
+//The following code was obtained from the Mozilla Developer Network Documentation which can be found at:
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 /***********
 *Test Cases*
@@ -89,5 +125,6 @@ var carsArray = [car1, car2];
 //Selecting the of 2 cars
 var topCars = selectNextGeneration(carsArray, 1);
 for(var i = 0; i < topCars.length; i++){
-    console.log(topCars[i].getFitness());
+    //console.log(topCars[i].getFitness());
+    crossoverOffspring(carsArray, [car1]);
 }
