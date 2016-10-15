@@ -8,4 +8,4 @@ pages:
     paths:
     - public
   only:
-    - Website_Test
+    - master
