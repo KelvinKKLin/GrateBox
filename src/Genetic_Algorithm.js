@@ -99,6 +99,24 @@ function crossoverOffspring(cars, topCars){
 
 }
 
+function mutateOffsprings(cars, mutationFactor){
+    //For each car
+    for(var i = 0; i < cars.length; i++){
+        var chromosome = cars[i].getChromosome();
+        //For each gene in the chromosome
+        for(var j = 0; j < chromosome.length; j++){
+            var mutationChance = getRandomArbitrary(0, 100);
+            //If the gene should randomly mutate
+            if(mutationChance < mutationFactor){
+                var min = 0;
+                var max = 1;
+                chromosome[j] = getRandomArbitrary(min, max);
+            }
+        }
+        car[i].setChromosome(chromosome);
+    }
+}
+
 //The following code was obtained from the Mozilla Developer Network Documentation which can be found at:
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomArbitrary(min, max) {
