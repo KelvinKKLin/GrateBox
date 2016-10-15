@@ -7,4 +7,5 @@ pages:
   artifacts:
     paths:
     - public
-
+  only:
+    - Website_Test
