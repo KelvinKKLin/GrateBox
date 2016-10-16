@@ -1,6 +1,6 @@
 ﻿function init() {
     var poly = [ ]
-    var canvas = document.getElementsByTagName('canvas')[0];
+    var canvas = document.getElementsByTagName('canvas')[0];             //set canvas and dimensions.
     canvas.width = 10000;
     canvas.height = 800;
     var c = canvas.getContext('2d');
@@ -10,7 +10,7 @@
 
     
 
-    function rectan(x, y, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6) { //draw the polygon
+    function rectan(x, y, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6) { //draw the polygon(will add every variables like cartMag1,cartAngle1 and wheels soon)
         c.moveTo(x, y);
         c.lineTo(x2, y2);
         c.lineTo(x3, y3);
@@ -26,7 +26,7 @@
     function draw1() {
         c.beginPath();
         c.moveTo(0, 400);
-        c.lineTo(2000, 400);                //function are unfinished, will add a path with uphills and downhills
+        c.lineTo(2000, 400);                //Path are unfinished, will add a path with uphills and downhills.
         c.stroke();
         c.fill();
         requestAnimationFrame(draw1);
@@ -47,10 +47,10 @@
     //var polygonX = 10;
     //var polygonY = 10;
 
-    // how far offset the canvas is
+    // how far offset the canvas is                                
     //var offsetX = 0;
     //var offsetY = 0;
-    //function draw2() {
+    //function draw2() {    //Kelvin, work on this function coz i am stucking on this.(How to make the camera move) Thanks.
     //ctx.save();
     //ctx.translate(offsetX, offsetY);
     // clear the viewport
@@ -75,7 +75,7 @@
     // }
 
 
-    //function clearCamera(){
+    //function clearCamera(){}
     //kill the polygon when it reaches the end.
 
     draw();
