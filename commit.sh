@@ -9,9 +9,8 @@ branch=$1
 
 git add .
 
-if [$# -e 2]; then
-	commitMessage=$2
-	git commit -m $commitMessage
+if [$# -eq 2]; then
+	git commit -m $2
 else
 	git commit -m 'End of Day Commit'
 fi
