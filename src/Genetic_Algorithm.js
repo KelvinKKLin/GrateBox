@@ -56,6 +56,15 @@ Car.prototype = {
         return this.cartMagnitude.concat(this.cartAngle).concat(this.wheelVertex).concat(this.wheelRadius).concat(this.axleAngle).concat(this.mass);
      },
 
+     setChromosome : function(chromosome){
+        this.cartMagnitude = chromosome.slice(0,8);
+        this.cartAngle = chromosome.slice(8,16);
+        this.wheelVertex = chromosome.slice(16,24);
+        this.wheelRadius = chromosome.slice(24,32);
+        this.axleAngle = chromosome.slice(32,40);
+        this.mass = chromosome[40];
+     },
+
      printChromosome : function(){
         console.log(this.getChromosome());
      }
@@ -93,6 +102,15 @@ Car2.prototype = {
 
      getChromosome : function(){
         return this.cartMagnitude.concat(this.cartAngle).concat(this.wheelVertex).concat(this.wheelRadius).concat(this.axleAngle).concat(this.mass);
+     },
+
+     setChromosome : function(chromosome){
+        this.cartMagnitude = chromosome.slice(0,8);
+        this.cartAngle = chromosome.slice(8,16);
+        this.wheelVertex = chromosome.slice(16,24);
+        this.wheelRadius = chromosome.slice(24,32);
+        this.axleAngle = chromosome.slice(32,40);
+        this.mass = chromosome[40];
      },
 
      printChromosome : function(){
@@ -157,13 +175,13 @@ function crossoverOffspring(cars, topCars){
 
 }
 
-/*function mutateOffsprings(cars, mutationFactor){
+function mutateOffsprings(cars, mutationFactor){
     //For each car
     for(var i = 0; i < cars.length; i++){
         var chromosome = cars[i].getChromosome();
         //For each gene in the chromosome
         for(var j = 0; j < chromosome.length; j++){
-            var mutationChance = getRandomArbitrary(0, 100);
+            var mutationChance = getRandomArbitrary(0, 1);
             //If the gene should randomly mutate
             if(mutationChance < mutationFactor){
                 var min = 0;
@@ -171,9 +189,10 @@ function crossoverOffspring(cars, topCars){
                 chromosome[j] = getRandomArbitrary(min, max);
             }
         }
-        car[i].setChromosome(chromosome);
+        cars[i].setChromosome(chromosome);
     }
-}*/
+    return cars;
+}
 
 //The following code was obtained from the Mozilla Developer Network Documentation which can be found at:
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
@@ -221,10 +240,16 @@ carsArray[1].printChromosome();
 console.log("\nCar 3");
 carsArray[2].printChromosome();
 
-
-var topCars = crossoverOffspring(carsArray, [car1, car2]);
+//Crossing over cars
+/*var topCars = crossoverOffspring(carsArray, [car1, car2]);
 for(var i = 0; i < topCars.length; i++){
     console.log("NEW CAR");
     topCars[i].printChromosome();
     console.log("\n");
+}*/
+
+var newCars = mutateOffsprings(carsArray, 0.5);
+for(var i = 0; i < newCars.length; i++){
+    newCars[i].printChromosome();
 }
+
