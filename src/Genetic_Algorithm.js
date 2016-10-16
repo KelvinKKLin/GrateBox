@@ -1,7 +1,6 @@
 //Import Statements
 var Heap = require('heap'); //License for the heap package can be found at: https://www.npmjs.com/package/heap
 
-
 /**
 * CAR MODEL
 **/
@@ -144,6 +143,10 @@ function selectNextGeneration(cars, n) {
 function crossoverOffspring(cars, topCars){
     var cars2 = [];
 
+    if(topCars.length < 2){
+        return cars;
+    }
+
     for(var i = 0; i < topCars.length; i++){
         if(cars2.length < cars.length){
             cars2.push(topCars[i]);
@@ -206,10 +209,13 @@ function getRandomArbitraryInteger(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+
 /***********
 *Test Cases*
 ***********/
 
+/*
 //Random Values Chosen to Easily Identify Cars
 var cartMagnitude = [1, 2, 3, 4, 5, 6, 7, 8];
 var cartAngle = [9, 10, 11, 12, 13, 14, 15, 16];
@@ -225,11 +231,11 @@ var car3 = new Car(wheelVertex, wheelRadius, axleAngle, cartMagnitude, cartAngle
 var carsArray = [car1, car2, car3];
 
 //Selecting the of 2 cars
-/*var topCars = selectNextGeneration(carsArray, 1);
+var topCars = selectNextGeneration(carsArray, 1);
 for(var i = 0; i < topCars.length; i++){
     //console.log(topCars[i].getFitness());
     crossoverOffspring(carsArray, [car1]);
-}*/
+}
 
 console.log("CAR 1");
 carsArray[0].printChromosome();
@@ -241,15 +247,15 @@ console.log("\nCar 3");
 carsArray[2].printChromosome();
 
 //Crossing over cars
-/*var topCars = crossoverOffspring(carsArray, [car1, car2]);
+var topCars = crossoverOffspring(carsArray, [car1, car2]);
 for(var i = 0; i < topCars.length; i++){
     console.log("NEW CAR");
     topCars[i].printChromosome();
     console.log("\n");
-}*/
+}
 
 var newCars = mutateOffsprings(carsArray, 0.5);
 for(var i = 0; i < newCars.length; i++){
     newCars[i].printChromosome();
 }
-
+*/
