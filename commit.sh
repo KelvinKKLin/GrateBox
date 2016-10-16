@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
+if [ $# -lt 1]; then
     echo $0: usage: commit branch-name [commit-message]
+	exit 1
 fi
 
 branch=$1
