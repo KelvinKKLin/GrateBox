@@ -6,6 +6,7 @@ if [ $# -lt 1]; then
 fi
 
 branch=$1
+
 git add .
 
 if [$# -e 2]; then
