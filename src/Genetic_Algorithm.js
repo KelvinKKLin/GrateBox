@@ -14,8 +14,55 @@ function Car(cartMagnitude, cartAngle, wheelVertex, wheelRadius, axleAngle, mass
     this.mass = mass;
 }
 
+function Car2(chromosome){
+    this.cartMagnitude = chromosome.slice(0,8);
+    this.cartAngle = chromosome.slice(8,16);
+    this.wheelVertex = chromosome.slice(16,24);
+    this.wheelRadius = chromosome.slice(24,32);
+    this.axleAngle = chromosome.slice(32,40);
+    this.mass = chromosome[40];
+}
 
 Car.prototype = {
+    getCartMagnitude : function(){
+        return this.cartMagnitude;
+    },
+
+    getCartAngle : function(){
+        return this.getCartAngle;
+    },
+
+     getWheelVertex : function(){
+        return this.wheelVertex;
+     },
+
+     getWheelRadius : function(){
+        return this.wheelRadius;
+     },
+
+     getAxleAngle : function(){
+        return this.axleAngle;
+     },
+
+     getMass : function(){
+        return this.mass;
+     },
+
+     getFitness : function(){
+        return this.cartMagnitude[0]; //TODO: Update this
+     },
+
+     getChromosome : function(){
+        return this.cartMagnitude.concat(this.cartAngle).concat(this.wheelVertex).concat(this.wheelRadius).concat(this.axleAngle).concat(this.mass);
+     },
+
+     printChromosome : function(){
+        console.log(this.getChromosome());
+     }
+
+};
+
+Car2.prototype = {
     getCartMagnitude : function(){
         return this.cartMagnitude;
     },
@@ -103,7 +150,7 @@ function crossoverOffspring(cars, topCars){
         parent1[geneIndex] = parent2[geneIndex];
 
         //Push Mutated Car into cars2
-        cars2.push( new Car(parent1) );
+        cars2.push( new Car2(parent1) );
     }
 
     return cars2;
@@ -165,13 +212,19 @@ for(var i = 0; i < topCars.length; i++){
     crossoverOffspring(carsArray, [car1]);
 }*/
 
-//console.log( "CAR 1: " + carsArray[0].printChromosome() );
-//console.log( "CAR 2: " + carsArray[1].printChromosome() );
-//console.log( "CAR 3: " + carsArray[2].printChromosome() );
-
+console.log("CAR 1");
 carsArray[0].printChromosome();
 
-//var topCars = crossoverOffspring(carsArray, [car1, car2]);
-//for(var i = 0; i < topCars.length; i++){
-//   topCars[i].printChromosome();
-//}
+console.log("\nCar 2");
+carsArray[1].printChromosome();
+
+console.log("\nCar 3");
+carsArray[2].printChromosome();
+
+
+var topCars = crossoverOffspring(carsArray, [car1, car2]);
+for(var i = 0; i < topCars.length; i++){
+    console.log("NEW CAR");
+    topCars[i].printChromosome();
+    console.log("\n");
+}
