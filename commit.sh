@@ -2,7 +2,6 @@
 
 if [ $# -ne 1 ]; then
     echo $0: usage: commit branch-name [commit-message]
-    
 fi
 
 branch=$1
