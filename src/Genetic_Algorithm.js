@@ -42,6 +42,14 @@ Car.prototype = {
 
      getFitness : function(){
         return this.cartMagnitude[0]; //TODO: Update this
+     },
+
+     getChromosome : function(){
+        return this.cartMagnitude.concat(this.cartAngle).concat(this.wheelVertex).concat(this.wheelRadius).concat(this.axleAngle).concat(this.mass);
+     },
+
+     printChromosome : function(){
+        console.log(this.getChromosome());
      }
 
 };
@@ -80,14 +88,17 @@ function crossoverOffspring(cars, topCars){
     for(var i = topCars.length; i < cars.length; i++){
         //Mutate Car
         do{
-            var parent1Index = getRandomArbitrary(0, topCars.length);
-            var parent2Index = getRandomArbitrary(0, topCars.length);
+            var parent1Index = getRandomArbitraryInteger(0, topCars.length-1);
+            console.log("Parent 1 Index: " + parent1Index);
+            var parent2Index = getRandomArbitraryInteger(0, topCars.length-1);
+            console.log("Parent 2 Index: " + parent2Index);
         } while (parent1Index === parent2Index);
 
         var parent1 = topCars[parent1Index].getChromosome();
         var parent2 = topCars[parent2Index].getChromosome();
 
-        var geneIndex = getRandomArbitrary(0, 41);
+        var geneIndex = getRandomArbitraryInteger(0, 41);
+        console.log("Gene Index: " + geneIndex);
 
         parent1[geneIndex] = parent2[geneIndex];
 
@@ -99,7 +110,7 @@ function crossoverOffspring(cars, topCars){
 
 }
 
-function mutateOffsprings(cars, mutationFactor){
+/*function mutateOffsprings(cars, mutationFactor){
     //For each car
     for(var i = 0; i < cars.length; i++){
         var chromosome = cars[i].getChromosome();
@@ -115,12 +126,18 @@ function mutateOffsprings(cars, mutationFactor){
         }
         car[i].setChromosome(chromosome);
     }
-}
+}*/
 
 //The following code was obtained from the Mozilla Developer Network Documentation which can be found at:
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
+}
+
+//The following code was obtained from StackOverflow at:
+//http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+function getRandomArbitraryInteger(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 /***********
@@ -138,11 +155,23 @@ var mass = 3.14;
 //Random cars
 var car1 = new Car(cartMagnitude, cartAngle, wheelVertex, wheelRadius, axleAngle, mass);
 var car2 = new Car(cartAngle, cartAngle, cartAngle, cartAngle, cartAngle, 222);
-var carsArray = [car1, car2];
+var car3 = new Car(wheelVertex, wheelRadius, axleAngle, cartMagnitude, cartAngle, mass);
+var carsArray = [car1, car2, car3];
 
 //Selecting the of 2 cars
-var topCars = selectNextGeneration(carsArray, 1);
+/*var topCars = selectNextGeneration(carsArray, 1);
 for(var i = 0; i < topCars.length; i++){
     //console.log(topCars[i].getFitness());
     crossoverOffspring(carsArray, [car1]);
-}
+}*/
+
+//console.log( "CAR 1: " + carsArray[0].printChromosome() );
+//console.log( "CAR 2: " + carsArray[1].printChromosome() );
+//console.log( "CAR 3: " + carsArray[2].printChromosome() );
+
+carsArray[0].printChromosome();
+
+//var topCars = crossoverOffspring(carsArray, [car1, car2]);
+//for(var i = 0; i < topCars.length; i++){
+//   topCars[i].printChromosome();
+//}
