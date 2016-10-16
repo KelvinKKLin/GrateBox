@@ -10,7 +10,7 @@ branch=$1
 git add .
 
 if [$# -eq 2]; then
-	git commit -m $2
+	git commit -m "$2"
 else
 	git commit -m 'End of Day Commit'
 fi
