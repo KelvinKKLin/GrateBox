@@ -8,8 +8,6 @@
     var x = 100;
     var y = 100;
 
-    
-
     function rectan(x, y, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6) { //draw the polygon(will add every variables like cartMag1,cartAngle1 and wheels soon)
         c.moveTo(x, y);
         c.lineTo(x2, y2);
@@ -34,53 +32,27 @@
 
 
     function draw() {
-        c.clearRect(0, 0, canvas.width, canvas.height);       
+        c.clearRect(0, 0, canvas.width, canvas.height);
         c.beginPath();
         rectan(0+x, 300+y, 0+x, 200+y, 50+x, 200+y, 100+x, 300+y, 150+x, 100+y, 200+x, 300+y);
         c.fill();
         x += 8;                                                  //move the polygon with the x+8 pix speed.
         //y += 8;
+        scrollWrapper(x, y);
+
         requestAnimationFrame(draw);
-
-
     }
-    //var polygonX = 10;
-    //var polygonY = 10;
 
-    // how far offset the canvas is                                
-    //var offsetX = 0;
-    //var offsetY = 0;
-    //function draw2() {    //Kelvin, work on this function coz i am stucking on this.(How to make the camera move) Thanks.
-    //ctx.save();
-    //ctx.translate(offsetX, offsetY);
-    // clear the viewport
-    // ctx.clearRect(-offsetX, -offsetY, 100, 100);
-
- 
-    //ctx.fillStyle = 'red';
-    //ctx.fillRect(polygonX - offsetX, polygonY - offsetY, 8, 8);
-
-    // draw the other stuff
-    //var l = thingsOnMap.length;
-    //for (var i = 0; i < l; i++) {
-    // var x = thingsOnMap[i][0];
-    //var y = thingsOnMap[i][1];
-    //ctx.fillStyle = 'lightblue';
-    // ctx.fillRect(x, y, 8, 8);
-    //ctx.fillStyle = 'black';
-    //ctx.fillText(x + ', ' + y, x, y) // just to show where we are drawing these things
-    //}
-
-    // ctx.restore();
-    // }
-
-
-    //function clearCamera(){}
-    //kill the polygon when it reaches the end.
+    //The following function was obtained from Stackoverflow at:
+    //http://stackoverflow.com/questions/7909583/2d-side-scrolling-camera-view-in-html5
+    function scrollWrapper(x, y){
+        var wrapper = document.getElementById('wrapper');
+        wrapper.scrollTop = x;
+        wrapper.scrollLeft = y;
+    }
 
     draw();
     draw1();
-    //draw2();
 }
 
 window.addEventListener('load', init, false);
