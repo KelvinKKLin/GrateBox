@@ -38,14 +38,15 @@
         c.fill();
         x += 8;                                                  //move the polygon with the x+8 pix speed.
         //y += 8;
-        scrollWrapper(x, y);
-
+        scrollWrapper(372,x-5);
         requestAnimationFrame(draw);
+
     }
 
     //The following function was obtained from Stackoverflow at:
     //http://stackoverflow.com/questions/7909583/2d-side-scrolling-camera-view-in-html5
     function scrollWrapper(x, y){
+        //console.log(x + "\t" + y);
         var wrapper = document.getElementById('wrapper');
         wrapper.scrollTop = x;
         wrapper.scrollLeft = y;
