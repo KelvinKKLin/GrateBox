@@ -8,6 +8,8 @@
     var x = 100;
     var y = 100;
 
+    var buffer = 100;
+
     function rectan(x, y, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6) { //draw the polygon(will add every variables like cartMag1,cartAngle1 and wheels soon)
         c.moveTo(x, y);
         c.lineTo(x2, y2);
@@ -38,7 +40,7 @@
         c.fill();
         x += 8;                                                  //move the polygon with the x+8 pix speed.
         //y += 8;
-        scrollWrapper(372,x-5);
+        scrollWrapper(372, x - buffer);
         requestAnimationFrame(draw);
 
     }
@@ -51,6 +53,7 @@
         wrapper.scrollTop = x;
         wrapper.scrollLeft = y;
     }
+
 
     draw();
     draw1();
