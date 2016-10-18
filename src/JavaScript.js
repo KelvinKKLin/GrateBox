@@ -10,9 +10,31 @@
 
     var buffer = 100;
 
+    var X = [];
+    var Y = [];
+    X[0] = 100;
+    Y[0] = 100;
+    for (var u = 1; u < 10000; u++) {
+        X[u] = X[u - 1] + 300;
+        Y[u] = 300 * Math.random();
+    }
+
+    function rectan(x, y, x1, y1, x2, y2, x3, y3) { //polar coordinates will be converted to Cartesian coordinates to fit x,y,x1,y1...)
+        c.moveTo(x, y);
+        c.lineTo(x1, y1);
+        c.lineTo(x2, y2);
+        c.lineTo(x3, y3);
+
+
+        c.closePath();
+        c.fillStyle = "rgb(200,0,0)";                                   //set color
+        c.stroke();
+
+    }
+
    
 
-    function rectan(x, y, Angle, Mag) { //polar coordinates will be converted to Cartesian coordinates to fit x,y,x1,y1...)
+    /*function rectan(x, y, Angle, Mag) { //polar coordinates will be converted to Cartesian coordinates to fit x,y,x1,y1...)
         var Angle = [];
         var Mag = [];
 		
@@ -32,23 +54,21 @@
         c.fillStyle = "rgb(200,0,0)";                                   //set color
         c.stroke();
 
-    }
+    }*/
 
 	
   
 
     function draw1() {
+        c.moveTo(0, 400);
+        c.beginPath();
+        for (i = 0; i < 1000; i++) {
+            c.lineTo(X[i], Y[i]);
+            c.moveTo(X[i], Y[i]);
 
-    	var fuckingX = [100, 200, 300, 400];
-    	var fuckingY = [350, 370, 400, 500];
-    	c.beginPath();
-    	c.moveTo(0, 400);
-    	for (var i = 0; i < 100; i++) {
-    		var rand1 = x + 10000;
-    		var rand2 = 600;
-    		c.lineTo(rand1, rand2);
-    		c.moveTo(rand1, rand2);
-    	}
+
+        }
+
 		
     //Path are unfinished, will add a path with uphills and downhills.
     	c.stroke();
@@ -57,7 +77,7 @@
     }
 
 
-    function draw() {                                                  
+   /* function draw() {                                                  
         c.clearRect(0, 0, canvas.width, canvas.height);
         c.beginPath();
         rectan(0,0,Angle,Mag);
@@ -76,9 +96,26 @@
         var wrapper = document.getElementById('wrapper');
         wrapper.scrollTop = x;
         wrapper.scrollLeft = y;
+    }*/
+
+
+    function draw() {
+        c.clearRect(0, 0, canvas.width, canvas.height);
+        c.beginPath();
+        rectan(0, 0, x+100, y+50, x+150, y+50, x+20, y+40);
+        c.fill();
+        x += 8;                                                  //x(speed) will be determinded by GA 
+        //y += 8;
+        scrollWrapper(372, x - buffer);
+        requestAnimationFrame(draw);
+
     }
-
-
+    function scrollWrapper(x, y) {
+        //console.log(x + "\t" + y);
+        var wrapper = document.getElementById('wrapper');
+        wrapper.scrollTop = x;
+        wrapper.scrollLeft = y;
+    }
     draw();
     draw1();
 }
