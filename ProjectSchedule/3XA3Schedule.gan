@@ -63,7 +63,7 @@
             <task id="265" name="Edit Requirements Documentation" color="#8cb6ce" meeting="false" start="2016-10-03" duration="4" complete="0" expand="true"/>
             <task id="118" name="Requirements Document Rev 0" color="#8cb6ce" meeting="true" start="2016-10-07" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="199" name="Create Proof of Concept Demonstration" color="#8cb6ce" meeting="false" start="2016-10-12" duration="9" complete="0" expand="true">
+        <task id="199" name="Create Proof of Concept Demonstration" color="#8cb6ce" meeting="false" start="2016-10-12" duration="7" complete="0" expand="true">
             <task id="200" name="Create Car Model" color="#8cb6ce" meeting="false" start="2016-10-12" duration="3" complete="0" expand="true">
                 <task id="289" name="Requirement 1" color="#8cb6ce" meeting="false" start="2016-10-12" duration="3" complete="0" expand="true"/>
                 <task id="290" name="Requirement 2" color="#8cb6ce" meeting="false" start="2016-10-12" duration="3" complete="0" expand="true"/>
@@ -90,7 +90,7 @@
                 <task id="299" name="Requirement 11" color="#8cb6ce" meeting="false" start="2016-10-15" duration="2" complete="0" expand="true"/>
                 <task id="300" name="Requirement 12" color="#8cb6ce" meeting="false" start="2016-10-15" duration="2" complete="0" expand="true"/>
             </task>
-            <task id="119" name="Proof of Concept Demonstration" color="#8cb6ce" meeting="true" start="2016-10-21" duration="0" complete="0" expand="true"/>
+            <task id="119" name="Proof of Concept Demonstration" color="#8cb6ce" meeting="true" start="2016-10-19" duration="0" complete="0" expand="true"/>
         </task>
         <task id="213" name="Create Test Plan Rev 0" color="#8cb6ce" meeting="false" start="2016-09-16" duration="42" complete="0" expand="true">
             <task id="208" name="Research Automated Testing Methods" color="#8cb6ce" meeting="false" start="2016-09-16" duration="3" complete="0" expand="true"/>
