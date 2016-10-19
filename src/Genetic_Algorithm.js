@@ -160,6 +160,7 @@ function crossoverOffspring(cars, topCars){
             console.log("Parent 1 Index: " + parent1Index);
             var parent2Index = getRandomArbitraryInteger(0, topCars.length-1);
             console.log("Parent 2 Index: " + parent2Index);
+            console.log("\n");
         } while (parent1Index === parent2Index);
 
         var parent1 = topCars[parent1Index].getChromosome();
@@ -178,9 +179,9 @@ function crossoverOffspring(cars, topCars){
 
 }
 
-function mutateOffsprings(cars, mutationFactor){
+function mutateOffsprings(cars, numberOfParents, mutationFactor){
     //For each car
-    for(var i = 0; i < cars.length; i++){
+    for(var i = numberOfParents; i < cars.length; i++){
         var chromosome = cars[i].getChromosome();
         //For each gene in the chromosome
         for(var j = 0; j < chromosome.length; j++){
@@ -209,13 +210,6 @@ function getRandomArbitraryInteger(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-
-/***********
-*Test Cases*
-***********/
-
-/*
 //Random Values Chosen to Easily Identify Cars
 var cartMagnitude = [1, 2, 3, 4, 5, 6, 7, 8];
 var cartAngle = [9, 10, 11, 12, 13, 14, 15, 16];
@@ -230,32 +224,34 @@ var car2 = new Car(cartAngle, cartAngle, cartAngle, cartAngle, cartAngle, 222);
 var car3 = new Car(wheelVertex, wheelRadius, axleAngle, cartMagnitude, cartAngle, mass);
 var carsArray = [car1, car2, car3];
 
-//Selecting the of 2 cars
-var topCars = selectNextGeneration(carsArray, 1);
-for(var i = 0; i < topCars.length; i++){
-    //console.log(topCars[i].getFitness());
-    crossoverOffspring(carsArray, [car1]);
-}
-
-console.log("CAR 1");
-carsArray[0].printChromosome();
-
-console.log("\nCar 2");
-carsArray[1].printChromosome();
-
-console.log("\nCar 3");
-carsArray[2].printChromosome();
-
-//Crossing over cars
-var topCars = crossoverOffspring(carsArray, [car1, car2]);
-for(var i = 0; i < topCars.length; i++){
-    console.log("NEW CAR");
-    topCars[i].printChromosome();
+//The top car should be car 3, then car 2
+console.log("Top 1 Car out of 3");
+var topCars1 = selectNextGeneration(carsArray, 1);
+for(var i = 0; i < topCars1.length; i++){
+    topCars1[i].printChromosome();
     console.log("\n");
 }
 
-var newCars = mutateOffsprings(carsArray, 0.5);
-for(var i = 0; i < newCars.length; i++){
-    newCars[i].printChromosome();
+console.log("Top 2 Cars out of 3");
+var topCars2 = selectNextGeneration(carsArray, 2);
+for(var i = 0; i < topCars2.length; i++){
+    console.log("CAR #" + (i+1));
+    topCars2[i].printChromosome();
+    console.log("\n");
 }
-*/
+
+topCars2 = crossoverOffspring(carsArray, topCars2);
+console.log("Length of topCars2: " + topCars2.length + "\n");
+console.log("RESULTS OF CROSSOVER: \n");
+for(var i = 0; i < topCars2.length; i++){
+    topCars2[i].printChromosome();
+    console.log("\n");
+}
+
+console.log("MUTATIONS: ")
+topCars2 = mutateOffsprings(carsArray, 2, 1);
+for(var i = 0; i < topCars2.length; i++){
+    topCars2[i].printChromosome();
+    console.log("\n");
+
+}
