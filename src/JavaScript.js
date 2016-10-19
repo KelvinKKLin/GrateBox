@@ -5,27 +5,26 @@
     canvas.height = 800;
     var c = canvas.getContext('2d');                                     //set 2d Canvas
 
-    var x = 100;                                                         //set x and y variables
-    var y = 100;
+    var x = 0;                                                         //set x and y variables
+    var y = 400;
 
     var buffer = 100;
 
-    var X = [];
-    var Y = [];
-    X[0] = 100;
-    Y[0] = 100;
+    //var X = [400,800,1200,1600];
+    //var Y = [400,500,600,700];
+    /*X[0] = 100;
+    Y[0] = 300;
+    var YMAG = [];
     for (var u = 1; u < 10000; u++) {
         X[u] = X[u - 1] + 300;
-        Y[u] = 300 * Math.random();
-    }
+        Y[u] = 800 * Math.random();
+    }*/
 
-    function rectan(x, y, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6) { //polar coordinates will be converted to Cartesian coordinates to fit x,y,x1,y1...)
+    function rectan(x1, y1, x2, y2, x3, y3, x4, y4) { //polar coordinates will be converted to Cartesian coordinates to fit x,y,x1,y1...)
         c.moveTo(x, y);
         c.lineTo(x2, y2);
         c.lineTo(x3, y3);
         c.lineTo(x4, y4);
-        c.lineTo(x5, y5);
-        c.lineTo(x6, y6);
         c.closePath();
         c.fillStyle = "rgb(200,0,0)";                                   //set color
         c.stroke();
@@ -60,14 +59,58 @@
   
 
     function draw1() {
-        c.moveTo(0, 400);
         c.beginPath();
-        for (i = 0; i < 1000; i++) {
-            c.lineTo(X[i], Y[i]);
-            c.moveTo(X[i], Y[i]);
+        c.moveTo(0, 400);
+       
+        c.lineTo(400, 400);
+        c.moveTo(400, 400);
+        c.lineTo(800, 500);
+        c.moveTo(800, 500);
+        c.lineTo(1200, 400);
+        c.moveTo(1200, 400);
+        c.lineTo(1600, 300);
+        c.moveTo(1600, 300);
+        c.lineTo(2000, 400);
+        c.moveTo(2000, 400);
+        c.lineTo(2400, 500);
+        c.moveTo(2400, 500);
+        c.lineTo(2800, 400);
+        c.moveTo(2800, 400);
+        c.lineTo(3200, 300);
+        c.moveTo(3200, 300);
+        c.lineTo(3600, 400);
+        c.moveTo(3600, 400);
+        c.lineTo(4000, 500);
+        c.moveTo(4000, 500);
+        c.lineTo(4400, 400);
+        c.moveTo(4400, 400);
+        c.lineTo(4800, 300);
+        c.moveTo(4800, 300);
+        c.lineTo(5200, 400);
+        c.moveTo(5200, 400);
+        c.lineTo(5600, 500);
+        c.moveTo(5600, 500);
+        c.lineTo(6000, 400);
+        c.moveTo(6000, 400);
+        c.lineTo(6400, 300);
+        c.moveTo(6400, 300);
+        c.lineTo(6800, 400);
+        c.moveTo(6800, 400);
+        c.lineTo(7200, 500);
+        c.moveTo(7200, 500);
+        c.lineTo(7600, 400);
+        c.moveTo(7600, 400);
+        c.lineTo(8000, 400);
+        c.moveTo(8000, 400);
+
+      
+
+        
+        
+            
 
 
-        }
+        
 
 		
     //Path are unfinished, will add a path with uphills and downhills.
@@ -102,10 +145,94 @@
     function draw() {
         c.clearRect(0, 0, canvas.width, canvas.height);
         c.beginPath();
-        rectan(0 + x, 300 + y, 0 + x, 200 + y, 50 + x, 200 + y, 100 + x, 300 + y, 150 + x, 100 + y, 200 + x, 300 + y);
-        c.fill();
-        x += 8;                                                  //x(speed) will be determinded by GA 
-        //y += 8;
+        if (x < 400) {
+            rectan(x, y, 0 + x, y - 100, 100 + x, y - 100, 100 + x, y);
+            c.fill();
+            y += 0;
+            x += 1;
+
+        }
+        else if (x >= 400 && x < 800) {
+            rectan(x, y, 24.2535 + x, y - 97.01, 97.01 + 24.2535 + x, y - 72.76, 97.01 + x, y + 24.2535);
+            c.fill();
+            y += 0.25;
+            x += 1;
+        }
+        else if (x >= 800 && x < 1600) {
+            rectan(x, y, x-24.2535 , y - 97.01, 97.01-24.2535 + x, y - 97.01 - 24.2535, 97.01 + x, y - 24.2535);
+            c.fill();
+            y += -0.25;
+            x += 1;
+        }
+        else if (x >= 1600 && x < 2400) {
+            rectan(x, y, 24.2535 + x, y - 97.01, 97.01 + 24.2535 + x, y - 72.76, 97.01 + x, y + 24.2535);
+            c.fill();
+            y += 0.25;
+            x += 1;
+        }
+        else if (x >= 2400 && x < 3200) {
+            rectan(x, y, x - 24.2535, y - 97.01, 97.01 - 24.2535 + x, y - 97.01 - 24.2535, 97.01 + x, y - 24.2535);
+            c.fill();
+            y += -0.25;
+            x += 1;
+        }
+        else if (x >= 3200 && x < 4000) {
+            rectan(x, y, 24.2535 + x, y - 97.01, 97.01 + 24.2535 + x, y - 72.76, 97.01 + x, y + 24.2535);
+            c.fill();
+            y += 0.25;
+            x += 1;
+        }
+        else if (x >= 4000 && x < 4800) {
+            rectan(x, y, x - 24.2535, y - 97.01, 97.01 - 24.2535 + x, y - 97.01 - 24.2535, 97.01 + x, y - 24.2535);
+            c.fill();
+            y += -0.25;
+            x += 1;
+        }
+        else if (x >= 4800 && x < 5600) {
+            rectan(x, y, 24.2535 + x, y - 97.01, 97.01 + 24.2535 + x, y - 72.76, 97.01 + x, y + 24.2535);
+            c.fill();
+            y += 0.25;
+            x += 1;
+        }
+        else if (x >= 5600 && x < 6400) {
+            rectan(x, y, x - 24.2535, y - 97.01, 97.01 - 24.2535 + x, y - 97.01 - 24.2535, 97.01 + x, y - 24.2535);
+            c.fill();
+            y += -0.25;
+            x += 1;
+        }
+        else if (x >= 6400 && x < 7200) {
+            rectan(x, y, 24.2535 + x, y - 97.01, 97.01 + 24.2535 + x, y - 72.76, 97.01 + x, y + 24.2535);
+            c.fill();
+            y += 0.25;
+            x += 1;
+        }
+        else if (x >= 7200 && x < 7600) {
+            rectan(x, y, x - 24.2535, y - 97.01, 97.01 - 24.2535 + x, y - 97.01 - 24.2535, 97.01 + x, y - 24.2535);
+            c.fill();
+            y += -0.25;
+            x += 1;
+        }
+
+        if (x >= 7600 && x < 8000) {
+            rectan(x, y, 0 + x, y - 100, 100 + x, y - 100, 100 + x, y);
+            c.fill();
+            y += 0;
+            x += 1;
+
+        }
+
+
+
+
+
+
+
+
+        
+          
+       
+
+
         scrollWrapper(372, x - buffer);
         requestAnimationFrame(draw);
 
