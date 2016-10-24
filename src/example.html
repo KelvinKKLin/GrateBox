@@ -36,17 +36,31 @@
          
          //create ground
          bodyDef.type = b2Body.b2_staticBody;
-         bodyDef.position.x = 20;
-         bodyDef.position.y = 20;
          fixDef.shape = new b2PolygonShape;
-         fixDef.shape.SetAsBox(25, 0.5);
-         fixDef.shape.SetAsBox(30, 2);
-
-
-         
-
-         
+         fixDef.shape.SetAsBox(5, 0.25);
+         bodyDef.position.Set(5, 10);
          world.CreateBody(bodyDef).CreateFixture(fixDef);
+         fixDef.shape.SetAsBox(2.5, 0.25);
+         bodyDef.position.Set(12.5, 10.5);
+         world.CreateBody(bodyDef).CreateFixture(fixDef);
+         fixDef.shape.SetAsBox(0.5, 2.5);
+         bodyDef.position.Set(15.5, 13);
+         world.CreateBody(bodyDef).CreateFixture(fixDef);
+         fixDef.shape.SetAsBox(2, 0.25);
+         bodyDef.position.Set(18, 15.5);
+         world.CreateBody(bodyDef).CreateFixture(fixDef);
+         fixDef.shape.SetAsBox(5, 0.25);
+         bodyDef.position.Set(25, 16);
+         world.CreateBody(bodyDef).CreateFixture(fixDef);
+
+
+
+
+
+
+         
+
+
          
          //create some objects
          bodyDef.type = b2Body.b2_dynamicBody;
