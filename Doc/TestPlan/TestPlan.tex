@@ -1,0 +1,278 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Test Plan\\Genetic Cars}
+
+\author{Team 8, Grate
+		\\ Kelvin Lin (linkk4)
+		\\ Eric Chaput (chaputem)
+		\\ Jin Liu (liu456)
+}
+
+\date{\today}
+
+\input{../Comments}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Oct 24 & 1.0 & Imported Template and completed survey's and non-functional requirements  testing\\
+Oct 25 & 1.1 & Implemented non-functional requirements testing\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{General Information}
+
+\subsection{Purpose}
+
+The purpose of this project's testing is to affirm that all requirements outlined in the Requirements Specifications document have been met and that the Genetic Cars software was implemented properly
+
+\subsection{Scope}
+
+This test plan presents a basis for the testing of software functionality. It has the objective of proving that the Genetic Cars project has met all the requirements outlined in the Requirements Specification document and of attaching metrics to those requirements for the sake of quantifying them. It also serves as a means to arrange testing activities. It will present what is to be tested and will act as an outline for testing methods and tools to be utilized.
+
+\subsection{Acronyms, Abbreviations, and Symbols}
+	
+\begin{table}[hbp]
+\caption{\textbf{Table of Abbreviations}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Abbreviation} & \textbf{Definition} \\
+\midrule
+Abbreviation1 & Definition1\\
+Abbreviation2 & Definition2\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+
+\begin{table}[!htbp]
+\caption{\textbf{Table of Definitions}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Term} & \textbf{Definition}\\
+\midrule
+Term1 & Definition1\\
+Term2 & Definition2\\
+\bottomrule
+\end{tabularx}
+
+\end{table}	
+
+\subsection{Overview of Document}
+
+The Genetic Cars project will re-implement the code of the open source project BoxCar2D. The software's requirements are outlined in the Requirements Specifications document. (EDIT THIS).
+
+\section{Plan}
+	
+\subsection{Software Description}
+
+The software will allow users to model and learn about genetic algorithms in a fun and educational way. The implementtation will be completed in JavaScript.
+
+\subsection{Test Team}
+
+The individuals responsible for the testing of this project are  Kelvin Lin, Eric Chaput, and  Jin Liu. Jin Liu is in charge of testing for functional requirements. Eric Chaput is in charge of testing for non-functional requirements and for surveying representaative users for feedback and testing purposes. Kelvin Lin as team leader shall oversee time management for testing but will otherwise take no direct role in the testing process.
+
+\subsection{Automated Testing Approach}
+
+QUnit will be the primary tool used for testing this project. It will be used to automate unit testing. JavaScript also supports the principle of self-testing so many automated tests through JavaScript itself will also be viable.
+
+\subsection{Testing Tools}
+
+QUnit will be the primary tool used for testing this project. It will be used to automate unit testing. All group members are familiar with QUnit's Java equivalent, JUnit, and so minimal instruction in QUnit will be necessary.
+
+\subsection{Testing Schedule}
+		
+See Gantt Chart at the following url ...
+
+\section{System Test Description}
+	
+\subsection{Tests for Functional Requirements}
+
+\subsubsection{Area of Testing1}
+		
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+
+\end{enumerate}
+
+\subsubsection{Area of Testing2}
+
+...
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\subsubsection{Area of Testing1}
+		
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: 
+					
+Initial State: 
+					
+Input/Condition: 
+					
+Output/Result: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+
+\end{enumerate}
+
+\subsubsection{Area of Testing2}
+
+...
+
+\section{Tests for Proof of Concept}
+
+\subsection{Area of Testing1}
+		
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+
+\end{enumerate}
+
+\subsection{Area of Testing2}
+
+...
+
+	
+\section{Comparison to Existing Implementation}	
+
+There are [INSERT NUMBERS] tests that compare the program to the Existing Implementation of the program please refer to:
+- test X1 in Y1
+- test X2 in Y2
+etc.
+				
+\section{Unit Testing Plan}
+
+Unit testing will be conducted using the QUnit software outlined in the development document.
+		
+\subsection{Unit testing of internal functions}
+
+In order to create unit tests for the internal functions of the program certain methods that return values
+can be tested. This will involve taking the methods and giving them input values. Given what they are
+supposed to output and that they actually output a series of unit tests can be created. Unit tests will include
+tests that contain proper inputs and inputs that generate exceptions.  Anything that needs to be imported will already be done
+by the individual classes. We will be using coverage metrics to determine how much of our code we have
+covered. Our goal is to cover as much as possible in order to make sure that we test all functions adequately.
+Our goal percentage to beat will be 85 percent.
+		
+\subsection{Unit testing of output files}		
+
+PLACEHOLDER TEXT
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This is where you can place additional information.
+
+\subsection{Symbolic Parameters}
+
+The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.
+
+\subsection{Usability Survey Questions?}
+
+SEE ATTATCHED
+
+\end{document}
