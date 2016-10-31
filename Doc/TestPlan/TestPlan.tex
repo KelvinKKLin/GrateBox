@@ -220,6 +220,36 @@ How test will be performed:
 
 \end{enumerate}
 
+\subsubsection{Other GUI elements}
+
+\begin{enumerate}
+
+\item{GU-1\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Program installed onto system and launched or open in a web browser.
+					
+Input: Generation of cars entered into program and simulation running to determine fitness.
+					
+Output: Movement of health bars in health bar GUI element relative to health of respective cars.
+					
+How test will be performed: Fitness determining simulation will be run. Health bars and how they move relative to respective cars will be observed. For this test specifically, a method will be written to display the numerical health values next to the health bars to determine the accuracy of these. The test will be considered a success if health bars graphically correspond to the numerical values of the respective cars. 
+					
+\item{GU-2\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Program installed onto system and launched or open in a web browser.
+					
+Input: Generation of cars entered into program and simulation run to determine fitness.
+					
+Output: Text file that contains numerical values with lables that will be displayed to the user (generation, cars alive, distance, height)
+					
+How test will be performed: A text file will be created based on the expected values of the generation, cars alive, distance, and height values after one minute with a particular random seed. This same seed will then be used in the program and the text of the above will be written to a text file after one minute of simulation. These text files will then be compared for testing purposes (i.e. are the values we expected the values we recieved). This will test for both the accuracy of these values and the accurate display of the values. The test will be considered a success if actual values match up with what is expected.
+
+\end{enumerate}
+
 \subsection{Tests for Nonfunctional Requirements}
 
 \subsubsection{Look and Feel}
