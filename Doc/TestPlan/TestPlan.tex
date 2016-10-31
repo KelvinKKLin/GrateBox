@@ -10,7 +10,6 @@
     linkcolor=red,
     urlcolor=blue
 }
-\usepackage[round]{natbib}
 
 \title{SE 3XA3: Test Plan\\Genetic Cars}
 
@@ -19,6 +18,9 @@
 		\\ Eric Chaput (chaputem)
 		\\ Jin Liu (liu456)
 }
+
+
+\usepackage[round]{natbib}
 
 \date{\today}
 
@@ -40,6 +42,9 @@
 \midrule
 Oct 24 & 1.0 & Imported Template and completed survey's and non-functional requirements  testing\\
 Oct 25 & 1.1 & Implemented non-functional requirements testing\\
+Oct 30 & 1.2 & First test case additions\\
+Oct 31 & 1.3 & Second test case additions\\
+Oct 31 & 1.4 & Final edits\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -52,11 +57,11 @@ Oct 25 & 1.1 & Implemented non-functional requirements testing\\
 
 \subsection{Purpose}
 
-The purpose of this project's testing is to affirm that all requirements outlined in the Requirements Specifications document have been met and that the Genetic Cars software was implemented properly
+The purpose of this project's testing is to affirm that all requirements outlined in the Requirements Specifications document have been met and that the Genetic Cars software was implemented properly.
 
 \subsection{Scope}
 
-This test plan presents a basis for the testing of software functionality. It has the objective of proving that the Genetic Cars project has met all the requirements outlined in the Requirements Specification document and of attaching metrics to those requirements for the sake of quantifying them. It also serves as a means to arrange testing activities. It will present what is to be tested and will act as an outline for testing methods and tools to be utilized.
+This test plan presents a basis for the testing of software functionality. It has the objectives of proving that the Genetic Cars project has met all the requirements outlined in the Requirements Specification document and of attaching metrics to those requirements for the sake of quantifying them. It also serves as a means to arrange testing activities. It will present what is to be tested and will act as an outline for testing methods and tools to be utilized.
 
 \subsection{Acronyms, Abbreviations, and Symbols}
 	
@@ -67,8 +72,10 @@ This test plan presents a basis for the testing of software functionality. It ha
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-Abbreviation1 & Definition1\\
-Abbreviation2 & Definition2\\
+PoC & Proof of Concept\\
+SRS & Software Requirements Specification\\
+GC & Genetic Cars\\
+GUI & Graphical User Interface\\
 \bottomrule
 \end{tabularx}
 
@@ -81,8 +88,13 @@ Abbreviation2 & Definition2\\
 \toprule
 \textbf{Term} & \textbf{Definition}\\
 \midrule
-Term1 & Definition1\\
-Term2 & Definition2\\
+Structural Testing & Testing derived from the internal structure of the software\\
+Functional Testing & Testing derived from a description of how the program functions (most often drawn from requirements)\\
+Dynamic Testing & Testing which includes having test cases run during execution\\
+Static Testing & Testing that does not involve program execution\\
+Manual Testing & Testing conducted by people\\
+Automated Testing & Testing that is run automatically by software\\
+A majority of tested users & Defined as 80 percent of the users tested\\
 \bottomrule
 \end{tabularx}
 
@@ -90,7 +102,7 @@ Term2 & Definition2\\
 
 \subsection{Overview of Document}
 
-The Genetic Cars project will re-implement the code of the open source project BoxCar2D. The software's requirements are outlined in the Requirements Specifications document. (EDIT THIS).
+The Genetic Cars project will re-implement the code of the open source project BoxCar2D. The software's requirements are outlined in the Requirements Specifications document.
 
 \section{Plan}
 	
@@ -108,7 +120,7 @@ QUnit will be the primary tool used for testing this project. It will be used to
 
 \subsection{Testing Tools}
 
-QUnit will be the primary tool used for testing this project. It will be used to automate unit testing. All group members are familiar with QUnit's Java equivalent, JUnit, and so minimal instruction in QUnit will be necessary.
+QUnit will be the primary tool used for testing this project. It will be used to automate unit testing. All group members are familiar with QUnit's Java equivalent, JUnit, and so minimal instruction in QUnit will be necessary. Testing will also be conducted in JavaScript itself as there are many testing methods native to JavaScript itself.
 
 \subsection{Testing Schedule}
 		
@@ -118,7 +130,7 @@ See Gantt Chart at the following url ...
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Genetic Algorithm}
 		
 \paragraph{Title for Test}
 
@@ -150,51 +162,141 @@ How test will be performed:
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Car Model}
 
-...
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+
+\end{enumerate}
+
+\subsubsection{Graphics}
+
+\paragraph{Title for Test}
+
+\begin{enumerate}
+
+\item{test-id1\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+					
+\item{test-id2\\}
+
+Type: Functional, Dynamic, Manual, Static etc.
+					
+Initial State: 
+					
+Input: 
+					
+Output: 
+					
+How test will be performed: 
+
+\end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\subsubsection{Look and Feel}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{LF-1\\}
 
-Type: 
+Type: Structural, Static, Manual
 					
-Initial State: 
+Initial State: Program installed onto system or open in a web browser and launched.
 					
-Input/Condition: 
+Input/Condition: Users asked to rate the visual asthetic of the program.
 					
-Output/Result: 
+Output/Result: A majority of tested users shall agree that the visual asthetic of the program is favorable.
 					
-How test will be performed: 
+How test will be performed: A test group of representative users (as defined in the development document) will be given two minutes of time to explore the program, its functions, and its outputs. This sample of users will then be asked to fill out a survey (see section 7.2) asking for their input. Test results shall be determined from those responses (i.e. if a majority of representative users rated the visual aesthetic of the program favorably then this test would be a success).
 					
-\item{test-id2\\}
+\item{LF-2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Type: Structural, Static, Manual
 					
-Initial State: 
+Initial State: Program installed onto system or open in a web browser and launched.
 					
-Input: 
+Input: Users asked to rate the style of the program
 					
-Output: 
+Output: A majority of tested users shall agree that the style of the program is favorable.
 					
-How test will be performed: 
+How test will be performed: How test will be performed: A test group of representative users (as defined in the development document) will be given two minutes of time to explore the program, its functions, and its outputs. This sample of users will then be asked to fill out a survey (see section 7.2) asking for their input. Test results shall be determined from those responses (i.e. if a majority of representative users rated the style of the program favorably then this test would be a success).
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Usability}
 
-...
+\begin{enumerate}
+
+\item{US-1\\}
+
+Type: Structural, Static, Manual
+					
+Initial State: Program installed onto system or open in a web browser and launched.
+					
+Input/Condition: Users asked to rate the visual asthetic of the program.
+					
+Output/Result: A majority of tested users shall agree that the visual asthetic of the program is favorable.
+					
+How test will be performed: A test group of representative users (as defined in the development document) will be given two minutes of time to explore the program, its functions, and its outputs. This sample of users will then be asked to fill out a survey (see section 7.2) asking for their input. Test results shall be determined from those responses (i.e. if a majority of representative users rated the visual aesthetic of the program favorably then this test would be a success).
+					
+\item{US-2\\}
+
+Type: Type: Structural, Static, Manual
+					
+Initial State: Program installed onto system or open in a web browser and launched.
+					
+Input: Users asked to rate the style of the program
+					
+Output: A majority of tested users shall agree that the style of the program is favorable.
+					
+How test will be performed: How test will be performed: A test group of representative users (as defined in the development document) will be given two minutes of time to explore the program, its functions, and its outputs. This sample of users will then be asked to fill out a survey (see section 7.2) asking for their input. Test results shall be determined from those responses (i.e. if a majority of representative users rated the style of the program favorably then this test would be a success).
+
+\end{enumerate}
+
+\subsubsection{Performance}
+
+\subsubsection{Other}
 
 \section{Tests for Proof of Concept}
 
-\subsection{Area of Testing1}
+Proof of Concept testing will be focused on verifying and validating the means by which automated testing will be performed. This will include automated testing of the genetic algorithm and then car model, as well as automated testing of graphical components to the extent possible.
+
+\subsection{Genetic algorithm and car model}
 		
 \paragraph{Title for Test}
 
@@ -226,7 +328,7 @@ How test will be performed:
 
 \end{enumerate}
 
-\subsection{Area of Testing2}
+\subsection{Graphics}
 
 ...
 
@@ -254,7 +356,7 @@ Our goal percentage to beat will be 85 percent.
 		
 \subsection{Unit testing of output files}		
 
-PLACEHOLDER TEXT
+Our program generates two primary outputs, the technical output generated by the genetic algorithms, and the graphical output displayed to the user. The genetic algorithms can be unit tested as explained above in the "Unit testing of internal functions" section. Graphical output will be harder to unit test, however Grate is looking into the prospect of pre generating expected graphical outcomes with given inputs and comparing those to the graphical outputs generated by the GC project. These images can then be compared by a unit test by percentage similarity. Currently the threshold for percentage similarity stands at 95 percent.
 
 \bibliographystyle{plainnat}
 
