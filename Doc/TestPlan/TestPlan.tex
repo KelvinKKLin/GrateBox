@@ -363,19 +363,37 @@ Proof of Concept testing will be focused on verifying and validating the means b
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{UC-1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Automated
 					
-Initial State: 
+Initial State: Program has been compiled but no additional inputs have been made.
 					
-Input: 
+Input: Creation of a car. Set random seed.
 					
-Output: 
+Output: Complete car object with random values that correspond with the given random seed. 100 percent match with estimated car and car values.
 					
-How test will be performed: 
+How test will be performed: Unit test will be set with a random seed and instructed to create 100 different cars given this seed. Final cars will then be compared to estimated cars. Test will be considered a success if generated cars are a 100 percent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated given the random seed.
 					
-\item{test-id2\\}
+\item{UC-2\\}
+
+Type: Functional, Dynamic, Automated
+					
+Initial State: Program has created several cars as in test case UC-1 but no additional instructions have been given.
+					
+Input: Several pre made cars with non-random values.
+					
+Output: A new generation of cars created by mutating and crossing the generation of cars given.
+					
+How test will be performed: Mutation factor will be set to 10 percent. Final generation of cars will be estimated given the mutation factor and the pre generated cars. Final generation of cars will be generated using Q-Unit. Test will be considered a success if generated cars are a 100 precent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated.
+
+\end{enumerate}
+
+\subsection{Graphics}
+
+\begin{enumerate}
+
+\item{UG-1\\}
 
 Type: Functional, Dynamic, Manual, Static etc.
 					
@@ -388,11 +406,6 @@ Output:
 How test will be performed: 
 
 \end{enumerate}
-
-\subsection{Graphics}
-
-...
-
 	
 \section{Comparison to Existing Implementation}	
 
