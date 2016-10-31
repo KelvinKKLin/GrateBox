@@ -373,7 +373,7 @@ Input: Creation of a car. Set random seed.
 					
 Output: Complete car object with random values that correspond with the given random seed. 100 percent match with estimated car and car values.
 					
-How test will be performed: Unit test will be set with a random seed and instructed to create 100 different cars given this seed. Final cars will then be compared to estimated cars. Test will be considered a success if generated cars are a 100 percent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated given the random seed.
+How test will be performed: Unit test will be set with a random seed and instructed to create 100 different cars given this seed. Final cars will then be compared to estimated cars. Test will be considered a success if generated cars are a 100 percent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated given the random seed. Test used to determine Q-Unit limitations on preset mathematical formulas.
 					
 \item{UC-2\\}
 
@@ -385,7 +385,7 @@ Input: Several pre made cars with non-random values.
 					
 Output: A new generation of cars created by mutating and crossing the generation of cars given.
 					
-How test will be performed: Mutation factor will be set to 10 percent. Final generation of cars will be estimated given the mutation factor and the pre generated cars. Final generation of cars will be generated using Q-Unit. Test will be considered a success if generated cars are a 100 precent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated.
+How test will be performed: Mutation factor will be set to 10 percent. Final generation of cars will be estimated given the mutation factor and the pre generated cars. Final generation of cars will be generated using Q-Unit. Test will be considered a success if generated cars are a 100 precent match to the 1st, 2nd, 3rd, 5th, 10th, and 50th cars estimated. Test used to determine Q-Unit limitations on random generation.
 
 \end{enumerate}
 
@@ -395,15 +395,15 @@ How test will be performed: Mutation factor will be set to 10 percent. Final gen
 
 \item{UG-1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic Automated
 					
-Initial State: 
+Initial State: Program open and running with generation of cars generated as in UC-1.
 					
-Input: 
+Input: Run simulation for the generation of cars. Predetermined graphical representation of simulation for comparison.
 					
-Output: 
+Output: Graphic representation of generation of cars for comparison to predetermined graphical representation.
 					
-How test will be performed: 
+How test will be performed: Generation of cars given will give estimated graphical output for 30 frames. Generation of cars given will be run through the program's graphics engine. 1st, 2nd, 12th, and 30th, frames. Comparison will be drawn using JavaScript in built image comparison. Test will be considered a success if 95 percent similarity reached. Test used to see Q-Unit limitations on a graphical level.
 
 \end{enumerate}
 	
