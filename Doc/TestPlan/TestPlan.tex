@@ -305,7 +305,38 @@ How test will be performed: How test will be performed: A test group of represen
 
 \subsubsection{Performance}
 
+\begin{enumerate}
+
+\item{PF-1\\}
+
+Type: Structural, Dynamic, Automatic
+					
+Initial State: Program installed onto system or open in a web browser and launched.
+					
+Input/Condition: Program inititates one generation of genetic cars.
+					
+Output/Result: Generation created, displayed, and mutated within 20 seconds.
+					
+How test will be performed: Built in java script timer method will be used with Q-Unit (see section on unit testing) to record the time it takes for 100 generations. If all fall below 20 seconds from beggining to end then the test will be considered a success.
+
+
+\item{PF-2\\}
+
+Type: Type: Functional, Static, Manual
+					
+Initial State: Program installed onto system or open in a web browser and launched.
+					
+Input: Users asked to rate the speed of the program
+					
+Output: A majority of tested users shall agree that the speed of the program is favorable
+					
+ How test will be performed: A test group of representative users (as defined in the development document) will be given two minutes of time to explore the program, its functions, and its outputs. This sample of users will then be asked to fill out a survey (see section 7.2) asking for their input. Test results shall be determined from those responses (i.e. if a majority of representative users agree that the program's speed is favourable then this test will be considered a success).
+
+\end{enumerate}
+
 \subsubsection{Other}
+
+
 
 \section{Tests for Proof of Concept}
 
