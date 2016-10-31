@@ -195,9 +195,45 @@ How test will be performed:
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{GR-1.1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Structural, Dynamic, Manual
+					
+Initial State: Nothing displayed on screen.
+					
+Input: Correct car created from car model. (i.e. a car object)
+					
+Output: Car created in graphics pane. Car's dimensions, values, etc. relative to numerical values given.
+					
+How test will be performed: Car values will be entered into graphics modules. Graphics modules will car given these values. Test is  successful if generated car appears as expected given numerical values (this is manually predetermined)
+
+\item{GR-1.2\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Nothing displayed on screen.
+					
+Input: Incorrect car generaged from car model. (i.e. a car object where values are unacceptable, for example 9 vector magnitudes)
+					
+Output: Error message
+					
+How test will be performed: Car values will be entered into graphics modules. Graphics modules will car given these values. Test is successful if error message displayed.
+
+\item{GR-1.3\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Nothing displayed on screen.
+					
+Input: Car generated from car model with invalid values (i.e a negative vector magnitude)
+					
+Output: Error Message
+					
+How test will be performed: How test will be performed: Car values will be entered into graphics modules. Graphics modules will car given these values. Test is successful if error message displayed.
+					
+\item{GR-2.1\\}
+
+Type: Structural, Dynamic, Manual
 					
 Initial State: 
 					
@@ -206,10 +242,10 @@ Input:
 Output: 
 					
 How test will be performed: 
-					
-\item{test-id2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+\item{GR-2.2\\}
+
+Type: Structural, Dynamic, Manual
 					
 Initial State: 
 					
