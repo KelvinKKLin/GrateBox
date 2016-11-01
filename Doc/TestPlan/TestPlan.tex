@@ -165,30 +165,113 @@ How test will be performed:
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{CM-1.1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Structural, Dynamic, Automated
 					
-Initial State: 
+Initial State: No car generated.
 					
-Input: 
+Input: Pre determined random seed and valid car generation module run.
 					
-Output: 
+Output: Set of 0-8 wheels for a car.
 					
-How test will be performed: 
-					
-\item{test-id2\\}
+How test will be performed: Car will be randomly created. Number of wheels will be found to be between 0 and 8 for a successful test. Note that the output should be the same number of wheels as there are wheel radiuses as in 1.2.
 
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+\item{CM-1.2\\}
 
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated.
+					
+Input: Pre determined random seed and valid  car generation module run.
+					
+Output: Set of 0-8 wheel radiuses for a car.
+					
+How test will be performed: Car will be randomly created. All wheel radiuses will be found to be positive numbers within a certain range to be determined at a later date. Note that the output should be the same number of radiuses as there are wheels as in 1.1.
+
+\item{CM-1.3\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated.
+					
+Input: Pre determined random seed and valid  car generation module run.
+					
+Output: Set of eight vector magnitudes for a car.
+					
+How test will be performed: Car will be randomly created. All vector magnitudes will be found to be positive numbers within a certain range to be determined at a later date.
+
+\item{CM-1.4\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated
+					
+Input: Pre determined random seed and valid car generation module run.
+					
+Output: Set of eight vector angles for a car.
+					
+How test will be performed: Car will be randomly created. All vector angles will be found to be positive values within a certain range (within 2*pi)
+
+\item{CM-1.5\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated
+					
+Input: Pre determined random seed and faulty car generation module run for wheel number.
+					
+Output: Error message displayed
+					
+How test will be performed:  Car will be randomly created. Error message should occur if test successful.
+
+\item{CM-1.6\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated
+					
+Input: Pre determined random seed and faulty car generation module run for wheel radiuses.
+					
+Output: Error message displayed
+					
+How test will be performed: Car will be randomly created. Error message should occur if test successful.
+
+\item{CM-1.7\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated
+					
+Input: Pre determined random seed and faulty car generation module run for vector angles.
+					
+Output: Error message displayed
+					
+How test will be performed: Car will be randomly created. Error message should occur if test successful.
+
+\item{CM-1.8\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: No car generated
+					
+Input: Pre determined random seed and faulty car generation module run for vector magnitudes.
+					
+Output: Error message displayed
+					
+How test will be performed: Car will be randomly created. Error message should occur if test successful.
+					
+\item{CM-2\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: Car generated with values created as in CM-1.
+					
+Input: Command to create car chromosome.
+					
+Output: Text file containing all car values in format for car chromosome.
+					
+How test will be performed:  Given car will be run through chromosome script. Output text file will be manually examined by testing team to determine validity. Chromesome will be successfully created if resulting text file contains the five corresponding arrays for a car and a mass value.
 \end{enumerate}
 
 \subsubsection{Graphics}
