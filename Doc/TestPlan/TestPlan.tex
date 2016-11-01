@@ -135,29 +135,155 @@ See Gantt Chart at the following url ...
 
 \begin{enumerate}
 
-\item{test-id1\\}
+%1.0 = Mutations
+\item{GA-1.1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Structural, Dynamic, Automated
 					
-Initial State: 
+Initial State: Cars with a known standardized chromosome. 
 					
-Input: 
+Input: The chromosome of the cars with a mutation rate of 0\%.
 					
-Output: 
+Output: The original chromosome of the car.
 					
-How test will be performed: 
+How test will be performed: Automated testing with QUnit will be used in order to create cars with a standardized known chromosome. The unit test will send the car model through the GA module's mutate function, passing a mutation rate of 0\%, and it will assert that the chromosome going into the module is the same chromosome coming out of the module. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
 					
-\item{test-id2\\}
+\item{GA-1.2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Structural, Dynamic, Automated
 					
-Initial State: 
+Initial State: Cars with a known standardized chromosome. 
 					
-Input: 
+Input: The chromosome of the cars with a mutation rate of 100\%.
 					
-Output: 
+Output: A chromosome that is completely modified.
 					
-How test will be performed: 
+How test will be performed: Automated testing with QUnit will be used in order to create cars with a standardized known chromosome. The unit test will send the car model through the GA module's mutate function, passing a mutation rate of 100\%, and it will assert that every element in the output chromosome is different than the output from the input chromosome. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+\item{GA-1.3\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: Cars with a known standardized chromosome. 
+					
+Input: The chromosome of the cars with a mutation rate of -1\%.
+					
+Output: The module should produce an error.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create cars with a standardized known chromosome. The unit test will send the car model through the GA module's mutate function, passing a mutation rate of -1\%, and it will assert that an error is produced. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+%Crossover
+\item{GA-2.1\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top 3 cars should be used.
+					
+Output: An array of cars with the first three cars of the input array as the first 3 elements, and the length of the array is the same as the input array.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's crossover function, passing a parameter of 3, and it will assert that the length of the array is the same as the input array and the first 3 cars of the output array is the same as the first 3 cars of the output array. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+\item{GA-2.2\\}
+
+Type: Structural, Dynamic, Manual
+					
+Initial State: An array of 3 cars with known chromosomes is created.
+					
+Input: An array of 3 cars with known chromosomes, and an integer parameter that specifies that the top 2 cars should be used.
+					
+Output: An array of cars with the first two cars of the input array, and a third car that is a derivative of the first two cars.
+					
+How test will be performed: This test will be manually tested by running a test driver that calls the crossover function. The output will be sent to a text file, where a tester will manually confirm that the chromosomes of the third car are indeed swapped. The tester will also verify that the output array has 3 elements. This test will be repeated a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+\item{GA-2.3\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top 1 cars should be used.
+					
+Output: An error.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's crossover function, passing a parameter of 1, and it will assert that an error is produced. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+\item{GA-2.4\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that 0 cars should be used.
+					
+Output: An error.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's crossover function, passing a parameter of 0, and it will assert that an error is produced. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+\item{GA-2.5\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that -1 cars should be used.
+					
+Output: An error.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's crossover function, passing a parameter of -1, and it will assert that an error is produced. This test will be repeated  a predetermined number of times in order to increase the confidence in the correctness of the module.
+
+%Selection
+\item{GA-3.1\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top 3 cars should be selected.
+					
+Output: An array of 3 cars with the highest fitness functions.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's selection function, passing a parameter of 3. The unit test will also search for the top three cars using an external search module. The unit test will car the two values and assert that they are the same.
+
+
+\item{GA-3.2\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length \textit{n}, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top  \textit{n}+1 cars should be selected.
+					
+Output: An error.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's selection function, passing a parameter of \textit{n}+1. The unit test will assert that an error is thrown.
+
+
+\item{GA-3.3\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length \textit{n}, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top  0 cars should be selected.
+					
+Output: An error
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's selection function, passing a parameter of 0. The unit test will assert that an error is thrown.
+
+
+\item{GA-3.4\\}
+
+Type: Structural, Dynamic, Automated
+					
+Initial State: An array of cars with known length \textit{n}, and known chromosomes is created.
+					
+Input: An array of cars with length known chromosomes, and an integer that specifies that the top  -1 cars should be selected.
+					
+Output: An array of 3 cars with the highest fitness functions.
+					
+How test will be performed: Automated testing with QUnit will be used in order to create an array of cars with a standardized known chromosome. The unit test will send the cars array through the GA module's selection function, passing a parameter of -1. The unit test will assert that an error is thrown.
 
 \end{enumerate}
 
@@ -633,39 +759,55 @@ Note that many of the given survey questions may not pertain to a particular tes
 
 -Unfavorable
 
-3. How would you rate the "usability" of this program? (i.e. Were the various functions obvious at first sight, did the program give the feedback you neeeded, was it a hassle to install/access online)\\
+3. How would you rate the "usability" of this program? (i.e. Were the various functions obvious at first sight, did the program give the feedback you neeeded, was it a hassle to install/access online)
 - Favorable
 
 - No opinion
 
 -Unfavorable
 
-4. How would you rate the "speed" of the program? (i.e Did you have to wait while the program loaded or performed functions, did the program run smoothly throughout, did you experiance choppyness)\\
+4. How would you rate the "speed" of the program? (i.e Did you have to wait while the program loaded or performed functions, did the program run smoothly throughout, did you experiance choppyness)
+
 - Favorable
+
 - No opinion
+
 -Unfavorable
 
-5. How would you rate the "accuracy" of the program? (i.e Did you feel the program displayed a valid interpretation of genetic algorithms based on your understanding of them, was the program mathematically sound from what you could see)\\
+5. How would you rate the "accuracy" of the program? (i.e Did you feel the program displayed a valid interpretation of genetic algorithms based on your understanding of them, was the program mathematically sound from what you could see)
+
 - Favorable
+
 - No opinion
+
 -Unfavorable
 
-6. How would you rate your overall user experiance with the Genetic Cars application?\\
+6. How would you rate your overall user experiance with the Genetic Cars application?
+
 - Favorable
+
 - No opinion
+
 -Unfavorable
 
-7. Did you find your experiance with the Genetic Cars application educational? (i.e. do you feel you undersant more about genetic algorithms as a result?)\\
+7. Did you find your experiance with the Genetic Cars application educational? (i.e. do you feel you undersant more about genetic algorithms as a result?)
+
 -Yes
+
 -Maybe
+
 -No
 
-8. Would you recommend the Genetic Cars application to a friend or relative?\\
+8. Would you recommend the Genetic Cars application to a friend or relative?
+
 -Yes
+
 -Maybe
+
 -No
 
-9. Are there any suggestion or recomendations you would like to make towards the Grate development team to help us improve the application?\\
+9. Are there any suggestion or recomendations you would like to make towards the Grate development team to help us improve the application?
+
 (USER INPUT)
 
 \end{document}
