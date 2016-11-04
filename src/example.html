@@ -1,14 +1,30 @@
+<!DOCTYPE html>
 <html>
-   <head>
-      <title>Box2dWeb example</title>
-   </head>
-   <body onload="init();">
-      <canvas id="canvas" width="800" height="400"></canvas>
-   </body>
-   <script type="text/javascript" src="box2d.js"></script>
-   <script type="text/javascript"></script>
-   <script src="graphs.js"></script>
- </body>
+  <head>
+
+    <style>
+      #mainbox {
+        width: 800px;
+        height: 400px;
+        border: 1px solid white;
+      }
+    </style>
+    <script type="text/javascript">
+ </script>
+  </head>
+  <body>
+    <canvas id="mainbox" width="800" height="400"></canvas>
+    
+    <div id="minimapholder">
+      <!--<img src="reddot.png" id="minimapmarker" />-->
+      <div id="minimapfog"></div>
+      <canvas id="minimap" width="800" height="200"></canvas>
+      <div id="minimapcamera"></div>
+    </div>
+    <script src="seedrandom.js"></script>
+    <script src="box2d.js"></script>
+    <script src="graphs.js"></script>
 
 
+  </body>
 </html>
