@@ -1,88 +1,143 @@
 var world;
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var box2dfps = 60;
+var zoom = 70;
+
+var cw_floorTiles = new Array();
 
 function init() {
-    var b2Vec2 = Box2D.Common.Math.b2Vec2
-       , b2BodyDef = Box2D.Dynamics.b2BodyDef
-       , b2Body = Box2D.Dynamics.b2Body
-       , b2FixtureDef = Box2D.Dynamics.b2FixtureDef
-       , b2Fixture = Box2D.Dynamics.b2Fixture
-       , b2World = Box2D.Dynamics.b2World
-       , b2MassData = Box2D.Collision.Shapes.b2MassData
-       , b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape
-       , b2CircleShape = Box2D.Collision.Shapes.b2CircleShape
-       , b2DebugDraw = Box2D.Dynamics.b2DebugDraw
-    ;
+  world = new b2World(9.8, true);
+  connectRoad(200);
+  runningInterval = setInterval(simulationStep, Math.round(1000/60));
+  drawInterval = setInterval(drawScreen, Math.round(1000/60));
+}
 
-    world = new b2World(
-          new b2Vec2(0, 9.8)    //gravity
-       , true                 //allow sleep
-    );
+function simulationStep() {
+  world.Step(1/box2dfps, 20, 20);
+}
 
-    var fixDef = new b2FixtureDef;
-    fixDef.density = 1.0;
-    fixDef.friction = 0.1;
-    fixDef.restitution = 0.2;
+function drawScreen() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.save();
+  ctx.scale(zoom, -zoom);
+  cw_drawFloor();
+  ctx.restore();
+}
 
-    var bodyDef = new b2BodyDef;
+function createRoad(position, angle, groundPieceWidth, groundPieceHeight){
+  /*fixDef = new b2FixtureDef;
+  fixDef.shape = new b2PolygonShape;
+  fixDef.friction = 0.5;
+  fixDef.restitution = 0.2;
+  fixDef.density = 1.0;
 
-    //create ground
-    bodyDef.type = b2Body.b2_staticBody;
-    fixDef.shape = new b2PolygonShape;
-    fixDef.shape.SetAsBox(5, 0.25);
-    bodyDef.position.Set(5, 10);
-    world.CreateBody(bodyDef).CreateFixture(fixDef);
-    fixDef.shape.SetAsBox(2.5, 0.25);
-    bodyDef.position.Set(12.5, 10.5);
-    world.CreateBody(bodyDef).CreateFixture(fixDef);
-    fixDef.shape.SetAsBox(0.5, 2.5);
-    bodyDef.position.Set(15.5, 13);
-    world.CreateBody(bodyDef).CreateFixture(fixDef);
-    fixDef.shape.SetAsBox(2, 0.25);
-    bodyDef.position.Set(18, 15.5);
-    world.CreateBody(bodyDef).CreateFixture(fixDef);
-    fixDef.shape.SetAsBox(5, 0.25);
-    bodyDef.position.Set(25, 16);
-    world.CreateBody(bodyDef).CreateFixture(fixDef);
+  var coords = new Array();
+  coords.push(new b2Vec2(0,0));
+  coords.push(new b2Vec2(0,-groundPieceHeight));
+  coords.push(new b2Vec2(groundPieceWidth,-groundPieceHeight));
+  coords.push(new b2Vec2(groundPieceWidth,0));
 
+  var center = new b2Vec2(0,0);
 
+  var newCoords = rotateRoad(coords, center, angle);
+  fixDef.shape.SetAsArray(newCoords);
 
+  var bodyDef = new b2BodyDef;
+  bodyDef.position.Set(position.x,position.y);
 
+  var body = world.CreateBody(bodyDef).CreateFixture(fixDef);
 
+  return body;*/
+  body_def = new b2BodyDef();
 
+  body_def.position.Set(position.x, position.y);
+  var body = world.CreateBody(body_def);
+  fix_def = new b2FixtureDef();
+  fix_def.shape = new b2PolygonShape();
+  fix_def.friction = 0.5;
 
+  var coords = new Array();
+  coords.push(new b2Vec2(0,0));
+  coords.push(new b2Vec2(0,-groundPieceHeight));
+  coords.push(new b2Vec2(groundPieceWidth,-groundPieceHeight));
+  coords.push(new b2Vec2(groundPieceWidth,0));
 
+  var center = new b2Vec2(0,0);
 
+  var newcoords = rotateRoad(coords, center, angle);
 
-    //create some objects
-    bodyDef.type = b2Body.b2_dynamicBody;
-    for (var i = 0; i < 10; ++i) {
-        fixDef.shape = new b2CircleShape(
-         Math.random() + 0.1 //radius
-      );
+  fix_def.shape.SetAsArray(newcoords);
 
-        bodyDef.position.x = Math.random() * 10;
-        bodyDef.position.y = Math.random() * 10;
-        world.CreateBody(bodyDef).CreateFixture(fixDef);
-    }
-
-    //setup debug draw
-    var debugDraw = new b2DebugDraw();
-    debugDraw.SetSprite(document.getElementById("canvas").getContext("2d"));
-    debugDraw.SetDrawScale(40.0);
-    debugDraw.SetFillAlpha(0.3);
-    debugDraw.SetLineThickness(1.0);
-    debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-    world.SetDebugDraw(debugDraw);
-
-    window.setInterval(update, 1000 / 60);
+  body.CreateFixture(fix_def);
+  return body;
 };
 
-function update() {
-    world.Step(
-          1 / 60   //frame-rate
-       , 10       //velocity iterations
-       , 10       //position iterations
-    );
-    world.DrawDebugData();
-    world.ClearForces();
-};// JavaScript source code
+function connectRoad(maxFloorTiles){
+/*
+  var lastTile = null;
+  var tilePosition = new b2Vec2(-5, 0);
+
+  floorTiles = new Array();
+
+  for(var i = 0; i < maxFloorTiles; i++){
+    lastTile = createRoad(tilePosition, (Math.random()*3 - 1.5) * 1.2*i/maxFloorTiles, 5, 5);
+
+    floorTiles.push(lastTile);
+
+    sideList = lastTile.GetFixtureList();
+    upperRightSideCoord = lastTile.GetWorldPoint(sideList.GetShape().m_vertices[3]);
+    tilePosition = upperRightSideCoord;
+  }
+
+  world.finishLine = tilePosition.x;
+  */
+
+  var last_tile = null;
+  var tile_position = new b2Vec2(-5,0);
+  cw_floorTiles = new Array();
+  for(var k = 0; k < maxFloorTiles; k++) {
+    last_tile = createRoad(tile_position, (Math.random()*3 - 1.5) * 1.2*k/maxFloorTiles, 5, 5);
+    cw_floorTiles.push(last_tile);
+    last_fixture = last_tile.GetFixtureList();
+    last_world_coords = last_tile.GetWorldPoint(last_fixture.GetShape().m_vertices[3]);
+    tile_position = last_world_coords;
+  }
+  world.finishLine = tile_position.x;
+
+
+};
+
+function rotateRoad(coordinate, center, angle){
+  var arrayOfCoords = new Array();
+
+  for(var i = 0; i < coordinate.length; i++){
+    var newCoords = new Object();
+    newCoords.x = Math.cos(angle)*(coordinate[i].x - center.x) - Math.sin(angle)*(coordinate[i].y - center.y) + center.x;
+    newCoords.y = Math.sin(angle)*(coordinate[i].x - center.x) + Math.cos(angle)*(coordinate[i].y - center.y) + center.y;
+    arrayOfCoords.push(newCoords);
+  }
+
+  return arrayOfCoords;
+};
+
+
+function cw_drawFloor() {
+  ctx.strokeStyle = "#000";
+  ctx.fillStyle = "#666";
+  ctx.lineWidth = 1/zoom;
+  ctx.beginPath();
+
+  outer_loop:
+  for(var k = Math.max(0,-20); k < cw_floorTiles.length; k++) {
+    var b = cw_floorTiles[k];
+    for (f = b.GetFixtureList(); f; f = f.m_next) {
+      var s = f.GetShape();
+      var shapePosition = b.GetWorldPoint(s.m_vertices[0]).x;
+    }
+  }
+  ctx.fill();
+  ctx.stroke();
+}
+
+init();
