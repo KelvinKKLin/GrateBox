@@ -1,22 +1,18 @@
 
 var timeStep = 1.0 / 60.0;
 var doDraw = true;
-var cw_paused = false;
 var box2dfps = 60;
 var screenfps = 60;
-var debugbox = document.getElementById("debug");
 var canvas = document.getElementById("mainbox");
 var ctx = canvas.getContext("2d");
 var cameraspeed = 0.05;
 var camera_y = 0;
 var camera_x = 0;
-var camera_target = -1; 
+var camera_target = -1;
 var minimapcamera = document.getElementById("minimapcamera").style;
 var minimapcanvas = document.getElementById("minimap");
 var minimapctx = minimapcanvas.getContext("2d");
 var minimapscale = 3;
-var minimapfogdistance = 0;
-var fogdistance = document.getElementById("minimapfog").style;
 var gravity = new b2Vec2(0.0, -9.81);
 var doSleep = true;
 var world;
@@ -42,8 +38,7 @@ function cw_drawScreen() {
     cw_setCameraPosition();
     ctx.translate(200 - (camera_x * zoom), 200 + (camera_y * zoom));
     ctx.scale(zoom, -zoom);
-    drawFloor()
-    ghost_draw_frame(ctx, ghost);
+    drawFloor();
     cw_drawCars();
     ctx.restore();
 }
@@ -99,11 +94,6 @@ function cw_init() {
   cw_drawInterval    = setInterval(cw_drawScreen,  Math.round(1000/screenfps));
 }
 
-
-cw_init();
-
-
-
 function ConnectPath() {
     var last_tile = null;
     var tile_position = new b2Vec2(-5, 0);
@@ -149,15 +139,30 @@ function CreatePath(position, angle) {
     return body;
 }
 
-function RotatePath(coords, center, angle) {
+function RotatePath(coordinate, center, angle) {
     var newcoords = new Array();
     for (var k = 0; k < coords.length; k++) {
         nc = new Object();
         nc.x = Math.cos(angle) * (coords[k].x - center.x) - Math.sin(angle) * (coords[k].y - center.y) + center.x;
         nc.y = Math.sin(angle) * (coords[k].x - center.x) + Math.cos(angle) * (coords[k].y - center.y) + center.y;
-        newcoords.push(nc);
+        newcoords.push(nc2);
     }
     return newcoords;
+
+
+
+    /*var arrayOfCoords = new Array();
+
+    for(var i = 0; i < coordinate.length; i++){
+     newCoords = new Object();
+     newCoords.x = Math.cos(angle)*(coordinate[i].x - center.x) - Math.sin(angle)*(coordinate[i].y - center.y) + center.x;
+     newCoords.y = Math.sin(angle)*(coordinate[i].x - center.x) + Math.cos(angle)*(coordinate[i].y - center.y) + center.y;
+     arrayOfCoords.push(newCoords);
+    }
+
+    return arrayOfCoords;*/
+
+
 }
 
 
@@ -167,22 +172,22 @@ function drawFloor() {
     ctx.fillStyle = "#555";
     ctx.lineWidth = 1 / zoom;
     ctx.beginPath();
-
-    outer_loop:
-        for (var k = Math.max(0, last_drawn_tile - 20) ; k < cw_floorTiles.length; k++) {
-            var b = cw_floorTiles[k];
-            for (f = b.GetFixtureList() ; f; f = f.m_next) {
-                var s = f.GetShape();
-                var shapePosition = b.GetWorldPoint(s.m_vertices[0]).x;
-                if ((shapePosition > (camera_x - 5)) && (shapePosition < (camera_x + 10))) {
-                    cw_drawVirtualPoly(b, s.m_vertices, s.m_vertexCount);
-                }
-                if (shapePosition > camera_x + 10) {
-                    last_drawn_tile = k;
-                    break outer_loop;
-                }
+    for (var k = Math.max(0, last_drawn_tile - 20) ; k < cw_floorTiles.length; k++) {
+        var b = cw_floorTiles[k];
+        for (f = b.GetFixtureList() ; f; f = f.m_next) {
+            var s = f.GetShape();
+            var shapePosition = b.GetWorldPoint(s.m_vertices[0]).x;
+            if ((shapePosition > (camera_x - 5)) && (shapePosition < (camera_x + 10))) {
+                cw_drawVirtualPoly(b, s.m_vertices, s.m_vertexCount);
+            }
+            if (shapePosition > camera_x + 10) {
+                last_drawn_tile = k;
+                break outer_loop;
             }
         }
+    }
     ctx.fill();
     ctx.stroke();
 }
+
+cw_init();
