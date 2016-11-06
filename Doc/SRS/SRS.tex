@@ -289,7 +289,7 @@ offspring.}
 		Requirement \#: 1 & Requirement Type: Functional \\
 	\end{tabular} \\
 	%
-	\textbf{Description:} Each car must be composed of at least \textit{v} vectors. 
+	\textbf{Description:} Each car must be composed of a car body with \textit{v} vertices and sides. 
 	\\
 	\textbf{Rationale:}  This requirement manages the complexity of the car model, 
 	allowing for realistic distribution of traits among members of a population. 
@@ -297,7 +297,7 @@ offspring.}
 	amount of memory. \\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
-	composed of more than \textit{v} vectors.\\
+	composed of more than \textit{v} vertices and sides.\\
 	%  
 	\textbf{Supporting Materials:} JavaScript \\
 	\textbf{History:} Created October 7\textsuperscript{th}, 2016
@@ -317,7 +317,7 @@ offspring.}
 	\textit{number\_of\_vertices} wheels. \\
 	\textbf{Rationale:}  The wheels must be attached to the car via a vertex 
 between 
-	two connecting vectors. This requirement ensures that no redundant or unused 
+	two connecting vertices. This requirement ensures that no redundant or unused 
 	wheels will be generated.\\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} No car generated within population \textit{p} shall be 
@@ -360,7 +360,7 @@ units.
 	\end{tabular} \\
 	%
 	\textbf{Description:} The center of each wheel generated must be attached to a 
-	vertex formed by connecting vectors. \\
+	vertex formed by connecting sides of the polygon car body. \\
 	\textbf{Rationale:}  Wheels cannot be floating on or around the car. This 
 	requirement ensures visual coherency by requiring wheels to be attached to the 
 	car model. Knowing the center of the wheel will also allow the physics engine 
@@ -368,7 +368,7 @@ to
 	calculate the torque and distance that the car travelled.\\
 	\textbf{Originator:} Kelvin Lin\\
 	\textbf{Fit Criterion:} Each wheel displayed on the screen is attached to a 
-	vertex formed by connecting vectors.\\
+	vertex formed by connecting sides of the polygon car body.\\
 	%  
 	\textbf{Supporting Materials:} JavaScript \\
 	\textbf{History:} Created October 7\textsuperscript{th}, 2016
