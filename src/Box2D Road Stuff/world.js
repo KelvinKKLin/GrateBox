@@ -29,7 +29,7 @@ function createWorld(){
     world.SetDebugDraw(debugDraw);
 
     //createBox(world, 3, 4.29, 0.5, 0.1);
-    createRoad(world, 0, 4.29, 150);
+    createRoad(world, 0, 1, 150);
 
     return world;
 }
@@ -52,7 +52,8 @@ function createBox(world, x, y, width, height, angle)
 
     var body = world.CreateBody( body_def );
     var fixture = body.CreateFixture(fix_def);
-    body.SetPositionAndAngle(body.GetPosition(), 1);
+    console.log(body.GetPosition());
+    body.SetPositionAndAngle(body.GetPosition(), angle);
     return body;
 }
 
@@ -60,10 +61,11 @@ function createRoad(world, startX, startY, maxNumberOfTiles){
     var lastX = startX;
     var lastY = startY;
     var lastHeight = 0.1
+    var angle = 0.78;
     for(var i = 0; i < maxNumberOfTiles; i++){
-            lastTile = createBox(world, lastX, lastY, 1, lastHeight, 0);
+            lastTile = createBox(world, lastX, lastY, 0.78, lastHeight, angle);
+            angle = angle * -1;
             lastX = lastX + 1;
-            lastHeight = lastHeight ;
     }
 }
 
