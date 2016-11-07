@@ -201,7 +201,7 @@ function draw_world(world, context)
     //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
 
-    ctx.fillStyle = '#FFF4C9';
+    ctx.fillStyle = '#555555';
     ctx.fillRect(0,0, canvas_width, canvas_height);
 
     //convert the canvas coordinate directions to cartesian
