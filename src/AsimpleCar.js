@@ -69,7 +69,7 @@ function makeWheelShape(world, worldScale, radius){
     return wheelFixture;
 };
 
-function createCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
+function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     var joint_def = new b2RevoluteJointDef();
     joint_def.bodyA = bodyA;
     joint_def.bodyB = bodyB;
@@ -80,6 +80,13 @@ function createCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     joint_def.enableMotor = true;
     return joint_def;
 };
+
+function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
+    var wheel = world.CreateBody(wheelbodyDef);
+    wheel.CreateFixture(wheelFixture);
+    wheelbodyDef.position.Set(car.GetWorldCenter().x, car.GetWorldCenter().y);
+    return wheel;
+}
 
 function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos) {
     var polygonFix1 = makePolygon(1, vertex1X, vertex1Y, vertex2X, vertex2Y);
@@ -116,22 +123,21 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     rearwheelX = points[rearwheelPos][2].x;
     rearwheelY = points[rearwheelPos][2].y;
 
-    var wheelFixture1 = makeWheelShape(world, worldScale, 80);
-    var wheelFixture2 = makeWheelShape(world, worldScale, 50);
+    var wheelFixture1 = makeWheelShape(world, worldScale, 200);
+    var wheelFixture2 = makeWheelShape(world, worldScale, 200);
 
     var wheelbodyDef = new b2BodyDef;
     wheelbodyDef.type = b2Body.b2_dynamicBody;
     wheelbodyDef.position.Set(car.GetWorldCenter().x, car.GetWorldCenter().y);
-    var rearwheel = world.CreateBody(wheelbodyDef);
-    rearwheel.CreateFixture(wheelFixture1);
-    wheelbodyDef.position.Set(car.GetWorldCenter().x, car.GetWorldCenter().y);
-    var frontwheel = world.CreateBody(wheelbodyDef);
-    frontwheel.CreateFixture(wheelFixture2);
 
-    var joint_def_rear = createCarJoints(world, rearwheel, car, rearwheelX, rearwheelY);
+    var rearwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture1);
+    var frontwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture2);
+
+
+    var joint_def_rear = makeCarJoints(world, rearwheel, car, rearwheelX, rearwheelY);
     world.CreateJoint(joint_def_rear);
 
-    var joint_def_front = createCarJoints(world, frontwheel, car, frontwheelX, frontwheelY);
+    var joint_def_front = makeCarJoints(world, frontwheel, car, frontwheelX, frontwheelY);
     world.CreateJoint(joint_def_front);
 
     return car;
