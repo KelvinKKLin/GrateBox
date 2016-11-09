@@ -14,6 +14,7 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
     ;
 
 var points = [];
+var cameraX = 0;
 
 function init() {
     world = new b2World(
@@ -133,7 +134,6 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     var rearwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture1);
     var frontwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture2);
 
-
     var joint_def_rear = makeCarJoints(world, rearwheel, car, rearwheelX, rearwheelY);
     world.CreateJoint(joint_def_rear);
 
@@ -183,8 +183,23 @@ function update() {
        , 10       //velocity iterations
        , 10       //position iterations
     );
-    world.DrawDebugData();
+    cameraX = cameraX + 3;
+    draw_world(world, ctx);
+    //world.DrawDebugData();
     world.ClearForces();
+};
+
+function draw_world(world, context)
+{
+    //first clear the canvas
+    ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
+
+    ctx.save();
+    ctx.translate(-cameraX , canvas_height);
+    ctx.scale(1 , -1);
+    world.DrawDebugData();
+    ctx.restore();
+
 };
 
 // main entry point
