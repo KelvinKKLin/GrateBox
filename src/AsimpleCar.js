@@ -1,4 +1,8 @@
-
+/**
+ * b2Vec2
+ *
+ * This imports the Box2D Vector and any associated methods.
+ */
 var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2BodyDef = Box2D.Dynamics.b2BodyDef
        , b2Body = Box2D.Dynamics.b2Body
@@ -13,9 +17,28 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2Joint = Box2D.Dynamics.b2Joint
     ;
 
+/**
+ * points
+ *
+ * This variable keeps track of points on a car
+ */
 var points = [];
+
+/**
+ * cameraX
+ *
+ * This variable keeps track of the horizontal velocity of
+ * the camera.
+ */
 var cameraX = 0;
 
+/**
+ * init()
+ *
+ * This method initializes the Box2D environment, and any objects within the Box2D world.
+ *
+ * @return The created Box2D world
+ */
 function init() {
     world = new b2World(
           new b2Vec2(0, 9.8)    //gravity
@@ -39,6 +62,19 @@ function init() {
     return world;
 };
 
+/**
+ * makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y)
+ *
+ * This method creates a polygon for the car given 4 points on the Cartesian plane.
+ * It assumes that one of the points of the polygon will be at the origin.
+ *
+ * @param num       The index of the polygon of the car
+ * @param vertex1X  The x-coordinate of the first vertex
+ * @param vertex1Y  The y-coordinate of the first vertex
+ * @param vertex2X  The x-coordinate of the second vertex
+ * @param vertex2Y  The y-coordinate of the second vertex
+ * @return          The polygon created
+ */
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
     var polygon = new b2PolygonShape;
     var polygonFix = new b2FixtureDef;
@@ -59,6 +95,16 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
     return polygonFix;
 };
 
+/**
+ * makeWheelShape(world, worldScale, radius)
+ *
+ * This method creates the shape of a wheel for the car given its radius.
+ *
+ * @param world       The Box2D world where the wheel will be placed in
+ * @param worldScale  The scaling factor
+ * @param radius      The radius of the wheel
+ * @return            The shape of the wheel created
+ */
 function makeWheelShape(world, worldScale, radius){
     var wheelshape = new b2CircleShape(radius / worldScale);
     var wheelFixture = new b2FixtureDef;
@@ -70,6 +116,18 @@ function makeWheelShape(world, worldScale, radius){
     return wheelFixture;
 };
 
+/**
+ * makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY)
+ *
+ * This method creates joints used to connect the wheels to the car chassis.
+ *
+ * @param world      The Box2D world where the joint will be placed in
+ * @param bodyA      The first object to connect the joint to
+ * @param bodyB      The second object to connect the joint to
+ * @param wheelPosX  The x-coordinate of the wheel
+ * @param wheelPosY  The y-coordinate of the wheel
+ * @return           The joint connecting bodyA to bodyB
+ */
 function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     var joint_def = new b2RevoluteJointDef();
     joint_def.bodyA = bodyA;
@@ -82,6 +140,17 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     return joint_def;
 };
 
+/**
+ * makeWheelFixture(world, car, wheelbodyDef, wheelFixture)
+ *
+ * This method connects the wheel to the car chassis.
+ *
+ * @param world            The Box2D world where the wheel will be placed in
+ * @param car              The car to connect the wheels to
+ * @param wheelbodyDef     The body (physics) definition of the wheel
+ * @param wheelFixture     The shape definition of the wheel
+ * @return                 The wheel
+ */
 function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
     var wheel = world.CreateBody(wheelbodyDef);
     wheel.CreateFixture(wheelFixture);
@@ -89,6 +158,33 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
     return wheel;
 }
 
+/**
+ * drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos)
+ *
+ * This method creates a car to the screen.
+ *
+ * @param world             The Box2D world where the car will be placed in
+ * @param worldScale        The scaling factor for the Box2D world
+ * @param vertex1X          The x-coordinate of the first vertex
+ * @param vertex1Y          The y-coordinate of the first vertex
+ * @param vertex2X          The x-coordinate of the second vertex
+ * @param vertex2Y          The y-coordinate of the second vertex
+ * @param vertex3X          The x-coordinate of the third vertex
+ * @param vertex3Y          The y-coordinate of the third vertex
+ * @param vertex4X          The x-coordinate of the fourth vertex
+ * @param vertex4Y          The y-coordinate of the fourth vertex
+ * @param vertex5X          The x-coordinate of the fifth vertex
+ * @param vertex5Y          The y-coordinate of the fifth vertex
+ * @param vertex6X          The x-coordinate of the sixth vertex
+ * @param vertex6Y          The y-coordinate of the sixth vertex
+ * @param vertex7X          The x-coordinate of the seventh vertex
+ * @param vertex7Y          The y-coordinate of the seventh vertex
+ * @param vertex8X          The x-coordinate of the eighth vertex
+ * @param vertex8Y          The y-coordinate of the eighth vertex
+ * @param frontwheelPos     The vertex that the front wheel is attached to
+ * @param rearWheelPos      The vertex that the back wheel is attached to
+ * @return                  The completed car
+ */
 function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos) {
     var polygonFix1 = makePolygon(1, vertex1X, vertex1Y, vertex2X, vertex2Y);
     var polygonFix2 = makePolygon(2, vertex2X, vertex2Y, vertex3X, vertex3Y);
@@ -143,6 +239,19 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     return car;
 };
 
+/**
+ * createBox(world, x, y, width, height, angle)
+ *
+ * This method creates a box with a specified width and height rotated at a specified angle on the screen.
+ *
+ * @param world    The Box2D world that the box is created in
+ * @param x        The x-coordinate of the upper left corner
+ * @param y        The y-coordinate of the upper left corner
+ * @param width    The width of the box
+ * @param height   The height of the box
+ * @param angle    The rotation of the box, counterclockwise from the horizontal, in radians
+ * @return         The box
+ */
 function createBox(world, x, y, width, height, angle) {
     var body_def = new b2BodyDef();
     var fix_def = new b2FixtureDef();
@@ -159,11 +268,20 @@ function createBox(world, x, y, width, height, angle) {
 
     var body = world.CreateBody(body_def);
     var fixture = body.CreateFixture(fix_def);
-    //console.log(body.GetPosition());
     body.SetPositionAndAngle(body.GetPosition(), angle);
     return body;
 };
 
+/**
+ * createRoad(world, startX, startY, maxNumberOfTiles)
+ *
+ * This method creates a road on the screen
+ *
+ * @param world             The Box2D world that the box is created in
+ * @param startX            The x-coordinate of the upper left corner of the first tile
+ * @param startY            The y-coordinate of the upper left corner of the first tile
+ * @param maxNumberOfTiles  The number of tiles the road is made out of
+ */
 function createRoad(world, startX, startY, maxNumberOfTiles) {
     var lastX = startX;
     var lastY = startY;
@@ -176,7 +294,11 @@ function createRoad(world, startX, startY, maxNumberOfTiles) {
     }
 };
 
-
+/**
+ * update()
+ *
+ * This method updates the screen.
+ */
 function update() {
     world.Step(
           1 / 60   //frame-rate
@@ -189,6 +311,14 @@ function update() {
     world.ClearForces();
 };
 
+/**
+ * draw_world(world, context)
+ *
+ * This method draws the world on the screen, before it is updated.
+ *
+ * @param world    The world to draw on
+ * @param context  The canvas to draw the world on
+ */
 function draw_world(world, context)
 {
     //first clear the canvas
@@ -202,7 +332,11 @@ function draw_world(world, context)
 
 };
 
-// main entry point
+/**
+ * function()
+ *
+ * This method is the entry point to the program.
+ */
 $(function()
 {
     var canvas = $('#canvas');
