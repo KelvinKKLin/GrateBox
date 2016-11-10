@@ -68,12 +68,12 @@ function init() {
  * This method creates a polygon for the car given 4 points on the Cartesian plane.
  * It assumes that one of the points of the polygon will be at the origin.
  *
- * @param num       The index of the polygon of the car
- * @param vertex1X  The x-coordinate of the first vertex
- * @param vertex1Y  The y-coordinate of the first vertex
- * @param vertex2X  The x-coordinate of the second vertex
- * @param vertex2Y  The y-coordinate of the second vertex
- * @return          The polygon created
+ * @param num       {Integer}      The index of the polygon of the car
+ * @param vertex1X  {Integer}      The x-coordinate of the first vertex
+ * @param vertex1Y  {Integer}      The y-coordinate of the first vertex
+ * @param vertex2X  {Integer}      The x-coordinate of the second vertex
+ * @param vertex2Y  {Integer}      The y-coordinate of the second vertex
+ * @return          {b2FixtureDef} The polygon created
  */
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
     var polygon = new b2PolygonShape;
@@ -100,10 +100,10 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
  *
  * This method creates the shape of a wheel for the car given its radius.
  *
- * @param world       The Box2D world where the wheel will be placed in
- * @param worldScale  The scaling factor
- * @param radius      The radius of the wheel
- * @return            The shape of the wheel created
+ * @param world       {b2World}      The Box2D world where the wheel will be placed in
+ * @param worldScale  {Integer}      The scaling factor
+ * @param radius      {Float}        The radius of the wheel
+ * @return            {b2FixtureDef} The shape of the wheel created
  */
 function makeWheelShape(world, worldScale, radius){
     var wheelshape = new b2CircleShape(radius / worldScale);
@@ -121,12 +121,12 @@ function makeWheelShape(world, worldScale, radius){
  *
  * This method creates joints used to connect the wheels to the car chassis.
  *
- * @param world      The Box2D world where the joint will be placed in
- * @param bodyA      The first object to connect the joint to
- * @param bodyB      The second object to connect the joint to
- * @param wheelPosX  The x-coordinate of the wheel
- * @param wheelPosY  The y-coordinate of the wheel
- * @return           The joint connecting bodyA to bodyB
+ * @param world      {b2World}            The Box2D world where the joint will be placed in
+ * @param bodyA      {b2BodyDef}          The first object to connect the joint to
+ * @param bodyB      {b2BodyDef}          The second object to connect the joint to
+ * @param wheelPosX  {Integer}            The x-coordinate of the wheel
+ * @param wheelPosY  {Integer}            The y-coordinate of the wheel
+ * @return           {b2RevoluteJointDef} The joint connecting bodyA to bodyB
  */
 function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     var joint_def = new b2RevoluteJointDef();
@@ -145,11 +145,11 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
  *
  * This method connects the wheel to the car chassis.
  *
- * @param world            The Box2D world where the wheel will be placed in
- * @param car              The car to connect the wheels to
- * @param wheelbodyDef     The body (physics) definition of the wheel
- * @param wheelFixture     The shape definition of the wheel
- * @return                 The wheel
+ * @param world            {b2World}      The Box2D world where the wheel will be placed in
+ * @param car              {b2BodyDef}    The car to connect the wheels to
+ * @param wheelbodyDef     {b2BodyDef}    The body (physics) definition of the wheel
+ * @param wheelFixture     {b2FixtureDef} The shape definition of the wheel
+ * @return                 {Body}         The wheel
  */
 function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
     var wheel = world.CreateBody(wheelbodyDef);
@@ -163,27 +163,27 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
  *
  * This method creates a car to the screen.
  *
- * @param world             The Box2D world where the car will be placed in
- * @param worldScale        The scaling factor for the Box2D world
- * @param vertex1X          The x-coordinate of the first vertex
- * @param vertex1Y          The y-coordinate of the first vertex
- * @param vertex2X          The x-coordinate of the second vertex
- * @param vertex2Y          The y-coordinate of the second vertex
- * @param vertex3X          The x-coordinate of the third vertex
- * @param vertex3Y          The y-coordinate of the third vertex
- * @param vertex4X          The x-coordinate of the fourth vertex
- * @param vertex4Y          The y-coordinate of the fourth vertex
- * @param vertex5X          The x-coordinate of the fifth vertex
- * @param vertex5Y          The y-coordinate of the fifth vertex
- * @param vertex6X          The x-coordinate of the sixth vertex
- * @param vertex6Y          The y-coordinate of the sixth vertex
- * @param vertex7X          The x-coordinate of the seventh vertex
- * @param vertex7Y          The y-coordinate of the seventh vertex
- * @param vertex8X          The x-coordinate of the eighth vertex
- * @param vertex8Y          The y-coordinate of the eighth vertex
- * @param frontwheelPos     The vertex that the front wheel is attached to
- * @param rearWheelPos      The vertex that the back wheel is attached to
- * @return                  The completed car
+ * @param world             {b2World}   The Box2D world where the car will be placed in
+ * @param worldScale        {Integer}   The scaling factor for the Box2D world
+ * @param vertex1X          {Integer}   The x-coordinate of the first vertex
+ * @param vertex1Y          {Integer}   The y-coordinate of the first vertex
+ * @param vertex2X          {Integer}   The x-coordinate of the second vertex
+ * @param vertex2Y          {Integer}   The y-coordinate of the second vertex
+ * @param vertex3X          {Integer}   The x-coordinate of the third vertex
+ * @param vertex3Y          {Integer}   The y-coordinate of the third vertex
+ * @param vertex4X          {Integer}   The x-coordinate of the fourth vertex
+ * @param vertex4Y          {Integer}   The y-coordinate of the fourth vertex
+ * @param vertex5X          {Integer}   The x-coordinate of the fifth vertex
+ * @param vertex5Y          {Integer}   The y-coordinate of the fifth vertex
+ * @param vertex6X          {Integer}   The x-coordinate of the sixth vertex
+ * @param vertex6Y          {Integer}   The y-coordinate of the sixth vertex
+ * @param vertex7X          {Integer}   The x-coordinate of the seventh vertex
+ * @param vertex7Y          {Integer}   The y-coordinate of the seventh vertex
+ * @param vertex8X          {Integer}   The x-coordinate of the eighth vertex
+ * @param vertex8Y          {Integer}   The y-coordinate of the eighth vertex
+ * @param frontwheelPos     {Integer}   The vertex that the front wheel is attached to
+ * @param rearWheelPos      {Integer}   The vertex that the back wheel is attached to
+ * @return                  {b2BodyDef} The completed car
  */
 function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos) {
     var polygonFix1 = makePolygon(1, vertex1X, vertex1Y, vertex2X, vertex2Y);
@@ -244,13 +244,13 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
  *
  * This method creates a box with a specified width and height rotated at a specified angle on the screen.
  *
- * @param world    The Box2D world that the box is created in
- * @param x        The x-coordinate of the upper left corner
- * @param y        The y-coordinate of the upper left corner
- * @param width    The width of the box
- * @param height   The height of the box
- * @param angle    The rotation of the box, counterclockwise from the horizontal, in radians
- * @return         The box
+ * @param world    {b2World} The Box2D world that the box is created in
+ * @param x        {Integer} The x-coordinate of the upper left corner
+ * @param y        {Integer} The y-coordinate of the upper left corner
+ * @param width    {Integer} The width of the box
+ * @param height   {Integer} The height of the box
+ * @param angle    {Float}   The rotation of the box, counterclockwise from the horizontal, in radians
+ * @return         {Body}    The box
  */
 function createBox(world, x, y, width, height, angle) {
     var body_def = new b2BodyDef();
@@ -277,10 +277,10 @@ function createBox(world, x, y, width, height, angle) {
  *
  * This method creates a road on the screen
  *
- * @param world             The Box2D world that the box is created in
- * @param startX            The x-coordinate of the upper left corner of the first tile
- * @param startY            The y-coordinate of the upper left corner of the first tile
- * @param maxNumberOfTiles  The number of tiles the road is made out of
+ * @param world             {b2World} The Box2D world that the box is created in
+ * @param startX            {Integer} The x-coordinate of the upper left corner of the first tile
+ * @param startY            {Integer} The y-coordinate of the upper left corner of the first tile
+ * @param maxNumberOfTiles  {Integer} The number of tiles the road is made out of
  */
 function createRoad(world, startX, startY, maxNumberOfTiles) {
     var lastX = startX;
@@ -316,8 +316,8 @@ function update() {
  *
  * This method draws the world on the screen, before it is updated.
  *
- * @param world    The world to draw on
- * @param context  The canvas to draw the world on
+ * @param world    {b2World} The world to draw on
+ * @param context  {Canvas}  The canvas to draw the world on
  */
 function draw_world(world, context)
 {
@@ -329,6 +329,84 @@ function draw_world(world, context)
     ctx.scale(1 , -1);
     world.DrawDebugData();
     ctx.restore();
+
+};
+
+/**
+* This method creates a new generation of cars.
+* @param {Integer} The number of cars in the generation
+* @return {Car[]} An array of cars, denoting the new generation.
+*/
+function createGeneration(n){
+
+}
+
+/**
+* This method selects for the next generation of cars.
+* @param {Cars[]} cars The array of cars to choose from.
+* @param {Integer} n The number of cars to select for.
+* @return {Cars[]} An array of the top n cars.
+*/
+function selectNextGeneration(cars, n){
+
+};
+
+/**
+* This method crosses over the chromosomes of the offspring
+* cars.
+* @param {Cars[]} cars The array of cars to crossover
+* @param {Integer} topCars The number of cars in the surviving parent generation
+* @return {Cars[]} An array of the crossed-over cars
+*/
+function crossOverOffsprings(cars, topCars){
+
+};
+
+/**
+* This method mutates the genes in the offspring's chromosomes.
+* @param {Cars[]} cars The array of cars to crossover
+* @param {Integer} numberOfParents The number of parents in the cars array
+* @param {Float} mutationFactor The likelihood of mutation
+* @return {Cars[]} An array of the mutated cars
+*/
+function mutateOffsprings(cars, numberOfParents, mutationFactor){
+
+};
+
+/*!
+Car Model
+*/
+
+/**
+* This method returns the chromosome of the car.
+* @return {Object[]} A multi-typed array representing the chromosome of the car.
+*/
+function getChromosome(){
+
+}
+
+/*!
+Misc
+*/
+
+/**
+* This method generates a random integer between min and max, exclusive.
+* @param {Integer} min The lower bound
+* @param {Integer} max The upper bound
+* @return {Integer} A random number between min and max
+*/
+function getRandomArbitraryInteger(min, max){
+
+};
+
+/**
+* This method generates a random floating point number between min and
+* max, exclusive.
+* @param {Integer} min The lower bound
+* @param {Integer} max The upper bound
+* @param {Float} A floating point number between min and max.
+*/
+function getRandomArbitrary(min, max){
 
 };
 

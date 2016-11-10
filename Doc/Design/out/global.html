@@ -291,7 +291,7 @@
 
     
 
-    <h4 class="name" id="createBox"><span class="type-signature"></span>createBox<span class="signature">(world, x, y, width, height, angle)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="createBox"><span class="type-signature"></span>createBox<span class="signature">(world, x, y, width, height, angle)</span><span class="type-signature"> &rarr; {Body}</span></h4>
 
     
 
@@ -339,6 +339,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -356,6 +361,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -375,6 +385,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -392,6 +407,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -411,6 +431,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -428,6 +453,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
             
             </td>
 
@@ -508,6 +538,171 @@
 
 
 
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Body</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="createGeneration"><span class="type-signature"></span>createGeneration<span class="signature">(The)</span><span class="type-signature"> &rarr; {Array.&lt;Car>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method creates a new generation of cars.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>The</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">number of cars in the generation</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line340">line 340</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of cars, denoting the new generation.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Car></span>
+
+
+    </dd>
+</dl>
+
     
 
 
@@ -565,6 +760,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -582,6 +782,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -601,6 +806,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -618,6 +828,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -697,6 +912,182 @@
 
     
 
+    <h4 class="name" id="crossOverOffsprings"><span class="type-signature"></span>crossOverOffsprings<span class="signature">(cars, topCars)</span><span class="type-signature"> &rarr; {Array.&lt;Cars>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method crosses over the chromosomes of the offspringcars.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Cars></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of cars to crossover</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>topCars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of cars in the surviving parent generation</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line361">line 361</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of the crossed-over cars
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Cars></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id="draw_world"><span class="type-signature"></span>draw_world<span class="signature">(world, context)</span><span class="type-signature"></span></h4>
 
     
@@ -745,6 +1136,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -762,6 +1158,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Canvas</span>
+
+
             
             </td>
 
@@ -841,7 +1242,7 @@
 
     
 
-    <h4 class="name" id="drawCar"><span class="type-signature"></span>drawCar<span class="signature">(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y, frontwheelPos, rearWheelPos)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="drawCar"><span class="type-signature"></span>drawCar<span class="signature">(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y, frontwheelPos, rearWheelPos)</span><span class="type-signature"> &rarr; {b2BodyDef}</span></h4>
 
     
 
@@ -889,6 +1290,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -906,6 +1312,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -925,6 +1336,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -942,6 +1358,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -961,6 +1382,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -978,6 +1404,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -997,6 +1428,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1014,6 +1450,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1033,6 +1474,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1050,6 +1496,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1069,6 +1520,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1086,6 +1542,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1105,6 +1566,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1122,6 +1588,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1141,6 +1612,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1158,6 +1634,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1177,6 +1658,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1194,6 +1680,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1213,6 +1704,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1230,6 +1726,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1309,6 +1810,475 @@
 </div>
 
 
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">b2BodyDef</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getChromosome"><span class="type-signature"></span>getChromosome<span class="signature">()</span><span class="type-signature"> &rarr; {Array.&lt;Object>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method returns the chromosome of the car.
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line384">line 384</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A multi-typed array representing the chromosome of the car.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getRandomArbitrary"><span class="type-signature"></span>getRandomArbitrary<span class="signature">(min, max, A)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    This method generates a random floating point number between min andmax, exclusive.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The lower bound</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The upper bound</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>A</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">floating point number between min and max.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line409">line 409</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getRandomArbitraryInteger"><span class="type-signature"></span>getRandomArbitraryInteger<span class="signature">(min, max)</span><span class="type-signature"> &rarr; {Integer}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method generates a random integer between min and max, exclusive.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>min</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The lower bound</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>max</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The upper bound</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line398">line 398</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    A random number between min and max
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Integer</span>
+
+
+    </dd>
+</dl>
 
     
 
@@ -1411,7 +2381,7 @@
 
     
 
-    <h4 class="name" id="makeCarJoints"><span class="type-signature"></span>makeCarJoints<span class="signature">(world, bodyA, bodyB, wheelPosX, wheelPosY)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="makeCarJoints"><span class="type-signature"></span>makeCarJoints<span class="signature">(world, bodyA, bodyB, wheelPosX, wheelPosY)</span><span class="type-signature"> &rarr; {b2RevoluteJointDef}</span></h4>
 
     
 
@@ -1459,6 +2429,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -1476,6 +2451,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">b2BodyDef</span>
+
+
             
             </td>
 
@@ -1495,6 +2475,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2BodyDef</span>
+
+
+            
             </td>
 
             
@@ -1513,6 +2498,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1530,6 +2520,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1610,6 +2605,18 @@
 
 
 
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">b2RevoluteJointDef</span>
+
+
+    </dd>
+</dl>
+
     
 
 
@@ -1619,7 +2626,7 @@
 
     
 
-    <h4 class="name" id="makePolygon"><span class="type-signature"></span>makePolygon<span class="signature">(num, vertex1X, vertex1Y, vertex2X, vertex2Y)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="makePolygon"><span class="type-signature"></span>makePolygon<span class="signature">(num, vertex1X, vertex1Y, vertex2X, vertex2Y)</span><span class="type-signature"> &rarr; {b2FixtureDef}</span></h4>
 
     
 
@@ -1667,6 +2674,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1684,6 +2696,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1703,6 +2720,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1721,6 +2743,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -1738,6 +2765,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
             
             </td>
 
@@ -1818,6 +2850,18 @@
 
 
 
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">b2FixtureDef</span>
+
+
+    </dd>
+</dl>
+
     
 
 
@@ -1827,7 +2871,7 @@
 
     
 
-    <h4 class="name" id="makeWheelFixture"><span class="type-signature"></span>makeWheelFixture<span class="signature">(world, car, wheelbodyDef, wheelFixture)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="makeWheelFixture"><span class="type-signature"></span>makeWheelFixture<span class="signature">(world, car, wheelbodyDef, wheelFixture)</span><span class="type-signature"> &rarr; {Body}</span></h4>
 
     
 
@@ -1875,6 +2919,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -1892,6 +2941,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">b2BodyDef</span>
+
+
             
             </td>
 
@@ -1911,6 +2965,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2BodyDef</span>
+
+
+            
             </td>
 
             
@@ -1928,6 +2987,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">b2FixtureDef</span>
+
+
             
             </td>
 
@@ -2008,6 +3072,18 @@
 
 
 
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Body</span>
+
+
+    </dd>
+</dl>
+
     
 
 
@@ -2017,7 +3093,7 @@
 
     
 
-    <h4 class="name" id="makeWheelShape"><span class="type-signature"></span>makeWheelShape<span class="signature">(world, worldScale, radius)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="makeWheelShape"><span class="type-signature"></span>makeWheelShape<span class="signature">(world, worldScale, radius)</span><span class="type-signature"> &rarr; {b2FixtureDef}</span></h4>
 
     
 
@@ -2065,6 +3141,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">b2World</span>
+
+
+            
             </td>
 
             
@@ -2083,6 +3164,11 @@
 
             <td class="type">
             
+                
+<span class="param-type">Integer</span>
+
+
+            
             </td>
 
             
@@ -2100,6 +3186,11 @@
             
 
             <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
             
             </td>
 
@@ -2179,6 +3270,393 @@
 </div>
 
 
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">b2FixtureDef</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="mutateOffsprings"><span class="type-signature"></span>mutateOffsprings<span class="signature">(cars, numberOfParents, mutationFactor)</span><span class="type-signature"> &rarr; {Array.&lt;Cars>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method mutates the genes in the offspring's chromosomes.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Cars></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of cars to crossover</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>numberOfParents</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of parents in the cars array</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mutationFactor</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Float</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The likelihood of mutation</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line372">line 372</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of the mutated cars
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Cars></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="selectNextGeneration"><span class="type-signature"></span>selectNextGeneration<span class="signature">(cars, n)</span><span class="type-signature"> &rarr; {Array.&lt;Cars>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    This method selects for the next generation of cars.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>cars</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Cars></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The array of cars to choose from.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Integer</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The number of cars to select for.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AsimpleCar.js.html">AsimpleCar.js</a>, <a href="AsimpleCar.js.html#line350">line 350</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    An array of the top n cars.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Cars></span>
+
+
+    </dd>
+</dl>
 
     
 
@@ -2282,13 +3760,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#b2Vec2">b2Vec2</a></li><li><a href="global.html#cameraX">cameraX</a></li><li><a href="global.html#createBox">createBox</a></li><li><a href="global.html#createRoad">createRoad</a></li><li><a href="global.html#draw_world">draw_world</a></li><li><a href="global.html#drawCar">drawCar</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#makeCarJoints">makeCarJoints</a></li><li><a href="global.html#makePolygon">makePolygon</a></li><li><a href="global.html#makeWheelFixture">makeWheelFixture</a></li><li><a href="global.html#makeWheelShape">makeWheelShape</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#update">update</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#b2Vec2">b2Vec2</a></li><li><a href="global.html#cameraX">cameraX</a></li><li><a href="global.html#createBox">createBox</a></li><li><a href="global.html#createGeneration">createGeneration</a></li><li><a href="global.html#createRoad">createRoad</a></li><li><a href="global.html#crossOverOffsprings">crossOverOffsprings</a></li><li><a href="global.html#draw_world">draw_world</a></li><li><a href="global.html#drawCar">drawCar</a></li><li><a href="global.html#getChromosome">getChromosome</a></li><li><a href="global.html#getRandomArbitrary">getRandomArbitrary</a></li><li><a href="global.html#getRandomArbitraryInteger">getRandomArbitraryInteger</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#makeCarJoints">makeCarJoints</a></li><li><a href="global.html#makePolygon">makePolygon</a></li><li><a href="global.html#makeWheelFixture">makeWheelFixture</a></li><li><a href="global.html#makeWheelShape">makeWheelShape</a></li><li><a href="global.html#mutateOffsprings">mutateOffsprings</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#selectNextGeneration">selectNextGeneration</a></li><li><a href="global.html#update">update</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Nov 09 2016 21:42:28 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Nov 09 2016 21:55:54 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
