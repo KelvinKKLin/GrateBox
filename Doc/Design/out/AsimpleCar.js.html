@@ -61,8 +61,6 @@ var points = [];
 var cameraX = 0;
 
 /**
- * init()
- *
  * This method initializes the Box2D environment, and any objects within the Box2D world.
  *
  * @return The created Box2D world
@@ -91,8 +89,6 @@ function init() {
 };
 
 /**
- * makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y)
- *
  * This method creates a polygon for the car given 4 points on the Cartesian plane.
  * It assumes that one of the points of the polygon will be at the origin.
  *
@@ -124,8 +120,6 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
 };
 
 /**
- * makeWheelShape(world, worldScale, radius)
- *
  * This method creates the shape of a wheel for the car given its radius.
  *
  * @param world       {b2World}      The Box2D world where the wheel will be placed in
@@ -145,8 +139,6 @@ function makeWheelShape(world, worldScale, radius){
 };
 
 /**
- * makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY)
- *
  * This method creates joints used to connect the wheels to the car chassis.
  *
  * @param world      {b2World}            The Box2D world where the joint will be placed in
@@ -169,8 +161,6 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
 };
 
 /**
- * makeWheelFixture(world, car, wheelbodyDef, wheelFixture)
- *
  * This method connects the wheel to the car chassis.
  *
  * @param world            {b2World}      The Box2D world where the wheel will be placed in
@@ -187,8 +177,6 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
 }
 
 /**
- * drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos)
- *
  * This method creates a car to the screen.
  *
  * @param world             {b2World}   The Box2D world where the car will be placed in
@@ -268,8 +256,6 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
 };
 
 /**
- * createBox(world, x, y, width, height, angle)
- *
  * This method creates a box with a specified width and height rotated at a specified angle on the screen.
  *
  * @param world    {b2World} The Box2D world that the box is created in
@@ -301,8 +287,6 @@ function createBox(world, x, y, width, height, angle) {
 };
 
 /**
- * createRoad(world, startX, startY, maxNumberOfTiles)
- *
  * This method creates a road on the screen
  *
  * @param world             {b2World} The Box2D world that the box is created in
@@ -323,8 +307,6 @@ function createRoad(world, startX, startY, maxNumberOfTiles) {
 };
 
 /**
- * update()
- *
  * This method updates the screen.
  */
 function update() {
@@ -340,8 +322,6 @@ function update() {
 };
 
 /**
- * draw_world(world, context)
- *
  * This method draws the world on the screen, before it is updated.
  *
  * @param world    {b2World} The world to draw on
@@ -362,7 +342,7 @@ function draw_world(world, context)
 
 /**
 * This method creates a new generation of cars.
-* @param {Integer} The number of cars in the generation
+* @param {Integer} n The number of cars in the generation
 * @return {Car[]} An array of cars, denoting the new generation.
 */
 function createGeneration(n){
@@ -464,13 +444,13 @@ $(function()
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#b2Vec2">b2Vec2</a></li><li><a href="global.html#cameraX">cameraX</a></li><li><a href="global.html#createBox">createBox</a></li><li><a href="global.html#createGeneration">createGeneration</a></li><li><a href="global.html#createRoad">createRoad</a></li><li><a href="global.html#crossOverOffsprings">crossOverOffsprings</a></li><li><a href="global.html#draw_world">draw_world</a></li><li><a href="global.html#drawCar">drawCar</a></li><li><a href="global.html#getChromosome">getChromosome</a></li><li><a href="global.html#getRandomArbitrary">getRandomArbitrary</a></li><li><a href="global.html#getRandomArbitraryInteger">getRandomArbitraryInteger</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#makeCarJoints">makeCarJoints</a></li><li><a href="global.html#makePolygon">makePolygon</a></li><li><a href="global.html#makeWheelFixture">makeWheelFixture</a></li><li><a href="global.html#makeWheelShape">makeWheelShape</a></li><li><a href="global.html#mutateOffsprings">mutateOffsprings</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#selectNextGeneration">selectNextGeneration</a></li><li><a href="global.html#update">update</a></li></ul>
+    <h3>Contents</h3><ul><li><a href="global.html#b2Vec2">b2Vec2</a></li><li><a href="global.html#cameraX">cameraX</a></li><li><a href="global.html#createBox">createBox</a></li><li><a href="global.html#createGeneration">createGeneration</a></li><li><a href="global.html#createRoad">createRoad</a></li><li><a href="global.html#crossOverOffsprings">crossOverOffsprings</a></li><li><a href="global.html#draw_world">draw_world</a></li><li><a href="global.html#drawCar">drawCar</a></li><li><a href="global.html#getChromosome">getChromosome</a></li><li><a href="global.html#getRandomArbitrary">getRandomArbitrary</a></li><li><a href="global.html#getRandomArbitraryInteger">getRandomArbitraryInteger</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#makeCarJoints">makeCarJoints</a></li><li><a href="global.html#makePolygon">makePolygon</a></li><li><a href="global.html#makeWheelFixture">makeWheelFixture</a></li><li><a href="global.html#makeWheelShape">makeWheelShape</a></li><li><a href="global.html#mutateOffsprings">mutateOffsprings</a></li><li><a href="global.html#points">points</a></li><li><a href="global.html#selectNextGeneration">selectNextGeneration</a></li><li><a href="global.html#update">update</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Nov 09 2016 21:55:54 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a> on Wed Nov 09 2016 22:18:46 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
