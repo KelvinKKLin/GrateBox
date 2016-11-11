@@ -149,8 +149,15 @@ below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{mCreateCar}:]  Car creation module
+\item [\refstepcounter{mnum} \mthemnum \label{mEvolveCar}:] Evolve car module
+\item [\refstepcounter{mnum} \mthemnum \label{mCreateRoad}:] Road creation module
+\item [\refstepcounter{mnum} \mthemnum \label{mGraphicsDisplay}:] Graphics display module
+\item [\refstepcounter{mnum} \mthemnum \label{mGeneticAlgorithm}:] Genetic Algorithm module
+\item [\refstepcounter{mnum} \mthemnum \label{mRandomSeed}:] Random seed generation and manipulation module
+\item [\refstepcounter{mnum} \mthemnum \label{mFitness}:] Fitness determination module
+\item [\refstepcounter{mnum} \mthemnum \label{mSortingAndSearching}:] Sorting and Searching algorithms module
+\item [\refstepcounter{mnum} \mthemnum \label{mPopulationGeneration}:] Population generation algorithms module
 \end{description}
 
 
@@ -161,22 +168,23 @@ actually be implemented.
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+{Hardware-Hiding Module} & There are no Hardware-Hiding modules necessary in Java-Script \\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module}
+& \mref{mCreateCar}\\
+& \mref{mEvolveCar}\\
+& \mref{mCreateRoad}\\
+& \mref{mGraphicsDisplay}\\
+& \mref{mGeneticAlgorithm}\\
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} 
+& \mref{mRandomSeed}\\
+& \mref{mFitness}\\
+& \mref{mSortingAndSearching}\\
+& \mref{mPopulationGeneration}\\
+
 \bottomrule
 
 \end{tabular}
@@ -271,13 +279,13 @@ requirements and between the modules and the anticipated changes. Requirements a
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-Req 1: Car body parameters & \mref{mHH}\\
-Req 2: Wheel number parameters & \mref{mHH}\\
-Req 3: Wheel radius parameters & \mref{mHH}\\
-Req 4: Wheel position parameters & \mref{mHH}\\
-Req 5: Min weight parameters & \mref{mHH}\\
-Req 6: Max weight parameters & \mref{mHH}\\
-Req 7: Generation display parameters & \mref{mHH}\\
+Req 1: Car body parameters & \mref{mCreateCar}\\
+Req 2: Wheel number parameters & \mref{mCreateCar}\\
+Req 3: Wheel radius parameters & \mref{mCreateCar}\\
+Req 4: Wheel position parameters & \mref{mCreateCar}\\
+Req 5: Min weight parameters & \mref{mCreateCar}\\
+Req 6: Max weight parameters & \mref{mCreateCar}\\
+Req 7: Generation display parameters & \mref{mPopulationGeneration}\\
 Req 8: Fitness display parameters & \mref{mHH}\\
 Req 9: Random seed parameters & \mref{mHH}\\
 Req 10: Mutation rate parameters & \mref{mHH}\\
