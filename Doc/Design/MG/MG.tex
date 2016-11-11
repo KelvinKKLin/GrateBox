@@ -149,6 +149,7 @@ below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
 \begin{description}
+\item [\refstepcounter{mnum} \mthemnum \label{mHardware}:] Hardware hiding module
 \item [\refstepcounter{mnum} \mthemnum \label{mCreateCar}:]  Car creation module
 \item [\refstepcounter{mnum} \mthemnum \label{mEvolveCar}:] Evolve car module
 \item [\refstepcounter{mnum} \mthemnum \label{mCreateRoad}:] Road creation module
@@ -168,7 +169,7 @@ actually be implemented.
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & There are no Hardware-Hiding modules necessary in Java-Script \\
+{Hardware-Hiding Module} & \mref{mHardware} \\
 \midrule
 
 \multirow{7}{0.3\textwidth}{Behaviour-Hiding Module}
@@ -196,7 +197,7 @@ actually be implemented.
 
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
+between requirements and modules  and anticipated changes and modules is listed in Table \ref{TblRT}. 
 
 \section{Module Decomposition} \label{SecMD}
 
@@ -216,7 +217,7 @@ that the module is not a leaf and will not have to be implemented.
 The system is designed to satisfy the requirements developed in the SRS. Throughout
 this stage the system is decomposed into modules and analyzed.
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Hardware Hiding Modules (\mref{mHardware})}
 
 \begin{description}
 \item[Secrets:]The data structure and algorithm used to implement the virtual
@@ -239,7 +240,7 @@ this stage the system is decomposed into modules and analyzed.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
+\subsubsection{}
 
 \begin{description}
 \item[Secrets:]The format and structure of the input data.
@@ -248,8 +249,41 @@ this stage the system is decomposed into modules and analyzed.
 \item[Implemented By:] [Your Program Name Here]
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{}
 
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
 
 \subsection{Software Decision Module}
 
@@ -264,15 +298,47 @@ this stage the system is decomposed into modules and analyzed.
 \item[Implemented By:] --
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
+
+\subsubsection{}
+
+\begin{description}
+\item[Secrets:]The format and structure of the input data.
+\item[Services:]Converts the input data into the data structure used by the
+  input parameters module.
+\item[Implemented By:] [Your Program Name Here]
+\end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
 This section shows two traceability matrices: between the modules and the
-requirements and between the modules and the anticipated changes. Requirements are outlined in greater detail in the SRS found here (INSERST LINK TO SRS HERE).
+requirements and between the modules and the anticipated changes. Requirements are outlined in greater detail in the SRS found \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/SRS}{here}.
 
-% the table should use mref, the requirements should be named, use something
-% like fref
 \begin{table}[H]
 \centering
 \begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
@@ -285,20 +351,20 @@ Req 3: Wheel radius parameters & \mref{mCreateCar}\\
 Req 4: Wheel position parameters & \mref{mCreateCar}\\
 Req 5: Min weight parameters & \mref{mCreateCar}\\
 Req 6: Max weight parameters & \mref{mCreateCar}\\
-Req 7: Generation display parameters & \mref{mPopulationGeneration}\\
-Req 8: Fitness display parameters & \mref{mHH}\\
-Req 9: Random seed parameters & \mref{mHH}\\
-Req 10: Mutation rate parameters & \mref{mHH}\\
-Req 11: Cars per generation parameters &\mref{mHH}\\ 
-Req 12: Road generation parameters & \mref{mHH}\\
-Req 13: Min cars per generation parameters & \mref{mHH}\\
-Req 14: Max cars per generation parameters & \mref{mHH}\\
-Req 15: Top cars parameters & \mref{mHH}\\
-Req 16: Max top cars parameters & \mref{mHH}\\
-Req 17: Min top cars parameters & \mref{mHH}\\
-Req 18: Non-moving parameters & \mref{mHH}\\
-Req 19: Fitness paramaters & \mref{mHH}\\
-Req 20: Default value replacement parameters & \mref{mHH}\\
+Req 7: Generation display parameters & \mref{mPopulationGeneration}, \mref{mGraphicsDisplay}\\
+Req 8: Fitness display parameters & \mref{mFitness}, \mref{mGraphicsDisplay}\\
+Req 9: Random seed parameters & \mref{mRandomSeed}\\
+Req 10: Mutation rate parameters & \mref{mGeneticAlgorithm}\\
+Req 11: Cars per generation parameters &\mref{mPopulationGeneration}\\ 
+Req 12: Road generation parameters & \mref{mCreateRoad}\\
+Req 13: Min cars per generation parameters & \mref{mPopulationGeneration}\\
+Req 14: Max cars per generation parameters & \mref{mPopulationGeneration}\\
+Req 15: Top cars parameters & \mref{mFitness}, \mref{mEvolveCar}, \mref{mGraphicsDisplay}\\
+Req 16: Max top cars parameters & \mref{mFitness}, \mref{mSortingAndSearching}\\
+Req 17: Min top cars parameters & \mref{mFitness}, \mref{mSortingAndSearching}\\
+Req 18: Non-moving parameters & \mref{mCreateCar}, \mref{mGraphicsDisplay}\\
+Req 19: Fitness paramaters & \mref{mFitness}, \mref{mSortingAndSearching}\\
+Req 20: Default value replacement parameters & \mref{mCreateCar}, \mref{mCreateRoad}\\
 
 \bottomrule
 \end{tabular}
@@ -312,12 +378,12 @@ Req 20: Default value replacement parameters & \mref{mHH}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acWebsite} & \mref{mHH}\\
-\acref{acUserInput} & \mref{mInput}\\
-\acref{acRoad} & \mref{mParams}\\
-\acref{acAesthetics} & \mref{mVerify}\\
-\acref{acGeneticAlgorithm} & \mref{mOutput}\\
-\acref{acInitialFactors} & \mref{mVerifyOut}\\
+\acref{acWebsite} & \mref{mGraphicsDisplay}\\
+\acref{acUserInput} & \mref{mCreateCar}, \mref{mCreateRoad}, \mref{mGeneticAlgorithm}, \mref{mPopulationGeneration}\\
+\acref{acRoad} & \mref{mCreateRoad}\\
+\acref{acAesthetics} & \mref{mGraphicsDisplay}\\
+\acref{acGeneticAlgorithm} & \mref{mEvolveCar}, \mref{mGeneticAlgorithm}\\
+\acref{acInitialFactors} & \mref{mCreateCar}, \mref{mPopulationGeneration}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
