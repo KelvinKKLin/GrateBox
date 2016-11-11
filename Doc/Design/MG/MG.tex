@@ -124,11 +124,12 @@ unlikely changes are listed in Section \ref{SecUchange}.
 \subsection{Anticipated Changes} \label{SecAchange}
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
+\item[\refstepcounter{acnum} \actheacnum \label{acWebsite}:] The changes that may arrise from the placement of the Genetic Cars project online (i.e. web hosting choices, website layout, etc.) 
+\item[\refstepcounter{acnum} \actheacnum \label{acUserInput}:] The ability for the user to alter inputs (i.e. the mutation rate, parameters for cars (vertex number etc.), parameters for the enviroment (gravity etc.)) 
+\item[\refstepcounter{acnum} \actheacnum \label{acRoad}:] Changes to the overall structure of the road (i.e. using different mathematical forumals to generate it, more or less steep overall, length)
+\item[\refstepcounter{acnum} \actheacnum \label{acAesthetics}:] Changes to the aesthetics of the program (i.e. display window shape and size, use of color, etc.)
+\item[\refstepcounter{acnum} \actheacnum \label{acGeneticAlgorithm}:] Changes to the genetic algorithm (i.e. isolate for fastest car instead of farthest traveled, different means of reproduction, etc.)
+\item[\refstepcounter{acnum} \actheacnum \label{acInitialFactors}:] Changes to the initial state of the enviroment and car population (i.e. larger/smaller initial population sizes)
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -138,7 +139,6 @@ unlikely changes are listed in Section \ref{SecUchange}.
   (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
 \item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
   a source of input data external to the software.
-\item ...
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -271,26 +271,26 @@ requirements and between the modules and the anticipated changes. Requirements a
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-Req 1: Car body parameters & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-Req 2: Wheel number parameters & \mref{mInput}, \mref{mParams}\\
-Req 3: Wheel radius parameters& \mref{mVerify}\\
-Req 4: Wheel position parameters & \mref{mOutput}, \mref{mControl}\\
-Req 5: Min weight parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 6: Max weight parameters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 7: Generation display parameters & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-Req 8: Fitness display parameters & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-Req 9: Random seed parameters & \mref{mVerifyOut}\\
-Req 10: Mutation rate parameters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-Req 11: Cars per generation parameters & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
-Req 12: Road generation parameters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 13: Min cars per generation parameters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 14: Max cars per generation parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 15: Top cars parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 16: Max top cars parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 17: Min top cars parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 18: Non-moving parameters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 19: Fitness paramaters & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-Req 20: Default value replacement parameters& \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
+Req 1: Car body parameters & \mref{mHH}\\
+Req 2: Wheel number parameters & \mref{mHH}\\
+Req 3: Wheel radius parameters & \mref{mHH}\\
+Req 4: Wheel position parameters & \mref{mHH}\\
+Req 5: Min weight parameters & \mref{mHH}\\
+Req 6: Max weight parameters & \mref{mHH}\\
+Req 7: Generation display parameters & \mref{mHH}\\
+Req 8: Fitness display parameters & \mref{mHH}\\
+Req 9: Random seed parameters & \mref{mHH}\\
+Req 10: Mutation rate parameters & \mref{mHH}\\
+Req 11: Cars per generation parameters &\mref{mHH}\\ 
+Req 12: Road generation parameters & \mref{mHH}\\
+Req 13: Min cars per generation parameters & \mref{mHH}\\
+Req 14: Max cars per generation parameters & \mref{mHH}\\
+Req 15: Top cars parameters & \mref{mHH}\\
+Req 16: Max top cars parameters & \mref{mHH}\\
+Req 17: Min top cars parameters & \mref{mHH}\\
+Req 18: Non-moving parameters & \mref{mHH}\\
+Req 19: Fitness paramaters & \mref{mHH}\\
+Req 20: Default value replacement parameters & \mref{mHH}\\
 
 \bottomrule
 \end{tabular}
@@ -304,18 +304,12 @@ Req 20: Default value replacement parameters& \mref{mOutput}, \mref{mODEs}, \mre
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+\acref{acWebsite} & \mref{mHH}\\
+\acref{acUserInput} & \mref{mInput}\\
+\acref{acRoad} & \mref{mParams}\\
+\acref{acAesthetics} & \mref{mVerify}\\
+\acref{acGeneticAlgorithm} & \mref{mOutput}\\
+\acref{acInitialFactors} & \mref{mVerifyOut}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
