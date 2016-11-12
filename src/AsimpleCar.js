@@ -364,7 +364,34 @@ function selectNextGeneration(cars, n){
 * @return {Cars[]} An array of the crossed-over cars
 */
 function crossOverOffsprings(cars, topCars){
+    var cars2 = [];
 
+    if(topCars.length < 2){
+        return cars;
+    }
+
+    for(var i = 0; i < topCars.length; i++){
+        if(cars2.length < cars.length){
+            cars2.push(topCars[i]);
+        }
+    }
+
+    for(var i = topCars.length; i < cars.length; i++){
+
+        do{
+            var parent1Index = getRandomArbitraryInteger(0, topCars.length - 1);
+            var parent2Index = getRandomArbitraryInteger(0, topCars.length - 1);
+        } while(parent1Index == parent2Index);
+
+        var parent1 = topCars[parent1Index].getChromosome();
+        var parent2 = topCars[parent2Index].getChromosome();
+
+        var geneIndex = getRandomArbitraryInteger(0, 20);
+        parent1[geneIndex] = parent2[geneIndex];
+
+        cars2.push(new Car(parent1));
+    }
+    return cars2;
 };
 
 /**
