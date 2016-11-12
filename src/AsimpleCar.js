@@ -35,7 +35,6 @@ var car = 0;
  * This variable keeps track of the horizontal velocity of
  * the camera.
  */
-var cameraX = 0;
 var camera_x = 0;
 
 /*!
@@ -54,24 +53,23 @@ function init() {
     );
     var worldScale = 60;
 
-    var a = new Car();
-    a.generateNewCar();
+    car = new Car();
+    car.generateNewCar();
 
-    var X_VERT = a.getVertexXArray();
-    var Y_VERT = a.getVertexYArray();
-    var WHEEL_POS = a.getWheelPosArray();
-    var WHEEL_RAD = a.getWheelRadiusArray();
+    var X_VERT = car.getVertexXArray();
+    var Y_VERT = car.getVertexYArray();
+    var WHEEL_POS = car.getWheelPosArray();
+    var WHEEL_RAD = car.getWheelRadiusArray();
     var done = false;
 
     do{
         try{
-            car = drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]);
+            car.setCarDef(drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]));
             done = true;
         } catch(err){
-            a.generateNewCar();
+            car.generateNewCar();
         }
     } while(!done);
-
 
     createRoad(world, 0, 14, 150);
 
@@ -460,7 +458,7 @@ function update() {
        , 10       //velocity iterations
        , 10       //position iterations
     );
-   
+
     draw_world(world, ctx);
     //world.DrawDebugData();
     world.ClearForces();
@@ -476,7 +474,7 @@ function draw_world(world, context){
     //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
 
-    ctx.save(); 
+    ctx.save();
     CameraPos();
 
     ctx.translate(200-(camera_x*50) , canvas_height-600);
@@ -486,7 +484,7 @@ function draw_world(world, context){
 
 };
 function CameraPos(){
-    cameraPosition = car.GetWorldCenter().x;
+    cameraPosition = car.getCarDef().GetWorldCenter().x;
     var diff_x = camera_x - cameraPosition;
     camera_x -= 0.025 * diff_x;
 }
@@ -627,7 +625,8 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  * THE CAR
  */
  function Car() {
-    this.center = 0;
+    this.health = 100;
+    this.carDef = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
     this.wheelPosArray = [];
@@ -659,8 +658,8 @@ Car.prototype = {
         }
     },
 
-    setCenter : function(center){
-        this.center = center;
+    removeHealth : function(){
+        this.health = this.health - 1;
     },
 
     setVertexXArray : function(vertexXArray){
@@ -687,6 +686,10 @@ Car.prototype = {
         this.wheelRadius[i] = wheelRadius;
     },
 
+    setCarDef : function(carDef){
+        this.carDef = carDef;
+    },
+
     getVertexXArray : function(){
         return this.vertexXArray;
     },
@@ -703,8 +706,12 @@ Car.prototype = {
         return this.wheelRadiusArray;
     },
 
-    getCenter : function(){
-        return center;
+    getHealth : function(){
+        return this.health;
+    },
+
+    getCarDef : function(){
+        return this.carDef;
     }
 };
 
