@@ -55,14 +55,16 @@ function init() {
 
     var X_VERT = a.getVertexXArray();
     var Y_VERT = a.getVertexYArray();
-    var WHEEL_POS = a.getWheelPos();
+    var WHEEL_POS = a.getWheelPosArray();
+    var WHEEL_RAD = a.getWheelRadiusArray();
     var done = false;
     console.log("X VERT " + X_VERT);
     console.log("Y VERT " + Y_VERT);
 
+
     do{
         try{
-            drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1]);
+            drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]);
             done = true;
         } catch(err){
             a.generateNewCar();
@@ -326,7 +328,7 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
  * @param rearWheelPos      {Integer}   The vertex that the back wheel is attached to
  * @return                  {b2BodyDef} The completed car
  */
-function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos) {
+function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos, frontWheelRadius, rearWheelRadius) {
     var polygonFix1 = 0;
     var polygonFix2 = 0;
     var polygonFix3 = 0;
@@ -376,8 +378,9 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     rearwheelX = points[rearwheelPos][2].x;
     rearwheelY = points[rearwheelPos][2].y;
 
-    var wheelFixture1 = makeWheelShape(world, worldScale, 200);
-    var wheelFixture2 = makeWheelShape(world, worldScale, 200);
+    console.log(frontWheelRadius);
+    var wheelFixture1 = makeWheelShape(world, worldScale, frontWheelRadius);
+    var wheelFixture2 = makeWheelShape(world, worldScale, rearWheelRadius);
 
     var wheelbodyDef = new b2BodyDef;
     wheelbodyDef.type = b2Body.b2_dynamicBody;
@@ -455,7 +458,7 @@ function update() {
        , 10       //velocity iterations
        , 10       //position iterations
     );
-    cameraX = cameraX + 3;
+    cameraX = cameraX + 0.5;
     draw_world(world, ctx);
     //world.DrawDebugData();
     world.ClearForces();
@@ -482,15 +485,6 @@ function draw_world(world, context){
 /*!
  * THE GENETIC ALGORITHM
  */
-
-/**
-* This method creates a new generation of cars.
-* @param {Integer} n The number of cars in the generation
-* @return {Car[]} An array of cars, denoting the new generation.
-*/
-function createGeneration(n){
-
-}
 
 /**
 * This method selects for the next generation of cars.
@@ -688,12 +682,12 @@ Car.prototype = {
         return this.vertexYArray;
     },
 
-    getWheelPos : function(){
+    getWheelPosArray : function(){
         return this.wheelPosArray;
     },
 
-    getWheelRadius : function(){
-        return this.getWheelRadiusArray;
+    getWheelRadiusArray : function(){
+        return this.wheelRadiusArray;
     }
 };
 
