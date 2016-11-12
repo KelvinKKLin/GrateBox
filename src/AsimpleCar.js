@@ -58,9 +58,6 @@ function init() {
     var WHEEL_POS = a.getWheelPosArray();
     var WHEEL_RAD = a.getWheelRadiusArray();
     var done = false;
-    console.log("X VERT " + X_VERT);
-    console.log("Y VERT " + Y_VERT);
-
 
     do{
         try{
@@ -619,6 +616,7 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  * THE CAR
  */
  function Car() {
+    this.center = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
     this.wheelPosArray = [];
@@ -648,6 +646,10 @@ Car.prototype = {
             this.wheelPosArray[i] = getRandomArbitraryInteger(1, 8);
             this.wheelRadiusArray[i] = getRandomArbitraryInteger(20, 100);
         }
+    },
+
+    setCenter : function(center){
+        this.center = center;
     },
 
     setVertexXArray : function(vertexXArray){
@@ -688,6 +690,10 @@ Car.prototype = {
 
     getWheelRadiusArray : function(){
         return this.wheelRadiusArray;
+    },
+
+    getCenter : function(){
+        return center;
     }
 };
 
