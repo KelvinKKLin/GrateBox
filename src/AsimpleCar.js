@@ -183,7 +183,7 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
 
     }
 
- 
+
 };
 
 /**
@@ -491,6 +491,50 @@ function crossOverOffsprings(cars, topCars){
 */
 function mutateOffsprings(cars, numberOfParents, mutationFactor){
 
+    for(var i = numberOfParents; i < cars.length; i++){
+        var vertexX = cars[i].getVertexX();
+        var vertexY = cars[i].getVertexY();
+        var wheelPos = cars[i].getWheelPos();
+
+        for(var i = 0; i < vertexX.length; i++){
+            var mutationChance = getRandomArbitrary(0, 1);
+            if(mutationChance < mutationFactor){
+                var min = -3;
+                var max = 3;
+                var value = 0;
+                do{
+                    value = getRandomArbitraryInteger(min, max);
+                } while(value == 0);
+
+                cars[i].setVertexX(i, value);
+            }
+        }
+
+        for(var i = 0; i < vertexY.length; i++){
+            var mutationChance = getRandomArbitrary(0, 1);
+            if(mutationChance < mutationFactor){
+                var min = -3;
+                var max = 3;
+                var value = 0;
+                do{
+                    value = getRandomArbitraryInteger(min, max);
+                } while(value == 0);
+
+                cars[i].setVertexY(i, value);
+            }
+        }
+
+        for(var i = 0; i < wheelPos.length; i++){
+            var mutationChance = getRandomArbitrary(0, 1);
+            if(mutationChance < mutationFactor){
+                var min = 1;
+                var max = 8;
+                value = getRandomArbitraryInteger(min, max);
+                cars[i].setWheelPos(i, value);
+            }
+        }
+
+    }
 };
 
 /*!
