@@ -50,7 +50,17 @@ function init() {
     );
     var worldScale = 60;
 
-    drawCar(world, worldScale, -5,-2,3,4,-2,3,-5,1,3,-4,-2,3,5,-5 ,2,-3,4, 1);
+    var a = new Car();
+    a.generateNewCar();
+
+    var X_VERT = a.getVertexXArray();
+    var Y_VERT = a.getVertexYArray();
+    var WHEEL_POS = a.getWheelPos();
+
+    console.log("X VERT " + X_VERT);
+    console.log("Y VERT " + Y_VERT);
+
+    drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1]);
     createRoad(world, 0, 15, 150);
 
     //setup debug draw
@@ -109,8 +119,7 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
             polygonFix.filter.groupInedx = -1;
             polygonFix.restitution = 0.3;
             return polygonFix;
-        }
-        else {
+        } else {
             var polygon = new b2PolygonShape;
             var polygonFix = new b2FixtureDef;
             polygonFix.shape = polygon;
@@ -131,6 +140,7 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
             return polygonFix;
         }
     }
+
     if (vertex1X < 0) {
         var a = vertex1X;
         var b = -vertex1Y;
@@ -551,14 +561,38 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
 /*!
  * THE CAR
  */
- function Car(vertexXArray, vertexYArray, wheelPosArray, wheelRadius) {
-    this.vertexXArray = cartMagnitude;
-    this.vertexYArray = cartAngle;
-    this.wheelPosArray = wheelVertex;
-    this.wheelRadius = wheelRadius;
+ function Car() {
+    this.vertexXArray = [];
+    this.vertexYArray = [];
+    this.wheelPosArray = [];
+    this.wheelRadiusArray = [];
 }
 
 Car.prototype = {
+    generateNewCar : function(){
+        for(var i = 0; i < 8; i++){
+
+            var xValue = 0;
+            var yValue = 0;
+
+            do{
+                xValue = getRandomArbitraryInteger(-3, 3);
+            } while(xValue == 0);
+
+            do{
+                yValue = getRandomArbitraryInteger(-3, 3);
+            } while(yValue == 0);
+
+            this.vertexXArray[i] = xValue;
+            this.vertexYArray[i] = yValue;
+        }
+
+        for(var i = 0; i < 2; i++){
+            this.wheelPosArray[i] = getRandomArbitraryInteger(1, 8);
+            this.wheelRadiusArray[i] = getRandomArbitraryInteger(20, 100);
+        }
+    },
+
     setVertexXArray : function(vertexXArray){
         this.vertexXArray = vertexXArray;
     },
@@ -592,11 +626,11 @@ Car.prototype = {
     },
 
     getWheelPos : function(){
-        return this.wheelPos;
+        return this.wheelPosArray;
     },
 
     getWheelRadius : function(){
-        return this.getWheelRadius;
+        return this.getWheelRadiusArray;
     }
 };
 
