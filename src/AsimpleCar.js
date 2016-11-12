@@ -50,7 +50,7 @@ function init() {
     );
     var worldScale = 60;
 
-    drawCar(world, worldScale, 2, -1, 4, 0, -1, -2, -2, 0.5, -0.25, 0.25, 0.75, 0.5,3, 0.5, 3.5, 0.5, 4, 1);
+    drawCar(world, worldScale, -5,-2,3,4,-2,3,-5,1,3,-4,-2,3,5,-5 ,2,-3,4, 1);
     createRoad(world, 0, 15, 150);
 
     //setup debug draw
@@ -79,23 +79,111 @@ function init() {
  * @return          {b2FixtureDef} The polygon created
  */
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
-    var polygon = new b2PolygonShape;
-    var polygonFix = new b2FixtureDef;
-    polygonFix.shape = polygon;
-    points[num] = [{ x: 0, y: 0 }, { x: vertex2X, y: vertex2Y }, { x: vertex1X, y: vertex1Y }];
+    var worldScale = 60;
+    if (vertex1X > 0) {
 
-    for (var i = 0; i < 3; i++) {
-        var vec = new b2Vec2();
-        vec.Set(points[num][i].x, points[num][i].y);
-        points[num][i] = vec;
+        var a = vertex1X;
+        var b = -vertex1Y;
+        var c = vertex2X;
+        var d = -vertex2Y;
+        var m = b / a;
+
+        var y = m * c;
+
+        if (y < d) {
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex2X, y: vertex2Y }, { x: vertex1X, y: vertex1Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+        }
+        else {
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+        }
+    }
+    if (vertex1X < 0) {
+        var a = vertex1X;
+        var b = -vertex1Y;
+        var c = vertex2X;
+        var d = -vertex2Y;
+        var m = b / a;
+
+        var y = m * c;
+
+        if (y > d) {
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex2X, y: vertex2Y }, { x: vertex1X, y: vertex1Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+        }
+        else {
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+        }
+
     }
 
-    polygonFix.shape.SetAsArray(points[num], points[num].length);
-    polygonFix.density = 5;
-    polygonFix.friction = 3;
-    polygonFix.filter.groupInedx = -1;
-    polygonFix.restitution = 0.3;
-    return polygonFix;
+ 
 };
 
 /**
