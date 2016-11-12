@@ -458,8 +458,6 @@ function update() {
 
     draw_world(world, ctx);
     world.ClearForces();
-    console.log("CAM X " + diff_x);
-    console.log("CAR H " + car.getHealth());
     if(Math.abs(diff_x)<0.01){
         car.removeHealth();
     }
@@ -630,7 +628,7 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  * THE CAR
  */
  function Car() {
-    this.health = 1000;
+    this.health = 100;
     this.carDef = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
