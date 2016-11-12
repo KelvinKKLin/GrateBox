@@ -3,8 +3,6 @@
  *
  * This imports the Box2D Vector and any associated methods.
  */
-
-
 var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2BodyDef = Box2D.Dynamics.b2BodyDef
        , b2Body = Box2D.Dynamics.b2Body
@@ -352,8 +350,6 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
         throw "ERROR";
     }
 
-
-
     var carBodyDef = new b2BodyDef;
     carBodyDef.type = b2Body.b2_dynamicBody;
     carBodyDef.position.Set(320 / worldScale, 100 / worldScale);
@@ -460,8 +456,9 @@ function update() {
     );
 
     draw_world(world, ctx);
-    //world.DrawDebugData();
     world.ClearForces();
+
+
 };
 
 /**
@@ -473,21 +470,20 @@ function update() {
 function draw_world(world, context){
     //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
-
     ctx.save();
-    CameraPos();
-
+    cameraPos();
     ctx.translate(200-(camera_x*50) , canvas_height-600);
-
     world.DrawDebugData();
     ctx.restore();
 
 };
-function CameraPos(){
+
+function cameraPos(){
     cameraPosition = car.getCarDef().GetWorldCenter().x;
     var diff_x = camera_x - cameraPosition;
     camera_x -= 0.025 * diff_x;
-}
+};
+
 /*!
  * THE GENETIC ALGORITHM
  */
