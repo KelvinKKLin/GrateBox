@@ -3,6 +3,8 @@
  *
  * This imports the Box2D Vector and any associated methods.
  */
+
+
 var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2BodyDef = Box2D.Dynamics.b2BodyDef
        , b2Body = Box2D.Dynamics.b2Body
@@ -25,6 +27,8 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
  */
 var points = [];
 
+var car = 0;
+
 /**
  * cameraX
  *
@@ -32,7 +36,7 @@ var points = [];
  * the camera.
  */
 var cameraX = 0;
-
+var camera_x = 0;
 
 /*!
     THE VIEW
@@ -61,14 +65,15 @@ function init() {
 
     do{
         try{
-            drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]);
+            car = drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]);
             done = true;
         } catch(err){
             a.generateNewCar();
         }
     } while(!done);
 
-    createRoad(world, 0, 15, 150);
+
+    createRoad(world, 0, 14, 150);
 
     //setup debug draw
     var debugDraw = new b2DebugDraw();
@@ -278,8 +283,8 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     joint_def.bodyB = bodyB;
     joint_def.localAnchorA = new b2Vec2(0, 0);
     joint_def.localAnchorB = new b2Vec2(wheelPosX, wheelPosY);
-    joint_def.maxMotorTorque = 300;
-    joint_def.motorSpeed = -500;
+    joint_def.maxMotorTorque = 70;
+    joint_def.motorSpeed = -300;
     joint_def.enableMotor = true;
     return joint_def;
 };
@@ -455,7 +460,7 @@ function update() {
        , 10       //velocity iterations
        , 10       //position iterations
     );
-    cameraX = cameraX + 0.5;
+   
     draw_world(world, ctx);
     //world.DrawDebugData();
     world.ClearForces();
@@ -471,14 +476,20 @@ function draw_world(world, context){
     //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
 
-    ctx.save();
-    ctx.translate(-cameraX , canvas_height-650);
+    ctx.save(); 
+    CameraPos();
+
+    ctx.translate(200-(camera_x*50) , canvas_height-600);
 
     world.DrawDebugData();
     ctx.restore();
 
 };
-
+function CameraPos(){
+    cameraPosition = car.GetWorldCenter().x;
+    var diff_x = camera_x - cameraPosition;
+    camera_x -= 0.025 * diff_x;
+}
 /*!
  * THE GENETIC ALGORITHM
  */
