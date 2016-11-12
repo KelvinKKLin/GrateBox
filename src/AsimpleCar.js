@@ -464,7 +464,7 @@ function update() {
         car.removeHealth();
     }
     if(car.getHealth() <= 0){
-        alert("CAR DIED");
+        world.DestroyBody(car.getCarDef());
     }
 
 
