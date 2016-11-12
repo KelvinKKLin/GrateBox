@@ -119,7 +119,28 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
             polygonFix.filter.groupInedx = -1;
             polygonFix.restitution = 0.3;
             return polygonFix;
-        } else {
+        } else if (y = d) {
+            vertex2X = vertex2X + 1;
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+
+        }else {
             var polygon = new b2PolygonShape;
             var polygonFix = new b2FixtureDef;
             polygonFix.shape = polygon;
@@ -169,8 +190,27 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
             polygonFix.filter.groupInedx = -1;
             polygonFix.restitution = 0.3;
             return polygonFix;
-        }
-        else {
+        } else if (y = d) {
+            vertex2X = vertex2X - 1;
+            var polygon = new b2PolygonShape;
+            var polygonFix = new b2FixtureDef;
+            polygonFix.shape = polygon;
+
+            points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
+
+            for (var i = 0; i < 3; i++) {
+                var vec = new b2Vec2();
+                vec.Set(points[num][i].x, points[num][i].y);
+                points[num][i] = vec;
+            }
+
+            polygonFix.shape.SetAsArray(points[num], points[num].length);
+            polygonFix.density = 5;
+            polygonFix.friction = 3;
+            polygonFix.filter.groupInedx = -1;
+            polygonFix.restitution = 0.3;
+            return polygonFix;
+        }else {
             var polygon = new b2PolygonShape;
             var polygonFix = new b2FixtureDef;
             polygonFix.shape = polygon;
