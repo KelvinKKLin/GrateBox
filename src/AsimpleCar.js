@@ -376,7 +376,9 @@ Misc
 * @return {Integer} A random number between min and max
 */
 function getRandomArbitraryInteger(min, max){
-
+    //The following code was obtained from
+    ////http://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 /**
@@ -387,7 +389,9 @@ function getRandomArbitraryInteger(min, max){
 * @param {Float} A floating point number between min and max.
 */
 function getRandomArbitrary(min, max){
-
+    //The following code was obtained from
+    ////https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+    return Math.random() * (max - min) + min;
 };
 
 /**
