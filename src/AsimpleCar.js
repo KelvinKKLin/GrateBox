@@ -470,10 +470,20 @@ function update() {
 
     if(car.getHealth() <= 0){
         world.DestroyBody(car.getCarDef());
+        resetCamera(world, ctx);
     }
 
 
 };
+
+function resetCamera(world, context){
+    ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
+    ctx.save();
+    cameraPos();
+    ctx.translate(0,canvas_height - 650);
+    world.DrawDebugData();
+    ctx.restore();
+}
 
 /**
  * This method draws the world on the screen, before it is updated.
