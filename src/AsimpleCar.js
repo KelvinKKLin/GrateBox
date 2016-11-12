@@ -34,6 +34,7 @@ var car = 0;
  * the camera.
  */
 var camera_x = 0;
+var diff_x;
 
 /*!
     THE VIEW
@@ -457,6 +458,14 @@ function update() {
 
     draw_world(world, ctx);
     world.ClearForces();
+    console.log("CAM X " + diff_x);
+    console.log("CAR H " + car.getHealth());
+    if(Math.abs(diff_x)<0.01){
+        car.removeHealth();
+    }
+    if(car.getHealth() <= 0){
+        alert("CAR DIED");
+    }
 
 
 };
@@ -480,7 +489,7 @@ function draw_world(world, context){
 
 function cameraPos(){
     cameraPosition = car.getCarDef().GetWorldCenter().x;
-    var diff_x = camera_x - cameraPosition;
+    diff_x = camera_x - cameraPosition;
     camera_x -= 0.025 * diff_x;
 };
 
@@ -621,13 +630,14 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  * THE CAR
  */
  function Car() {
-    this.health = 100;
+    this.health = 1000;
     this.carDef = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
     this.wheelPosArray = [];
     this.wheelRadiusArray = [];
 }
+
 
 Car.prototype = {
     generateNewCar : function(){
