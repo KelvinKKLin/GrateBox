@@ -492,9 +492,10 @@ function crossOverOffsprings(cars, topCars){
 function mutateOffsprings(cars, numberOfParents, mutationFactor){
 
     for(var i = numberOfParents; i < cars.length; i++){
-        var vertexX = cars[i].getVertexX();
-        var vertexY = cars[i].getVertexY();
+        var vertexX = cars[i].getVertexXArray();
+        var vertexY = cars[i].getVertexYArray();
         var wheelPos = cars[i].getWheelPos();
+        var wheelRadius = cars[i].getWheelRadius();
 
         for(var i = 0; i < vertexX.length; i++){
             var mutationChance = getRandomArbitrary(0, 1);
@@ -534,34 +535,70 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
             }
         }
 
+        for(var i = 0; i < wheelRadius.length; i++){
+            var mutationChance = getRandomArbitrary(0, 1);
+            if(mutationChance < mutationFactor){
+                var min = 20;
+                var max = 100;
+                value = getRandomArbitraryInteger(min, max);
+                cars[i].setWheelRadius(i, value);
+            }
+        }
+
     }
 };
 
 /*!
-Car Model
-*/
-
-/**
-* This method returns the chromosome of the car.
-* @return {Object[]} A multi-typed array representing the chromosome of the car.
-*/
-function getChromosome(){
-
-}
-
-/*!
  * THE CAR
  */
- //var Car = function(){
-//
- //};
+ function Car(vertexXArray, vertexYArray, wheelPosArray, wheelRadius) {
+    this.vertexXArray = cartMagnitude;
+    this.vertexYArray = cartAngle;
+    this.wheelPosArray = wheelVertex;
+    this.wheelRadius = wheelRadius;
+}
 
-//Car.prototype.setAllStats(vertexXArray, vertexYArray, wheelsArray) = function(){
-//    this.vertexXArray = vertexXArray;
-//    this.vertexYArray = vertexYArray;
-//    this.wheelsArray  = wheelsArray;
-//};
+Car.prototype = {
+    setVertexXArray : function(vertexXArray){
+        this.vertexXArray = vertexXArray;
+    },
 
+    setVertexX : function(i, vertexX){
+        this.vertexXArray[i] = vertexX;
+    },
+
+    setVertexYArray : function(vertexYArray){
+        this.vertexYArray = vertexYArray;
+    },
+
+    setVertexY : function(i, vertexY){
+        this.vertexYArray = vertexY;
+    },
+
+    setWheelPos : function(i, wheelPos){
+        this.wheelPosArray[i] = wheelPos;
+    },
+
+    setWheelRadius : function(i, wheelRadius){
+        this.wheelRadius[i] = wheelRadius;
+    },
+
+    getVertexXArray : function(){
+        return this.vertexXArray;
+    },
+
+    getVertexYArray : function(){
+        return this.vertexYArray;
+    },
+
+    getWheelPos : function(){
+        return this.wheelPos;
+    },
+
+    getWheelRadius : function(){
+        return this.getWheelRadius;
+    }
+};
 
 /*!
  * MISC
