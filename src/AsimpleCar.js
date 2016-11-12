@@ -17,6 +17,7 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2Joint = Box2D.Dynamics.b2Joint
     ;
 
+
 /**
  * points
  *
@@ -59,6 +60,17 @@ function init() {
     window.setInterval(update, 1000 / 60);
     return world;
 };
+
+function createRandomCar(){
+    var car_def = new Object;
+    car_def.wheelCount = 2;
+
+}
+
+function createRandomVertexPoint(){
+
+}
+
 
 /**
  * This method creates a polygon for the car given 4 points on the Cartesian plane.
@@ -305,8 +317,8 @@ function draw_world(world, context)
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
 
     ctx.save();
-    ctx.translate(-cameraX , canvas_height);
-    ctx.scale(1 , -1);
+    ctx.translate(-cameraX , canvas_height-650);
+
     world.DrawDebugData();
     ctx.restore();
 
