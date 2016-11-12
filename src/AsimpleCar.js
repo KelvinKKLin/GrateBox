@@ -56,11 +56,19 @@ function init() {
     var X_VERT = a.getVertexXArray();
     var Y_VERT = a.getVertexYArray();
     var WHEEL_POS = a.getWheelPos();
-
+    var done = false;
     console.log("X VERT " + X_VERT);
     console.log("Y VERT " + Y_VERT);
 
-    drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1]);
+    do{
+        try{
+            drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1]);
+            done = true;
+        } catch(err){
+            a.generateNewCar();
+        }
+    } while(!done);
+
     createRoad(world, 0, 15, 150);
 
     //setup debug draw
@@ -319,14 +327,29 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
  * @return                  {b2BodyDef} The completed car
  */
 function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos) {
-    var polygonFix1 = makePolygon(1, vertex1X, vertex1Y, vertex2X, vertex2Y);
-    var polygonFix2 = makePolygon(2, vertex2X, vertex2Y, vertex3X, vertex3Y);
-    var polygonFix3 = makePolygon(3, vertex3X, vertex3Y, vertex4X, vertex4Y);
-    var polygonFix4 = makePolygon(4, vertex4X, vertex4Y, vertex5X, vertex5Y);
-    var polygonFix5 = makePolygon(5, vertex5X, vertex5Y, vertex6X, vertex6Y);
-    var polygonFix6 = makePolygon(6, vertex6X, vertex6Y, vertex7X, vertex7Y);
-    var polygonFix7 = makePolygon(7, vertex7X, vertex7Y, vertex8X, vertex8Y);
-    var polygonFix8 = makePolygon(8, vertex8X, vertex8Y, vertex1X, vertex1Y);
+    var polygonFix1 = 0;
+    var polygonFix2 = 0;
+    var polygonFix3 = 0;
+    var polygonFix4 = 0;
+    var polygonFix5 = 0;
+    var polygonFix6 = 0;
+    var polygonFix7 = 0;
+    var polygonFix8 = 0;
+
+    try{
+        var polygonFix1 = makePolygon(1, vertex1X, vertex1Y, vertex2X, vertex2Y);
+        var polygonFix2 = makePolygon(2, vertex2X, vertex2Y, vertex3X, vertex3Y);
+        var polygonFix3 = makePolygon(3, vertex3X, vertex3Y, vertex4X, vertex4Y);
+        var polygonFix4 = makePolygon(4, vertex4X, vertex4Y, vertex5X, vertex5Y);
+        var polygonFix5 = makePolygon(5, vertex5X, vertex5Y, vertex6X, vertex6Y);
+        var polygonFix6 = makePolygon(6, vertex6X, vertex6Y, vertex7X, vertex7Y);
+        var polygonFix7 = makePolygon(7, vertex7X, vertex7Y, vertex8X, vertex8Y);
+        var polygonFix8 = makePolygon(8, vertex8X, vertex8Y, vertex1X, vertex1Y);
+        done = true;
+    } catch(err){
+        throw "ERROR";
+    }
+
 
 
     var carBodyDef = new b2BodyDef;
