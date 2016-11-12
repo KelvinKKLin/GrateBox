@@ -17,7 +17,6 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
        , b2Joint = Box2D.Dynamics.b2Joint
     ;
 
-
 /**
  * points
  *
@@ -25,6 +24,11 @@ var b2Vec2 = Box2D.Common.Math.b2Vec2
  */
 var points = [];
 
+/**
+ * car
+ *
+ * This variable holds the car model
+ */
 var car = 0;
 
 /**
@@ -460,7 +464,10 @@ function update() {
     world.ClearForces();
     if(Math.abs(diff_x)<0.01){
         car.removeHealth();
+    } else{
+        car.increaseFitness();
     }
+
     if(car.getHealth() <= 0){
         world.DestroyBody(car.getCarDef());
     }
@@ -628,6 +635,7 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  * THE CAR
  */
  function Car() {
+    this.fitness = 0;
     this.health = 100;
     this.carDef = 0;
     this.vertexXArray = [];
@@ -660,6 +668,10 @@ Car.prototype = {
             this.wheelPosArray[i] = getRandomArbitraryInteger(1, 8);
             this.wheelRadiusArray[i] = getRandomArbitraryInteger(20, 100);
         }
+    },
+
+    increaseFitness : function(){
+        this.fitness = this.fitness + 1;
     },
 
     removeHealth : function(){
@@ -716,6 +728,10 @@ Car.prototype = {
 
     getCarDef : function(){
         return this.carDef;
+    },
+
+    getFitness : function(){
+        return this.fitness;
     }
 };
 
