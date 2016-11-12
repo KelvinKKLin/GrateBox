@@ -33,6 +33,11 @@ var points = [];
  */
 var cameraX = 0;
 
+
+/*!
+    THE VIEW
+ */
+
 /**
  * This method initializes the Box2D environment, and any objects within the Box2D world.
  *
@@ -45,7 +50,7 @@ function init() {
     );
     var worldScale = 60;
 
-    drawCar(world, worldScale, 4, 0, 2, -1, -1, -2, -2, 0.5, -0.25, 0.25, 0.75, 0.5,3, 0.5, 3.5, 0.5, 4, 1);
+    drawCar(world, worldScale, 2, -1, 4, 0, -1, -2, -2, 0.5, -0.25, 0.25, 0.75, 0.5,3, 0.5, 3.5, 0.5, 4, 1);
     createRoad(world, 0, 15, 150);
 
     //setup debug draw
@@ -60,16 +65,6 @@ function init() {
     window.setInterval(update, 1000 / 60);
     return world;
 };
-
-function createRandomCar(){
-    var car_def = new Object;
-    car_def.wheelCount = 2;
-
-}
-
-function createRandomVertexPoint(){
-
-}
 
 
 /**
@@ -311,8 +306,7 @@ function update() {
  * @param world    {b2World} The world to draw on
  * @param context  {Canvas}  The canvas to draw the world on
  */
-function draw_world(world, context)
-{
+function draw_world(world, context){
     //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
 
@@ -323,6 +317,10 @@ function draw_world(world, context)
     ctx.restore();
 
 };
+
+/*!
+ * THE GENETIC ALGORITHM
+ */
 
 /**
 * This method creates a new generation of cars.
@@ -340,7 +338,22 @@ function createGeneration(n){
 * @return {Cars[]} An array of the top n cars.
 */
 function selectNextGeneration(cars, n){
+    var cars = cars;
+    var n = n;
+    var topCars = [];
+    var heap = new Heap(function(ab){
+        return b.getFitness() - a.getFitness();
+    });
 
+    for(var i = 0; i < cars.length; i++){
+        heap.push(cars[i]);
+    }
+
+    for(var i = 0; i < n; i++){
+        topCars.push(heap.pop());
+    }
+
+    return topCars;
 };
 
 /**
@@ -378,8 +391,22 @@ function getChromosome(){
 }
 
 /*!
-Misc
-*/
+ * THE CAR
+ */
+ //var Car = function(){
+//
+ //};
+
+//Car.prototype.setAllStats(vertexXArray, vertexYArray, wheelsArray) = function(){
+//    this.vertexXArray = vertexXArray;
+//    this.vertexYArray = vertexYArray;
+//    this.wheelsArray  = wheelsArray;
+//};
+
+
+/*!
+ * MISC
+ */
 
 /**
 * This method generates a random integer between min and max, exclusive.
