@@ -42,7 +42,6 @@ var camera_y = 0;
 var diff_x;
 var diff_y;
 
-
 var proc1 = setInterval(update, 1000 / 60);
 var proc2 = setInterval(nextCar, 1000/60);
 
@@ -56,7 +55,7 @@ var proc2 = setInterval(nextCar, 1000/60);
  var MUTATION_RATE = 0.02;
 
  //Variables
- var carsArray = [];
+ var carsArray = [0,0,0];
  var topCars = [];
  var currentMember = 0;
 
@@ -76,8 +75,15 @@ function init() {
     );
     var worldScale = 60;
 
-    car = new Car();
-    car.generateNewCar();
+    if(currentMember < 3){
+        car = new Car();
+        car.generateNewCar();
+    } else{
+        car = new Car();
+        car.setChromosome(carsArray[currentMember%3].getChromosome());
+    }
+
+    console.log("CAR #" + currentMember + " Car: " + carsArray);
 
     var X_VERT = car.getVertexXArray();
     var Y_VERT = car.getVertexYArray();
@@ -108,30 +114,6 @@ function init() {
     return world;
 };
 
-function newCar(world, worldScale){
-
-    if(carsArray.length < 3){
-        car = new Car();
-        car.generateNewCar();
-    } else{
-        car = carsArray[currentMember];
-    }
-
-    var X_VERT = car.getVertexXArray();
-    var Y_VERT = car.getVertexYArray();
-    var WHEEL_POS = car.getWheelPosArray();
-    var WHEEL_RAD = car.getWheelRadiusArray();
-    var done = false;
-
-    do{
-        try{
-            car.setCarDef(drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]));
-            done = true;
-        } catch(err){
-            car.generateNewCar();
-        }
-    } while(!done);
-}
 
 /**
  * This method updates the screen.
@@ -154,24 +136,16 @@ function update() {
 
 function nextCar(){
     if(car.getHealth() <= 0){
-
-        //TODO: Fix me!
-        if(carsArray.length < 3){
-            carsArray.push(car);
-        } else{
-            carsArray.pop();
-            carsArray.push(currentMember);
-        }
-
+        carsArray[currentMember%3] = car;
 
         if(currentMember % 3 == 0 && currentMember > 0){
             var topCars = selectNextGeneration(carsArray, PARENT_POOL);
             carsArray = crossOverOffsprings(carsArray, topCars);
-            carsArray = mutateOffsprings(carsArray, PARENT_POOL, MUTATION_RATE);
-            currentMember = 0;
+            carsArray = mutateOffsprings(carsArray, PARENT_POOL, 1);
         }
-
         currentMember = currentMember + 1;
+
+
         resetWorld(world);
         resetCamera(world, ctx);
         clearInterval(proc1);
@@ -552,6 +526,7 @@ function ConnectTile() {
 }
 
 
+
 function resetWorld(world){
     for (var b = world.GetBodyList(); b != null; b = b.GetNext()){
         world.DestroyBody(b);
@@ -582,6 +557,7 @@ function draw_world(world, context){
     ctx.restore();
 };
 
+
 function cameraPos(){
     cameraPositionX = car.getCarDef().GetWorldCenter().x;
     cameraPositionY = car.getCarDef().GetWorldCenter().y;
@@ -606,7 +582,7 @@ function selectNextGeneration(cars, n){
     var n = n;
     var topCars = [];
     var heap = new Heap(function(a, b){
-        return b.getFitness() - a.getFitness();
+        return b.getFitness() - a.getFitness(); //Defines Max-Heap Property
     });
 
     for(var i = 0; i < cars.length; i++){
@@ -628,6 +604,7 @@ function selectNextGeneration(cars, n){
 * @return {Cars[]} An array of the crossed-over cars
 */
 function crossOverOffsprings(cars, topCars){
+
     var cars2 = [];
 
     if(topCars.length < 2){
@@ -653,7 +630,9 @@ function crossOverOffsprings(cars, topCars){
         var geneIndex = getRandomArbitraryInteger(0, 20);
         parent1[geneIndex] = parent2[geneIndex];
 
-        cars2.push(new Car(parent1));
+        var newCar = new Car();
+        newCar.setChromosome(parent1);
+        cars2.push(newCar);
     }
     return cars2;
 };
@@ -666,14 +645,13 @@ function crossOverOffsprings(cars, topCars){
 * @return {Cars[]} An array of the mutated cars
 */
 function mutateOffsprings(cars, numberOfParents, mutationFactor){
-
     for(var i = numberOfParents; i < cars.length; i++){
         var vertexX = cars[i].getVertexXArray();
         var vertexY = cars[i].getVertexYArray();
         var wheelPos = cars[i].getWheelPosArray();
         var wheelRadius = cars[i].getWheelRadiusArray();
 
-        for(var i = 0; i < vertexX.length; i++){
+        for(var j = 0; j < vertexX.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
                 var min = -3;
@@ -683,11 +661,15 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
                     value = getRandomArbitraryInteger(min, max);
                 } while(value == 0);
 
-                cars[i].setVertexX(i, value);
+                var newCar = new Car();
+                var chromosome = cars[i].getChromosome();
+                newCar.setChromosome(chromosome);
+                newCar.setVertexX(j, value);
+                cars[i] = newCar;
             }
         }
 
-        for(var i = 0; i < vertexY.length; i++){
+        for(var j = 0; j < vertexY.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
                 var min = -3;
@@ -697,31 +679,49 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
                     value = getRandomArbitraryInteger(min, max);
                 } while(value == 0);
 
-                cars[i].setVertexY(i, value);
+                var newCar = new Car();
+                var chromosome = cars[i].getChromosome();
+                newCar.setChromosome(chromosome);
+                newCar.setVertexY(j, value);
+                cars[i] = newCar;
             }
         }
 
-        for(var i = 0; i < wheelPos.length; i++){
+        for(var j = 0; j < wheelPos.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
                 var min = 1;
                 var max = 8;
                 value = getRandomArbitraryInteger(min, max);
-                cars[i].setWheelPos(i, value);
+
+                var newCar = new Car();
+                var chromosome = cars[i].getChromosome();
+                newCar.setChromosome(chromosome);
+                newCar.setWheelPos(j, value);
+                cars[i] = newCar;
+
             }
         }
 
-        for(var i = 0; i < wheelRadius.length; i++){
+        for(var j = 0; j < wheelRadius.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
                 var min = 20;
                 var max = 100;
                 value = getRandomArbitraryInteger(min, max);
-                cars[i].setWheelRadius(i, value);
+                wheelRadius[j] = value;
+
+                var newCar = new Car();
+                var chromosome = cars[i].getChromosome();
+                console.log(chromosome);
+                newCar.setChromosome(chromosome);
+                newCar.setWheelRadiusArray(wheelRadius);
+
+                cars[i] = newCar;
             }
         }
-
     }
+    return cars;
 };
 
 /*!
@@ -795,8 +795,19 @@ Car.prototype = {
         this.wheelRadius[i] = wheelRadius;
     },
 
+    setWheelRadiusArray : function(wheelRadiusArray){
+        this.wheelRadius = wheelRadiusArray;
+    },
+
     setCarDef : function(carDef){
         this.carDef = carDef;
+    },
+
+    setChromosome : function(chromosome){
+        this.vertexXArray = chromosome.slice(0, 8);
+        this.vertexYArray = chromosome.slice(8, 16);
+        this.wheelPosArray = chromosome.slice(16,18);
+        this.wheelRadiusArray = chromosome.slice(18, 20);
     },
 
     getVertexXArray : function(){
