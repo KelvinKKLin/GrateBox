@@ -77,7 +77,7 @@ function init() {
         }
     } while(!done);
 
-    createRoad(world, 0, 14, 150);
+    ConnectTile();
 
     //setup debug draw
     var debugDraw = new b2DebugDraw();
@@ -439,45 +439,74 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
  * @param angle    {Float}   The rotation of the box, counterclockwise from the horizontal, in radians
  * @return         {Body}    The box
  */
-function createBox(world, x, y, width, height, angle) {
-    var body_def = new b2BodyDef();
-    var fix_def = new b2FixtureDef();
+function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positionX, positionY) {
+    var worldScale = 60;
+    var polygon = new b2PolygonShape;
+    var polygonFix = new b2FixtureDef;
+    polygonFix.shape = polygon;
 
-    fix_def.density = 1.0;
-    fix_def.friction = 0.5;
-    fix_def.restitution = 0;
+    var point = [];
 
-    fix_def.shape = new b2PolygonShape();
+    point = [{ x: 0, y: 0 }, { x: point1X, y: point1Y }, { x: point2X, y: point2Y }, { x: point3X, y: point3Y }];
 
-    fix_def.shape.SetAsBox(width, height);
-
-    body_def.position.Set(x, y);
-
-    var body = world.CreateBody(body_def);
-    var fixture = body.CreateFixture(fix_def);
-    body.SetPositionAndAngle(body.GetPosition(), angle);
-    return body;
-};
-
-/**
- * This method creates a road on the screen
- *
- * @param world             {b2World} The Box2D world that the box is created in
- * @param startX            {Integer} The x-coordinate of the upper left corner of the first tile
- * @param startY            {Integer} The y-coordinate of the upper left corner of the first tile
- * @param maxNumberOfTiles  {Integer} The number of tiles the road is made out of
- */
-function createRoad(world, startX, startY, maxNumberOfTiles) {
-    var lastX = startX;
-    var lastY = startY;
-    var lastHeight = 0.1
-    var angle = 0;//0.78;
-    for (var i = 0; i < maxNumberOfTiles; i++) {
-        lastTile = createBox(world, lastX, lastY, 0.78, lastHeight, angle);
-        angle = angle * -1;
-        lastX = lastX + 1;
+    for (var i = 0; i < 4; i++) {
+        var vec = new b2Vec2();
+        vec.Set(point[i].x, point[i].y);
+        points[i] = vec;
     }
-};
+
+
+    polygonFix.shape.SetAsArray(point, point.length);
+    polygonFix.density = 5;
+    polygonFix.friction = 3;
+    polygonFix.filter.groupInedx = -1;
+    polygonFix.restitution = 0.3;
+    var tailBodyDef = new b2BodyDef;
+    tailBodyDef.type = b2Body.b2_staticBody;
+    tailBodyDef.position.Set(positionX, positionY);
+
+    var tail = world.CreateBody(tailBodyDef);
+    tail.CreateFixture(polygonFix);
+
+
+
+
+
+}
+
+function ConnectTile() {
+    var randomnum;
+    var point1x;
+    var point1y;
+    var point2x;
+    var point2y;
+    var point3x;
+    var point3y;
+    var position = [];
+    position[0] = [-10, 10];
+    for (i = 0; i < 100; i++) {
+        randomnum = Math.random();
+        if (Math.random() > 0.5) {
+            randomnum = -randomnum;
+        }
+        point1x = 3 * Math.cos(Math.PI / 6 * randomnum);
+        point1y = -3 * Math.sin(Math.PI / 6 * randomnum);
+        point2x = 3 * Math.cos(Math.PI / 6 * randomnum) + 0.3 * Math.sin(Math.PI / 6 * randomnum);
+        point2y = -(3 * Math.sin(Math.PI / 6 * randomnum) - 0.3 * Math.cos(Math.PI / 6 * randomnum));
+        point3x = 0.3 * Math.sin(Math.PI / 6 * randomnum);
+        point3y = 0.3 * Math.cos(Math.PI / 6 * randomnum);
+        position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
+        console.log(randomnum);
+        console.log(point1y);
+        createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
+
+
+
+
+    }
+
+
+}
 
 /**
  * This method updates the screen.
@@ -524,7 +553,7 @@ function draw_world(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(200-(camera_x*50) , canvas_height-600);
+    ctx.translate(200-(camera_x*40) , canvas_height-600);
     world.DrawDebugData();
     ctx.restore();
 };
@@ -532,7 +561,7 @@ function draw_world(world, context){
 function cameraPos(){
     cameraPosition = car.getCarDef().GetWorldCenter().x;
     diff_x = camera_x - cameraPosition;
-    camera_x -= 0.025 * diff_x;
+    camera_x -= 0.0125 * diff_x;
 };
 
 /*!
@@ -673,7 +702,7 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
  */
  function Car() {
     this.fitness = 0;
-    this.health = 100;
+    this.health = 10;
     this.carDef = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
