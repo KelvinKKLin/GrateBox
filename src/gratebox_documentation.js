@@ -825,15 +825,11 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
     this.wheelRadiusArray = [];
 }
 
-/**
- Stuff
- */
-Car.prototype = {
 
-	/**
-	* Method that generates new car randomly.
-	*/
-    generateNewCar : function(){
+    /**
+    * Method that generates new car randomly.
+    */
+    function generateNewCar(){
         for(var i = 0; i < 8; i++){
 
             var xValue = 0;
@@ -855,157 +851,156 @@ Car.prototype = {
             this.wheelPosArray[i] = getRandomArbitraryInteger(1, 8);
             this.wheelRadiusArray[i] = getRandomArbitraryInteger(20, 100);
         }
-    },
+    };
 
-	/**
-	* Method that increases the fitness value of a car by 1.
-	*/
-    increaseFitness : function(){
+    /**
+    * Method that increases the fitness value of a car by 1.
+    */
+    function increaseFitness(){
         this.fitness = this.fitness + 1;
-    },
+    };
 
-	/**
-	* Method that reduces the health value of a car by 1.
-	*/
-    removeHealth : function(){
+    /**
+    * Method that reduces the health value of a car by 1.
+    */
+    function removeHealth(){
         this.health = this.health - 1;
-    },
+    };
 
     /**
-	* Method that sets the array of vertices in the horizontal.
-	* @param {vertexXArray[]} vertexXArray The array of vertices to be set.
-	*/
-    setVertexXArray : function(vertexXArray){
+    * Method that sets the array of vertices in the horizontal.
+    * @param {vertexXArray[]} vertexXArray The array of vertices to be set.
+    */
+    function setVertexXArray (vertexXArray){
         this.vertexXArray = vertexXArray;
-    },
+    };
 
     /**
-	* Method that sets a specific vertex in an array of the horizontal vertices to a specific value.
-	* @param {vertexXArray[]} vertexXArray The array of vertices where the vertex is present.
-	* @param {Integer} i The identify of the specific vertex in the array that is to be altered.
-	*/
-    setVertexX : function(i, vertexX){
+    * Method that sets a specific vertex in an array of the horizontal vertices to a specific value.
+    * @param {vertexXArray[]} vertexXArray The array of vertices where the vertex is present.
+    * @param {Integer} i The identify of the specific vertex in the array that is to be altered.
+    */
+    function setVertexX (i, vertexX){
         this.vertexXArray[i] = vertexX;
-    },
+    };
 
     /**
-	* Method that sets the array of vertices in the vertical.
-	* @param {vertexXArray[]} vertexYArray The array of vertices to be set.
-	*/
-    setVertexYArray : function(vertexYArray){
+    * Method that sets the array of vertices in the vertical.
+    * @param {vertexXArray[]} vertexYArray The array of vertices to be set.
+    */
+    function setVertexYArray (vertexYArray){
         this.vertexYArray = vertexYArray;
-    },
+    };
 
     /**
-	* Method that sets a specific vertex in an array of the vertical vertices to a specific value.
-	* @param {vertexXArray[]} vertexYArray The array of vertices where the vertex is present.
-	* @param {Integer} i The identify of the specific vertex in the array that is to be altered.
-	*/
-    setVertexY : function(i, vertexY){
+    * Method that sets a specific vertex in an array of the vertical vertices to a specific value.
+    * @param {vertexXArray[]} vertexYArray The array of vertices where the vertex is present.
+    * @param {Integer} i The identify of the specific vertex in the array that is to be altered.
+    */
+    function setVertexY (i, vertexY){
         this.vertexYArray = vertexY;
-    },
+    };
 
     /**
     * Method that sets the position of a specific wheel to a specific location.
     * @param {wheelPosArray[]} wheelPos The array that conatins the locations of the wheels.
     * @param {Integer} i The identify of the specific wheel position to be set in the array.
     */
-    setWheelPos : function(i, wheelPos){
+    function setWheelPos (i, wheelPos){
         this.wheelPosArray[i] = wheelPos;
-    },
+    };
 
     /**
     * Method that sets the radius of a specific wheel.
     * @param {wheelRadius[]} wheelRadius The array that conatins the radiuses of the wheels.
     * @param {Integer} i The identify of the specific wheel radius to be set in the array.
     */
-    setWheelRadius : function(i, wheelRadius){
+    function setWheelRadius(i, wheelRadius){
         this.wheelRadius[i] = wheelRadius;
-    },
+    };
 
     /**
     * Method that sets array of wheel radiuses to a specific array.
     * @param {wheelRadius[]} wheelRadiusArray The array that conatins the locations of the wheels.
     */
-    setWheelRadiusArray : function(wheelRadiusArray){
+    function setWheelRadiusArray (wheelRadiusArray){
         this.wheelRadius = wheelRadiusArray;
-    },
+    };
 
     /**
     * Method that sets the definition of a car.
     * @param {Float} carDef The set value of the ar's definition.
     */
-    setCarDef : function(carDef){
+    function setCarDef (carDef){
         this.carDef = carDef;
-    },
+    };
 
     /**
     * Method that sets the chromosome of a car
     * @param {Chromosome[]} chromosome The chromosome to be altered.
     */
-    setChromosome : function(chromosome){
+    function setChromosome (chromosome){
         this.vertexXArray = chromosome.slice(0, 8);
         this.vertexYArray = chromosome.slice(8, 16);
         this.wheelPosArray = chromosome.slice(16,18);
         this.wheelRadiusArray = chromosome.slice(18, 20);
-    },
+    };
 
     /**
     * Method that retrieves the array of horizontal vertices of a car.
     */
-    getVertexXArray : function(){
+    function getVertexXArray(){
         return this.vertexXArray;
-    },
+    };
 
     /**
     * Method that retrieves the array of vertical vertices of a car.
     */
-    getVertexYArray : function(){
+    function getVertexYArray(){
         return this.vertexYArray;
-    },
+    };
 
     /**
     * Method that retrieves the array of wheel positions of a car.
     */
-    getWheelPosArray : function(){
+    function getWheelPosArray(){
         return this.wheelPosArray;
-    },
+    };
 
     /**
     * Method that retrieves the array of wheel radiuses of a car.
     */
-    getWheelRadiusArray : function(){
+    function getWheelRadiusArray(){
         return this.wheelRadiusArray;
-    },
+    };
 
     /**
     * Method that retrieves the specific chromosome of a car.
     */
-    getChromosome : function(){
+    function getChromosome(){
         return this.vertexXArray.concat(this.vertexYArray).concat(this.wheelPosArray).concat(this.wheelRadiusArray);
-    },
+    };
 
     /**
     * Method that retrieves the health of a car.
     */
-    getHealth : function(){
+    function getHealth(){
         return this.health;
-    },
+    };
 
     /**
     * Method that retrieves the definition of a car.
     */
-    getCarDef : function(){
+    function getCarDef(){
         return this.carDef;
-    },
+    };
 
     /**
     * Method that retrieves the fitness of a car.
     */
-    getFitness : function(){
+    function getFitness(){
         return this.fitness;
-    }
-};
+    };
 
 /*!
  * MISC
@@ -1037,8 +1032,6 @@ function getRandomArbitrary(min, max){
 };
 
 /**
- * function()
- *
  * This method is the entry point to the program.
  */
 $(function()
