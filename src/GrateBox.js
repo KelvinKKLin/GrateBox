@@ -44,6 +44,20 @@ var proc1 = setInterval(update, 1000 / 60);
 var proc2 = setInterval(nextCar, 1000/60);
 
 /*!
+ * GENETIC ALGORITHM GLOBAL VARIABLES
+ */
+
+ //Constants
+ var POPULATION_SIZE = 3;
+ var PARENT_POOL = 2;
+ var MUTATION_RATE = 0.02;
+
+ //Variables
+ var carsArray = [];
+ var topCars = [];
+ var currentMember = 0;
+
+/*!
     THE VIEW
  */
 
@@ -88,13 +102,17 @@ function init() {
     debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
     world.SetDebugDraw(debugDraw);
 
-
     return world;
 };
 
 function newCar(world, worldScale){
-    car = new Car();
-    car.generateNewCar();
+
+    if(carsArray.length < 3){
+        car = new Car();
+        car.generateNewCar();
+    } else{
+        car = carsArray[currentMember];
+    }
 
     var X_VERT = car.getVertexXArray();
     var Y_VERT = car.getVertexYArray();
@@ -112,9 +130,45 @@ function newCar(world, worldScale){
     } while(!done);
 }
 
+/**
+ * This method updates the screen.
+ */
+function update() {
+    world.Step(
+          1 / 60   //frame-rate
+       , 10       //velocity iterations
+       , 10       //position iterations
+    );
+
+    world.ClearForces();
+    draw_world(world, ctx);
+    if(Math.abs(diff_x)<0.01){
+        car.removeHealth();
+    } else{
+        car.increaseFitness();
+    }
+};
+
 function nextCar(){
     if(car.getHealth() <= 0){
-        //world.DestroyBody(car.getCarDef());
+
+        //TODO: Fix me!
+        if(carsArray.length < 3){
+            carsArray.push(car);
+        } else{
+            carsArray.pop();
+            carsArray.push(currentMember);
+        }
+
+
+        if(currentMember % 3 == 0 && currentMember > 0){
+            var topCars = selectNextGeneration(carsArray, PARENT_POOL);
+            carsArray = crossOverOffsprings(carsArray, topCars);
+            carsArray = mutateOffsprings(carsArray, PARENT_POOL, MUTATION_RATE);
+            currentMember = 0;
+        }
+
+        currentMember = currentMember + 1;
         resetWorld(world);
         resetCamera(world, ctx);
         clearInterval(proc1);
@@ -455,7 +509,6 @@ function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positi
         points[i] = vec;
     }
 
-
     polygonFix.shape.SetAsArray(point, point.length);
     polygonFix.density = 5;
     polygonFix.friction = 3;
@@ -467,11 +520,6 @@ function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positi
 
     var tail = world.CreateBody(tailBodyDef);
     tail.CreateFixture(polygonFix);
-
-
-
-
-
 }
 
 function ConnectTile() {
@@ -496,37 +544,10 @@ function ConnectTile() {
         point3x = 0.3 * Math.sin(Math.PI / 6 * randomnum);
         point3y = 0.3 * Math.cos(Math.PI / 6 * randomnum);
         position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
-        console.log(randomnum);
-        console.log(point1y);
         createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
-
-
-
-
     }
-
-
 }
 
-/**
- * This method updates the screen.
- */
-function update() {
-    world.Step(
-          1 / 60   //frame-rate
-       , 10       //velocity iterations
-       , 10       //position iterations
-    );
-
-    world.ClearForces();
-    draw_world(world, ctx);
-    if(Math.abs(diff_x)<0.01){
-        car.removeHealth();
-    } else{
-        car.increaseFitness();
-    }
-    console.log("TRIGGERED");
-};
 
 function resetWorld(world){
     for (var b = world.GetBodyList(); b != null; b = b.GetNext()){
@@ -578,7 +599,7 @@ function selectNextGeneration(cars, n){
     var cars = cars;
     var n = n;
     var topCars = [];
-    var heap = new Heap(function(ab){
+    var heap = new Heap(function(a, b){
         return b.getFitness() - a.getFitness();
     });
 
@@ -643,8 +664,8 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
     for(var i = numberOfParents; i < cars.length; i++){
         var vertexX = cars[i].getVertexXArray();
         var vertexY = cars[i].getVertexYArray();
-        var wheelPos = cars[i].getWheelPos();
-        var wheelRadius = cars[i].getWheelRadius();
+        var wheelPos = cars[i].getWheelPosArray();
+        var wheelRadius = cars[i].getWheelRadiusArray();
 
         for(var i = 0; i < vertexX.length; i++){
             var mutationChance = getRandomArbitrary(0, 1);
@@ -786,6 +807,10 @@ Car.prototype = {
 
     getWheelRadiusArray : function(){
         return this.wheelRadiusArray;
+    },
+
+    getChromosome : function(){
+        return this.vertexXArray.concat(this.vertexYArray).concat(this.wheelPosArray).concat(this.wheelRadiusArray);
     },
 
     getHealth : function(){
