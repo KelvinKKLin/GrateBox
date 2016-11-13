@@ -38,7 +38,10 @@ var car = 0;
  * the camera.
  */
 var camera_x = 0;
+var camera_y = 0;
 var diff_x;
+var diff_y;
+
 
 var proc1 = setInterval(update, 1000 / 60);
 var proc2 = setInterval(nextCar, 1000/60);
@@ -537,12 +540,12 @@ function ConnectTile() {
         if (Math.random() > 0.5) {
             randomnum = -randomnum;
         }
-        point1x = 3 * Math.cos(Math.PI / 6 * randomnum);
-        point1y = -3 * Math.sin(Math.PI / 6 * randomnum);
-        point2x = 3 * Math.cos(Math.PI / 6 * randomnum) + 0.3 * Math.sin(Math.PI / 6 * randomnum);
-        point2y = -(3 * Math.sin(Math.PI / 6 * randomnum) - 0.3 * Math.cos(Math.PI / 6 * randomnum));
-        point3x = 0.3 * Math.sin(Math.PI / 6 * randomnum);
-        point3y = 0.3 * Math.cos(Math.PI / 6 * randomnum);
+        point1x = 3 * Math.cos(Math.PI / 9 * randomnum);
+        point1y = -3 * Math.sin(Math.PI /9 * randomnum);
+        point2x = 3 * Math.cos(Math.PI / 9 * randomnum) + 0.3 * Math.sin(Math.PI / 9 * randomnum);
+        point2y = -(3 * Math.sin(Math.PI / 9 * randomnum) - 0.3 * Math.cos(Math.PI / 9 * randomnum));
+        point3x = 0.3 * Math.sin(Math.PI / 9 * randomnum);
+        point3y = 0.3 * Math.cos(Math.PI / 9 * randomnum);
         position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
         createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
     }
@@ -574,15 +577,18 @@ function draw_world(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(200-(camera_x*40) , canvas_height-600);
+    ctx.translate(200 - (camera_x * 40), -300+ (camera_y * 20));
     world.DrawDebugData();
     ctx.restore();
 };
 
 function cameraPos(){
-    cameraPosition = car.getCarDef().GetWorldCenter().x;
-    diff_x = camera_x - cameraPosition;
+    cameraPositionX = car.getCarDef().GetWorldCenter().x;
+    cameraPositionY = car.getCarDef().GetWorldCenter().y;
+    diff_x = camera_x - cameraPositionX;
+    diff_y = camera_y - cameraPositionY;
     camera_x -= 0.0125 * diff_x;
+    camera_y -= 0.02 * diff_y;
 };
 
 /*!
