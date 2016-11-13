@@ -46,24 +46,28 @@ var camera_x = 0;
  * the camera.
  */
 var camera_y = 0;
+
 /**
  * diff_x
  *
  * This variable keeps track of the change in the horizontal displacement of the camera.
  */
 var diff_x;
+
 /**
  * diff_y
  *
  * This variable keeps track of the change in the vertical displacement of the camera.
  */
 var diff_y;
+
 /**
  * proc1
  *
  * This variable keeps track of the game loop thread.
  */
 var proc1 = setInterval(update, 1000 / 60);
+
 /**
  * proc2
  *
@@ -76,38 +80,44 @@ var proc2 = setInterval(nextCar, 1000/60);
  */
 
  //Constants
+
  /**
  * POPULATION_SIZE
  *
- * This constant of 3 indicates the size of the initial population of cars.
+ * This constant indicates the size of the initial population of cars.
  */
  var POPULATION_SIZE = 3;
+
  /**
  * PARENT_POOL
  *
- * This constant of 2 indicates the size of the pool from which parents creat offspring.
+ * This constant indicates the size of the pool from which parents creat offspring.
  */
  var PARENT_POOL = 2;
+
  /**
  * MUTATION_RATE
  *
- * This constant of 0.02 indicates the rate at which mutations occur.
+ * This constant indicates the rate at which mutations occur.
  */
  var MUTATION_RATE = 0.02;
 
  //Variables
+
  /**
  * carsArray
  *
  * This variable array contains the cars in the population cars.
  */
  var carsArray = [0,0,0];
+
  /**
  * topCars
  *
  * This variable array contains the highest performing cars for the purpose of creating the next generation.
  */
  var topCars = [];
+
  /**
  * currentMember
  *
@@ -193,7 +203,6 @@ function update() {
 /**
  * This method selects the next car to be simulated.
  */
-
 function nextCar(){
     if(car.getHealth() <= 0){
         carsArray[currentMember%3] = car;
@@ -562,7 +571,6 @@ function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positi
 /**
  * This method connects the tiles to each other in a sequential fashion starting from the first tile at the origin.
  */
-
 function ConnectTile() {
     var randomnum;
     var point1x;
@@ -594,7 +602,6 @@ function ConnectTile() {
  *
  * @param world    {b2World} The world to be reset.
  */
-
 function resetWorld(world){
     for (var b = world.GetBodyList(); b != null; b = b.GetNext()){
         world.DestroyBody(b);
@@ -607,7 +614,6 @@ function resetWorld(world){
  * @param world    {b2World} The world on which the camera is reset.
  * @param context  {Canvas}  The canvas to draw the world on
  */
-
 function resetCamera(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
@@ -636,7 +642,6 @@ function draw_world(world, context){
 /**
  * This method sets the camera position to the position of the car.
  */
-
 function cameraPos(){
     cameraPositionX = car.getCarDef().GetWorldCenter().x;
     cameraPositionY = car.getCarDef().GetWorldCenter().y;
@@ -810,7 +815,6 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
 /**
 * This method establishes the initial values shared by all cares. All cars start with 10 health and have a fitness and carDef of 0.
 */
-
  function Car() {
     this.fitness = 0;
     this.health = 10;
@@ -821,9 +825,8 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
     this.wheelRadiusArray = [];
 }
 
-
-
 Car.prototype = {
+
 	/**
 	* Method that generates new car randomly.
 	*/
@@ -854,10 +857,10 @@ Car.prototype = {
 	/**
 	* Method that increases the fitness value of a car by 1.
 	*/
-
     increaseFitness : function(){
         this.fitness = this.fitness + 1;
     },
+
 	/**
 	* Method that reduces the health value of a car by 1.
 	*/
@@ -869,7 +872,6 @@ Car.prototype = {
 	* Method that sets the array of vertices in the horizontal.
 	* @param {vertexXArray[]} vertexXArray The array of vertices to be set.
 	*/
-
     setVertexXArray : function(vertexXArray){
         this.vertexXArray = vertexXArray;
     },
@@ -879,7 +881,6 @@ Car.prototype = {
 	* @param {vertexXArray[]} vertexXArray The array of vertices where the vertex is present.
 	* @param {Integer} i The identify of the specific vertex in the array that is to be altered.
 	*/
-
     setVertexX : function(i, vertexX){
         this.vertexXArray[i] = vertexX;
     },
@@ -888,7 +889,6 @@ Car.prototype = {
 	* Method that sets the array of vertices in the vertical.
 	* @param {vertexXArray[]} vertexYArray The array of vertices to be set.
 	*/
-
     setVertexYArray : function(vertexYArray){
         this.vertexYArray = vertexYArray;
     },
@@ -898,7 +898,6 @@ Car.prototype = {
 	* @param {vertexXArray[]} vertexYArray The array of vertices where the vertex is present.
 	* @param {Integer} i The identify of the specific vertex in the array that is to be altered.
 	*/
-
     setVertexY : function(i, vertexY){
         this.vertexYArray = vertexY;
     },
@@ -908,7 +907,6 @@ Car.prototype = {
     * @param {wheelPosArray[]} wheelPos The array that conatins the locations of the wheels.
     * @param {Integer} i The identify of the specific wheel position to be set in the array.
     */
-
     setWheelPos : function(i, wheelPos){
         this.wheelPosArray[i] = wheelPos;
     },
@@ -918,7 +916,6 @@ Car.prototype = {
     * @param {wheelRadius[]} wheelRadius The array that conatins the radiuses of the wheels.
     * @param {Integer} i The identify of the specific wheel radius to be set in the array.
     */
-
     setWheelRadius : function(i, wheelRadius){
         this.wheelRadius[i] = wheelRadius;
     },
@@ -927,7 +924,6 @@ Car.prototype = {
     * Method that sets array of wheel radiuses to a specific array.
     * @param {wheelRadius[]} wheelRadiusArray The array that conatins the locations of the wheels.
     */
-
     setWheelRadiusArray : function(wheelRadiusArray){
         this.wheelRadius = wheelRadiusArray;
     },
@@ -936,7 +932,6 @@ Car.prototype = {
     * Method that sets the definition of a car.
     * @param {Float} carDef The set value of the ar's definition.
     */
-
     setCarDef : function(carDef){
         this.carDef = carDef;
     },
@@ -945,7 +940,6 @@ Car.prototype = {
     * Method that sets the chromosome of a car
     * @param {Chromosome[]} chromosome The chromosome to be altered.
     */
-
     setChromosome : function(chromosome){
         this.vertexXArray = chromosome.slice(0, 8);
         this.vertexYArray = chromosome.slice(8, 16);
@@ -956,7 +950,6 @@ Car.prototype = {
     /**
     * Method that retrieves the array of horizontal vertices of a car.
     */
-
     getVertexXArray : function(){
         return this.vertexXArray;
     },
@@ -964,7 +957,6 @@ Car.prototype = {
     /**
     * Method that retrieves the array of vertical vertices of a car.
     */
-
     getVertexYArray : function(){
         return this.vertexYArray;
     },
@@ -972,7 +964,6 @@ Car.prototype = {
     /**
     * Method that retrieves the array of wheel positions of a car.
     */
-
     getWheelPosArray : function(){
         return this.wheelPosArray;
     },
@@ -980,7 +971,6 @@ Car.prototype = {
     /**
     * Method that retrieves the array of wheel radiuses of a car.
     */
-
     getWheelRadiusArray : function(){
         return this.wheelRadiusArray;
     },
@@ -988,7 +978,6 @@ Car.prototype = {
     /**
     * Method that retrieves the specific chromosome of a car.
     */
-
     getChromosome : function(){
         return this.vertexXArray.concat(this.vertexYArray).concat(this.wheelPosArray).concat(this.wheelRadiusArray);
     },
@@ -996,7 +985,6 @@ Car.prototype = {
     /**
     * Method that retrieves the health of a car.
     */
-
     getHealth : function(){
         return this.health;
     },
@@ -1004,7 +992,6 @@ Car.prototype = {
     /**
     * Method that retrieves the definition of a car.
     */
-
     getCarDef : function(){
         return this.carDef;
     },
@@ -1012,7 +999,6 @@ Car.prototype = {
     /**
     * Method that retrieves the fitness of a car.
     */
-
     getFitness : function(){
         return this.fitness;
     }
