@@ -32,13 +32,16 @@ var points = [];
 var car = 0;
 
 /**
- * cameraX
+ * camera_x
  *
  * This variable keeps track of the horizontal velocity of
  * the camera.
  */
 var camera_x = 0;
 var diff_x;
+
+var proc1 = setInterval(update, 1000 / 60);
+var proc2 = setInterval(nextCar, 1000/60);
 
 /*!
     THE VIEW
@@ -85,10 +88,40 @@ function init() {
     debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
     world.SetDebugDraw(debugDraw);
 
-    window.setInterval(update, 1000 / 60);
+
     return world;
 };
 
+function newCar(world, worldScale){
+    car = new Car();
+    car.generateNewCar();
+
+    var X_VERT = car.getVertexXArray();
+    var Y_VERT = car.getVertexYArray();
+    var WHEEL_POS = car.getWheelPosArray();
+    var WHEEL_RAD = car.getWheelRadiusArray();
+    var done = false;
+
+    do{
+        try{
+            car.setCarDef(drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]));
+            done = true;
+        } catch(err){
+            car.generateNewCar();
+        }
+    } while(!done);
+}
+
+function nextCar(){
+    if(car.getHealth() <= 0){
+        //world.DestroyBody(car.getCarDef());
+        resetWorld(world);
+        resetCamera(world, ctx);
+        clearInterval(proc1);
+        init();
+        proc1 = setInterval(update, 1000/60);
+    }
+}
 
 /**
  * This method creates a polygon for the car given 4 points on the Cartesian plane.
@@ -243,10 +276,7 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
             polygonFix.restitution = 0.3;
             return polygonFix;
         }
-
     }
-
-
 };
 
 /**
@@ -379,7 +409,6 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     rearwheelX = points[rearwheelPos][2].x;
     rearwheelY = points[rearwheelPos][2].y;
 
-    console.log(frontWheelRadius);
     var wheelFixture1 = makeWheelShape(world, worldScale, frontWheelRadius);
     var wheelFixture2 = makeWheelShape(world, worldScale, rearWheelRadius);
 
@@ -460,20 +489,20 @@ function update() {
        , 10       //position iterations
     );
 
-    draw_world(world, ctx);
     world.ClearForces();
+    draw_world(world, ctx);
     if(Math.abs(diff_x)<0.01){
         car.removeHealth();
     } else{
         car.increaseFitness();
     }
+    console.log("TRIGGERED");
+};
 
-    if(car.getHealth() <= 0){
-        world.DestroyBody(car.getCarDef());
-        resetCamera(world, ctx);
+function resetWorld(world){
+    for (var b = world.GetBodyList(); b != null; b = b.GetNext()){
+        world.DestroyBody(b);
     }
-
-
 };
 
 function resetCamera(world, context){
@@ -483,7 +512,7 @@ function resetCamera(world, context){
     ctx.translate(0,canvas_height - 650);
     world.DrawDebugData();
     ctx.restore();
-}
+};
 
 /**
  * This method draws the world on the screen, before it is updated.
@@ -492,14 +521,12 @@ function resetCamera(world, context){
  * @param context  {Canvas}  The canvas to draw the world on
  */
 function draw_world(world, context){
-    //first clear the canvas
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
     ctx.translate(200-(camera_x*50) , canvas_height-600);
     world.DrawDebugData();
     ctx.restore();
-
 };
 
 function cameraPos(){
