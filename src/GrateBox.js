@@ -46,10 +46,29 @@ var camera_x = 0;
  * the camera.
  */
 var camera_y = 0;
+/**
+ * diff_x
+ *
+ * This variable keeps track of the change in the horizontal displacement of the camera.
+ */
 var diff_x;
+/**
+ * diff_y
+ *
+ * This variable keeps track of the change in the vertical displacement of the camera.
+ */
 var diff_y;
-
+/**
+ * proc1
+ *
+ * This variable keeps track of the game loop thread.
+ */
 var proc1 = setInterval(update, 1000 / 60);
+/**
+ * proc2
+ *
+ * This variable keeps track of updateCar thread.
+ */
 var proc2 = setInterval(nextCar, 1000/60);
 
 /*!
@@ -57,13 +76,43 @@ var proc2 = setInterval(nextCar, 1000/60);
  */
 
  //Constants
+ /**
+ * POPULATION_SIZE
+ *
+ * This constant of 3 indicates the size of the initial population of cars.
+ */
  var POPULATION_SIZE = 3;
+ /**
+ * PARENT_POOL
+ *
+ * This constant of 2 indicates the size of the pool from which parents creat offspring.
+ */
  var PARENT_POOL = 2;
+ /**
+ * MUTATION_RATE
+ *
+ * This constant of 0.02 indicates the rate at which mutations occur.
+ */
  var MUTATION_RATE = 0.02;
 
  //Variables
+ /**
+ * carsArray
+ *
+ * This variable array contains the cars in the population cars.
+ */
  var carsArray = [0,0,0];
+ /**
+ * topCars
+ *
+ * This variable array contains the highest performing cars for the purpose of creating the next generation.
+ */
  var topCars = [];
+ /**
+ * currentMember
+ *
+ * This variable integer indicates the current member of the group of cars.
+ */
  var currentMember = 0;
 
 /*!
