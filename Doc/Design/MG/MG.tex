@@ -299,45 +299,40 @@ this stage the system is decomposed into modules and analyzed.
 \subsubsection{Genetic Algorithm module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] The algorithms determining how each car generation changes from the last.
+\item[Services:] Determines which parent cars creat the offspring. Creates the offspring. Mutates the genes in the offspring's chromosomes. Creates final chromosome to be used with the Create car and Evolve car modules.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Random seed generation and manipulation module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] The algorithms determining the random elements of the application.
+\item[Services:] Generates a random seed to be used for by the Car creation and Road creation modules. Generates random ints and floats for all of the behaviour hiding modules that use them.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Fitness determination module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] The algorithms determining the fitness of  a car depending on its performance.
+\item[Services:] Sets the criteria for score. Measures each car's score to determine which is the highest. Generates final fitness to be used by the Evolve car module.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Sorting and Searching algorithms module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] The algorithms that search and sort through data (mostly in arrays)
+\item[Services:] Brute force search and sort methods through arrays for the Create car, Evolve car, and Road creation modules. Uses selection sort for this purpose
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Population generation algorithms module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] The algorithms that effect the generation of the initial population and the proceding populations.
+\item[Services:] Generates the initial population with all parameters. Generates the proceding populations using chromosomes generated in other modules.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
