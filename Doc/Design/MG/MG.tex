@@ -243,45 +243,32 @@ this stage the system is decomposed into modules and analyzed.
 \subsubsection{Car creation module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] Accepts a chromosome created by either the Genetic Algorithm module or the Random seed generation and manipulation module.
+\item[Services:] Creates a car object according to the values present in the input chromosome (definition, x and y vertex arrays, wheel positions array, wheel radius array, and fitness).
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Evolve car module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] Takes population size number of cars as input.
+\item[Services:] Creates the next generation of cars determined by the initial input generation by crossbreeding to create offspring as well as mutating offspring according to to a mutation rate.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Road creation module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] Takes as input values created by the Random seed generation and manipulation module.
+\item[Services:] Generates a randomly created road the becomes progressively steeper on which to simulate the cars.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Graphics Display module}
 
 \begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] Genetic Cars
-\end{description}
-
-\subsubsection{Graphics display module}
-
-\begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
+\item[Secrets:] A generation of cars and a complete road. Box 2d physics library.
+\item[Services:] Creates a graphical representation of the simulation for the user to see as well as implementing the physics from a library of said simulation.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
