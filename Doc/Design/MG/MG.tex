@@ -386,19 +386,18 @@ provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
 correct execution of B may be necessary for A to complete the task described in
 its specification. That is, A {\em uses} B if there exist situations in which
 the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
-the modules. It can be seen that the graph is a directed acyclic graph
-(DAG). Each level of the hierarchy offers a testable and usable subset of the
-system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
+implementation of B.  
 
-\begin{figure}[H]
-\centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
-\caption{Use hierarchy among modules}
-\label{FigUH}
-\end{figure}
 
+\mref{mCreateCar} uses \mref{mRandomSeed} and \mref{mSortingAndSearching}.
+
+\mref{mEvolveCar} uses \mref{mGeneticAlgorithm}, \mref{mFitness}, \mref{mSortingAndSearching}, and \mref{mRandomSeed}.
+
+\mref{mCreateRoad} uses \mref{mRandomSeed}.
+
+\mref{mGraphicsDisplay} uses \mref{mCreateCar} and \mref{mCreateRoad}.
+
+\mref{mHardware}, \mref{mGeneticAlgorithm}, \mref{mRandomSeed}, \mref{mFitness}, \mref{mSortingAndSearching}, and \mref{mPopulationGeneration} are all independent modules.
 %\section*{References}
 
 \bibliographystyle {plainnat}
