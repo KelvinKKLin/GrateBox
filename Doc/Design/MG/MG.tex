@@ -48,27 +48,34 @@
 \pagenumbering{roman}
 \tableofcontents
 \listoftables
-
-\begin{table}[bp]
+\begin{table}[h]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Nov 06 & 1.0 & Creation of template and first additions\\
-Nov 08 & 1.1 & Added all elements not directly reliant on specific module names/uses\\
+Nov 08 & 1.1 & Added all elements not directly reliant on specific module 
+names/uses\\
 Nov 11 & 1.2 & All but module detail complete\\
 Nov 13 & 1.3 & Final draft and editing complete\\
 \bottomrule
 \end{tabularx}
 \end{table}
-
-\newpage
-
 \pagenumbering{arabic}
+\newpage
+.
+\newpage
 
 \section{Introduction}
 
-The Genetic Cars project seeks to present an accurate depiction of genetic algorithms in action both as a teaching tool and as a source of entertainment. The requirements for this document, outlined in the software requirements specifications document, outline what the Genetic Cars project must do. This module guide will present how it will go about doing so by presenting the various modules of the Genetic Cars project. The Module internal specification (MIS) will specify the exact methods and functions of the application in more detail.
+The Genetic Cars project seeks to present an accurate depiction of genetic 
+algorithms in action both as a teaching tool and as a source of entertainment. 
+The requirements for this document, outlined in the software requirements 
+specifications document, outline what the Genetic Cars project must do. This 
+module guide will present how it will go about doing so by presenting the 
+various modules of the Genetic Cars project. The Module internal specification 
+(MIS) will specify the exact methods and functions of the application in more 
+detail.
 
 Decomposing a system into modules is a commonly accepted approach to developing
 software.  A module is a work assignment for a programmer or programming
@@ -77,7 +84,7 @@ based on the principle of information hiding~\citep{Parnas1972a}.  This
 principle supports design for change, because the ``secrets'' that each module
 hides represent likely future changes.  
 
-Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
+Our design follows the rules laid out by \citet{ParnasEtAl1984}, as follows:
 \begin{itemize}
 \item System details that are likely to change independently should be the
   secrets of separate modules.
@@ -86,7 +93,8 @@ Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
   structures must obtain it by calling access programs belonging to that module.
 \end{itemize}
 
-This MG specifies the modular structure of the system and is intended to allow both
+This MG specifies the modular structure of the system and is intended to allow 
+both
 designers and maintainers to easily identify the parts of the software.  The
 potential readers of this document are as follows:
 
@@ -125,21 +133,39 @@ unlikely changes are listed in Section \ref{SecUchange}.
 \subsection{Anticipated Changes} \label{SecAchange}
 
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acWebsite}:] The changes that may arrise from the placement of the Genetic Cars project online (i.e. web hosting choices, website layout, etc.) 
-\item[\refstepcounter{acnum} \actheacnum \label{acUserInput}:] The ability for the user to alter inputs (i.e. the mutation rate, parameters for cars (vertex number etc.), parameters for the enviroment (gravity etc.)) 
-\item[\refstepcounter{acnum} \actheacnum \label{acRoad}:] Changes to the overall structure of the road (i.e. using different mathematical forumals to generate it, more or less steep overall, length)
-\item[\refstepcounter{acnum} \actheacnum \label{acAesthetics}:] Changes to the aesthetics of the program (i.e. display window shape and size, use of color, etc.)
-\item[\refstepcounter{acnum} \actheacnum \label{acGeneticAlgorithm}:] Changes to the genetic algorithm (i.e. isolate for fastest car instead of farthest traveled, different means of reproduction, etc.)
-\item[\refstepcounter{acnum} \actheacnum \label{acInitialFactors}:] Changes to the initial state of the enviroment and car population (i.e. larger/smaller initial population sizes)
+\item[\refstepcounter{acnum} \actheacnum \label{acWebsite}:] The changes that 
+may arrise from the placement of the Genetic Cars project online (i.e. web 
+hosting choices, website layout, etc.) 
+\item[\refstepcounter{acnum} \actheacnum \label{acUserInput}:] The ability for 
+the user to alter inputs (i.e. the mutation rate, parameters for cars (vertex 
+number etc.), parameters for the environment (gravity etc.)) 
+\item[\refstepcounter{acnum} \actheacnum \label{acRoad}:] Changes to the overall 
+structure of the road (i.e. using different mathematical forumals to generate 
+it, more or less steep overall, length)
+\item[\refstepcounter{acnum} \actheacnum \label{acAesthetics}:] Changes to the 
+aesthetics of the program (i.e. display window shape and size, use of color, 
+etc.)
+\item[\refstepcounter{acnum} \actheacnum \label{acGeneticAlgorithm}:] Changes to 
+the genetic algorithm (i.e. isolate for fastest car instead of farthest 
+traveled, different means of reproduction, etc.)
+\item[\refstepcounter{acnum} \actheacnum \label{acInitialFactors}:] Changes to 
+the initial state of the enviroment and car population (i.e. larger/smaller 
+initial population sizes)
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
 
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucVehicleChange}:] Changes to the structure of the vehicle altogether 
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucFitnessRequirements}:] Changes to the goal of fitness isolation (i.e. isolating for the worst vehicles instead of the best)
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucCarSpeed}:] Changes to the speed of componenets in simulations (i.e. the set speed of the wheels)
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucLibrary}:] Changes to the library used to generate cars (i.e. changes to the library that result in rounder or more abstract cars)
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucVehicleChange}:] Changes to 
+the structure of the vehicle altogether 
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucFitnessRequirements}:] Changes 
+to the goal of fitness isolation (i.e. isolating for the worst vehicles instead 
+of the best)
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucCarSpeed}:] Changes to the 
+speed of componenets in simulations (i.e. the set speed of the wheels)
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucLibrary}:] Changes to the 
+library used to generate cars (i.e. changes to the library that result in 
+rounder or more abstract cars)
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
@@ -150,17 +176,26 @@ below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHardware}:] Hardware hiding module
+\item [\refstepcounter{mnum} \mthemnum \label{mHardware}:] Hardware hiding 
+module
 \item [\refstepcounter{mnum} \mthemnum \label{mCreateCar}:]  Car creation module
 \item [\refstepcounter{mnum} \mthemnum \label{mEvolveCar}:] Evolve car module
-\item [\refstepcounter{mnum} \mthemnum \label{mCreateRoad}:] Road creation module
-\item [\refstepcounter{mnum} \mthemnum \label{mGraphicsDisplay}:] Graphics display module
-\item [\refstepcounter{mnum} \mthemnum \label{mGeneticAlgorithm}:] Genetic Algorithm module
-\item [\refstepcounter{mnum} \mthemnum \label{mRandomSeed}:] Random seed generation and manipulation module
-\item [\refstepcounter{mnum} \mthemnum \label{mFitness}:] Fitness determination module
-\item [\refstepcounter{mnum} \mthemnum \label{mSearching}:] Searching algorithms module
-\item [\refstepcounter{mnum} \mthemnum \label{mSorting}:] Sorting algorithms module
-\item [\refstepcounter{mnum} \mthemnum \label{mPopulationGeneration}:] Population generation algorithms module
+\item [\refstepcounter{mnum} \mthemnum \label{mCreateRoad}:] Road creation 
+module
+\item [\refstepcounter{mnum} \mthemnum \label{mGraphicsDisplay}:] Graphics 
+display module
+\item [\refstepcounter{mnum} \mthemnum \label{mGeneticAlgorithm}:] Genetic 
+Algorithm module
+\item [\refstepcounter{mnum} \mthemnum \label{mRandomSeed}:] Random seed 
+generation and manipulation module
+\item [\refstepcounter{mnum} \mthemnum \label{mFitness}:] Fitness determination 
+module
+\item [\refstepcounter{mnum} \mthemnum \label{mSearching}:] Searching algorithms 
+module
+\item [\refstepcounter{mnum} \mthemnum \label{mSorting}:] Sorting algorithms 
+module
+\item [\refstepcounter{mnum} \mthemnum \label{mPopulationGeneration}:] 
+Population generation algorithms module
 \end{description}
 
 
@@ -200,7 +235,8 @@ actually be implemented.
 
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules  and anticipated changes and modules is listed in Table \ref{TblRT}. 
+between requirements and modules  and anticipated changes and modules is listed 
+in Table \ref{TblRT}. 
 
 \section{Module Decomposition} \label{SecMD}
 
@@ -217,7 +253,8 @@ Only the leaf modules in the
 hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
 that the module is not a leaf and will not have to be implemented. 
 
-The system is designed to satisfy the requirements developed in the SRS. Throughout
+The system is designed to satisfy the requirements developed in the SRS. 
+Throughout
 this stage the system is decomposed into modules and analyzed.
 
 \subsection{Hardware Hiding Modules (\mref{mHardware})}
@@ -247,7 +284,9 @@ this stage the system is decomposed into modules and analyzed.
 
 \begin{description}
 \item[Secrets:] The algorithms that create cars.
-\item[Services:] Creates a car object according to the values present in the input chromosome (definition, x and y vertex arrays, wheel positions array, wheel radius array, and fitness).
+\item[Services:] Creates a car object according to the values present in the 
+input chromosome (definition, x and y vertex arrays, wheel positions array, 
+wheel radius array, and fitness).
 \item[Implemented By:] Genetic Cars
 \end{description}
 
@@ -255,23 +294,30 @@ this stage the system is decomposed into modules and analyzed.
 
 \begin{description}
 \item[Secrets:] The algorithms that evolve the cars between generations.
-\item[Services:] Creates the next generation of cars determined by the initial input generation by crossbreeding to create offspring as well as mutating offspring according to to a mutation rate.
+\item[Services:] Creates the next generation of cars determined by the initial 
+input generation by crossbreeding to create offspring as well as mutating 
+offspring according to to a mutation rate.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Road creation module}
 
 \begin{description}
-\item[Secrets:] The algorithms that create and govern the road used by the simulation
-\item[Services:] Generates a randomly created road the becomes progressively steeper on which to simulate the cars.
+\item[Secrets:] The algorithms that create and govern the road used by the 
+simulation
+\item[Services:] Generates a randomly created road the becomes progressively 
+steeper on which to simulate the cars.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Graphics Display module}
 
 \begin{description}
-\item[Secrets:] The algorithms that create the graphical display and elements from all other module products.
-\item[Services:] Creates a graphical representation of the simulation for the user to see as well as implementing the physics from a library of said simulation.
+\item[Secrets:] The algorithms that create the graphical display and elements 
+from all other module products.
+\item[Services:] Creates a graphical representation of the simulation for the 
+user to see as well as implementing the physics from a library of said 
+simulation.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
@@ -289,24 +335,33 @@ this stage the system is decomposed into modules and analyzed.
 \subsubsection{Genetic Algorithm module}
 
 \begin{description}
-\item[Secrets:] The algorithms determining how each car generation changes from the last.
-\item[Services:] Determines which parent cars creat the offspring. Creates the offspring. Mutates the genes in the offspring's chromosomes. Creates final chromosome to be used with the Create car and Evolve car modules.
+\item[Secrets:] The algorithms determining how each car generation changes from 
+the last.
+\item[Services:] Determines which parent cars creat the offspring. Creates the 
+offspring. Mutates the genes in the offspring's chromosomes. Creates final 
+chromosome to be used with the Create car and Evolve car modules.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Random seed generation and manipulation module}
 
 \begin{description}
-\item[Secrets:] The algorithms determining the random elements of the application.
-\item[Services:] Generates a random seed to be used for by the Car creation and Road creation modules. Generates random ints and floats for all of the behaviour hiding modules that use them.
+\item[Secrets:] The algorithms determining the random elements of the 
+application.
+\item[Services:] Generates a random seed to be used for by the Car creation and 
+Road creation modules. Generates random ints and floats for all of the behaviour 
+hiding modules that use them.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Fitness determination module}
 
 \begin{description}
-\item[Secrets:] The algorithms determining the fitness of  a car depending on its performance.
-\item[Services:] Sets the criteria for score. Measures each car's score to determine which is the highest. Generates final fitness to be used by the Evolve car module.
+\item[Secrets:] The algorithms determining the fitness of  a car depending on 
+its performance.
+\item[Services:] Sets the criteria for score. Measures each car's score to 
+determine which is the highest. Generates final fitness to be used by the Evolve 
+car module.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
@@ -314,7 +369,8 @@ this stage the system is decomposed into modules and analyzed.
 
 \begin{description}
 \item[Secrets:] The algorithms that search through data (mostly in arrays)
-\item[Services:] Brute force search methods through arrays for the Create car, Evolve car, and Road creation modules. Uses selection sort for this purpose
+\item[Services:] Brute force search methods through arrays for the Create car, 
+Evolve car, and Road creation modules. Uses selection sort for this purpose
 \item[Implemented By:] Genetic Cars
 \end{description}
 
@@ -322,22 +378,27 @@ this stage the system is decomposed into modules and analyzed.
 
 \begin{description}
 \item[Secrets:] The algorithms that sort through data (mostly in arrays)
-\item[Services:] Brute force sort methods through arrays for the Create car, Evolve car, and Road creation modules. Uses selection sort for this purpose
+\item[Services:] Brute force sort methods through arrays for the Create car, 
+Evolve car, and Road creation modules. Uses selection sort for this purpose
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \subsubsection{Population generation algorithms module}
 
 \begin{description}
-\item[Secrets:] The algorithms that effect the generation of the initial population and the proceding populations.
-\item[Services:] Generates the initial population with all parameters. Generates the proceding populations using chromosomes generated in other modules.
+\item[Secrets:] The algorithms that effect the generation of the initial 
+population and the proceding populations.
+\item[Services:] Generates the initial population with all parameters. Generates 
+the proceding populations using chromosomes generated in other modules.
 \item[Implemented By:] Genetic Cars
 \end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
 This section shows two traceability matrices: between the modules and the
-requirements and between the modules and the anticipated changes. Requirements are outlined in greater detail in the SRS found \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/SRS}{here}.
+requirements and between the modules and the anticipated changes. Requirements 
+are outlined in greater detail in the SRS found 
+\href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/SRS}{here}.
 
 \begin{table}[H]
 \centering
@@ -351,7 +412,8 @@ Req 3: Wheel radius parameters & \mref{mCreateCar}\\
 Req 4: Wheel position parameters & \mref{mCreateCar}\\
 Req 5: Min weight parameters & \mref{mCreateCar}\\
 Req 6: Max weight parameters & \mref{mCreateCar}\\
-Req 7: Generation display parameters & \mref{mPopulationGeneration}, \mref{mGraphicsDisplay}\\
+Req 7: Generation display parameters & \mref{mPopulationGeneration}, 
+\mref{mGraphicsDisplay}\\
 Req 8: Fitness display parameters & \mref{mFitness}, \mref{mGraphicsDisplay}\\
 Req 9: Random seed parameters & \mref{mRandomSeed}\\
 Req 10: Mutation rate parameters & \mref{mGeneticAlgorithm}\\
@@ -359,12 +421,17 @@ Req 11: Cars per generation parameters &\mref{mPopulationGeneration}\\
 Req 12: Road generation parameters & \mref{mCreateRoad}\\
 Req 13: Min cars per generation parameters & \mref{mPopulationGeneration}\\
 Req 14: Max cars per generation parameters & \mref{mPopulationGeneration}\\
-Req 15: Top cars parameters & \mref{mFitness}, \mref{mEvolveCar}, \mref{mGraphicsDisplay}\\
-Req 16: Max top cars parameters & \mref{mFitness},  \mref{mSearching},  \mref{mSorting}\\
-Req 17: Min top cars parameters & \mref{mFitness}, \mref{mSearching}, \mref{mSorting}\\
+Req 15: Top cars parameters & \mref{mFitness}, \mref{mEvolveCar}, 
+\mref{mGraphicsDisplay}\\
+Req 16: Max top cars parameters & \mref{mFitness},  \mref{mSearching},  
+\mref{mSorting}\\
+Req 17: Min top cars parameters & \mref{mFitness}, \mref{mSearching}, 
+\mref{mSorting}\\
 Req 18: Non-moving parameters & \mref{mCreateCar}, \mref{mGraphicsDisplay}\\
-Req 19: Fitness paramaters & \mref{mFitness},  \mref{mSearching},  \mref{mSorting}\\
-Req 20: Default value replacement parameters & \mref{mCreateCar}, \mref{mCreateRoad}\\
+Req 19: Fitness paramaters & \mref{mFitness},  \mref{mSearching},  
+\mref{mSorting}\\
+Req 20: Default value replacement parameters & \mref{mCreateCar}, 
+\mref{mCreateRoad}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -378,7 +445,8 @@ Req 20: Default value replacement parameters & \mref{mCreateCar}, \mref{mCreateR
 \textbf{AC} & \textbf{Modules}\\
 \midrule
 \acref{acWebsite} & \mref{mGraphicsDisplay}\\
-\acref{acUserInput} & \mref{mCreateCar}, \mref{mCreateRoad}, \mref{mGeneticAlgorithm}, \mref{mPopulationGeneration}\\
+\acref{acUserInput} & \mref{mCreateCar}, \mref{mCreateRoad}, 
+\mref{mGeneticAlgorithm}, \mref{mPopulationGeneration}\\
 \acref{acRoad} & \mref{mCreateRoad}\\
 \acref{acAesthetics} & \mref{mGraphicsDisplay}\\
 \acref{acGeneticAlgorithm} & \mref{mEvolveCar}, \mref{mGeneticAlgorithm}\\
@@ -399,15 +467,19 @@ the correct functioning of A depends upon the availability of a correct
 implementation of B.  
 
 
-\mref{mCreateCar} uses \mref{mRandomSeed}, \mref{mSorting} and  \mref{mSearching}.
+\mref{mCreateCar} uses \mref{mRandomSeed}, \mref{mSorting} and  
+\mref{mSearching}.
 
-\mref{mEvolveCar} uses \mref{mGeneticAlgorithm}, \mref{mFitness}, \mref{mSorting}, \mref{mSearching}, and \mref{mRandomSeed}.
+\mref{mEvolveCar} uses \mref{mGeneticAlgorithm}, \mref{mFitness}, 
+\mref{mSorting}, \mref{mSearching}, and \mref{mRandomSeed}.
 
 \mref{mCreateRoad} uses \mref{mRandomSeed}.
 
 \mref{mGraphicsDisplay} uses \mref{mCreateCar} and \mref{mCreateRoad}.
 
-\mref{mHardware}, \mref{mGeneticAlgorithm}, \mref{mRandomSeed}, \mref{mFitness}, \mref{mSorting},  \mref{mSearching}, and \mref{mPopulationGeneration} are all independent modules.
+\mref{mHardware}, \mref{mGeneticAlgorithm}, \mref{mRandomSeed}, \mref{mFitness}, 
+\mref{mSorting},  \mref{mSearching}, and \mref{mPopulationGeneration} are all 
+independent modules.
 %\section*{References}
 
 \bibliographystyle {plainnat}
