@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Genetic Cars" company="Team 8, Grate" webLink="" view-date="2016-08-28" view-index="0" gantt-divider-location="802" resource-divider-location="479" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Genetic Cars" company="Team 8, Grate" webLink="" view-date="2016-06-26" view-index="0" gantt-divider-location="802" resource-divider-location="479" version="2.8.1" locale="zh_CN">
     <description><![CDATA[This is a re-implementation of Generic Cars by rednuht.org
 ]]></description>
-    <view zooming-state="default:3" id="gantt-chart">
-        <field id="tpd3" name="Name" width="394" order="0"/>
-        <field id="tpd4" name="Begin date" width="141" order="1"/>
-        <field id="tpd5" name="End date" width="248" order="2"/>
+    <view zooming-state="default:4" id="gantt-chart">
+        <field id="tpd3" name="名称" width="394" order="0"/>
+        <field id="tpd4" name="开始日期" width="141" order="1"/>
+        <field id="tpd5" name="结束日期" width="248" order="2"/>
         <timeline><![CDATA[286]]></timeline>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="238" order="0"/>
-        <field id="1" name="Default role" width="237" order="1"/>
+        <field id="0" name="名称" width="238" order="0"/>
+        <field id="1" name="默认角色" width="237" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -130,13 +130,13 @@
             </task>
             <task id="120" name="Test Plan Rev 0" color="#8cb6ce" meeting="true" start="2016-10-28" duration="0" complete="0" expand="true"/>
         </task>
-        <task id="228" name="Create Design Document Rev 0" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true">
-            <task id="221" name="Create MIS" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true"/>
-            <task id="222" name="Create MID" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true"/>
-            <task id="223" name="Create Trace to Requirements" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true"/>
-            <task id="224" name="Create Decomposition Module" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true"/>
-            <task id="225" name="Create Uses Relationship" color="#8cb6ce" meeting="false" start="2016-10-29" duration="13" complete="0" expand="true"/>
-            <task id="288" name="Edit Design Document" color="#8cb6ce" meeting="false" start="2016-11-05" duration="6" complete="0" expand="true"/>
+        <task id="228" name="Create Design Document Rev 0" color="#8cb6ce" meeting="false" start="2016-10-29" duration="15" complete="0" expand="true">
+            <task id="221" name="Create MIS" color="#8cb6ce" meeting="false" start="2016-11-01" duration="6" complete="0" expand="true"/>
+            <task id="222" name="Create MID" color="#8cb6ce" meeting="false" start="2016-11-05" duration="6" complete="0" expand="true"/>
+            <task id="223" name="Create Trace to Requirements" color="#8cb6ce" meeting="false" start="2016-11-02" duration="4" complete="0" expand="true"/>
+            <task id="224" name="Create Decomposition Module" color="#8cb6ce" meeting="false" start="2016-10-29" duration="15" complete="0" expand="true"/>
+            <task id="225" name="Create Uses Relationship" color="#8cb6ce" meeting="false" start="2016-11-02" duration="5" complete="0" expand="true"/>
+            <task id="288" name="Edit Design Document" color="#8cb6ce" meeting="false" start="2016-11-09" duration="3" complete="0" expand="true"/>
             <task id="121" name="Design Document Rev 0" color="#8cb6ce" meeting="true" start="2016-11-11" duration="0" complete="0" expand="true"/>
         </task>
         <task id="235" name="Create Rev 0" color="#8cb6ce" meeting="false" start="2016-10-29" duration="34" complete="0" expand="true">
@@ -160,11 +160,60 @@
         </task>
     </tasks>
     <resources>
-        <resource id="0" name="Kelvin Lin" function="1" contacts="" phone=""/>
         <resource id="1" name="Eric Chaput" function="2" contacts="" phone=""/>
+        <resource id="0" name="Kelvin Lin" function="1" contacts="" phone=""/>
         <resource id="2" name="Jin Liu" function="2" contacts="" phone=""/>
     </resources>
     <allocations>
+        <allocation task-id="153" resource-id="1" function="2" responsible="false" load="25.0"/>
+        <allocation task-id="155" resource-id="1" function="2" responsible="false" load="25.0"/>
+        <allocation task-id="168" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="169" resource-id="1" function="2" responsible="false" load="25.0"/>
+        <allocation task-id="174" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="175" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="176" resource-id="1" function="2" responsible="false" load="25.0"/>
+        <allocation task-id="185" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="186" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="187" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="188" resource-id="1" function="2" responsible="false" load="25.0"/>
+        <allocation task-id="173" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="208" resource-id="1" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="210" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="221" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="222" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="223" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="225" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="229" resource-id="1" function="2" responsible="false" load="20.0"/>
+        <allocation task-id="230" resource-id="1" function="2" responsible="true" load="15.0"/>
+        <allocation task-id="231" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="232" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="249" resource-id="1" function="2" responsible="false" load="30.0"/>
+        <allocation task-id="250" resource-id="1" function="2" responsible="true" load="33.0"/>
+        <allocation task-id="251" resource-id="1" function="2" responsible="false" load="30.0"/>
+        <allocation task-id="257" resource-id="1" function="2" responsible="false" load="95.0"/>
+        <allocation task-id="258" resource-id="1" function="2" responsible="false" load="5.0"/>
+        <allocation task-id="265" resource-id="1" function="2" responsible="false" load="30.0"/>
+        <allocation task-id="288" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="289" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="290" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="291" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="292" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="293" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="294" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="200" resource-id="1" function="2" responsible="true" load="5.0"/>
+        <allocation task-id="309" resource-id="1" function="2" responsible="false" load="1.0"/>
+        <allocation task-id="310" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="311" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="314" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="313" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="312" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="315" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="316" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="317" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="318" resource-id="1" function="2" responsible="false" load="2.0"/>
+        <allocation task-id="332" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="333" resource-id="1" function="2" responsible="true" load="2.0"/>
+        <allocation task-id="121" resource-id="1" function="2" responsible="true" load="10.0"/>
         <allocation task-id="153" resource-id="0" function="1" responsible="true" load="25.0"/>
         <allocation task-id="155" resource-id="0" function="1" responsible="true" load="25.0"/>
         <allocation task-id="168" resource-id="0" function="1" responsible="true" load="10.0"/>
@@ -179,9 +228,8 @@
         <allocation task-id="173" resource-id="0" function="1" responsible="false" load="10.0"/>
         <allocation task-id="208" resource-id="0" function="1" responsible="true" load="10.0"/>
         <allocation task-id="209" resource-id="0" function="1" responsible="true" load="20.0"/>
-        <allocation task-id="210" resource-id="0" function="1" responsible="true" load="20.0"/>
-        <allocation task-id="211" resource-id="0" function="1" responsible="true" load="25.0"/>
-        <allocation task-id="221" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="210" resource-id="0" function="1" responsible="true" load="10.0"/>
+        <allocation task-id="211" resource-id="0" function="1" responsible="true" load="20.0"/>
         <allocation task-id="222" resource-id="0" function="1" responsible="true" load="10.0"/>
         <allocation task-id="223" resource-id="0" function="1" responsible="true" load="10.0"/>
         <allocation task-id="224" resource-id="0" function="1" responsible="true" load="10.0"/>
@@ -195,7 +243,7 @@
         <allocation task-id="251" resource-id="0" function="1" responsible="false" load="30.0"/>
         <allocation task-id="257" resource-id="0" function="1" responsible="true" load="95.0"/>
         <allocation task-id="258" resource-id="0" function="1" responsible="true" load="5.0"/>
-        <allocation task-id="265" resource-id="0" function="1" responsible="true" load="45.0"/>
+        <allocation task-id="265" resource-id="0" function="1" responsible="true" load="30.0"/>
         <allocation task-id="301" resource-id="0" function="1" responsible="true" load="5.0"/>
         <allocation task-id="302" resource-id="0" function="1" responsible="true" load="5.0"/>
         <allocation task-id="303" resource-id="0" function="1" responsible="true" load="5.0"/>
@@ -205,48 +253,22 @@
         <allocation task-id="307" resource-id="0" function="1" responsible="true" load="5.0"/>
         <allocation task-id="308" resource-id="0" function="1" responsible="true" load="5.0"/>
         <allocation task-id="202" resource-id="0" function="1" responsible="true" load="25.0"/>
-        <allocation task-id="335" resource-id="0" function="1" responsible="true" load="10.0"/>
-        <allocation task-id="153" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="155" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="168" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="169" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="174" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="175" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="176" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="185" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="186" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="187" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="188" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="173" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="208" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="209" resource-id="1" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="210" resource-id="1" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="211" resource-id="1" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="221" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="222" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="223" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="224" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="225" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="229" resource-id="1" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="230" resource-id="1" function="2" responsible="true" load="15.0"/>
-        <allocation task-id="231" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="232" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="249" resource-id="1" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="250" resource-id="1" function="2" responsible="true" load="33.0"/>
-        <allocation task-id="251" resource-id="1" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="257" resource-id="1" function="2" responsible="false" load="95.0"/>
-        <allocation task-id="258" resource-id="1" function="2" responsible="false" load="5.0"/>
-        <allocation task-id="265" resource-id="1" function="2" responsible="false" load="45.0"/>
-        <allocation task-id="288" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="289" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="290" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="291" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="292" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="293" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="294" resource-id="1" function="2" responsible="true" load="5.0"/>
-        <allocation task-id="200" resource-id="1" function="2" responsible="true" load="25.0"/>
-        <allocation task-id="309" resource-id="1" function="2" responsible="true" load="15.0"/>
-        <allocation task-id="335" resource-id="1" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="336" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="335" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="337" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="338" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="339" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="340" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="341" resource-id="0" function="1" responsible="false" load="2.0"/>
+        <allocation task-id="342" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="343" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="344" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="345" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="346" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="331" resource-id="0" function="1" responsible="true" load="2.0"/>
+        <allocation task-id="120" resource-id="0" function="1" responsible="true" load="5.0"/>
+        <allocation task-id="288" resource-id="0" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="121" resource-id="0" function="1" responsible="false" load="10.0"/>
         <allocation task-id="153" resource-id="2" function="2" responsible="false" load="25.0"/>
         <allocation task-id="155" resource-id="2" function="2" responsible="false" load="25.0"/>
         <allocation task-id="173" resource-id="2" function="2" responsible="false" load="10.0"/>
@@ -258,12 +280,8 @@
         <allocation task-id="168" resource-id="2" function="2" responsible="false" load="10.0"/>
         <allocation task-id="208" resource-id="2" function="2" responsible="false" load="20.0"/>
         <allocation task-id="209" resource-id="2" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="210" resource-id="2" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="221" resource-id="2" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="222" resource-id="2" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="223" resource-id="2" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="224" resource-id="2" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="225" resource-id="2" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="210" resource-id="2" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="224" resource-id="2" function="2" responsible="false" load="30.0"/>
         <allocation task-id="229" resource-id="2" function="2" responsible="false" load="20.0"/>
         <allocation task-id="230" resource-id="2" function="2" responsible="false" load="10.0"/>
         <allocation task-id="231" resource-id="2" function="2" responsible="true" load="15.0"/>
@@ -274,7 +292,6 @@
         <allocation task-id="257" resource-id="2" function="2" responsible="false" load="95.0"/>
         <allocation task-id="258" resource-id="2" function="2" responsible="false" load="5.0"/>
         <allocation task-id="265" resource-id="2" function="2" responsible="false" load="25.0"/>
-        <allocation task-id="288" resource-id="2" function="2" responsible="false" load="10.0"/>
         <allocation task-id="295" resource-id="2" function="2" responsible="true" load="5.0"/>
         <allocation task-id="296" resource-id="2" function="2" responsible="true" load="5.0"/>
         <allocation task-id="297" resource-id="2" function="2" responsible="true" load="5.0"/>
@@ -282,6 +299,7 @@
         <allocation task-id="299" resource-id="2" function="2" responsible="true" load="5.0"/>
         <allocation task-id="300" resource-id="2" function="2" responsible="true" load="5.0"/>
         <allocation task-id="201" resource-id="2" function="2" responsible="true" load="25.0"/>
+        <allocation task-id="121" resource-id="2" function="2" responsible="false" load="10.0"/>
     </allocations>
     <vacations/>
     <previous/>
