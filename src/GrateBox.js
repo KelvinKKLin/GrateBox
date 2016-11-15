@@ -32,34 +32,34 @@ var points = [];
 var car = 0;
 
 /**
- * camera_x
+ * camerax
  *
  * This variable keeps track of the horizontal velocity of
  * the camera.
  */
-var camera_x = 0;
+var camerax = 0;
 
 /**
- * camera_y
+ * cameray
  *
  * This variable keeps track of the vertical velocity of
  * the camera.
  */
-var camera_y = 0;
+var cameray = 0;
 
 /**
- * diff_x
+ * diffx
  *
  * This variable keeps track of the change in the horizontal displacement of the camera.
  */
-var diff_x;
+var diffx;
 
 /**
- * diff_y
+ * diffy
  *
  * This variable keeps track of the change in the vertical displacement of the camera.
  */
-var diff_y;
+var diffy;
 
 /**
  * proc1
@@ -139,7 +139,7 @@ function init() {
           new b2Vec2(0, 9.8)    //gravity
        , true                 //allow sleep
     );
-    var worldScale = 60;
+    var WORLD_SCALE = 60;
 
     if(currentMember < 3){
         car = new Car();
@@ -151,22 +151,22 @@ function init() {
 
     console.log("CAR #" + currentMember + " Car: " + carsArray);
 
-    var X_VERT = car.getVertexXArray();
-    var Y_VERT = car.getVertexYArray();
-    var WHEEL_POS = car.getWheelPosArray();
-    var WHEEL_RAD = car.getWheelRadiusArray();
+    var xvert = car.getVertexXArray();
+    var yvert = car.getVertexYArray();
+    var wheelpos = car.getWheelPosArray();
+    var wheelrad = car.getWheelRadiusArray();
     var done = false;
 
     do{
         try{
-            car.setCarDef(drawCar(world, worldScale, X_VERT[0],Y_VERT[0],X_VERT[1],Y_VERT[1],X_VERT[2],Y_VERT[2],X_VERT[3],Y_VERT[3],X_VERT[4],Y_VERT[4],-X_VERT[5],Y_VERT[5],X_VERT[6],Y_VERT[6] ,X_VERT[7],Y_VERT[7],WHEEL_POS[0], WHEEL_POS[1], WHEEL_RAD[0], WHEEL_RAD[1]));
+            car.setCarDef(drawCar(world, WORLD_SCALE, xvert[0], yvert[0], xvert[1], yvert[1], xvert[2], yvert[2], xvert[3], yvert[3], xvert[4], yvert[4], xvert[5], yvert[5], xvert[6], yvert[6], xvert[7], yvert[7], wheelpos[0], wheelpos[1], wheelrad[0], wheelrad[1]));
             done = true;
         } catch(err){
             car.generateNewCar();
         }
     } while(!done);
 
-    ConnectTile();
+    connecttile();
 
     //setup debug draw
     var debugDraw = new b2DebugDraw();
@@ -192,8 +192,8 @@ function update() {
     );
 
     world.ClearForces();
-    draw_world(world, ctx);
-    if(Math.abs(diff_x)<0.01){
+    drawworld(world, ctx);
+    if(Math.abs(diffx)<0.01){
         car.removeHealth();
     } else{
         car.increaseFitness();
@@ -235,7 +235,7 @@ function nextCar(){
  * @return          {b2FixtureDef} The polygon created
  */
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
-    var worldScale = 60;
+    var WORLD_SCALE = 60;
     if (vertex1X > 0) {
 
         var a = vertex1X;
@@ -383,12 +383,12 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y){
  * This method creates the shape of a wheel for the car given its radius.
  *
  * @param world       {b2World}      The Box2D world where the wheel will be placed in
- * @param worldScale  {Integer}      The scaling factor
+ * @param WORLD_SCALE  {Integer}      The scaling factor
  * @param radius      {Float}        The radius of the wheel
  * @return            {b2FixtureDef} The shape of the wheel created
  */
-function makeWheelShape(world, worldScale, radius){
-    var wheelshape = new b2CircleShape(radius / worldScale);
+function makeWheelShape(world, WORLD_SCALE, radius) {
+    var wheelshape = new b2CircleShape(radius / WORLD_SCALE);
     var wheelFixture = new b2FixtureDef;
     wheelFixture.density = 1;
     wheelFixture.friction = 3;
@@ -409,15 +409,15 @@ function makeWheelShape(world, worldScale, radius){
  * @return           {b2RevoluteJointDef} The joint connecting bodyA to bodyB
  */
 function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
-    var joint_def = new b2RevoluteJointDef();
-    joint_def.bodyA = bodyA;
-    joint_def.bodyB = bodyB;
-    joint_def.localAnchorA = new b2Vec2(0, 0);
-    joint_def.localAnchorB = new b2Vec2(wheelPosX, wheelPosY);
-    joint_def.maxMotorTorque = 70;
-    joint_def.motorSpeed = -300;
-    joint_def.enableMotor = true;
-    return joint_def;
+    var jointdef = new b2RevoluteJointDef();
+    jointdef.bodyA = bodyA;
+    jointdef.bodyB = bodyB;
+    jointdef.localAnchorA = new b2Vec2(0, 0);
+    jointdef.localAnchorB = new b2Vec2(wheelPosX, wheelPosY);
+    jointdef.maxMotorTorque = 170;
+    jointdef.motorSpeed = -300;
+    jointdef.enableMotor = true;
+    return jointdef;
 };
 
 /**
@@ -440,7 +440,7 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
  * This method creates a car to the screen.
  *
  * @param world             {b2World}   The Box2D world where the car will be placed in
- * @param worldScale        {Integer}   The scaling factor for the Box2D world
+ * @param WORLD_SCALE        {Integer}   The scaling factor for the Box2D world
  * @param vertex1X          {Integer}   The x-coordinate of the first vertex
  * @param vertex1Y          {Integer}   The y-coordinate of the first vertex
  * @param vertex2X          {Integer}   The x-coordinate of the second vertex
@@ -461,7 +461,7 @@ function makeWheelFixture(world, car, wheelbodyDef, wheelFixture){
  * @param rearWheelPos      {Integer}   The vertex that the back wheel is attached to
  * @return                  {b2BodyDef} The completed car
  */
-function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y,frontwheelPos,rearwheelPos, frontWheelRadius, rearWheelRadius) {
+function drawCar(world, WORLD_SCALE, vertex1X, vertex1Y, vertex2X, vertex2Y, vertex3X, vertex3Y, vertex4X, vertex4Y, vertex5X, vertex5Y, vertex6X, vertex6Y, vertex7X, vertex7Y, vertex8X, vertex8Y, frontwheelPos, rearwheelPos, frontWheelRadius, rearWheelRadius) {
     var polygonFix1 = 0;
     var polygonFix2 = 0;
     var polygonFix3 = 0;
@@ -487,7 +487,7 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
 
     var carBodyDef = new b2BodyDef;
     carBodyDef.type = b2Body.b2_dynamicBody;
-    carBodyDef.position.Set(320 / worldScale, 100 / worldScale);
+    carBodyDef.position.Set(320 / WORLD_SCALE, 100 / WORLD_SCALE);
 
     var car = world.CreateBody(carBodyDef);
     car.CreateFixture(polygonFix1);
@@ -509,8 +509,8 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     rearwheelX = points[rearwheelPos][2].x;
     rearwheelY = points[rearwheelPos][2].y;
 
-    var wheelFixture1 = makeWheelShape(world, worldScale, frontWheelRadius);
-    var wheelFixture2 = makeWheelShape(world, worldScale, rearWheelRadius);
+    var wheelFixture1 = makeWheelShape(world, WORLD_SCALE, frontWheelRadius);
+    var wheelFixture2 = makeWheelShape(world, WORLD_SCALE, rearWheelRadius);
 
     var wheelbodyDef = new b2BodyDef;
     wheelbodyDef.type = b2Body.b2_dynamicBody;
@@ -519,11 +519,11 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
     var rearwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture1);
     var frontwheel = makeWheelFixture(world, car, wheelbodyDef, wheelFixture2);
 
-    var joint_def_rear = makeCarJoints(world, rearwheel, car, rearwheelX, rearwheelY);
-    world.CreateJoint(joint_def_rear);
+    var jointdefrear = makeCarJoints(world, rearwheel, car, rearwheelX, rearwheelY);
+    world.CreateJoint(jointdefrear);
 
-    var joint_def_front = makeCarJoints(world, frontwheel, car, frontwheelX, frontwheelY);
-    world.CreateJoint(joint_def_front);
+    var jointdeffront = makeCarJoints(world, frontwheel, car, frontwheelX, frontwheelY);
+    world.CreateJoint(jointdeffront);
 
     return car;
 };
@@ -540,7 +540,7 @@ function drawCar(world, worldScale, vertex1X, vertex1Y, vertex2X, vertex2Y, vert
  * @return         {Body}    The box
  */
 function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positionX, positionY) {
-    var worldScale = 60;
+    var WORLD_SCALE = 60;
     var polygon = new b2PolygonShape;
     var polygonFix = new b2FixtureDef;
     polygonFix.shape = polygon;
@@ -571,7 +571,7 @@ function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positi
 /**
  * This method connects the tiles to each other in a sequential fashion starting from the first tile at the origin.
  */
-function ConnectTile() {
+function connecttile() {
     var randomnum;
     var point1x;
     var point1y;
@@ -629,11 +629,11 @@ function resetCamera(world, context){
  * @param world    {b2World} The world to draw on
  * @param context  {Canvas}  The canvas to draw the world on
  */
-function draw_world(world, context){
+function drawworld(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(200 - (camera_x * 40), -300+ (camera_y * 20));
+    ctx.translate(200 - (camerax * 40), -300+ (cameray * 20));
     world.DrawDebugData();
     ctx.restore();
 };
@@ -645,10 +645,10 @@ function draw_world(world, context){
 function cameraPos(){
     cameraPositionX = car.getCarDef().GetWorldCenter().x;
     cameraPositionY = car.getCarDef().GetWorldCenter().y;
-    diff_x = camera_x - cameraPositionX;
-    diff_y = camera_y - cameraPositionY;
-    camera_x -= 0.0125 * diff_x;
-    camera_y -= 0.02 * diff_y;
+    diffx = camerax - cameraPositionX;
+    diffy = cameray - cameraPositionY;
+    camerax -= 0.0125 * diffx;
+    cameray -= 0.0125 * diffy;
 };
 
 /*!
