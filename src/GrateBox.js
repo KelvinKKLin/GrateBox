@@ -220,6 +220,9 @@ function nextCar(){
         clearInterval(proc1);
         init();
         proc1 = setInterval(update, 1000/60);
+    } else if(car.getFitness() > 1000000000){
+        car.setFitness(-1);
+        car.setHealth(0);
     }
 }
 
@@ -414,7 +417,7 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY){
     jointdef.bodyB = bodyB;
     jointdef.localAnchorA = new b2Vec2(0, 0);
     jointdef.localAnchorB = new b2Vec2(wheelPosX, wheelPosY);
-    jointdef.maxMotorTorque = 170;
+    jointdef.maxMotorTorque = 500;
     jointdef.motorSpeed = -300;
     jointdef.enableMotor = true;
     return jointdef;
@@ -676,6 +679,8 @@ function selectNextGeneration(cars, n){
     for(var i = 0; i < n; i++){
         topCars.push(heap.pop());
     }
+
+    $("#results").append("Top car of generation " + currentMember/3 + " ran for " + topCars[0].getFitness() +" cycles <br/>");
 
     return topCars;
 };
@@ -948,6 +953,22 @@ Car.prototype = {
         this.vertexYArray = chromosome.slice(8, 16);
         this.wheelPosArray = chromosome.slice(16,18);
         this.wheelRadiusArray = chromosome.slice(18, 20);
+    },
+
+    /**
+    * Method that sets the health of a car
+    * @param {Integer} health The health to be altered.
+    */
+    setHealth : function(health){
+        this.health = health;
+    },
+
+    /**
+    * Method that sets the fitness of a car
+    * @param {Integer} fitness The fitness to be altered.
+    */
+    setFitness : function(fitness){
+        this.fitness = fitness;
     },
 
     /**
