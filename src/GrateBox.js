@@ -149,8 +149,6 @@ function init() {
         car.setChromosome(carsArray[currentMember%3].getChromosome());
     }
 
-    console.log("CAR #" + currentMember + " Car: " + carsArray);
-
     var xvert = car.getVertexXArray();
     var yvert = car.getVertexYArray();
     var wheelpos = car.getWheelPosArray();
@@ -1064,8 +1062,14 @@ function getRandomArbitrary(min, max){
  */
 $(function()
 {
+    $("#ga-stats").append("Population Size: " + POPULATION_SIZE + "<br>");
+    $("#ga-stats").append("Parent Pool: " + PARENT_POOL + "<br>");
+    $("#ga-stats").append("Mutation Rate: " + MUTATION_RATE + "<br>");
+
+
     var canvas = $('#canvas');
     ctx = canvas.get(0).getContext('2d');
+
 
     //first create the world
     init();
