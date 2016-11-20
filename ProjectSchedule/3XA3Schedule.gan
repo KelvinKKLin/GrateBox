@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Genetic Cars" company="Team 8, Grate" webLink="" view-date="2016-06-26" view-index="0" gantt-divider-location="802" resource-divider-location="479" version="2.8.1" locale="zh_CN">
+<?xml version="1.0" encoding="UTF-8"?><project name="Genetic Cars" company="Team 8, Grate" webLink="" view-date="2016-05-29" view-index="0" gantt-divider-location="802" resource-divider-location="479" version="2.8.1" locale="zh_CN">
     <description><![CDATA[This is a re-implementation of Generic Cars by rednuht.org
 ]]></description>
-    <view zooming-state="default:4" id="gantt-chart">
+    <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="名称" width="394" order="0"/>
         <field id="tpd4" name="开始日期" width="141" order="1"/>
         <field id="tpd5" name="结束日期" width="248" order="2"/>
@@ -140,16 +140,14 @@
             <task id="121" name="Design Document Rev 0" color="#8cb6ce" meeting="true" start="2016-11-11" duration="0" complete="0" expand="true"/>
         </task>
         <task id="235" name="Create Rev 0" color="#8cb6ce" meeting="false" start="2016-10-29" duration="34" complete="0" expand="true">
-            <task id="229" name="Implement Project According to Design" color="#8cb6ce" meeting="false" start="2016-10-29" duration="15" complete="0" expand="true"/>
-            <task id="230" name="Quantative Testing" color="#8cb6ce" meeting="false" start="2016-11-13" duration="5" complete="0" expand="true"/>
+            <task id="229" name="Implement Project According to Design" color="#8cb6ce" meeting="false" start="2016-10-29" duration="17" complete="0" expand="true"/>
             <task id="231" name="Qualitative Testing" color="#8cb6ce" meeting="false" start="2016-11-13" duration="5" complete="0" expand="true"/>
-            <task id="232" name="Create Documentation" color="#8cb6ce" meeting="false" start="2016-11-13" duration="5" complete="0" expand="true"/>
-            <task id="122" name="Rev 0 Demonstration" color="#8cb6ce" meeting="true" start="2016-12-02" duration="0" complete="0" expand="true"/>
+            <task id="232" name="Create Documentation" color="#8cb6ce" meeting="false" start="2016-11-12" duration="3" complete="0" expand="true"/>
+            <task id="122" name="Rev 0 Demonstration" color="#8cb6ce" meeting="true" start="2016-11-16" duration="0" complete="0" expand="true"/>
             <task id="124" name="Peer Evaluation of Other Teams" color="#8cb6ce" meeting="true" start="2016-12-02" duration="0" complete="0" expand="true"/>
         </task>
         <task id="248" name="Create Revision 1" color="#8cb6ce" meeting="false" start="2016-11-19" duration="13" complete="0" expand="true">
             <task id="249" name="Iterate Code from Rev 0" color="#8cb6ce" meeting="false" start="2016-11-19" duration="7" complete="0" expand="true"/>
-            <task id="250" name="Quantative Testing" color="#8cb6ce" meeting="false" start="2016-11-26" duration="6" complete="0" expand="true"/>
             <task id="251" name="Qualitative Testing" color="#8cb6ce" meeting="false" start="2016-11-26" duration="6" complete="0" expand="true"/>
             <task id="123" name="Final Demonstration Rev 1" color="#8cb6ce" meeting="true" start="2016-12-02" duration="0" complete="0" priority="4" expand="true"/>
         </task>
@@ -184,11 +182,8 @@
         <allocation task-id="223" resource-id="1" function="2" responsible="false" load="10.0"/>
         <allocation task-id="225" resource-id="1" function="2" responsible="false" load="10.0"/>
         <allocation task-id="229" resource-id="1" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="230" resource-id="1" function="2" responsible="true" load="15.0"/>
         <allocation task-id="231" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="232" resource-id="1" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="249" resource-id="1" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="250" resource-id="1" function="2" responsible="true" load="33.0"/>
+        <allocation task-id="232" resource-id="1" function="2" responsible="false" load="30.0"/>
         <allocation task-id="251" resource-id="1" function="2" responsible="false" load="30.0"/>
         <allocation task-id="257" resource-id="1" function="2" responsible="false" load="95.0"/>
         <allocation task-id="258" resource-id="1" function="2" responsible="false" load="5.0"/>
@@ -214,6 +209,7 @@
         <allocation task-id="332" resource-id="1" function="2" responsible="true" load="2.0"/>
         <allocation task-id="333" resource-id="1" function="2" responsible="true" load="2.0"/>
         <allocation task-id="121" resource-id="1" function="2" responsible="true" load="10.0"/>
+        <allocation task-id="249" resource-id="1" function="2" responsible="true" load="100.0"/>
         <allocation task-id="153" resource-id="0" function="1" responsible="true" load="25.0"/>
         <allocation task-id="155" resource-id="0" function="1" responsible="true" load="25.0"/>
         <allocation task-id="168" resource-id="0" function="1" responsible="true" load="10.0"/>
@@ -234,12 +230,9 @@
         <allocation task-id="223" resource-id="0" function="1" responsible="true" load="10.0"/>
         <allocation task-id="224" resource-id="0" function="1" responsible="true" load="10.0"/>
         <allocation task-id="225" resource-id="0" function="1" responsible="true" load="10.0"/>
-        <allocation task-id="229" resource-id="0" function="1" responsible="true" load="20.0"/>
-        <allocation task-id="230" resource-id="0" function="1" responsible="false" load="10.0"/>
+        <allocation task-id="229" resource-id="0" function="1" responsible="true" load="30.0"/>
         <allocation task-id="231" resource-id="0" function="1" responsible="false" load="10.0"/>
         <allocation task-id="232" resource-id="0" function="1" responsible="true" load="15.0"/>
-        <allocation task-id="249" resource-id="0" function="1" responsible="true" load="30.0"/>
-        <allocation task-id="250" resource-id="0" function="1" responsible="false" load="30.0"/>
         <allocation task-id="251" resource-id="0" function="1" responsible="false" load="30.0"/>
         <allocation task-id="257" resource-id="0" function="1" responsible="true" load="95.0"/>
         <allocation task-id="258" resource-id="0" function="1" responsible="true" load="5.0"/>
@@ -282,13 +275,10 @@
         <allocation task-id="209" resource-id="2" function="2" responsible="false" load="20.0"/>
         <allocation task-id="210" resource-id="2" function="2" responsible="false" load="10.0"/>
         <allocation task-id="224" resource-id="2" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="229" resource-id="2" function="2" responsible="false" load="20.0"/>
-        <allocation task-id="230" resource-id="2" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="229" resource-id="2" function="2" responsible="false" load="30.0"/>
         <allocation task-id="231" resource-id="2" function="2" responsible="true" load="15.0"/>
         <allocation task-id="232" resource-id="2" function="2" responsible="false" load="10.0"/>
-        <allocation task-id="249" resource-id="2" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="250" resource-id="2" function="2" responsible="false" load="30.0"/>
-        <allocation task-id="251" resource-id="2" function="2" responsible="true" load="33.0"/>
+        <allocation task-id="251" resource-id="2" function="2" responsible="true" load="10.0"/>
         <allocation task-id="257" resource-id="2" function="2" responsible="false" load="95.0"/>
         <allocation task-id="258" resource-id="2" function="2" responsible="false" load="5.0"/>
         <allocation task-id="265" resource-id="2" function="2" responsible="false" load="25.0"/>
@@ -300,6 +290,7 @@
         <allocation task-id="300" resource-id="2" function="2" responsible="true" load="5.0"/>
         <allocation task-id="201" resource-id="2" function="2" responsible="true" load="25.0"/>
         <allocation task-id="121" resource-id="2" function="2" responsible="false" load="10.0"/>
+        <allocation task-id="249" resource-id="2" function="2" responsible="true" load="50.0"/>
     </allocations>
     <vacations/>
     <previous/>
