@@ -39,18 +39,18 @@ function connecttile() {
     var point3x;
     var point3y;
     var position = [];
-    position[0] = [-10, 10];
-    for (i = 0; i < 100; i++) {
+    position[0] = [-10, 5];
+    for (i = 0; i < 1000; i++) {
         randomnum = Math.random();
         if (Math.random() > 0.5) {
             randomnum = -randomnum;
         }
-        point1x = 3 * Math.cos(Math.PI / 9 * randomnum);
-        point1y = -3 * Math.sin(Math.PI / 9 * randomnum);
-        point2x = 3 * Math.cos(Math.PI / 9 * randomnum) + 0.3 * Math.sin(Math.PI / 9 * randomnum);
-        point2y = -(3 * Math.sin(Math.PI / 9 * randomnum) - 0.3 * Math.cos(Math.PI / 9 * randomnum));
-        point3x = 0.3 * Math.sin(Math.PI / 9 * randomnum);
-        point3y = 0.3 * Math.cos(Math.PI / 9 * randomnum);
+        point1x = 3 * Math.cos(Math.PI / 6 * randomnum);
+        point1y = -3 * Math.sin(Math.PI / 6 * randomnum);
+        point2x = 3 * Math.cos(Math.PI / 6 * randomnum) + 0.3 * Math.sin(Math.PI / 6 * randomnum);
+        point2y = -(3 * Math.sin(Math.PI / 6 * randomnum) - 0.3 * Math.cos(Math.PI / 6 * randomnum));
+        point3x = 0.3 * Math.sin(Math.PI / 6 * randomnum);
+        point3y = 0.3 * Math.cos(Math.PI / 6 * randomnum);
         position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
         createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
     }

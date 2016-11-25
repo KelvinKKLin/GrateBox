@@ -273,7 +273,7 @@ function resetCamera(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(0,canvas_height - 650);
+    ctx.translate(0,canvas_height);
     world.DrawDebugData();
     ctx.restore();
 };
@@ -288,7 +288,8 @@ function drawworld(world, context){
     ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(200 - (camerax * 40), -200 );
+    ctx.translate(200 - (camerax * 40), canvas_height);
+    ctx.scale(1, -1);
     world.DrawDebugData();
     ctx.restore();
 };
