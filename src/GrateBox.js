@@ -1,118 +1,140 @@
 /**
- * b2Vec2
- *
- * This imports the Box2D Vector and any associated methods.
- */
+* b2Vec2
+*
+* This imports the Box2D Vector and any associated methods.
+*/
 
 
 /**
- * points
- *
- * This variable keeps track of points on a car
- */
+* points
+*
+* This variable keeps track of points on a car
+*/
 var points = [];
 
 /**
- * car
- *
- * This variable holds the car model
- */
+* car
+*
+* This variable holds the car model
+*/
 var car = 0;
 
 /**
- * camerax
- *
- * This variable keeps track of the horizontal velocity of
- * the camera.
- */
+* camerax
+*
+* This variable keeps track of the horizontal velocity of
+* the camera.
+*/
 var camerax = 0;
 
 /**
- * cameray
- *
- * This variable keeps track of the vertical velocity of
- * the camera.
- */
+* cameray
+*
+* This variable keeps track of the vertical velocity of
+* the camera.
+*/
 var cameray = 0;
 
 /**
- * diffx
- *
- * This variable keeps track of the change in the horizontal displacement of the camera.
- */
+* diffx
+*
+* This variable keeps track of the change in the horizontal displacement of the camera.
+*/
 var diffx;
 
 /**
- * diffy
- *
- * This variable keeps track of the change in the vertical displacement of the camera.
- */
+* diffy
+*
+* This variable keeps track of the change in the vertical displacement of the camera.
+*/
 var diffy;
 
 /**
- * proc1
- *
- * This variable keeps track of the game loop thread.
- */
+* proc1
+*
+* This variable keeps track of the game loop thread.
+*/
 var proc1 = setInterval(update, 1000 / 60);
 
 /**
- * proc2
- *
- * This variable keeps track of updateCar thread.
- */
+* proc2
+*
+* This variable keeps track of updateCar thread.
+*/
 var proc2 = setInterval(nextCar, 1000/60);
 
 /*!
- * GENETIC ALGORITHM GLOBAL VARIABLES
- */
+* GENETIC ALGORITHM GLOBAL VARIABLES
+*/
 
- //Constants
+//Constants
 
- /**
- * POPULATION_SIZE
- *
- * This constant indicates the size of the initial population of cars.
- */
- var POPULATION_SIZE = 3;
+/**
+* POPULATION_SIZE
+*
+* This constant indicates the size of the initial population of cars.
+*/
+var POPULATION_SIZE = 3;
 
- /**
- * PARENT_POOL
- *
- * This constant indicates the size of the pool from which parents creat offspring.
- */
- var PARENT_POOL = 2;
+/**
+* PARENT_POOL
+*
+* This constant indicates the size of the pool from which parents creat offspring.
+*/
+var PARENT_POOL = 2;
 
- /**
- * MUTATION_RATE
- *
- * This constant indicates the rate at which mutations occur.
- */
- var MUTATION_RATE = 0.02;
+/**
+* MUTATION_RATE
+*
+* This constant indicates the rate at which mutations occur.
+*/
+var MUTATION_RATE = 0.02;
 
- //Variables
+//Variables
 
- /**
- * carsArray
- *
- * This variable array contains the cars in the population cars.
- */
- var carsArray = [0,0,0];
+/**
+* carsArray
+*
+* This variable array contains the cars in the population cars.
+*/
+var carsArray = [0,0,0];
 
- /**
- * topCars
- *
- * This variable array contains the highest performing cars for the purpose of creating the next generation.
- */
- var topCars = [];
+/**
+* topCars
+*
+* This variable array contains the highest performing cars for the purpose of creating the next generation.
+*/
+var topCars = [];
 
- /**
- * currentMember
- *
- * This variable integer indicates the current member of the group of cars.
- */
- var currentMember = 0;
+/**
+* currentMember
+*
+* This variable integer indicates the current member of the group of cars.
+*/
+var currentMember = 0;
 
+var GRAVITY = 9.8;
+var WORLD_SCALE = 60;
+var NUMBER_OF_MEMBERS = 3;
+var DRAW_SCALE = 40.0;
+var FILL_ALPHA = 0.3;
+var LINE_THICKNESS = 1.0;
+
+var FRAME_RATE = 1/60;
+var VELOCITY_ITERATION = 10;
+var POSITION_ITERATION = 10;
+var MOVEMENT_THRESHOLD = 0.01;
+
+var INTERVAL_RATE = 1000/60;
+var TIMEOUT_RATE = 1000000000;
+
+var DEFAULT_CAM_X = 200;
+var CAM_X_TRANSLATION = 40;
+
+var CAM_SPEED = 0.0125;
+
+var MIN_NUMBER_OF_CARS = 2;
+var NUMBER_OF_GENES = 20;
 /*!
     THE VIEW
  */
@@ -124,17 +146,16 @@ var proc2 = setInterval(nextCar, 1000/60);
  */
 function init() {
     world = new b2World(
-          new b2Vec2(0, 9.8)    //gravity
+          new b2Vec2(0, GRAVITY)    //gravity
        , true                 //allow sleep
     );
-    var WORLD_SCALE = 60;
 
-    if(currentMember < 3){
+    if(currentMember < NUMBER_OF_MEMBERS){
         car = new Car();
         car.generateNewCar();
     } else{
         car = new Car();
-        car.setChromosome(carsArray[currentMember%3].getChromosome());
+        car.setChromosome(carsArray[currentMember%NUMBER_OF_MEMBERS].getChromosome());
     }
 
     var xvert = car.getVertexXArray();
@@ -157,9 +178,9 @@ function init() {
     //setup debug draw
     var debugDraw = new b2DebugDraw();
     debugDraw.SetSprite(document.getElementById("canvas").getContext("2d"));
-    debugDraw.SetDrawScale(40.0);
-    debugDraw.SetFillAlpha(0.3);
-    debugDraw.SetLineThickness(1.0);
+    debugDraw.SetDrawScale(DRAW_SCALE);
+    debugDraw.SetFillAlpha(FILL_ALPHA);
+    debugDraw.SetLineThickness(LINE_THICKNESS);
     debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
     world.SetDebugDraw(debugDraw);
 
@@ -172,15 +193,11 @@ function init() {
  * This method updates the screen.
  */
 function update() {
-    world.Step(
-          1 / 60   //frame-rate
-       , 10       //velocity iterations
-       , 10       //position iterations
-    );
+    world.Step(FRAME_RATE, VELOCITY_ITERATION, POSITION_ITERATION);
 
     world.ClearForces();
     drawworld(world, ctx);
-    if(Math.abs(diffx)<0.01){
+    if(Math.abs(diffx) < MOVEMENT_THRESHOLD){
         car.removeHealth();
     } else{
         car.increaseFitness();
@@ -192,9 +209,9 @@ function update() {
  */
 function nextCar(){
     if(car.getHealth() <= 0){
-        carsArray[currentMember%3] = car;
+        carsArray[currentMember%NUMBER_OF_MEMBERS] = car;
 
-        if(currentMember % 3 == 0 && currentMember > 0){
+        if(currentMember % NUMBER_OF_MEMBERS == 0 && currentMember > 0){
             var topCars = selectNextGeneration(carsArray, PARENT_POOL);
             carsArray = crossOverOffsprings(carsArray, topCars);
             carsArray = mutateOffsprings(carsArray, PARENT_POOL, 1);
@@ -206,24 +223,12 @@ function nextCar(){
         resetCamera(world, ctx);
         clearInterval(proc1);
         init();
-        proc1 = setInterval(update, 1000/60);
-    } else if(car.getFitness() > 1000000000){
+        proc1 = setInterval(update, INTERVAL_RATE);
+    } else if(car.getFitness() > TIMEOUT_RATE){
         car.setFitness(-1);
         car.setHealth(0);
     }
 }
-
-/**
- * This method creates a polygon for the car given 4 points on the Cartesian plane.
- * It assumes that one of the points of the polygon will be at the origin.
- *
- * @param num       {Integer}      The index of the polygon of the car
- * @param vertex1X  {Integer}      The x-coordinate of the first vertex
- * @param vertex1Y  {Integer}      The y-coordinate of the first vertex
- * @param vertex2X  {Integer}      The x-coordinate of the second vertex
- * @param vertex2Y  {Integer}      The y-coordinate of the second vertex
- * @return          {b2FixtureDef} The polygon created
- */
 
 
 /**
@@ -238,19 +243,6 @@ function nextCar(){
  * @return         {Body}    The box
  */
 
-
-
-this.stop = function () {
-    clearInterval(this._interval);
-}
-
-this.resume = function () {
-    var self = this;
-    clearInterval(self._interval);
-    this._interval = setInterval(function () {
-        self.drawAnimation();
-    }, 10);
-}   //http://stackoverflow.com/questions/28279776/pause-resume-and-restart-canvas-animations-with-js //
 
 /**
  * This method resets the world for the next simulation.
@@ -270,10 +262,10 @@ function resetWorld(world){
  * @param context  {Canvas}  The canvas to draw the world on
  */
 function resetCamera(world, context){
-    ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
+    ctx.clearRect(0, 0, canvas_width, canvas_height);
     ctx.save();
     cameraPos();
-    ctx.translate(0,canvas_height);
+    ctx.translate(0, canvas_height);
     world.DrawDebugData();
     ctx.restore();
 };
@@ -285,10 +277,10 @@ function resetCamera(world, context){
  * @param context  {Canvas}  The canvas to draw the world on
  */
 function drawworld(world, context){
-    ctx.clearRect( 0 , 0 , canvas_width, canvas_height );
+    ctx.clearRect(0, 0, canvas_width, canvas_height );
     ctx.save();
     cameraPos();
-    ctx.translate(200 - (camerax * 40), canvas_height);
+    ctx.translate(DEFAULT_CAM_X - (camerax * CAM_X_TRANSLATION), canvas_height);
     ctx.scale(1, -1);
     world.DrawDebugData();
     ctx.restore();
@@ -303,8 +295,8 @@ function cameraPos(){
     cameraPositionY = car.getCarDef().GetWorldCenter().y;
     diffx = camerax - cameraPositionX;
     diffy = cameray - cameraPositionY;
-    camerax -= 0.0125 * diffx;
-    cameray -= 0.0125 * diffy;
+    camerax -= CAM_SPEED * diffx;
+    cameray -= CAM_SPEED * diffy;
 };
 
 /*!
@@ -349,7 +341,7 @@ function crossOverOffsprings(cars, topCars){
 
     var cars2 = [];
 
-    if(topCars.length < 2){
+    if(topCars.length < MIN_NUMBER_OF_CARS){
         return cars;
     }
 
@@ -369,7 +361,7 @@ function crossOverOffsprings(cars, topCars){
         var parent1 = topCars[parent1Index].getChromosome();
         var parent2 = topCars[parent2Index].getChromosome();
 
-        var geneIndex = getRandomArbitraryInteger(0, 20);
+        var geneIndex = getRandomArbitraryInteger(0, NUMBER_OF_GENES);
         parent1[geneIndex] = parent2[geneIndex];
 
         var newCar = new Car();
@@ -473,7 +465,7 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
 /**
 * This method establishes the initial values shared by all cares. All cars start with 10 health and have a fitness and carDef of 0.
 */
- 
+
 /*!
  * MISC
  */
