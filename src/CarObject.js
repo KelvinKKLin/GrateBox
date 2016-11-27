@@ -1,6 +1,15 @@
+var CAR_HEALTH = 10;
+var CAR_FITNESS = 0;
+
+var NUMBER_OF_VECTORS = 8;
+
+var MIN_WHEEL_RADIUS = 20;
+var MAX_WHEEL_RADIUS = 100;
+var NUMBER_OF_WHEELS = 2;
+
 function Car() {
-    this.fitness = 0;
-    this.health = 10;
+    this.fitness = CAR_FITNESS;
+    this.health = CAR_HEALTH;
     this.carDef = 0;
     this.vertexXArray = [];
     this.vertexYArray = [];
@@ -17,26 +26,29 @@ Car.prototype = {
 	* Method that generates new car randomly.
 	*/
     generateNewCar: function () {
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < NUMBER_OF_VECTORS; i++) {
 
             var xValue = 0;
             var yValue = 0;
 
+            var minRange = -3;
+            var maxRange = 3;
+
             do {
-                xValue = getRandomArbitraryInteger(-3, 3);
+                xValue = getRandomArbitraryInteger(minRange, maxRange);
             } while (xValue == 0);
 
             do {
-                yValue = getRandomArbitraryInteger(-3, 3);
+                yValue = getRandomArbitraryInteger(minRange, maxRange);
             } while (yValue == 0);
 
             this.vertexXArray[i] = xValue;
             this.vertexYArray[i] = yValue;
         }
 
-        for (var i = 0; i < 2; i++) {
-            this.wheelPosArray[i] = getRandomArbitraryInteger(1, 8);
-            this.wheelRadiusArray[i] = getRandomArbitraryInteger(20, 100);
+        for (var i = 0; i < NUMBER_OF_WHEELS; i++) {
+            this.wheelPosArray[i] = getRandomArbitraryInteger(1, NUMBER_OF_VECTORS);
+            this.wheelRadiusArray[i] = getRandomArbitraryInteger(MIN_WHEEL_RADIUS, MAX_WHEEL_RADIUS);
         }
     },
 
