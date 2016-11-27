@@ -1,2 +1,9 @@
 # Lab 3 Instructions #
 *.aux
+*.bbl
+*.blg
+*.log
+*.lot
+*.out
+*.syntex.gz
+*.toc
