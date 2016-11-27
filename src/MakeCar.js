@@ -1,5 +1,22 @@
+var WORLD_SCALE = 60;
+var NUMBER_OF_VERTICES = 3;
+var POLYGON_DENSITY = 5;
+var POLYGON_FRICTION = 3;
+var POLYGON_FILTER_GROUP_INDEX = -1;
+var POLYGON_RESTITUTION = 0.3;
+
+var WHEEL_DENSITY = 1;
+var WHEEL_FRICTION = 3;
+var WHEEL_FILTER_GROUP_INDEX = -1;
+var WHEEL_RESTITUTION = 0.1;
+
+var JOINT_MAX_TORQUE = 500;
+var JOINT_SPEED = -300;
+
+var X_SCALE = 320;
+var Y_SCALE = 100;
+
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
-    var WORLD_SCALE = 60;
     if (vertex1X > 0) {
 
         var a = vertex1X;
@@ -17,17 +34,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex2X, y: vertex2Y }, { x: vertex1X, y: vertex1Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
         } else if (y = d) {
             vertex2X = vertex2X + 1;
@@ -37,17 +54,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
 
         } else {
@@ -57,17 +74,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
         }
     }
@@ -88,17 +105,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex2X, y: vertex2Y }, { x: vertex1X, y: vertex1Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
         } else if (y = d) {
             vertex2X = vertex2X - 1;
@@ -108,17 +125,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
         } else {
             var polygon = new b2PolygonShape;
@@ -127,17 +144,17 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 
             points[num] = [{ x: 0, y: 0 }, { x: vertex1X, y: vertex1Y }, { x: vertex2X, y: vertex2Y }];
 
-            for (var i = 0; i < 3; i++) {
+            for (var i = 0; i < NUMBER_OF_VERTICES; i++) {
                 var vec = new b2Vec2();
                 vec.Set(points[num][i].x, points[num][i].y);
                 points[num][i] = vec;
             }
 
             polygonFix.shape.SetAsArray(points[num], points[num].length);
-            polygonFix.density = 5;
-            polygonFix.friction = 3;
-            polygonFix.filter.groupInedx = -1;
-            polygonFix.restitution = 0.3;
+            polygonFix.density = POLYGON_DENSITY;
+            polygonFix.friction = POLYGON_FRICTION;
+            polygonFix.filter.groupIndex = POLYGON_FILTER_GROUP_INDEX;
+            polygonFix.restitution = POLYGON_RESTITUTION;
             return polygonFix;
         }
     }
@@ -154,10 +171,10 @@ function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
 function makeWheelShape(world, WORLD_SCALE, radius) {
     var wheelshape = new b2CircleShape(radius / WORLD_SCALE);
     var wheelFixture = new b2FixtureDef;
-    wheelFixture.density = 1;
-    wheelFixture.friction = 3;
-    wheelFixture.filter.groupIndex = -1;
-    wheelFixture.restitution = 0.1;
+    wheelFixture.density = WHEEL_DENSITY;
+    wheelFixture.friction = WHEEL_FRICTION;
+    wheelFixture.filter.groupIndex = WHEEL_FILTER_GROUP_INDEX;
+    wheelFixture.restitution = WHEEL_RESTITUTION;
     wheelFixture.shape = wheelshape;
     return wheelFixture;
 };
@@ -178,8 +195,8 @@ function makeCarJoints(world, bodyA, bodyB, wheelPosX, wheelPosY) {
     jointdef.bodyB = bodyB;
     jointdef.localAnchorA = new b2Vec2(0, 0);
     jointdef.localAnchorB = new b2Vec2(wheelPosX, wheelPosY);
-    jointdef.maxMotorTorque = 500;
-    jointdef.motorSpeed = -300;
+    jointdef.maxMotorTorque = JOINT_MAX_TORQUE;
+    jointdef.motorSpeed = JOINT_SPEED;
     jointdef.enableMotor = true;
     return jointdef;
 };
@@ -251,7 +268,7 @@ function drawCar(world, WORLD_SCALE, vertex1X, vertex1Y, vertex2X, vertex2Y, ver
 
     var carBodyDef = new b2BodyDef;
     carBodyDef.type = b2Body.b2_dynamicBody;
-    carBodyDef.position.Set(320 / WORLD_SCALE, 100 / WORLD_SCALE);
+    carBodyDef.position.Set(X_SCALE / WORLD_SCALE, Y_SCALE / WORLD_SCALE);
 
     var car = world.CreateBody(carBodyDef);
     car.CreateFixture(polygonFix1);
