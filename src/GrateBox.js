@@ -3,7 +3,9 @@
 *
 * This imports the Box2D Vector and any associated methods.
 */
-
+var userinputpopulation = document.getElementById(POPULATION_SIZE);
+var userinputparents = document.getElementById(NumberofParent);
+var userinputMutation = document.getElementById(MutationRate);
 
 /**
 * points
