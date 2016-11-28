@@ -135,6 +135,8 @@ var CAM_SPEED = 0.025;
 
 var MIN_NUMBER_OF_CARS = 2;
 var NUMBER_OF_GENES = 20;
+
+var currentGeneration = 1;
 /*!
     THE VIEW
  */
@@ -208,10 +210,15 @@ function update() {
  * This method selects the next car to be simulated.
  */
 function nextCar(){
+    var carNumber = (currentMember)%3+1;
+    $("#curr-gen").html("Now Running Generation " + currentGeneration + ", Car Number " + carNumber);
+
     if(car.getHealth() <= 0){
         carsArray[currentMember%NUMBER_OF_MEMBERS] = car;
 
-        if(currentMember % NUMBER_OF_MEMBERS == 0 && currentMember > 0){
+        if(currentMember % NUMBER_OF_MEMBERS == NUMBER_OF_MEMBERS-1 && currentMember > 0){
+            currentGeneration = currentGeneration + 1;
+
             var topCars = selectNextGeneration(carsArray, PARENT_POOL);
             carsArray = crossOverOffsprings(carsArray, topCars);
             carsArray = mutateOffsprings(carsArray, PARENT_POOL, 1);
@@ -325,8 +332,7 @@ function selectNextGeneration(cars, n){
         topCars.push(heap.pop());
     }
 
-    $("#results").append("Top car of generation " + currentMember/3 + " ran for " + topCars[0].getFitness() +" cycles <br/>");
-
+    $("#results").append("Top car of generation " + currentGeneration + " ran for " + topCars[0].getFitness() +" cycles <br/>");
     return topCars;
 };
 
