@@ -76,14 +76,14 @@ var proc2 = setInterval(nextCar, 1000/60);
 *
 * This constant indicates the size of the initial population of cars.
 */
-var POPULATION_SIZE = 3;
+var POPULATION_SIZE = 4;
 
 /**
 * PARENT_POOL
 *
 * This constant indicates the size of the pool from which parents creat offspring.
 */
-var PARENT_POOL = 2;
+var PARENT_POOL = 1;
 
 /**
 * MUTATION_RATE
@@ -396,11 +396,11 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
         for(var j = 0; j < vertexX.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
-                var min = -3;
-                var max = 3;
+                var min = -1;
+                var max = 1;
                 var value = 0;
                 do{
-                    value = getRandomArbitraryInteger(min, max);
+                    value = getRandomArbitrary(min, max);
                 } while(value == 0);
 
                 var newCar = new Car();
@@ -414,11 +414,11 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
         for(var j = 0; j < vertexY.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
-                var min = -3;
-                var max = 3;
+                var min = -1;
+                var max = 1;
                 var value = 0;
                 do{
-                    value = getRandomArbitraryInteger(min, max);
+                    value = getRandomArbitrary(min, max);
                 } while(value == 0);
 
                 var newCar = new Car();
