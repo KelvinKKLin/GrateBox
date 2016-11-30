@@ -83,7 +83,7 @@ var POPULATION_SIZE = 4;
 *
 * This constant indicates the size of the pool from which parents creat offspring.
 */
-var PARENT_POOL = 1;
+var PARENT_POOL = 2;
 
 /**
 * MUTATION_RATE
@@ -130,8 +130,8 @@ var MOVEMENT_THRESHOLD = 0.01;
 var INTERVAL_RATE = 1000/60;
 var TIMEOUT_RATE = 1000000000;
 
-var DEFAULT_CAM_X = 200;
-var CAM_X_TRANSLATION = 42;
+var DEFAULT_CAM_X = 300;
+var CAM_X_TRANSLATION = 41;
 
 var CAM_SPEED = 0.025;
 
@@ -396,8 +396,8 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
         for(var j = 0; j < vertexX.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
-                var min = -1;
-                var max = 1;
+                var min = -0.5;
+                var max = 0.5;
                 var value = 0;
                 do{
                     value = getRandomArbitrary(min, max);
@@ -414,8 +414,8 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
         for(var j = 0; j < vertexY.length; j++){
             var mutationChance = getRandomArbitrary(0, 1);
             if(mutationChance < mutationFactor){
-                var min = -1;
-                var max = 1;
+                var min = -0.5;
+                var max = 0.5;
                 var value = 0;
                 do{
                     value = getRandomArbitrary(min, max);

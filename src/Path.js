@@ -1,11 +1,11 @@
 var WORLD_SCALE = 60;
 var NUMBER_OF_VERTICES = 4;
 var TILE_DENSITY = 5;
-var TILE_FRICTION = 3;
+var TILE_FRICTION = 1.5;
 //var TILE_FILTER_GROUP_INDEX = -1;
-var TILE_RESTITUTION = 0.1;
+var TILE_RESTITUTION = 0.05;
 
-var ORIGIN_X = -5;
+var ORIGIN_X = -10;
 var ORIGIN_Y = 8;
 var NUMBER_OF_TILES = 1000;
 var CHANCE_TO_FLIP_SLOPE = 0.5;
@@ -14,7 +14,8 @@ var HEIGHT = 0.6;
 var SLOPE1 = 12;
 var SLOPE2 = 6;
 var SLOPE3 = 4;
-var SLOPE4 = 2;
+var SLOPE4 = 3;
+var SLOPE5 = 1.5;
 function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, positionX, positionY) {
     var polygon = new b2PolygonShape;
     var polygonFix = new b2FixtureDef;
@@ -56,7 +57,7 @@ function connecttile() {
     var point3y;
     var position = [];
     var randonnum = [];
-    randomnum = [0.1, 0.1, -0.2, -0.3, 0.17, -0.28, -0.4, 0.22, 0.35, 0.2, 0.48, -0.5, -0.68, 0.7, 0.8, 0.4, -0.45, 0.65, 0.456, -0.78, 0.63, 0.815, -0.99, 0.74, -0.879, 0.5465, 0.74, -0.38, 0.94, 0.81];
+    randomnum = [0.1, 0.1, -0.2, -0.3, 0.17, -0.28, 0.4, 0.22, -0.35, 0.2, 0.48, -0.5, -0.68, 0.7, -0.8, 0.4, -0.45, 0.65, 0.456, -0.78, 0.63, 0.815, -0.99, 0.74, -0.879, 0.5465, 0.74, -0.38, 0.94, -0.81];
     position[0] = [ORIGIN_X, ORIGIN_Y];
     for (i = 0; i < 20; i++) {
         point1x = WIDTH * Math.cos(Math.PI / SLOPE1 * randomnum[i]);
@@ -95,6 +96,16 @@ function connecttile() {
         point2y = -(WIDTH * Math.sin(Math.PI / SLOPE4 * randomnum[i - 60]) - HEIGHT * Math.cos(Math.PI / SLOPE4 * randomnum[i - 60]));
         point3x = HEIGHT * Math.sin(Math.PI / SLOPE4 * randomnum[i - 60]);
         point3y = HEIGHT * Math.cos(Math.PI / SLOPE4 * randomnum[i - 60]);
+        position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
+        createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
+    };
+    for (i = 80; i < 100; i++) {
+        point1x = WIDTH * Math.cos(Math.PI / SLOPE5 * randomnum[i - 80]);
+        point1y = -WIDTH * Math.sin(Math.PI / SLOPE5 * randomnum[i - 80]);
+        point2x = WIDTH * Math.cos(Math.PI / SLOPE5 * randomnum[i - 80]) + HEIGHT * Math.sin(Math.PI / SLOPE5 * randomnum[i - 80]);
+        point2y = -(WIDTH * Math.sin(Math.PI / SLOPE5 * randomnum[i - 80]) - HEIGHT * Math.cos(Math.PI / SLOPE5 * randomnum[i - 80]));
+        point3x = HEIGHT * Math.sin(Math.PI / SLOPE5 * randomnum[i - 80]);
+        point3y = HEIGHT * Math.cos(Math.PI / SLOPE5 * randomnum[i - 80]);
         position[i + 1] = [point1x + position[i][0], point1y + position[i][1]];
         createtile(point1x, point1y, point2x, point2y, point3x, point3y, position[i][0], position[i][1]);
     };
