@@ -1,16 +1,21 @@
 <html>
-
     <head>
         <title>GrateBox</title>
-        <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
 
-    <body onload="init();">
-
-        <div id="title">
-           <h1>GrateBox</h1>
+    <body>
+      <div class="container">
+        <div class="jumbotron text-center">
+          <h1>GrateBox</h1>
+          <p>Learn about Genetic Algorithms through GrateBox!</p> 
         </div>
+      </div>
+    </body>
 
+    <body onload="init();">
         <div id="cur-stats">
           <h3 id="curr-gen">Current Generation:</h3>
         </div>
@@ -23,15 +28,6 @@
         <div id="canvas-container">
            <canvas id="canvas" width="1200" height="600"></canvas>
             <button type="button" id="pauseButton">Pause</button>
-            <h4>Population Size:</h4>
-            <input id="populationSizeTextField" value="4"> <br /> <br />
-            Enter the desired number of cars per generation here.
-            <h4>Number of Parents:</h4>
-            <input id="numberOfParentsTextField" value="2"> <br /> <br />
-            Enter the number of cars chosen from each generation to create the next here.
-            <h4>Mutation Rate:</h4>
-            <input id="mutationRateTextField" value="0.20"> <br /> <br />
-            Enter the degree of mutation as a percent here (i.e. the initial mutation rate of 2% is entered as 0.02).
            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
            <script type="text/javascript" src="./heap.js"></script>
         </div>
@@ -107,5 +103,3 @@
     </body>
 
 </html>
-
-
