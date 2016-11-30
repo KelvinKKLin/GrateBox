@@ -118,7 +118,7 @@ var DRAW_SCALE = 40.0;
 var FILL_ALPHA = 0.3;
 var LINE_THICKNESS = 1.0;
 
-var FRAME_RATE = 1/60;
+var frameRate = 1/60;
 var VELOCITY_ITERATION = 10;
 var POSITION_ITERATION = 10;
 var MOVEMENT_THRESHOLD = 0.01;
@@ -135,6 +135,8 @@ var MIN_NUMBER_OF_CARS = 2;
 var NUMBER_OF_GENES = 20;
 
 var currentGeneration = 1;
+
+var paused = false;
 /*!
     THE VIEW
  */
@@ -198,15 +200,19 @@ function update() {
     $("#ga-stats").append("Parent Pool: " + parentPool + "<br>");
     $("#ga-stats").append("Mutation Rate: " + mutationRate + "<br>");
 
-    world.Step(FRAME_RATE, VELOCITY_ITERATION, POSITION_ITERATION);
+    world.Step(frameRate, VELOCITY_ITERATION, POSITION_ITERATION);
 
     world.ClearForces();
     drawworld(world, ctx);
-    if(Math.abs(diffx) < MOVEMENT_THRESHOLD){
-        car.removeHealth();
-    } else{
-        car.increaseFitness();
+
+    if(!paused){
+        if(Math.abs(diffx) < MOVEMENT_THRESHOLD){
+            car.removeHealth();
+        } else{
+            car.increaseFitness();
+        }
     }
+
 
 };
 
@@ -596,4 +602,14 @@ $('#mutationRateTextField').on('keypress', function (e) {
 
             $(this).removeAttr("disabled");
          }
+});
+
+$("#pauseButton").click(function(){
+    if(frameRate === 1/60){
+        frameRate = 0;
+        paused = true;
+    } else{
+        frameRate = 1/60;
+        paused = false;
+    }
 });
