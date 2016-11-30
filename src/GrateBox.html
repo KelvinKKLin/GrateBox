@@ -11,15 +11,27 @@
            <h1>GrateBox</h1>
         </div>
 
+        <div id="cur-stats">
+          <h3 id="curr-gen">Current Generation:</h3>
+        </div>
+
+        <div id="ga-stats">
+          <h3>Information</h3>
+        </div>
+
+
         <div id="canvas-container">
            <canvas id="canvas" width="1200" height="600"></canvas>
-            <h4>Population Size:</h4>
-            <input id="populationSizeTextField" value="4">
-            <h4>Number of Parents:</h4>
-            <input id="numberOfParentsTextField" value="2">
-            <h4>Mutation Rate:</h4>
-            <input id="mutationRateTextField" value="0.02">
             <button type="button" id="pauseButton">Pause</button>
+            <h4>Population Size:</h4>
+            <input id="populationSizeTextField" value="4"> <br /> <br />
+            Enter the desired number of cars per generation here.
+            <h4>Number of Parents:</h4>
+            <input id="numberOfParentsTextField" value="2"> <br /> <br />
+            Enter the number of cars chosen from each generation to create the next here.
+            <h4>Mutation Rate:</h4>
+            <input id="mutationRateTextField" value="0.20"> <br /> <br />
+            Enter the degree of mutation as a percent here (i.e. the initial mutation rate of 2% is entered as 0.02).
            <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
            <script type="text/javascript" src="./heap.js"></script>
         </div>
@@ -32,14 +44,6 @@
        <script src="MakeCar.js"></script>
        <script src="CarObject.js"></script>
 
-	   <div id="cur-stats">
-          <h3 id="curr-gen">Current Generation:</h3>
-	   </div>
-
-	   <div id="ga-stats">
-          <h3>Information</h3>
-       </div>
-
        <div id="results">
          <h3>Results</h3>
 
@@ -51,7 +55,7 @@
 
          Genetic algorithms (GAs) search for near-optimal solutions to a wide variety of
          problems with incomplete or imperfect information by emulating the process of
-         natural selection. Applications of genetic algorithms include automated design,
+         natural selection. As the algorithm is used, the solution will be more and more optimized. They are well suited to solving open ended problems with a variety of possible solutions. Applications of genetic algorithms include automated design,
          bioinformatics, economics, game theory, and training neural networks.
 
          <h3>What is this program's purpose?</h3>
@@ -60,6 +64,10 @@
          generate an initial car with a polygon body and two wheels randomly placed. Observe
          how the car evolves towards a more successful iteration to move farther and farther
          along the road.
+
+         <h3>How performance is calculated</h3>
+
+         Under the <b>Results </b> heading, you will see that the best car of each generation is displayed with a corresponding value giving its "cycles". Each car possesses a health value to determine if it is still moving. As the car moves, a thread is constantly running to check the car's speed. If the car is not making forwards advancement the health of the car decreases. When the car's health reaches zero it is determined to be dead, and the number of times the thread cycled is recorded as the number of cycles. The greater the amount of cycles, the better performing the car is.
 
          <h3>GitHub</h3>
 
