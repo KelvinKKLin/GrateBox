@@ -3,9 +3,6 @@
 *
 * This imports the Box2D Vector and any associated methods.
 */
-var userinputpopulation = document.getElementById(POPULATION_SIZE);
-var userinputparents = document.getElementById(NumberofParent);
-var userinputMutation = document.getElementById(MutationRate);
 
 /**
 * points
@@ -72,25 +69,25 @@ var proc2 = setInterval(nextCar, 1000/60);
 //Constants
 
 /**
-* POPULATION_SIZE
+* populationSize
 *
 * This constant indicates the size of the initial population of cars.
 */
-var POPULATION_SIZE = 4;
+var populationSize = $('#populationSizeTextField').val();
 
 /**
-* PARENT_POOL
+* parentPool
 *
 * This constant indicates the size of the pool from which parents creat offspring.
 */
-var PARENT_POOL = 2;
+var parentPool = $('#numberOfParentsTextField').val();
 
 /**
-* MUTATION_RATE
+* mutationRate
 *
 * This constant indicates the rate at which mutations occur.
 */
-var MUTATION_RATE = 0.02;
+var mutationRate = $('#mutationRateTextField').val();;
 
 //Variables
 
@@ -117,7 +114,6 @@ var currentMember = 0;
 
 var GRAVITY = 9.8;
 var WORLD_SCALE = 60;
-var NUMBER_OF_MEMBERS = 3;
 var DRAW_SCALE = 40.0;
 var FILL_ALPHA = 0.3;
 var LINE_THICKNESS = 1.0;
@@ -154,12 +150,12 @@ function init() {
        , true                 //allow sleep
     );
 
-    if(currentMember < NUMBER_OF_MEMBERS){
+    if(currentMember < populationSize){
         car = new Car();
         car.generateNewCar();
     } else{
         car = new Car();
-        car.setChromosome(carsArray[currentMember%NUMBER_OF_MEMBERS].getChromosome());
+        car.setChromosome(carsArray[currentMember%populationSize].getChromosome());
     }
 
     var xvert = car.getVertexXArray();
@@ -197,6 +193,11 @@ function init() {
  * This method updates the screen.
  */
 function update() {
+    $("#ga-stats").empty();
+    $("#ga-stats").append("Population Size: " + populationSize + "<br>");
+    $("#ga-stats").append("Parent Pool: " + parentPool + "<br>");
+    $("#ga-stats").append("Mutation Rate: " + mutationRate + "<br>");
+
     world.Step(FRAME_RATE, VELOCITY_ITERATION, POSITION_ITERATION);
 
     world.ClearForces();
@@ -206,24 +207,25 @@ function update() {
     } else{
         car.increaseFitness();
     }
+
 };
 
 /**
  * This method selects the next car to be simulated.
  */
 function nextCar(){
-    var carNumber = (currentMember)%3+1;
+    var carNumber = (currentMember)%populationSize+1;
     $("#curr-gen").html("Now Running Generation " + currentGeneration + ", Car Number " + carNumber);
 
     if(car.getHealth() <= 0){
-        carsArray[currentMember%NUMBER_OF_MEMBERS] = car;
+        carsArray[currentMember%populationSize] = car;
 
-        if(currentMember % NUMBER_OF_MEMBERS == NUMBER_OF_MEMBERS-1 && currentMember > 0){
+        if(currentMember % populationSize == populationSize-1 && currentMember > 0){
             currentGeneration = currentGeneration + 1;
 
-            var topCars = selectNextGeneration(carsArray, PARENT_POOL);
+            var topCars = selectNextGeneration(carsArray, parentPool);
             carsArray = crossOverOffsprings(carsArray, topCars);
-            carsArray = mutateOffsprings(carsArray, PARENT_POOL, 1);
+            carsArray = mutateOffsprings(carsArray, parentPool, 1);
         }
         currentMember = currentMember + 1;
 
@@ -334,7 +336,7 @@ function selectNextGeneration(cars, n){
         topCars.push(heap.pop());
     }
 
-    $("#results").append("Top car of generation " + currentGeneration + " ran for " + topCars[0].getFitness() +" cycles <br/>");
+    $("#results").append("Top car of generation " + (currentGeneration-1) + " ran for " + topCars[0].getFitness() +" cycles <br/>");
     return topCars;
 };
 
@@ -503,7 +505,12 @@ function getRandomArbitrary(min, max){
     return Math.random() * (max - min) + min;
 };
 
-
+function resetStats(){
+    currentGeneration = 1;
+    currentMember = 0;
+    $("#results").empty();
+    $("#results").append("<h3>Results</h3>");
+};
 
 /**
  * function()
@@ -512,11 +519,6 @@ function getRandomArbitrary(min, max){
  */
 $(function()
 {
-    $("#ga-stats").append("Population Size: " + POPULATION_SIZE + "<br>");
-    $("#ga-stats").append("Parent Pool: " + PARENT_POOL + "<br>");
-    $("#ga-stats").append("Mutation Rate: " + MUTATION_RATE + "<br>");
-
-
     var canvas = $('#canvas');
     ctx = canvas.get(0).getContext('2d');
 
@@ -529,5 +531,69 @@ $(function()
     canvas_height = parseInt(canvas.attr('height'));
 });
 
+$('#populationSizeTextField').on('keypress', function (e) {
+         if(e.which === 13){
+
+            //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+            var userEnteredValue = $('#populationSizeTextField').val();
+            if(!$.isNumeric(userEnteredValue)){
+                alert("Please enter a number");
+            } else if(userEnteredValue <= 0){
+                alert("Please enter a number greater than 0");
+            } else if(userEnteredValue <= parentPool){
+                alert("Please enter a number that is greater than the parent pool");
+            } else{
+                populationSize = userEnteredValue;
+                resetStats();
+            }
+
+            $(this).removeAttr("disabled");
+         }
+});
+
+$('#numberOfParentsTextField').on('keypress', function (e) {
+         if(e.which === 13){
+
+            //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
 
 
+            var userEnteredValue = $('#numberOfParentsTextField').val();
+            if(!$.isNumeric(userEnteredValue)){
+                alert("Please enter a number");
+            } else if(userEnteredValue < 2){
+                alert("Please enter a number that is 2 or greater");
+            } else if(userEnteredValue >= populationSize){
+                alert("Please enter a value that is less than the population size");
+            } else{
+                parentPool = userEnteredValue;
+                resetStats();
+            }
+
+            $(this).removeAttr("disabled");
+         }
+});
+
+$('#mutationRateTextField').on('keypress', function (e) {
+         if(e.which === 13){
+
+            //Disable textbox to prevent multiple submit
+            $(this).attr("disabled", "disabled");
+
+            var userEnteredValue = $('#mutationRateTextField').val();
+            if(!$.isNumeric(userEnteredValue)){
+                alert("Please enter a number");
+            } else if(userEnteredValue < 0){
+                alert("Please enter a number that is 0 or greater");
+            } else if(userEnteredValue > 1){
+                alert("Please enter a number that is 1 or less");
+            } else{
+                mutationRate = userEnteredValue;
+                resetStats();
+            }
+
+            $(this).removeAttr("disabled");
+         }
+});
