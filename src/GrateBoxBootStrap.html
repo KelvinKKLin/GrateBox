@@ -1,71 +1,65 @@
-<html>
-    <head>
-        <title>GrateBox</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </head>
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
-      <div class="container">
-        <div class="jumbotron text-center">
-          <h1>GrateBox</h1>
-          <p>Learn about Genetic Algorithms through GrateBox!</p> 
-        </div>
+<head>
+  <title>GrateBox</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.17.1.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="init();">
+<div class="jumbotron text-center">
+  <h1>GrateBox</h1>
+  <p>Team 8</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h3>Simulation</h3>
+      <div id="canvas-container">
+        <canvas id="canvas" width="750" height="500"></canvas>
       </div>
-    </body>
+    </div>
 
-    <body onload="init();">
-        <div id="cur-stats">
+    <div class="col-sm-4">
+      <h3>Parameters</h3>
+      <div id="input">
+        <button type="button" id="pauseButton">Pause</button>
+        <h4>Population Size:</h4>
+        <input id="populationSizeTextField" value="4"> <br /> <br />
+        Enter the desired number of cars per generation here.
+        <h4>Number of Parents:</h4>
+        <input id="numberOfParentsTextField" value="2"> <br /> <br />
+        Enter the number of cars chosen from each generation to create the next here.
+        <h4>Mutation Rate:</h4>
+        <input id="mutationRateTextField" value="0.20"> <br /> <br />
+        Enter the degree of mutation as a percent here (i.e. the initial mutation rate of 2% is entered as 0.02).
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="./heap.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+     <div id="cur-stats">
           <h3 id="curr-gen">Current Generation:</h3>
-        </div>
+     </div>
 
-        <div id="ga-stats">
+    <div id="cur-stats">
+          <h3 id="curr-gen">Current Generation:</h3>
+     </div>
+
+     <div id="ga-stats">
           <h3>Information</h3>
-        </div>
-
-
-        <div id="canvas-container">
-           <canvas id="canvas" width="1200" height="600"></canvas>
-            <button type="button" id="pauseButton">Pause</button>
-           <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-           <script type="text/javascript" src="./heap.js"></script>
-        </div>
-    </body>
-
-    <body>
-      <div class="container">
-         <div class="row">
-            <div class="col-sm-4">
-               <h3>Population Size:</h3>
-               <input id="populationSizeTextField" value="4"> <br /> <br />
-               Enter the desired number of cars per generation here.
-            </div>
-         <div class="col-sm-4">
-               <h3>Number of Parents:</h3>
-               <input id="numberOfParentsTextField" value="2"> <br /> <br />
-               Enter the number of cars chosen from each generation to create the next here.
-            </div>
-         <div class="col-sm-4">
-               <h3>Mutation Rate:</h3>
-               <input id="mutationRateTextField" value="0.20"> <br /> <br />
-               Enter the degree of mutation as a percent here (i.e. the initial mutation rate of 2% is entered as 0.02).
-            </div>
-         </div>
       </div>
-
-    </body>
-
-    <body>
-       <script type="text/javascript" src="Box2D.js"></script>
-       <script src="GrateBox.js"></script>
-       <script src="Path.js"></script>
-       <script src="MakeCar.js"></script>
-       <script src="CarObject.js"></script>
 
        <div id="results">
          <h3>Results</h3>
-
        </div>
 
        <div id="info">
@@ -95,11 +89,17 @@
 
        </div>
 
-   </body>
+  </div>
+</div>
 
+</body>
 
-</html>
-       </div>
-    </body>
+<body >
+      <script type="text/javascript" src="Box2D.js"></script>
+      <script src="GrateBox.js"></script>
+      <script src="Path.js"></script>
+      <script src="MakeCar.js"></script>
+      <script src="CarObject.js"></script>
+</body>
 
 </html>
