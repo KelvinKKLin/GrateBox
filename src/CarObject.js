@@ -75,6 +75,7 @@ var WHEEL_POS_LOC = 16;
 var WHEEL_RADIUS_LOC = 18;
 
 /**
+ * @constructor
  * This is the constructor for the car.
  */
 function Car() {
