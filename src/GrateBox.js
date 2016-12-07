@@ -421,16 +421,10 @@ function selectNextGeneration(cars, n){
     var cars = cars;
     var n = n;
     var topCars = [];
-    var heap = new Heap(function(a, b){
-        return b.getFitness() - a.getFitness(); //Defines Max-Heap Property
-    });
+    cars = quicksort(cars, 0, cars.length - 1);
 
-    for(var i = 0; i < cars.length; i++){
-        heap.push(cars[i]);
-    }
-
-    for(var i = 0; i < n; i++){
-        topCars.push(heap.pop());
+    for (var i = 0; i < n; i++) {
+        topCars.push(cars[i]);
     }
 
     $("#results").append("Top car of generation " + (currentGeneration-1) + " ran for " + topCars[0].getFitness() +" cycles <br/>");
@@ -569,6 +563,81 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
 /*!
  * MISC
  */
+
+/**
+ * This method preforms quicksort on an array of cars according to fitness value.
+ *
+ * The following code was modified from: https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
+ *
+ * @param cars {Cars[]} The array of cars to sort
+ * @param left {Integer} The left index
+ * @param right {Integer} The right index
+ * @return The sorted cars array
+ */
+function quicksort(cars, left, right){
+    var index;
+
+    if (cars.length > 1) {
+        index = partition(cars, left, right);
+        if (left < index - 1) {
+            quicksort(cars, left, index - 1);
+        }
+
+        if (index < right) {
+            quicksort(cars, index, right);
+        }
+    }
+
+    return cars;
+}
+
+/**
+ * This method swaps 2 items in an array.
+ *
+ * The following code was obtained from: https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
+ *
+ * @param items {Cars[]} An array of cars
+ * @param firstIndex {Integer} The index of the first car to swap
+ * @param secondIndex {Integer} The index of the second car to swap
+ */
+function swap(items, firstIndex, secondIndex){
+    var temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
+}
+
+/**
+ * This method partitions the array into two sets based on a pivot.
+ *
+ * The following code was modified from: https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
+ *
+ * @param items {Cars[]} An array of cars
+ * @param left {Integer} The left index of the pivot
+ * @param right {Integer} The right index of the pivot
+ * @return The left index of the partitioned array
+ */
+function partition(items, left, right) {
+    var pivot   = items[((right + left) / 2)]
+    var i       = left;
+    var j       = right;
+
+    while (i <= j) {
+        while (Math.random*100 < pivot) {
+            i++;
+        }
+
+        while (Math.random * 100 > pivot) {
+            j--;
+        }
+
+        if (i <= j) {
+            swap(items, i, j);
+            i++;
+            j--;
+        }
+    }
+    return i;
+}
 
 /**
 * This method generates a random integer between min and max, exclusive.
