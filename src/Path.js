@@ -110,7 +110,7 @@ var TILES_PER_PART = 20;
  * @param point4X {Integer} The x-coordinate of the upper left hand vertex
  * @param point4Y {Integer} The y-coordinate of the upper left hand vertex
  */
-function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, point4X, point4y) {
+function createtile(point1X, point1Y, point2X, point2Y, point3X, point3Y, point4X, point4Y) {
     var polygon = new b2PolygonShape;
     var polygonFix = new b2FixtureDef;
     polygonFix.shape = polygon;
