@@ -1,8 +1,118 @@
+//Symbolic Parameters
+
 /**
-* b2Vec2
+* GRAVITY
 *
-* This imports the Box2D Vector and any associated methods.
+* This variable keeps track of the acceleration of gravity in the simulation.
 */
+var GRAVITY = 9.8;
+
+/**
+* WORLD_SCALE
+*
+* This variable keeps track of the scaling factor for the objects in the simulation.
+*/
+var WORLD_SCALE = 60;
+
+/**
+* DRAW_SCALE
+*
+* This variable keeps track of the scaling factor of the display of the simulation.
+*/
+var DRAW_SCALE = 40.0;
+
+/**
+* FILL_ALPHA
+*
+* This variable keeps track of the alpha value of the display of the simulation.
+*/
+var FILL_ALPHA = 0.3;
+
+/**
+* LINE_THICKNESS
+*
+* This variable keeps track of the line thickness.
+*/
+var LINE_THICKNESS = 1.0;
+
+/**
+* VELOCITY_ITERATION
+*
+* This variable keeps track of the timestep used to update velocity in the
+* simulation.
+*/
+var VELOCITY_ITERATION = 10;
+
+/**
+* POSITION_ITERATION
+*
+* This variable keeps track of the timestep used to update the position in
+* the simulation.
+*/
+var POSITION_ITERATION = 10;
+
+/**
+* MOVEMENT_THRESHOLD
+*
+* This variable keeps track of the minimum amount that a car has to move per
+* iteration in order for it to be considered moving.
+*/
+var MOVEMENT_THRESHOLD = 0.01;
+
+/**
+* INTERVAL_RATE
+*
+* This variable keeps track of how often the simulation updates.
+*/
+var INTERVAL_RATE = 1000/60;
+
+/**
+* TIMEOUT_RATE
+*
+* This variable keeps track of the maximum lifespan of the car.
+*/
+var TIMEOUT_RATE = 1000000000;
+
+/**
+* DEFAULT_CAM_X
+*
+* This variable keeps track of the default shift factor for the
+* camera in the x-direction.
+*/
+var DEFAULT_CAM_X = 300;
+
+/**
+* CAM_X_TRANSLATION
+*
+* This variable keeps track of the default shift factor in the
+* movement of the camera in the x-direction.
+*/
+var CAM_X_TRANSLATION = 41;
+
+/**
+* CAM_SPEED
+*
+* This variable keeps track of the default speed of the camera
+* in the x-direction.
+*/
+var CAM_SPEED = 0.025;
+
+/**
+* MIN_NUMBER_OF_CARS
+*
+* This variable keeps track of the minimum number of cars allowed
+* in the simulation.
+*/
+var MIN_NUMBER_OF_CARS = 2;
+
+/**
+* NUMBER_OF_GENES
+*
+* This variable keeps track of the number of genes that each car has.
+*/
+var NUMBER_OF_GENES = 20;
+
+//Global Variables
 
 /**
 * points
@@ -89,8 +199,6 @@ var parentPool = $('#numberOfParentsTextField').val();
 */
 var mutationRate = $('#mutationRateTextField').val();;
 
-//Variables
-
 /**
 * carsArray
 *
@@ -112,30 +220,26 @@ var topCars = [];
 */
 var currentMember = 0;
 
-var GRAVITY = 9.8;
-var WORLD_SCALE = 60;
-var DRAW_SCALE = 40.0;
-var FILL_ALPHA = 0.3;
-var LINE_THICKNESS = 1.0;
-
+/**
+* frameRate
+*
+* This is the frame rate for the simulation.
+*/
 var frameRate = 1/60;
-var VELOCITY_ITERATION = 10;
-var POSITION_ITERATION = 10;
-var MOVEMENT_THRESHOLD = 0.01;
 
-var INTERVAL_RATE = 1000/60;
-var TIMEOUT_RATE = 1000000000;
-
-var DEFAULT_CAM_X = 300;
-var CAM_X_TRANSLATION = 41;
-
-var CAM_SPEED = 0.025;
-
-var MIN_NUMBER_OF_CARS = 2;
-var NUMBER_OF_GENES = 20;
-
+/**
+ * currentGeneration
+ *
+ * This is the current generation that the simulation is in.
+ */
 var currentGeneration = 1;
 
+/**
+ * paused
+ *
+ * This variable represents whether the user has paused the
+ * simulation.
+ */
 var paused = false;
 
 /*!
@@ -247,20 +351,6 @@ function nextCar(){
         car.setHealth(0);
     }
 }
-
-
-/**
- * This method creates a box with a specified width and height rotated at a specified angle on the screen.
- *
- * @param world    {b2World} The Box2D world that the box is created in
- * @param x        {Integer} The x-coordinate of the upper left corner
- * @param y        {Integer} The y-coordinate of the upper left corner
- * @param width    {Integer} The width of the box
- * @param height   {Integer} The height of the box
- * @param angle    {Float}   The rotation of the box, counterclockwise from the horizontal, in radians
- * @return         {Body}    The box
- */
-
 
 /**
  * This method resets the world for the next simulation.
@@ -475,13 +565,6 @@ function mutateOffsprings(cars, numberOfParents, mutationFactor){
     return cars;
 };
 
-/*!
- * THE CAR
- */
-
-/**
-* This method establishes the initial values shared by all cares. All cars start with 10 health and have a fitness and carDef of 0.
-*/
 
 /*!
  * MISC
@@ -538,6 +621,10 @@ $(function()
     canvas_height = parseInt(canvas.attr('height'));
 });
 
+/*!
+ * This event handles the event where the user enters a
+ * population size.
+ */
 $('#populationSizeTextField').on('keypress', function (e) {
          if(e.which === 13){
 
@@ -560,6 +647,10 @@ $('#populationSizeTextField').on('keypress', function (e) {
          }
 });
 
+/*!
+ * This event handles the event where the user enters
+ * the number of parents that a generation has.
+ */
 $('#numberOfParentsTextField').on('keypress', function (e) {
          if(e.which === 13){
 
@@ -583,6 +674,10 @@ $('#numberOfParentsTextField').on('keypress', function (e) {
          }
 });
 
+/*!
+ * This event handles the event where the user enters
+ *  the mutation rate.
+ */
 $('#mutationRateTextField').on('keypress', function (e) {
          if(e.which === 13){
 
@@ -605,6 +700,10 @@ $('#mutationRateTextField').on('keypress', function (e) {
          }
 });
 
+/*!
+ * This event handles the event where the user presses the
+ * pause button.
+ */
 $("#pauseButton").click(function(){
     if(frameRate === 1/60){
         frameRate = 0;
