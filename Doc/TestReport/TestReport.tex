@@ -48,9 +48,67 @@ Dec 7 & 1.1 & Document completion\\
 
 \pagenumbering{arabic}
 
-This document ...
+This document will make frequent reference to the Development, Test Plan, SRS and Design documents of the GrateBox project. They can be found \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/DevelopmentPlan}{here}, \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/TestPlan}{here}, \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/SRS}{here}, and \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/Doc/Design}{here} respectively.
 
 \section{Functional Requirements Evaluation}
+
+Functional requirements were evaluated through automated and non-automated testing.
+
+\subsection{Automated Testing}
+
+Automated testing for GrateBox was conducted using the QUnit software outlined in the Development document. The test cases executed can be found in the test.js file \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/src/test}{here}. Each test case in the test.js file corresponds with an automated test case in the Test Plan document. The automated test cases in the Test Plan document are those found in sections 3.1.1 and 3.1.2. All automated test cases were properly implemented and executed, and the results returned were the results expected, indicating successful implementation of functional requirements by automated testing.
+
+\subsection{Non-Automated Testing}
+
+Non-Automated testing for GrateBox's functional requirements was conducted by the test team outlined in the Test Plan document. These include the tests outlined in sections 3.1.3, 3.1.4, and 3.1.5 of the Test Plan document. All test cases were exectued correctly and returned the results expected. They are broken down into more detail below.
+
+\subsubsection{Graphics}
+
+Test for graphics are as follows.\\
+
+GR-1.1\\
+
+Cars are generated as expected given numerical values. The position of vertices, the connections between vertices, the radius of wheels, and the placement of wheels all vary depending on given input. Comparison with BoxCar-2D also verifies successful implementation of graphics module. Test successful.\\
+
+GR-1.2\\
+
+Cars are not generated as expected given invalid numerical values. An error message is displayed when this occurs. Test successful.\\
+
+GR-1.3\\
+
+Cars are not generated as expected given invalid numerical values. An error message is displayed when this occurs. Test successful.\\
+
+GR-2.1\\
+
+Road created corresponds to algorithm input. Test successful.\\
+
+GR-2.2\\
+
+No road created and error message is displayed when this occurs. Test successful.
+
+\subsubsection{Fitness and Score}
+
+Test for fitness and scores are as follows.\\
+
+FI-1\\
+
+Values calculated correspond to values observed. Test successful.\\
+
+FI-2\\
+
+Values calculated correspond to values observed and value properly displayed in GUI. Test successful.
+
+\subsubsection{Other GUI elements}
+
+Test for other GUI elements are as follows.\\
+
+GU-1\\
+
+Health bars operate properly. Test successful.\\
+
+GU-2\\
+
+Text file is created and is accurate. Test succesful.
 
 \section{Nonfunctional Requirements Evaluation}
 
