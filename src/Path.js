@@ -1,99 +1,71 @@
 //Symbolic Parameters
 
 /**
-* NUMBER_OF_VERTICES
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var NUMBER_OF_VERTICES = 4;
 
 /**
-* TILE_DENSITY
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var TILE_DENSITY = 5;
 
 /**
-* TILE_FRICTION
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var TILE_FRICTION = 1.5;
 
 /**
-* TILE_RESTITUTION
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var TILE_RESTITUTION = 0.05;
 
 /**
-* ORIGIN_X
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var ORIGIN_X = -10;
 
 /**
-* ORIGIN_Y
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var ORIGIN_Y = 8;
 
 /**
-* WIDTH
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var WIDTH = 6;
 
 /**
-* HEIGHT
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var HEIGHT = 0.6;
 
 /**
-* SLOPE1
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var SLOPE1 = 12;
 
 /**
-* SLOPE2
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var SLOPE2 = 6;
 
 /**
-* SLOPE3
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var SLOPE3 = 4;
 
 /**
-* SLOPE4
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var SLOPE4 = 3;
 
 /**
-* SLOPE5
-*
 * This variable keeps track of the scale of the world for the objects in the simulation.
 */
 var SLOPE5 = 1.5;
 
 /**
- * TILES_PER_PART
- *
  * This variable keeps track of the number of tiles per part of the road.
  */
 var TILES_PER_PART = 20;

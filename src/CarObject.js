@@ -1,82 +1,61 @@
 //Symbolic Parameters
 
 /**
-* CAR_HEALTH
-*
 * This variable keeps track of the car's health
 */
 var CAR_HEALTH = 10;
 
 /**
-* CAR_FITNESS
-*
 * This variable keeps track of the car's fitness
 */
 var CAR_FITNESS = 0;
 
 /**
-* NUMBER_OF_VECTORS
-*
 * This variable keeps track of the number of vectors that a car has
 */
 var NUMBER_OF_VECTORS = 8;
 
 /**
-* MIN_WHEEL_RADIUS
-*
 * This variable keeps track of the minimum radius a wheel can have
 */
 var MIN_WHEEL_RADIUS = 20;
 
 /**
-* MAX_WHEEL_RADIUS
-*
 * This variable keeps track of the maximum radius a wheel can have
 */
 var MAX_WHEEL_RADIUS = 100;
 
 /**
-* NUMBER_OF_WHEELS
-*
 * This variable keeps track of the number of wheels a car can have
 */
 var NUMBER_OF_WHEELS = 2;
 
 /**
-* VECT_X_LOC
-*
 * This variable keeps track of the starting location of the X-vector
 * on the car's chromosome.
 */
 var VECT_X_LOC = 0;
 
 /**
-* VECT_Y_LOC
-*
 * This variable keeps track of the starting location of the Y-vector
 * on the car's chromosome.
 */
 var VECT_Y_LOC = 8;
 
 /**
-* WHEEL_POS_LOC
-*
 * This variable keeps track of the starting location of the wheel
 * position array on the car's chromosome.
 */
 var WHEEL_POS_LOC = 16;
 
 /**
-* WHEEL_RADIUS_LOC
-*
 * This variable keeps track of the starting location of the wheel radi
 * on the car's chromosome.
 */
 var WHEEL_RADIUS_LOC = 18;
 
 /**
- * @constructor
- * This is the constructor for the car.
+ * @constructor Car
  */
 function Car() {
     this.fitness = CAR_FITNESS;
