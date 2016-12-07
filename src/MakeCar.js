@@ -1,21 +1,113 @@
+//Symbolic Parameters
+
+/**
+* WORLD_SCALE
+*
+* This variable keeps track of the scale of the world for the objects in the simulation.
+*/
 var WORLD_SCALE = 60;
+
+/**
+* NUMBER_OF_VERTICES
+*
+* This variable keeps track of the number of verticies needed to define a polygon.
+*/
 var NUMBER_OF_VERTICES = 3;
+
+/**
+* POLYGON_DENSITY
+*
+* This variable keeps track of the density of a polygon.
+*/
 var POLYGON_DENSITY = 5;
+
+/**
+* POLYGON_FRICTION
+*
+* This variable keeps track of the friction of a polygon.
+*/
 var POLYGON_FRICTION = 3;
+
+/**
+* POLYGON_FILTER_GROUP_INDEX
+*
+* This variable keeps track of the filter group applied to the polygon.
+*/
 var POLYGON_FILTER_GROUP_INDEX = -1;
+
+/**
+* POLYGON_RESTITUTION
+*
+* This variable keeps track of the restitution of the polygon.
+*/
 var POLYGON_RESTITUTION = 0.3;
 
+/**
+* WHEEL_DENSITY
+*
+* This variable keeps track of the density of a wheel.
+*/
 var WHEEL_DENSITY = 1;
+
+/**
+* WHEEL_FRICTION
+*
+* This variable keeps track of the friction of a wheel.
+*/
 var WHEEL_FRICTION = 3;
+
+/**
+* WHEEL_FILTER_GROUP_INDEX
+*
+* This variable keeps track of the filter group applied to a wheel.
+*/
 var WHEEL_FILTER_GROUP_INDEX = -1;
+
+/**
+* WHEEL_RESTITUTION
+*
+* This variable keeps track of the restitution of a wheel.
+*/
 var WHEEL_RESTITUTION = 0.1;
 
+/**
+* JOINT_MAX_TORQUE
+*
+* This variable keeps track of the maximum torque that a joint can support.
+*/
 var JOINT_MAX_TORQUE = 250;
+
+/**
+* JOINT_SPEED
+*
+* This variable keeps track of the maximum speed that a joint can support.
+*/
 var JOINT_SPEED = -50;
 
+/**
+* X_SCALE
+*
+* This variable keeps track of the scaling factor in the x-direction.
+*/
 var X_SCALE = 320;
+
+/**
+* Y_SCALE
+*
+* This variable keeps track of the scaling factor in the y-direction.
+*/
 var Y_SCALE = 100;
 
+/**
+ * This method creates a polygon given the x and y coordinate of 2 vertices,
+ * and it joins them at the origin.
+ *
+ * @param num       {Integer}   The ID of the polygon
+ * @param vertex1X  {Integer}   The x-coordinate of the first vector
+ * @param vertex1Y  {Integer}   The y-coordinate of the first vector
+ * @param vertex2X  {Integer}   The x-coordinate of the second vector
+ * @param vertex2Y  {Integer}   The y-coordinate of the second vector
+ */
 function makePolygon(num, vertex1X, vertex1Y, vertex2X, vertex2Y) {
     if (vertex1X > 0) {
 
@@ -307,4 +399,6 @@ function drawCar(world, WORLD_SCALE, vertex1X, vertex1Y, vertex2X, vertex2Y, ver
     world.CreateJoint(jointdeffront);
 
     return car;
-};// JavaScript source code
+};
+
+
