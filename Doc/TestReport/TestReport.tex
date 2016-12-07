@@ -161,7 +161,7 @@ Majority of users agreed that the program's usability rated favourable. Test suc
 
 \subsection{Overall Evaluation valuation based on tests and user survey}
 
-Overall evaluation of non-functional requirements takes into account the results of the final user surveys and the results of the above test cases. The nebulous nature of non-functional requirements means that exact evaluation is difficult. With this in mind, the GrateBox project achieved most of the goals set out by non-functional requirements. GrateBox looks and feels good, is highly usable, and performs as expected. All fit criterion were met or exceeded and users agreed that our product excelled non-functionally.
+Overall evaluation of non-functional requirements takes into account the results of the final user surveys and the results of the above test cases. The nebulous nature of non-functional requirements means that exact evaluation is difficult. With this in mind, the GrateBox project achieved most of the goals set out by non-functional requirements. GrateBox looks and feels good, is highly usable, and performs as expected. All fit criterion were met or exceeded and users agreed that our product excelled non-functionally. Stress testing, while not directly applicable to GrateBox (GrateBox is a simple program executed by one machine by one user), has been undertaken indirectly through a 2 hour execution of GrateBox on two different machines, demonstrating the robustness of the program.
 
 \section{Comparison to Existing Implementation}
 
@@ -173,9 +173,24 @@ All unit testing for this project can be found in the test folder found \href{ht
 
 \section{Changes Due to Testing}
 
+Several changes were made to GrateBox as a result of testing. They have been divided below according to their related requirements.
+
 \subsection{Changes to functional requirements}
 
+Initial car design was predicated on the creation of vectors from a centre point and then the connecting of the end of these vectors to form a polygon that would serve as the body of the car. However, testing for car creation using this method prooved prohibitively difficult. To this end, car bodies were redesigned to be composed of a series of conducted vertexs. This change also effected how car chromosomes were created and manipulated.
+
+
+User surveys revealed the need for a pause button in GrateBox as users felt a lack of control over the program at times. This was added to the parameters section of GrateBox.
+
+
+The initial values of the user variables (number of cars per generation, number of parents, and mutation rate) all increased as a result of user input. The initial values resulted in cars that were too slow in evolving, and would often require ten or more generations for a moderately successful car to emerge. 
+
 \subsection{Changes to non-functional requirements}
+
+User feedback told Grate the the UI of GrateBox was too minimal, and that look and feel requirements were not being met. To this end, an html visual enhancer, BootStrap, was used to fufill this user need. Users opinions' of GrateBox's look and feel increased dramatically following this change.
+
+
+It was observed during user trials that many users had trouble grasping the exact nature of genetic algorithms quickly. To this end text was added to GrateBox to give users the most very basic background with which to use the program. It was important to Grate that this text not be overly extensive, as it was believed that this could go a long way to turning users off of our product. The exact amount and content of text was modified extensively over GrateBox's development cycle via user input.
 
 \section{Automated Testing}
 		
