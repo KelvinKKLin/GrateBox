@@ -7,6 +7,11 @@ var MIN_WHEEL_RADIUS = 20;
 var MAX_WHEEL_RADIUS = 100;
 var NUMBER_OF_WHEELS = 2;
 
+var VECT_X_LOC = 0;
+var VECT_Y_LOC = 8;
+var WHEEL_POS_LOC = 16;
+var WHEEL_RADIUS_LOC = 18;
+
 function Car() {
     this.fitness = CAR_FITNESS;
     this.health = CAR_HEALTH;
@@ -139,10 +144,10 @@ Car.prototype = {
     * @param {Chromosome[]} chromosome The chromosome to be altered.
     */
     setChromosome: function (chromosome) {
-        this.vertexXArray = chromosome.slice(0, 8);
-        this.vertexYArray = chromosome.slice(8, 16);
-        this.wheelPosArray = chromosome.slice(16, 18);
-        this.wheelRadiusArray = chromosome.slice(18, 20);
+        this.vertexXArray = chromosome.slice(VECT_X_LOC, VECT_Y_LOC);
+        this.vertexYArray = chromosome.slice(VECT_Y_LOC, WHEEL_POS_LOC);
+        this.wheelPosArray = chromosome.slice(WHEEL_POS_LOC, WHEEL_RADIUS_LOC);
+        this.wheelRadiusArray = chromosome.slice(WHEEL_RADIUS_LOC, WHEEL_RADIUS_LOC+NUMBER_OF_WHEELS);
     },
 
     /**

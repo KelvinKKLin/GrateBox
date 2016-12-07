@@ -137,6 +137,7 @@ var NUMBER_OF_GENES = 20;
 var currentGeneration = 1;
 
 var paused = false;
+
 /*!
     THE VIEW
  */
