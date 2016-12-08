@@ -2,8 +2,8 @@
 
 \usepackage{booktabs}
 \usepackage{tabularx}
-\usepackage{hyperref}
-\usepackage{color}
+\usepackage[hidelinks=true]{hyperref}
+\usepackage[usenames, dvipsnames]{color}
 
 \title{SE 3XA3: Development Plan\\GrateBox}
 
@@ -32,9 +32,12 @@ September 28, 2016 & Kelvin Lin & Added Git Workflow Plan for Draft 2\\
 September 29, 2016 & Eric Chaput & Added to Sections 3,6, and 7\\
 September 30, 2016 & Kelvin Lin, Eric Chaput, Jin Liu & Spelling and Grammar 
 edits\\
-November 4, 2016 & Eric Chaput & Revisions based on TA comments.\\
+November 4, 2016 & Eric Chaput & Revisions based on TA comments\\
 December 6, 2016 & Kelvin Lin & Added Reflection\\
 December 7, 2016 & Eric Chaput & Final Edits for Revision 1\\
+December 8, 2016 & Kelvin Lin & Edited all spelling and grammar mistakes\\
+December 8, 2016 & Kelvin Lin & Reflected new changes in Royal Purple\\
+December 8, 2016 & Kelvin Lin & Depreciated all invalid paragraphs\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -43,13 +46,13 @@ December 7, 2016 & Eric Chaput & Final Edits for Revision 1\\
 
 \maketitle
 
-\textcolor{blue}{Blue text indicates rev 1 updates}
+\textcolor{RoyalPurple}{Royal Purple text denote changes made for revision 1.}
 
 \section{Abstract}
 
 Having stated the problem to be solved in the problem statement document, Grate 
 will develop the Genetic Cars project to solve it. The following document 
-details the development plan for Grate's Genetic Cars project..
+details the development plan for Grate's Genetic Cars project.
 
 \section{Team Meeting Plan}
 
@@ -113,36 +116,6 @@ chair is responsible for establishing the next meeting date and making the
 appropriate reservations for a meeting space. Unless otherwise noted, Kelvin Lin 
 will be the chair of the meetings.
 
-\subsubsection{The Agenda}
-The agenda is a written document to be written in \LaTeX. It details the topics 
-to be covered in an upcoming meeting. At a minimum, it must provide a numbered 
-list of topics to be covered, as well as a brief summary of each topic. The 
-summary can be as simple as a point list. The agenda should be released to all 
-team members 
-before each meeting.
-
-\subsubsection{The Scribe}
-The scribe of the meeting will be responsible for taking appropriate notes at 
-the meeting. Before each meeting, the scribe must prepare the appropriate 
-equipment needed to take notes. This could include, but is not limited to, 
-laptops, notebooks, pens, pencils, and paper. If possible, the scribe should 
-obtain a copy of the agenda from the chair. During each meeting, the scribe has 
-the obligation to keep accurate, unbiased notes that provide a faithful 
-representation of the meeting. All events and decisions must be recorded in a 
-manner so that they can be referenced in the future. Attendance, and future 
-meeting dates should also be recorded. After each meeting, the scribe is 
-responsible for formalizing the notes into meeting minutes. Unless otherwise 
-noted, Jin Liu will be the scribe of the meetings.
-
-\subsubsection{The Meeting Minutes}
-The meeting minutes is a written document to be written in \LaTeX. It is a 
-formalization of the notes taken by the scribe during each meeting. The meeting 
-minutes can be appended to the corresponding meeting agenda of the same date. At 
-a minimum, the meeting minutes must contain three sections: a section to detail 
-the key points of the conversation during each topic of discussion, a summary of 
-the key decisions made during each meeting, and a list of tasks each member is 
-responsible for before the next meeting. The meeting minutes should be released 
-to all team members before the start of the next meeting.
 
 \subsection{Emergency Provisions}
 In the unlikely event of an emergency, impromptu meetings can be held on 
@@ -321,16 +294,15 @@ the project.
 The car in this project is composed of 8 vectors attached to a central point. 
 The 
 tips of the vectors are connected to form triangles. Each car contains 8 
-vectors. In addition, each car can have up to 8 wheels. Each wheel has a radius, 
+vectors. In addition, each car can have up to \textcolor{RoyalPurple}{2} wheels. Each wheel has a radius, 
 an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car 
 will also have mass, which will be a randomly generated value between two 
 predetermined numbers.
 
 \subsubsection{The Deliverable}
-The Car Model will likely be modelled as a JSON object, or a customized 
-equivalent, with properties such as the coordinates for each of its 8 vectors; 
+The Car Model will modelled with a \textcolor{RoyalPurple}{JavaScript prototype object} with properties such as the coordinates for each of its 8 vectors; 
 the vertex, axle angle, and radius of each of its 8 wheels; a boolean for each 
-of its wheels to indicate whether the wheel exists. A script to test the JSON 
+of its wheels to indicate whether the wheel exists. A script to test the \textcolor{RoyalPurple}{Car Object}
 model will also be created. This script will access each field of the car and 
 output its value in text to the console. The script will also use the Box2D API 
 to create the corresponding vectors for the car, and if it is successful, then 
@@ -340,7 +312,7 @@ it will print "true" to the console.
 The Box2D API poses the most significant risk for the car model. The Box2D API 
 defines the car entity in terms that can be used with many physics equations, 
 which is important for calculating the fitness function of the car. In the event 
-that the Box2D API prooves to be infeasible for Grate, alternate arrangemets 
+that the Box2D API \textcolor{RoyalPurple}{proves} to be infeasible for Grate, alternate \textcolor{RoyalPurple}{arrangements}
 will have to be made in order to complete the project: the team will resort to 
 using basic kinematics equations to calculate the fitness function instead of 
 using the API. A possible drawback to this approach would be that the members of 
@@ -364,7 +336,7 @@ car as genes, and swapping them in order to simulate reproduction. This project
 will do this by randomly selecting two fields and two cars, and swapping those 
 two fields such that the first car will have the two fields from the second car 
 and the second car will have two fields from the first car. Finally, to finish 
-creating the offsprings, the GA will randomly change some of the fields at a 
+creating the offspring, the GA will randomly change some of the fields at a 
 frequency based on a mutation likelihood between 0\% and 100\%. 
 
 \subsubsection{The Deliverable}
@@ -377,7 +349,7 @@ scores, and return an array containing the top n cars. The crossoverOffsprings
 function will take an array of cars, and randomly select parent cars (from the 
 first n element in the cars array) to cross over their genes, such that the 
 number of cars in the cars array equals the population. The mutateOffsprings 
-function will randomly mutate the fields of the offsprings by a given mutation 
+function will randomly mutate the fields of the offspring by a given mutation 
 factor.
 
 This file will be demonstrated using another script with hardcoded values for 
@@ -391,12 +363,12 @@ of the cars that mutated as well as their previous fields on separate lines.
 \subsubsection{The Risks}
 The adaptation of algorithm itself presents a significant risk for this project. 
 Any assumptions made in the original algorithm will carry over to the project 
-where those assumptions may not hold to be true.  Furhtermore, if any errors 
+where those assumptions may not hold to be true.  \textcolor{RoyalPurple}{Furthermore}, if any errors 
 exist in the GA code, the final result will be negatively effected. To avoid 
-this risk, the original algorithm will be tested in an isolated enviroment to 
+this risk, the original algorithm will be tested in an isolated \textcolor{RoyalPurple}{environment} to 
 ensure its general accuracy. The coded algorithm will also be tested in 
 isolation of the program's other components to ensure it is properly implemented 
-in Javascript. This is feasible due to Grate's object oriented programming 
+in JavaScript. This is feasible due to \textcolor{RoyalPurple}{Grate's} object oriented programming 
 approach to this project.
 
 \subsection{The Graphics}
@@ -417,19 +389,19 @@ generations.
 The deliverable for the proof of concept demonstration will be a simplified 
 version of the final user interface. It will consist of a HTML5 canvas with a 
 dynamically generated line representing the road near the bottom of the canvas. 
-A random car will be generated with 3 vectors (1 triangle) and 2 wheels (2 
+A random car will be generated with \textcolor{RoyalPurple}{8} vectors and 2 wheels (2 
 circles). The car will move horizontally across the screen indefinitely. A 
 camera will also focus on the car, so that the center of the car will always be 
 at the center of the screen.
 
 \subsubsection{The Risks}
-The implementation of the Javascript graphics language will present a 
+The implementation of the JavaScript graphics language will present a 
 significant risk for this project. Grate has more experience with C++ and Java 
-graphics packages, and it is possible that the adaptation of Javascript will 
-prove more difficult then initially believed. Grate's graphics and technology 
+graphics packages, and it is possible that the adaptation of JavaScript will 
+prove more difficult then initially believed. \textcolor{RoyalPurple}{Grate's} graphics and technology 
 experts have arranged to minimize this risk by educating themselves on 
-Javascript's graphics functionality extensively through online resources and 
-peers familiar with Javascript.
+JavaScript's graphics functionality extensively through online resources and 
+peers familiar with JavaScript.
 
 \section{Technology}
 
@@ -437,11 +409,10 @@ This project will use technology that all group members are already familiar
 with on a basic level. The project itself will be coded in Java Script, however 
 all group members understand that Java may be used if JavaScript proves too 
 difficult to use for this project. All group members are familiar with both of 
-these languages and no further learning will be required. Grate's graphics 
+these languages and no further learning will be required. \textcolor{RoyalPurple}{Grate's} graphics 
 expert is also adept at creating graphics in JavaScript. Written reports and 
-documents will be generated through Latex, a technology being taught in the 3xa3 
-course, and documents and reports will be shared through Git, another technology 
-being taught in the 3xa3 course. The technology expert will ensure that all 
+documents will be generated through Latex, a technology being taught in the 3XA3 
+course, and documents and reports will be shared through Git, another technology taught in the 3XA3 course. The technology expert will ensure that all 
 group members are aware of how to use these technologies. Testing will be aided 
 by the use of Java’s built in unit test functionality. Dox will serve as the 
 primary document generator, and QUnit will serve as the means of automated 
@@ -451,7 +422,7 @@ testing.
 
 JavaScript as a programming language is used for web applications. JavaScript is 
 the ideal programming language for this project. Member's of Grate is familiar 
-with JavaScript, and Grate's graphics 
+with JavaScript, and \textcolor{RoyalPurple}{Grate's} graphics 
 expert believes that JavScript will work best for his role. The final project 
 will also closely 
 resemble a standard web page in design. Finally, since the original basis for 
@@ -468,7 +439,7 @@ across platforms makes it ideal for this project. As of September 28 2016 all
 team members have acquired a working knowledge of how \LaTeX functions, and it 
 is 
 believed that no further education will be required. If any such education is 
-necessary the TAs and the Latex tutorial found online will be Grate's go-to 
+necessary the TAs and the Latex tutorial found online will be \textcolor{RoyalPurple}{Grate's} go-to 
 instructors. 
 
 \subsection{GitLab}
@@ -478,72 +449,65 @@ information on GitLab and how it will be used for this project can be found in
 sections 2.1.2 and in the Git Workflow Plan found in section 4. All Grate 
 members are familiar with GitLab and how it functions. 
 
-\subsection{Dox}
-Dox will be used to generate documents. Dox is a JavaScript documentation 
-generator written with Node available on GitHub. It generates a JSON 
-representation from the comments in the code, which can be passed to a template 
-in order to generate a website similar to JavaDocs. Its well documented nature 
-makes it a good choice for this project. The original source of Dox can be found 
-at
-\href{https://github.com/tj/dox}{https://github.com/tj/dox}.
+\subsection{JSDoc}
+\textcolor{RoyalPurple}{JSDoc will be used to generate documents. JSDoc is a JavaScript documentation 
+generator ran through the command line. It uses a similar commenting syntax to JavaDocs, and it supports additional tags that allows it to create more detailed specifications for the project. Its well documented nature 
+makes it a good choice for this project. A link to JSDoc can be found at
+\url{http://usejsdoc.org/}.}
 
 \subsection{QUnit}
 QUnit will be used for automated testing for this project. Its similarity to 
 JUnit, an automated testing software for Java, means that it will be easy to 
 learn, and its cross platform flexibility means that it is unlikely to cause 
 technical problems. The original source of QUnit can be found at
-\href{https://qunitjs.com/}{https://gunitjs.com}
+\url{https://qunitjs.com/}{https://gunitjs.com}
 
-\subsection{BootStrap}
-\textcolor{blue}{
-An HTML extension that helps with web design. Will be used to better the UI of 
-our project. Completely open source. Mostly self explanatory use.}
+\subsection{Bootstrap}
+\textcolor{RoyalPurple}{
+Bootstrap is an HTML add-on that allows users to build custom websites following a predefined theme. Bootstrap allows users to quickly make simple, yet elegant responsive websites that scale to any resolution. Boostrap will be used in order to build the website for this application because it is completely open source, and it is thoroughly documented. A link to Bootstrap can be found at \url{http://getbootstrap.com/}.}
 
 \subsection{JQuery}
-\textcolor{blue}{
-A JavaScript extension that makes it easier to create buttons. This will be used 
-for the pause button in our final product. Use is self explanatory for the most 
-part. An open source technology.}
+\textcolor{RoyalPurple}{
+JQuery is a JavaScript API that allows users to interface with interactive elements of an HTML page easily. JQuery will be used in order to get input from the user, as well as to get the dimensions of the user's screen. JQuery is easy to learn, and it is thoroughly documented. A link to JQuery can be found at \url{https://jquery.com/}.}
 
 \section{Coding Style}
 
 Code will be styled primarily as has been taught by the software engineering 
-program at McMaster University. Grate will undertake an object oriented 
+program at McMaster University. \textcolor{RoyalPurple}{Grate} will undertake an object oriented 
 programming approach to achieve maximum modularity and information hiding. The 
 team shall also ensure that the code meets several aesthetic guidelines outlined 
 here. All code is to be well commented, with comments being placed before the 
 code. Comments are to be written with the understanding that they should be 
-concise and easy to comprehend by outside parties. To satisify these 
+concise and easy to comprehend by outside parties. To \textcolor{RoyalPurple}{satisfy} these 
 requirements, Mozilla Developer Network's coding style will be adopted by the 
 team. 
 
 \subsection{Mozilla Developer Network}
 
-Mozilla Developer Network will be Grate's default coding style. It contains 
+Mozilla Developer Network will be \textcolor{RoyalPurple}{Grate's} default coding style. It contains 
 subsections specifically for JavaScript, the programming language of choice for 
 this project.  The guidelines for this coding style can be found at
-\href{https://developer.mozilla.org/en-US/docs/Mozilla/Developer\_guide/Coding\_Style}{https://developer.mozilla.org/en-US/docs/Mozilla/Developer\_guide/Coding\_Style}.
+\url{https://developer.mozilla.org/en-US/docs/Mozilla/Developer\_guide/Coding\_Style}.
 
 \section{Project Schedule}
 Please find the project schedule at 
 
-\href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule} 
-{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule}.
+\url{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule}.
 
 \section{Project Review}
-\textcolor{blue}{The past four months have been successful for Grate. Grate 
+\textcolor{RoyalPurple}{The past four months have been successful for Grate. Grate 
 accomplished all of 
 the goals it specified in the beginning with a high degree of success. Grate was 
 able to re-implement Genetic Cars by rednuht.org while creating extensive 
 documentation on the project following standard software engineering 
 principles.}
 
-\textcolor{blue}{The members of Grate were able to experience first-hand the 
+\textcolor{RoyalPurple}{The members of Grate were able to experience first-hand the 
 thrills and 
 challenges of implementing a medium-scale project, and this experience allowed 
 all members to grow in significant ways: both technically and managerially. }
 
-\textcolor{blue}{From the beginning, a key lesson Grate learned was to start 
+\textcolor{RoyalPurple}{From the beginning, a key lesson Grate learned was to start 
 coding early, but 
 not become attached to the code that is written. The proof of concept 
 demonstration proved effective in showing Grate that proper software design 
@@ -554,7 +518,7 @@ that Grate realized that it would be extremely challenging to modify this code
 in the future. The proof of concept helped set Grate on a road to using software 
 design principles in order to build a strong and understandable system.}
 
-\textcolor{blue}{Moreover, creating the different documents for the project 
+\textcolor{RoyalPurple}{Moreover, creating the different documents for the project 
 allowed the members 
 of Grate to build a project that is bigger than what any individual member could 
 have built. By writing complete and relevant documents, the individual members 
@@ -564,7 +528,7 @@ other's code before the other person's code was complete. Of course, this was
 effective partially because of each member's trust in each other, and the common 
 desire to succeed and build an amazing product in this course.}
 
-\textcolor{blue}{Macroscopically, the iterative process that Grate used was very 
+\textcolor{RoyalPurple}{Macroscopically, the iterative process that Grate used was very 
 effective in 
 developing software project management skills. The Gantt chart was used 
 extensively in the software development process as a guideline for each member 
@@ -577,14 +541,14 @@ finish their section of the code before starting their own. These tools allowed
 each member of Grate to refine their teamwork, communication, and time 
 management skills, which benefited the team as a whole.}
 
-\textcolor{blue}{Nevertheless, GrateBox is still in its early stages of 
+\textcolor{RoyalPurple}{Nevertheless, GrateBox is still in its early stages of 
 development, and there 
 are still tasks Grate has left incomplete at the time of writing. On the 
 technical side, there are several different types of genetic algorithms that 
 GrateBox could be made to support. Moreover, support for more parameters can be 
 made for the user to customize. }
 
-\textcolor{blue}{With respect to software project management, the use of PERT 
+\textcolor{RoyalPurple}{With respect to software project management, the use of PERT 
 charts, agile 
 methodology, and continuous integration could be implemented. The use of PERT 
 chart would extend the effectiveness of the Gantt chart, so that each member 
@@ -595,7 +559,7 @@ software to be tested every time a build is created. By implementing all of
 these features, GrateBox would be a more powerful application to teach students 
 and professionals the power of Genetic Algorithms.}
 
-\textcolor{blue}{Ultimately, the members of Grate started this project with no 
+\textcolor{RoyalPurple}{Ultimately, the members of Grate started this project with no 
 prior experience 
 with software project management. However, after going through several 
 iterations of the design process, every member became adept at effectively 
