@@ -137,12 +137,16 @@ All unit testing for this project can be found in the test folder found
 \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/src/test}{here}. 
 The tests.java file contains the source code for all testing. The Test.html file 
 contains the output of this code. All test were conducted using the third party 
-testing software QUnit, outlined in the Design document.
+testing software QUnit, outlined in the Design document.\\
+
+Most of the unit testing was focused on ensuring the validity of the genetic algorithm and the car creation and manipulation elements of GrateBox, as graphical aspects of GrateBox proved far more difficult to test with unit testing.\\
+
+Overall, these unit tests served to guarantee a level of functionality across builds, and did not account for non-functional requirements, as these were better suited to manual testing with user feedback.
 
 \section{Changes Due to Testing}
 
 Several changes were made to GrateBox as a result of testing. They have been 
-divided below according to their related requirements.
+divided below according to their related requirements. Many changes were made on a requirement by requirement basis, and these can be seen in sections 1 and 2 of this document.
 
 \subsection{Changes to functional requirements}
 
@@ -153,11 +157,9 @@ method proved prohibitively difficult. To this end, car bodies were redesigned
 to be composed of a series of conducted vertexes. This change also affected how 
 car chromosomes were created and manipulated.\\
 
-
 User surveys revealed the need for a pause button in GrateBox as users felt a 
 lack of control over the program at times. This was added to the parameters 
 section of GrateBox.\\
-
 
 The initial values of the user variables (number of cars per generation, number 
 of parents, and mutation rate) all increased as a result of user input. The 
@@ -171,7 +173,6 @@ and feel requirements were not being met. To this end, an html visual enhancer,
 BootStrap, was used to satisfy this user need. Users opinions' of GrateBox's 
 look and feel increased dramatically following this change.\\
 
-
 It was observed during user trials that many users had trouble grasping the 
 exact nature of genetic algorithms quickly. To this end text was added to 
 GrateBox to give users the most very basic background with which to use the 
@@ -181,6 +182,8 @@ The exact amount and content of text was modified extensively over GrateBox's
 development cycle via user input.
 
 \section{Automated Testing}
+
+\subsection{Introduction to automated testing}
 
 Automated testing proved difficult for certain elements of GrateBox, as it is 
 by nature a visual product. Still some automated testing was conducted for the 
@@ -195,7 +198,9 @@ automated testing, as many different variables could be tested with minimal time
 investment. While it proved impractical for the project given time 
 constrictions, further elaboration on GrateBox could utilise image analysing on 
 a pixel by pixel basis to improve the quality of the graphical output. Although 
-the overall value of such a time investment is questionable.
+the overall value of such a time investment is questionable.\\
+
+Outline below are all of our individual test cases, along with their names, initial states, inputs and expected outputs. A test was deemed to be successful if the expected output was the actual output. Only successful tests are listed here.
 		
 \section{Trace to Requirements}
 
