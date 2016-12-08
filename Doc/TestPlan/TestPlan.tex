@@ -46,6 +46,7 @@ Oct 25 & 1.1 & Implemented non-functional requirements testing\\
 Oct 30 & 1.2 & First test case additions\\
 Oct 31 & 1.3 & Second test case additions\\
 Oct 31 & 1.4 & Final edits\\
+Dec 07 & 1.5 & Final edits for Rev 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -403,11 +404,11 @@ Initial State: No car generated.
 					
 Input: Pre determined random seed and valid car generation module run.
 					
-Output: Set of 0-8 wheels for a car.
+\textcolor{blue}{Output: Set of 2 wheels for a car.}
 					
-How test will be performed: Car will be randomly created. Number of wheels will 
-be found to be between 0 and 8 for a successful test. Note that the output 
-should be the same number of wheels as there are wheel radii as in 1.2.
+\textcolor{blue}{How test will be performed: Car will be randomly created. Number of wheels will 
+be found to be 2 for a successful test. Note that the output 
+should be the same number of wheels as there are wheel radii as in 1.2.}
 
 \item{CM-1.2\\}
 
@@ -417,12 +418,12 @@ Initial State: No car generated.
 					
 Input: Pre determined random seed and valid  car generation module run.
 					
-Output: Set of 0-8 wheel radiuses for a car.
+Output: Set of wheel radiuses for a car.
 					
-How test will be performed: Car will be randomly created. All wheel radii
+\textcolor{blue}{How test will be performed: Car will be randomly created. All wheel radii
 will be found to be positive numbers within a certain range to be determined at 
 a later date. Note that the output should be the same number of radii as 
-there are wheels as in 1.1.
+there are wheels as in 1.1.}
 
 \item{CM-1.3\\}
 
@@ -432,11 +433,10 @@ Initial State: No car generated.
 					
 Input: Pre determined random seed and valid  car generation module run.
 					
-Output: Set of eight vector magnitudes for a car.
+\textcolor{blue}{Output: Set of eight vertex positions for a car.}
 					
-How test will be performed: Car will be randomly created. All vector magnitudes 
-will be found to be positive numbers within a certain range to be determined at 
-a later date.
+\textcolor{blue}{How test will be performed: Car will be randomly created. All vertex positions 
+will be found to be positions in 2-D space within a certain area.}
 
 \item{CM-1.4\\}
 
@@ -446,10 +446,10 @@ Initial State: No car generated
 					
 Input: Pre determined random seed and valid car generation module run.
 					
-Output: Set of eight vector angles for a car.
+\textcolor{blue}{Output: Set of eight vector angles for a car.}
 					
-How test will be performed: Car will be randomly created. All vector angles will 
-be found to be positive values within a certain range (within 2*pi)
+\textcolor{blue}{How test will be performed: Car will be randomly created. All vertex angles will 
+be found to be positive values within a certain range (within 2*pi)}
 
 \item{CM-1.5\\}
 
@@ -499,13 +499,13 @@ Type: Structural, Dynamic, Automated
 					
 Initial State: No car generated
 					
-Input: Pre determined random seed and faulty car generation module run for 
-vector magnitudes.
+\textcolor{blue}{Input: Pre determined random seed and faulty car generation module run for 
+vertex number.}
 					
 Output: Error message displayed
 					
-How test will be performed: Car will be randomly created. Error message should 
-occur if test successful.
+\textcolor{blue}{How test will be performed: Car will be randomly created. Error message should 
+occur if test successful.}
 					
 \item{CM-2\\}
 
@@ -885,7 +885,6 @@ users agree that the program's accuracy is favourable then this test will be
 considered a success, accuracy defined in the survey).
 
 \end{enumerate}
-\textcolor{red}{For above, include coverage metrics and the use of symbolic parametres - CM} \\
 
 \section{Tests for Proof of Concept}
 
@@ -1090,12 +1089,12 @@ Grate development team to help us improve the application?
 
 (USER INPUT)
 
-10. Did you feel like you were able to learn how GrateBox works without too much difficulty?
+\textcolor{blue}{10. Did you feel like you were able to learn how GrateBox works without too much difficulty?}
 
--Yes
+\textcolor{blue}{-Yes}
 
--Maybe
+\textcolor{blue}{-Maybe}
 
--No
+\textcolor{blue}{-No}
 
 \end{document}
