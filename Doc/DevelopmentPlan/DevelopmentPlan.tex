@@ -294,15 +294,18 @@ the project.
 The car in this project is composed of 8 vectors attached to a central point. 
 The 
 tips of the vectors are connected to form triangles. Each car contains 8 
-vectors. In addition, each car can have up to \textcolor{RoyalPurple}{2} wheels. Each wheel has a radius, 
+vectors. In addition, each car can have up to \textcolor{RoyalPurple}{2} wheels. 
+Each wheel has a radius, 
 an axle angle, and a vertex. Two wheels can lie on the same vertex. Each car 
 will also have mass, which will be a randomly generated value between two 
 predetermined numbers.
 
 \subsubsection{The Deliverable}
-The Car Model will modelled with a \textcolor{RoyalPurple}{JavaScript prototype object} with properties such as the coordinates for each of its 8 vectors; 
+The Car Model will modelled with a \textcolor{RoyalPurple}{JavaScript prototype 
+object} with properties such as the coordinates for each of its 8 vectors; 
 the vertex, axle angle, and radius of each of its 8 wheels; a boolean for each 
-of its wheels to indicate whether the wheel exists. A script to test the \textcolor{RoyalPurple}{Car Object}
+of its wheels to indicate whether the wheel exists. A script to test the 
+\textcolor{RoyalPurple}{Car Object}
 model will also be created. This script will access each field of the car and 
 output its value in text to the console. The script will also use the Box2D API 
 to create the corresponding vectors for the car, and if it is successful, then 
@@ -312,7 +315,8 @@ it will print "true" to the console.
 The Box2D API poses the most significant risk for the car model. The Box2D API 
 defines the car entity in terms that can be used with many physics equations, 
 which is important for calculating the fitness function of the car. In the event 
-that the Box2D API \textcolor{RoyalPurple}{proves} to be infeasible for Grate, alternate \textcolor{RoyalPurple}{arrangements}
+that the Box2D API \textcolor{RoyalPurple}{proves} to be infeasible for Grate, 
+alternate \textcolor{RoyalPurple}{arrangements}
 will have to be made in order to complete the project: the team will resort to 
 using basic kinematics equations to calculate the fitness function instead of 
 using the API. A possible drawback to this approach would be that the members of 
@@ -363,12 +367,15 @@ of the cars that mutated as well as their previous fields on separate lines.
 \subsubsection{The Risks}
 The adaptation of algorithm itself presents a significant risk for this project. 
 Any assumptions made in the original algorithm will carry over to the project 
-where those assumptions may not hold to be true.  \textcolor{RoyalPurple}{Furthermore}, if any errors 
+where those assumptions may not hold to be true.  
+\textcolor{RoyalPurple}{Furthermore}, if any errors 
 exist in the GA code, the final result will be negatively effected. To avoid 
-this risk, the original algorithm will be tested in an isolated \textcolor{RoyalPurple}{environment} to 
+this risk, the original algorithm will be tested in an isolated 
+\textcolor{RoyalPurple}{environment} to 
 ensure its general accuracy. The coded algorithm will also be tested in 
 isolation of the program's other components to ensure it is properly implemented 
-in JavaScript. This is feasible due to \textcolor{RoyalPurple}{Grate's} object oriented programming 
+in JavaScript. This is feasible due to \textcolor{RoyalPurple}{Grate's} object 
+oriented programming 
 approach to this project.
 
 \subsection{The Graphics}
@@ -389,7 +396,8 @@ generations.
 The deliverable for the proof of concept demonstration will be a simplified 
 version of the final user interface. It will consist of a HTML5 canvas with a 
 dynamically generated line representing the road near the bottom of the canvas. 
-A random car will be generated with \textcolor{RoyalPurple}{8} vectors and 2 wheels (2 
+A random car will be generated with \textcolor{RoyalPurple}{8} vectors and 2 
+wheels (2 
 circles). The car will move horizontally across the screen indefinitely. A 
 camera will also focus on the car, so that the center of the car will always be 
 at the center of the screen.
@@ -398,7 +406,8 @@ at the center of the screen.
 The implementation of the JavaScript graphics language will present a 
 significant risk for this project. Grate has more experience with C++ and Java 
 graphics packages, and it is possible that the adaptation of JavaScript will 
-prove more difficult then initially believed. \textcolor{RoyalPurple}{Grate's} graphics and technology 
+prove more difficult then initially believed. \textcolor{RoyalPurple}{Grate's} 
+graphics and technology 
 experts have arranged to minimize this risk by educating themselves on 
 JavaScript's graphics functionality extensively through online resources and 
 peers familiar with JavaScript.
@@ -409,10 +418,12 @@ This project will use technology that all group members are already familiar
 with on a basic level. The project itself will be coded in Java Script, however 
 all group members understand that Java may be used if JavaScript proves too 
 difficult to use for this project. All group members are familiar with both of 
-these languages and no further learning will be required. \textcolor{RoyalPurple}{Grate's} graphics 
+these languages and no further learning will be required. 
+\textcolor{RoyalPurple}{Grate's} graphics 
 expert is also adept at creating graphics in JavaScript. Written reports and 
 documents will be generated through Latex, a technology being taught in the 3XA3 
-course, and documents and reports will be shared through Git, another technology taught in the 3XA3 course. The technology expert will ensure that all 
+course, and documents and reports will be shared through Git, another technology 
+taught in the 3XA3 course. The technology expert will ensure that all 
 group members are aware of how to use these technologies. Testing will be aided 
 by the use of Java’s built in unit test functionality. Dox will serve as the 
 primary document generator, and QUnit will serve as the means of automated 
@@ -439,7 +450,8 @@ across platforms makes it ideal for this project. As of September 28 2016 all
 team members have acquired a working knowledge of how \LaTeX functions, and it 
 is 
 believed that no further education will be required. If any such education is 
-necessary the TAs and the Latex tutorial found online will be \textcolor{RoyalPurple}{Grate's} go-to 
+necessary the TAs and the Latex tutorial found online will be 
+\textcolor{RoyalPurple}{Grate's} go-to 
 instructors. 
 
 \subsection{GitLab}
@@ -450,8 +462,11 @@ sections 2.1.2 and in the Git Workflow Plan found in section 4. All Grate
 members are familiar with GitLab and how it functions. 
 
 \subsection{JSDoc}
-\textcolor{RoyalPurple}{JSDoc will be used to generate documents. JSDoc is a JavaScript documentation 
-generator ran through the command line. It uses a similar commenting syntax to JavaDocs, and it supports additional tags that allows it to create more detailed specifications for the project. Its well documented nature 
+\textcolor{RoyalPurple}{JSDoc will be used to generate documents. JSDoc is a 
+JavaScript documentation 
+generator ran through the command line. It uses a similar commenting syntax to 
+JavaDocs, and it supports additional tags that allows it to create more detailed 
+specifications for the project. Its well documented nature 
 makes it a good choice for this project. A link to JSDoc can be found at
 \url{http://usejsdoc.org/}.}
 
@@ -464,27 +479,39 @@ technical problems. The original source of QUnit can be found at
 
 \subsection{Bootstrap}
 \textcolor{RoyalPurple}{
-Bootstrap is an HTML add-on that allows users to build custom websites following a predefined theme. Bootstrap allows users to quickly make simple, yet elegant responsive websites that scale to any resolution. Boostrap will be used in order to build the website for this application because it is completely open source, and it is thoroughly documented. A link to Bootstrap can be found at \url{http://getbootstrap.com/}.}
+Bootstrap is an HTML add-on that allows users to build custom websites following 
+a predefined theme. Bootstrap allows users to quickly make simple, yet elegant 
+responsive websites that scale to any resolution. Boostrap will be used in order 
+to build the website for this application because it is completely open source, 
+and it is thoroughly documented. A link to Bootstrap can be found at 
+\url{http://getbootstrap.com/}.}
 
 \subsection{JQuery}
 \textcolor{RoyalPurple}{
-JQuery is a JavaScript API that allows users to interface with interactive elements of an HTML page easily. JQuery will be used in order to get input from the user, as well as to get the dimensions of the user's screen. JQuery is easy to learn, and it is thoroughly documented. A link to JQuery can be found at \url{https://jquery.com/}.}
+JQuery is a JavaScript API that allows users to interface with interactive 
+elements of an HTML page easily. JQuery will be used in order to get input from 
+the user, as well as to get the dimensions of the user's screen. JQuery is easy 
+to learn, and it is thoroughly documented. A link to JQuery can be found at 
+\url{https://jquery.com/}.}
 
 \section{Coding Style}
 
 Code will be styled primarily as has been taught by the software engineering 
-program at McMaster University. \textcolor{RoyalPurple}{Grate} will undertake an object oriented 
+program at McMaster University. \textcolor{RoyalPurple}{Grate} will undertake an 
+object oriented 
 programming approach to achieve maximum modularity and information hiding. The 
 team shall also ensure that the code meets several aesthetic guidelines outlined 
 here. All code is to be well commented, with comments being placed before the 
 code. Comments are to be written with the understanding that they should be 
-concise and easy to comprehend by outside parties. To \textcolor{RoyalPurple}{satisfy} these 
+concise and easy to comprehend by outside parties. To 
+\textcolor{RoyalPurple}{satisfy} these 
 requirements, Mozilla Developer Network's coding style will be adopted by the 
 team. 
 
 \subsection{Mozilla Developer Network}
 
-Mozilla Developer Network will be \textcolor{RoyalPurple}{Grate's} default coding style. It contains 
+Mozilla Developer Network will be \textcolor{RoyalPurple}{Grate's} default 
+coding style. It contains 
 subsections specifically for JavaScript, the programming language of choice for 
 this project.  The guidelines for this coding style can be found at
 \url{https://developer.mozilla.org/en-US/docs/Mozilla/Developer\_guide/Coding\_Style}.
@@ -495,19 +522,22 @@ Please find the project schedule at
 \url{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/ProjectSchedule}.
 
 \section{Project Review}
-\textcolor{RoyalPurple}{The past four months have been successful for Grate. Grate 
+\textcolor{RoyalPurple}{The past four months have been successful for Grate. 
+Grate 
 accomplished all of 
 the goals it specified in the beginning with a high degree of success. Grate was 
 able to re-implement Genetic Cars by rednuht.org while creating extensive 
 documentation on the project following standard software engineering 
 principles.}
 
-\textcolor{RoyalPurple}{The members of Grate were able to experience first-hand the 
+\textcolor{RoyalPurple}{The members of Grate were able to experience first-hand 
+the 
 thrills and 
 challenges of implementing a medium-scale project, and this experience allowed 
 all members to grow in significant ways: both technically and managerially. }
 
-\textcolor{RoyalPurple}{From the beginning, a key lesson Grate learned was to start 
+\textcolor{RoyalPurple}{From the beginning, a key lesson Grate learned was to 
+start 
 coding early, but 
 not become attached to the code that is written. The proof of concept 
 demonstration proved effective in showing Grate that proper software design 
@@ -518,7 +548,8 @@ that Grate realized that it would be extremely challenging to modify this code
 in the future. The proof of concept helped set Grate on a road to using software 
 design principles in order to build a strong and understandable system.}
 
-\textcolor{RoyalPurple}{Moreover, creating the different documents for the project 
+\textcolor{RoyalPurple}{Moreover, creating the different documents for the 
+project 
 allowed the members 
 of Grate to build a project that is bigger than what any individual member could 
 have built. By writing complete and relevant documents, the individual members 
@@ -528,7 +559,8 @@ other's code before the other person's code was complete. Of course, this was
 effective partially because of each member's trust in each other, and the common 
 desire to succeed and build an amazing product in this course.}
 
-\textcolor{RoyalPurple}{Macroscopically, the iterative process that Grate used was very 
+\textcolor{RoyalPurple}{Macroscopically, the iterative process that Grate used 
+was very 
 effective in 
 developing software project management skills. The Gantt chart was used 
 extensively in the software development process as a guideline for each member 
@@ -548,7 +580,8 @@ technical side, there are several different types of genetic algorithms that
 GrateBox could be made to support. Moreover, support for more parameters can be 
 made for the user to customize. }
 
-\textcolor{RoyalPurple}{With respect to software project management, the use of PERT 
+\textcolor{RoyalPurple}{With respect to software project management, the use of 
+PERT 
 charts, agile 
 methodology, and continuous integration could be implemented. The use of PERT 
 chart would extend the effectiveness of the Gantt chart, so that each member 
@@ -559,7 +592,8 @@ software to be tested every time a build is created. By implementing all of
 these features, GrateBox would be a more powerful application to teach students 
 and professionals the power of Genetic Algorithms.}
 
-\textcolor{RoyalPurple}{Ultimately, the members of Grate started this project with no 
+\textcolor{RoyalPurple}{Ultimately, the members of Grate started this project 
+with no 
 prior experience 
 with software project management. However, after going through several 
 iterations of the design process, every member became adept at effectively 
@@ -568,4 +602,5 @@ tools, GrateBox became what Grate considers a successful application in under
 four months.}
 
 \end{document}
+
 
