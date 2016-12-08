@@ -60,7 +60,7 @@ Automated testing for GrateBox was conducted using the QUnit software outlined i
 
 \subsection{Non-Automated Testing}
 
-Non-Automated testing for GrateBox's functional requirements was conducted by the test team outlined in the Test Plan document. These include the tests outlined in sections 3.1.3, 3.1.4, and 3.1.5 of the Test Plan document. All test cases were exectued correctly and returned the results expected. They are broken down into more detail below.
+Non-Automated testing for GrateBox's functional requirements was conducted by the test team outlined in the Test Plan document. These include the tests outlined in sections 3.1.3, 3.1.4, and 3.1.5 of the Test Plan document. All test cases were executed correctly and returned the results expected. They are broken down into more detail below.
 
 \subsubsection{Graphics}
 
@@ -108,13 +108,13 @@ Health bars operate properly. Test successful.\\
 
 GU-2\\
 
-Text file is created and is accurate. Test succesful.
+Text file is created and is accurate. Test successful.
 
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Nonfunctional Tests}
 
-The exact details of nonfunctional requirements can be found in the Test Plan document in section 3.2.
+The exact details of non-functional requirements can be found in the Test Plan document in section 3.2.
 
 
 \subsubsection{Look and Feel}
@@ -131,11 +131,11 @@ Majority of users agreed that the style of the program rated favourable. Test su
 
 US-1\\
 
-Users performed all tasks in alloted time. Test successful.\\
+Users performed all tasks in allotted time. Test successful.\\
 
 US-2\\
 
-Users performed all tasks in alloted time. Test successful.\\
+Users performed all tasks in allotted time. Test successful.\\
 
 US-3\\
 
@@ -149,7 +149,7 @@ Time restriction for tasks performed met. Test successful.\\
 
 PF-2\\
 
-Majority of useres agreed that the program's usability rated favourable. Test successful.\\
+Majority of users agreed that the program's usability rated favourable. Test successful.\\
 
 PF-3\\
 
@@ -177,7 +177,7 @@ Several changes were made to GrateBox as a result of testing. They have been div
 
 \subsection{Changes to functional requirements}
 
-Initial car design was predicated on the creation of vectors from a centre point and then the connecting of the end of these vectors to form a polygon that would serve as the body of the car. However, testing for car creation using this method prooved prohibitively difficult. To this end, car bodies were redesigned to be composed of a series of conducted vertexs. This change also effected how car chromosomes were created and manipulated.\\
+Initial car design was predicated on the creation of vectors from a centre point and then the connecting of the end of these vectors to form a polygon that would serve as the body of the car. However, testing for car creation using this method proved prohibitively difficult. To this end, car bodies were redesigned to be composed of a series of conducted vertexes. This change also affected how car chromosomes were created and manipulated.\\
 
 
 User surveys revealed the need for a pause button in GrateBox as users felt a lack of control over the program at times. This was added to the parameters section of GrateBox.\\
@@ -187,14 +187,14 @@ The initial values of the user variables (number of cars per generation, number 
 
 \subsection{Changes to non-functional requirements}
 
-User feedback told Grate the the UI of GrateBox was too minimal, and that look and feel requirements were not being met. To this end, an html visual enhancer, BootStrap, was used to fufill this user need. Users opinions' of GrateBox's look and feel increased dramatically following this change.\\
+User feedback told Grate that the UI of GrateBox was too minimal, and that look and feel requirements were not being met. To this end, an html visual enhancer, BootStrap, was used to fulfill this user need. Users opinions' of GrateBox's look and feel increased dramatically following this change.\\
 
 
 It was observed during user trials that many users had trouble grasping the exact nature of genetic algorithms quickly. To this end text was added to GrateBox to give users the most very basic background with which to use the program. It was important to Grate that this text not be overly extensive, as it was believed that this could go a long way to turning users off of our product. The exact amount and content of text was modified extensively over GrateBox's development cycle via user input.
 
 \section{Automated Testing}
 
-Automated testing prooved difficult for certain elements of GrateBox, as it is by nature a visual product. Still some automated testing was conducted for the benefit of the testing team and to improve accuracy. QUnit, our unit testing software, allows for mutliple executions of the same test with some variances, and this was done to ensure the soundness of many aspects fo GrateBox. This functionality allows for the entrance of a variable into a field with the instructions to manipulate that variable within a range of possible values and determine many possible outputs (for example negative values, non integer values, etc.). The genetic algorithm in particular benefited greatly from automated testing, as many different variables could be tested with minimal time investment. While it proved impractical for the project given time constrictions, further elaboration on GrateBox could utilise image analyzing on a pixel by pixel basis to improve the quality of the graphical output. Although the overall value of such a time investment is questionable.
+Automated testing prooved difficult for certain elements of GrateBox, as it is by nature a visual product. Still some automated testing was conducted for the benefit of the testing team and to improve accuracy. QUnit, our unit testing software, allows for multiple executions of the same test with some variances, and this was done to ensure the soundness of many aspects fo GrateBox. This functionality allows for the entrance of a variable into a field with the instructions to manipulate that variable within a range of possible values and determine many possible outputs (for example negative values, non-integer values, etc.). The genetic algorithm in particular benefited greatly from automated testing, as many different variables could be tested with minimal time investment. While it proved impractical for the project given time constrictions, further elaboration on GrateBox could utilise image analyzing on a pixel by pixel basis to improve the quality of the graphical output. Although the overall value of such a time investment is questionable.
 		
 \section{Trace to Requirements}
 		
@@ -202,6 +202,6 @@ Automated testing prooved difficult for certain elements of GrateBox, as it is b
 
 \section{Code Coverage Metrics}
 
-In the Test Plan document, Grate endevoured to achieve 70\% coverage with our automated and unit testing. While not every unit test possible was executed, most were, and Grate feels that this coverage metric was reached, as a large majority of our actual code contains corresponding tests to validate it. The modularized nature of our code reduced the overall usefulness of larger coverage tests. For example, the inclusion of the genetic algorithm in a test for graphical validity achieves very little, as the modularized nature of the code requires little to no interaction between these two modules.
+In the Test Plan document, Grate endeavoured to achieve 70\% coverage with our automated and unit testing. While not every unit test possible was executed, most were, and Grate feels that this coverage metric was reached, as a large majority of our actual code contains corresponding tests to validate it. The modularized nature of our code reduced the overall usefulness of larger coverage tests. For example, the inclusion of the genetic algorithm in a test for graphical validity achieves very little, as the modularized nature of the code requires little to no interaction between these two modules.
 
 \end{document}
