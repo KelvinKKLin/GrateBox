@@ -68,7 +68,7 @@ respectively.
 
 \section{Functional Requirements Evaluation}
 
-An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs that would have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
+An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs and erros that may have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
 
 Functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration.\\
 
@@ -84,73 +84,45 @@ Functional requirements are listed by the number given to them in the Software R
 
 \section{Nonfunctional Requirements Evaluation}
 
-\subsection{Nonfunctional Tests}
+An evaluation of non-functional requirements reveals near complete coverage by the non-functional test cases. The tests written for GrateBox caught problems and  potential improvements in GrateBox that were resolved by the development team. Those will be discussed below.\\
 
-The exact details of non-functional requirements can be found in the Test Plan 
-document in section 3.2.
+Non-functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these non-functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration. While many non-functional requirements required only software test to validate, many required timed tests by user volunteers and user feedback collected through surveys. The exact details of the survey can be found in the Test Plan document linked at teh beggining of this document.\\
 
+\subsection{Look and Feel Requirements}
 
-\subsubsection{Look and Feel}
+\textbf{Requirement \#21}: The need for GrateBox to be attractive to a student audience was of crucial importance to GrateBox's success. Initial releases of GrateBox however were met with hostility by users surveyed. To this end, another look was taken at technologies necessary to aid in increasing the aesthetic appeal of GrateBox. BootStrap was chosen as a result of this feedback and was incorporated into GrateBox. User surveys following the update revealed a marked increase in user support of the product's appearance.\\
 
-LF-1\\
+\textbf{Requirement \#22}: The importance of maintaining an education and professional outlook was identified early, and Grate did its upmost to ensure that this style was projected by the product, and it was felt that the program did in fact project this style during initial releases. While this sentiment was shared by most users surveyed, many also recommended that the look and feel of GrateBox could be improved by enabling additional options for the user to reduce the confusion the original releases could project. In particular, many users requested the ability to pause the simulation to allow them to utilise GrateBox at their own pace rather than a pace set by the program. With the goal of reducing confusion, a pause button was added, along with a clearer input method for user changeable parameters 
 
-Majority of users agreed that the visual aesthetic of the program rated 
-favourable. Test successful.\\
+\subsection{Usability and Humanity Requirements}
 
-LF-2\\
+\textbf{Requirement \#23}: Being an educational tool, it was of the upmost importance that GrateBox be easy to use. To this end, a set of tasks was set before users to be completed within a set time frame, to judge the program's ease of use. While most users were able to complete the tasks in a timely manner, some were not. These users had problems understanding exactly what fitness values were in practical terms, and so could not utilize the program to the fullest. To remedy this, Grate incorporated a more detailed and nuanced explanation of the program's fitness value, and the program's ease of use increased greatly as a result.\\
 
-Majority of users agreed that the style of the program rated favourable. Test 
-successful.
+\textbf{Requirement \#24}: If a learning tool is to be successful, it must allow for some degree of user engagement, and Grate aimed to accomplish this with GrateBox by allowing for a degree of personalization by the user. The mutation rate, population size, and number of parents of each set of generations was fully customizable by the user from the very earliest releases, however while users could update these values and see the changes in the simulations that resulted from these updates, many could not grasp exactly what the changes they were making were changing in real terms. To this end Grate incorporated written explanations of each user changeable field to help the educational process GrateBox attempted to induce.\\
 
-\subsubsection{Usability}
+\textbf{Requirement \#25}: It was always intended for GrateBox to be composed of only a single web page with very simple commands so that even users with no experience with the program could operate it. Our testing revealed that users were able to easily learn how to use the products minimal functionalities. While some users had problems understanding the exact effects of these functionalities (see requirements 23 and 24), none were incapable of operating them.
 
-US-1\\
+\subsection{Performance Requirements}
 
-Users performed all tasks in allotted time. Test successful.\\
+\textbf{Requirement \#26}: In order to maintain user attention, the speed of GrateBox had to be such that the user would not grow board of waiting for the product. Manual testing by the testing team revealed that the program did in fact meet or surpass our metrics for speed defined in the requirements, and most users surveyed agreed with this assessment. Testing the speed of the program however revealed the need to remove a significant amount of useless code from the API GrateBox utilized in order to further reduce GrateBox's runtime.\\
 
-US-2\\
+\textbf{Requirement \#27}: As a learning tool, GrateBox's precision was of the upmost importance. If the user believes that an educational program they are using is inaccurate, they will likely doubt the veracity of what is being taught to them. To this end, the product was made to display all values to the precision outlined in the requirements, however testing demonstrated several accuracy errors in final calculations of values. These resulted from the use of both integers and floats in the same mathematical equations. These errors were fixed in the final product. The actual testing process also revealed the need to switch our sorting method from a heap sort to a quick sort, as heap sorting methods proved overly difficult to verify with automated testing.
 
-Users performed all tasks in allotted time. Test successful.\\
+\subsection{Robustness, Maintainability, and Compatibility}
 
-US-3\\
+\textbf{Robustness}: While no formal robustness testing was conducted by Grate, several informal robustness tests were conducted over the lifetime of the development cycle. The most important of these were tests run to simply see how many generations GrateBox could run for before encountering errors. Grate was very thankful these tests were undertaken, as memory leak issues were encountered resulting in the sudden collapse of GrateBox after 4 generations of automobiles. The source of these errors was tracked to the API. Following extensive modification of elements of GrateBox's API, the program now runs for a significant amount of time before encountering problems, long enough that only the most dedicated and fanatic of users could possibly encounter them.\\
 
-Majority of users agreed that the program's usability rated favourable. Test 
-successful.
+\textbf{Requirement \#28}: The need for GrateBox to be easy to update and upgrade was made clear before Grate even began the development process, as it was believed making this a priority early on in the development process would make the development process itself all the more easy. Ultimately, informal discussions with other software developers and internal testing saw the almost absolute removal of constant values in the GrateBox code. These were replaced with variable values, greatly adding to GrateBox's longevity as a software product.\\
 
-\subsubsection{Performance}
+\textbf{Compatibility}: One benefit of programming in such a common language as JavaScript was the overwhelming compatibility of the programming language, and the use of HTML for the final website design also aided in improving GrateBox's compatibility. No compatibility problems were encountered during the testing process for and device with JavaScript installed, verifying the fantastic compatibility of GrateBox.
 
-PF-1\\
+\subsection{Legal Requirements}
 
-Time restriction for tasks performed met. Test successful.\\
+While no legal requirements existed for this project, as all software utilized was fully open sourced, a software license was created by the recommendation of a surveyed user to be safe.
 
-PF-2\\
+\subsection{Health and Safety Requirements}
 
-Majority of users agreed that the program's usability rated favourable. Test 
-successful.\\
-
-PF-3\\
-
-Numerical values and equations determined to be accurate and valid. Test 
-successful.\\
-
-PF-4\\
-
-Majority of users agreed that the program's usability rated favourable. Test 
-successful.
-
-\subsection{Overall Evaluation valuation based on tests and user survey}
-
-Overall evaluation of non-functional requirements takes into account the results 
-of the final user surveys and the results of the above test cases. The nebulous 
-nature of non-functional requirements means that exact evaluation is difficult. 
-With this in mind, the GrateBox project achieved most of the goals set out by 
-non-functional requirements. GrateBox looks and feels good, is highly usable, 
-and performs as expected. All fit criterion were met or exceeded and users 
-agreed that our product excelled non-functionally. Stress testing, while not 
-directly applicable to GrateBox (GrateBox is a simple program executed by one 
-machine by one user), has been undertaken indirectly through a 2 hour execution 
-of GrateBox on two different machines, demonstrating the robustness of the 
-program.
+While no formal health and safety testing was undertaken, as the health and safety risks of this projects were deemed to be too minimal to warrent such testing, users were informally asked throughout the survey process if they had concerns regarding the GrateBox project when it came to health and safety. No users had any concerns. While no significant health and safety risks could be identified, Grate made the effort to identify a set of potenial user problems given extreme conditions (this list can be seen in section 4.3.3 of the test plan).
 
 \section{Comparison to Existing Implementation}
 
