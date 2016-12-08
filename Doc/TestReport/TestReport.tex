@@ -68,84 +68,19 @@ respectively.
 
 \section{Functional Requirements Evaluation}
 
-Functional requirements were evaluated through automated and non-automated 
-testing.
+An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs that would have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
 
-\subsection{Automated Testing}
+Functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration.\\
 
-Automated testing for GrateBox was conducted using the QUnit software outlined 
-in the Development document. The test cases executed can be found in the test.js 
-file 
-\href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/src/test}{here}. 
-Each test case in the test.js file corresponds with an automated test case in 
-the Test Plan document. The automated test cases in the Test Plan document are 
-those found in sections 3.1.1 and 3.1.2. All automated test cases were properly 
-implemented and executed, and the results returned were the results expected, 
-indicating successful implementation of functional requirements by automated 
-testing.
+\textbf{Requirement \#5/6}: Testing revealed inconsistent masses across similar cars in different generations. This was revealed to be a conceptual problem with the code. Initially, mass was treated as a fixed value common to all cars. While this technically fulfilled the functional requirements for mass, later generations would trend towards the extremes of and eventually past the range of viable mass values dictated by the requirements. The development team elected to remedy this problem by making the mass value of cars a variable dependant on density and volume. With a constant density value set across all cars, and a much stricter range of possible volumes that cars could possess, mass values in test cases after this fix fulfilled these mass requirements far more consistently.\\
 
-\subsection{Non-Automated Testing}
+\textbf{Requirement \#8}: While testing did not reveal a problem with the actual display of fitness values required by this requirement, it did reveal a flaw in the creation of these values. Initially, the fitness of a car was determined by the distance along the x-axis of the road that the car had traveled. This solution did not account for vertical displacement, which became ever more important as GrateBox incorporated more sloped roads, to the point where many cars that were technically traveling a shorter distance along the road were receiving higher fitness values, skewing the results and threatening the integrity of GrateBox itself. The development team was quick to implement a more nuanced fitness algorithm that rated cars off of both their vertical and horizontal displacement and also accounted for the lifetime and durability of the car.\\
 
-Non-Automated testing for GrateBox's functional requirements was conducted by 
-the test team outlined in the Test Plan document. These include the tests 
-outlined in sections 3.1.3, 3.1.4, and 3.1.5 of the Test Plan document. All test 
-cases were executed correctly and returned the results expected. They are broken 
-down into more detail below.
+\textbf{Requirement \#10/11}: Whenever the user enters a new value into any of the fields that are able to be changed by the user, a new simulation begins with those values. While this seemed obvious to the development team, user surveys revealed that this process confused users. To this end, the functionality of these user changeable fields was updated to require the user to select enter following the entrance of a new value into the field. The following user feedback revealed that this change in functionality resulted in a better product.\\
 
-\subsubsection{Graphics}
+\textbf{Requirement \#13/14}: Testing revealed that many users felt the need to enter impossible values into user changeable variables. For example, many users attempted to simulate generations of cars with negative amounts of cars per generation. Others simply attempted to enter strings of text into these fields. GrateBox, at the time incapable of processing these invalid inputs, failed as a result. The development team quickly implemented error messages and try/catch exceptions into the code in order to thwart user attempts to circumvent the functionality of the program.\\
 
-Test for graphics are as follows.\\
-
-GR-1.1\\
-
-Cars are generated as expected given numerical values. The position of vertices, 
-the connections between vertices, the radius of wheels, and the placement of 
-wheels all vary depending on given input. Comparison with BoxCar-2D also 
-verifies successful implementation of graphics module. Test successful.\\
-
-GR-1.2\\
-
-Cars are not generated as expected given invalid numerical values. An error 
-message is displayed when this occurs. Test successful.\\
-
-GR-1.3\\
-
-Cars are not generated as expected given invalid numerical values. An error 
-message is displayed when this occurs. Test successful.\\
-
-GR-2.1\\
-
-Road created corresponds to algorithm input. Test successful.\\
-
-GR-2.2\\
-
-No road created and error message is displayed when this occurs. Test 
-successful.
-
-\subsubsection{Fitness and Score}
-
-Test for fitness and scores are as follows.\\
-
-FI-1\\
-
-Values calculated correspond to values observed. Test successful.\\
-
-FI-2\\
-
-Values calculated correspond to values observed and value properly displayed in 
-GUI. Test successful.
-
-\subsubsection{Other GUI elements}
-
-Test for other GUI elements are as follows.\\
-
-GU-1\\
-
-Health bars operate properly. Test successful.\\
-
-GU-2\\
-
-Text file is created and is accurate. Test successful.
+\textbf{Requirement \#18}: The algorithm that was designed to determine at what exact point along the road a car was deemed to be non-moving evolved over the course of the testing process. The first set of tests illuminted the need for larger health bars for each car to account for some cars stopping temporarily along the road as they attempted to circumvent terrain challenges. This was followed by a number of bugs in Java's graphics libraries, which caused cars to be deemed non-moving far before the graphics indicated this. These bugs were eventually ironed out of the program.
 
 \section{Nonfunctional Requirements Evaluation}
 
