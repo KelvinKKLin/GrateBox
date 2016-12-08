@@ -1,0 +1,60 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+\title{SE 3XA3: Module Interface Specification\\GrateBox}
+
+\author{Team 8, Grate
+		\\ Kelvin Lin (linkk4)
+		\\ Eric Chaput (chaputem)
+		\\ Jin Liu (liu456)
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{table}[h]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Nov 10 & 1.0 & Created MIS Document\\
+Nov 12 & 1.1 & Updated MIS to reflect new modules\\
+Nov 13 & 1.2 & Added the car module to MIS\\
+Nov 13 & 1.3 & Added title page and revision history\\
+Dec 7  & 1.4 & Updated MIS to reflect new decomposition of program\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\end{document}
