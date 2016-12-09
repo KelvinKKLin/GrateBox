@@ -1,6 +1,6 @@
 # GrateBox
 
-Team Name: 8
+Team Name: Grate
 
 Team Members: Kelvin Lin, Eric Chaput, Jin Liu
 

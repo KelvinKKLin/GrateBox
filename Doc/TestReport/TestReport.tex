@@ -72,68 +72,220 @@ respectively.
 
 \section{Functional Requirements Evaluation}
 
-An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs and errors that may have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
+An evaluation of functional requirements reveals near complete coverage by the 
+functional test cases. The tests written for GrateBox caught bugs and errors 
+that may have gone otherwise unnoticed by the development team. Those will be 
+discussed below. Many of the more mundane or generic functional requirements 
+were fulfilled well before testing began, so they will not be addressed, as 
+their verification would be redundant at this point. \\
 
-Functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration.\\
+Functional requirements are listed by the number given to them in the Software 
+Requirements Specification document. Note that these functional requirements are 
+laid out in more detail in the SRS document linked above, and it should be 
+referred to for further elaboration.\\
 
-\textbf{Requirement \#5/6}: Testing revealed inconsistent masses across similar cars in different generations. This was revealed to be a conceptual problem with the code. Initially, mass was treated as a fixed value common to all cars. While this technically fulfilled the functional requirements for mass, later generations would trend towards the extremes of and eventually past the range of viable mass values dictated by the requirements. The development team elected to remedy this problem by making the mass value of cars a variable dependant on density and volume. With a constant density value set across all cars, and a much stricter range of possible volumes that cars could possess, mass values in test cases after this fix fulfilled these mass requirements far more consistently.\\
+\textbf{Requirement \#5/6}: Testing revealed inconsistent masses across similar 
+cars in different generations. This was revealed to be a conceptual problem with 
+the code. Initially, mass was treated as a fixed value common to all cars. While 
+this technically fulfilled the functional requirements for mass, later 
+generations would trend towards the extremes of and eventually past the range of 
+viable mass values dictated by the requirements. The development team elected to 
+remedy this problem by making the mass value of cars a variable dependant on 
+density and volume. With a constant density value set across all cars, and a 
+much stricter range of possible volumes that cars could possess, mass values in 
+test cases after this fix fulfilled these mass requirements far more 
+consistently.\\
 
-\textbf{Requirement \#8}: While testing did not reveal a problem with the actual display of fitness values required by this requirement, it did reveal a flaw in the creation of these values. Initially, the fitness of a car was determined by the distance along the x-axis of the road that the car had travelled. This solution did not account for vertical displacement, which became ever more important as GrateBox incorporated more sloped roads, to the point where many cars that were technically travelling a shorter distance along the road were receiving higher fitness values, skewing the results and threatening the integrity of GrateBox itself. The development team was quick to implement a more nuanced fitness algorithm that rated cars off of both their vertical and horizontal displacement and also accounted for the lifetime and durability of the car.\\
+\textbf{Requirement \#8}: While testing did not reveal a problem with the actual 
+display of fitness values required by this requirement, it did reveal a flaw in 
+the creation of these values. Initially, the fitness of a car was determined by 
+the distance along the x-axis of the road that the car had travelled. This 
+solution did not account for vertical displacement, which became ever more 
+important as GrateBox incorporated more sloped roads, to the point where many 
+cars that were technically travelling a shorter distance along the road were 
+receiving higher fitness values, skewing the results and threatening the 
+integrity of GrateBox itself. The development team was quick to implement a more 
+nuanced fitness algorithm that rated cars off of both their vertical and 
+horizontal displacement and also accounted for the lifetime and durability of 
+the car.\\
 
-\textbf{Requirement \#10/11}: Whenever the user enters a new value into any of the fields that are able to be changed by the user, a new simulation begins with those values. While this seemed obvious to the development team, user surveys revealed that this process confused users. To this end, the functionality of these user changeable fields was updated to require the user to select enter following the entrance of a new value into the field. The following user feedback revealed that this change in functionality resulted in a better product.\\
+\textbf{Requirement \#10/11}: Whenever the user enters a new value into any of 
+the fields that are able to be changed by the user, a new simulation begins with 
+those values. While this seemed obvious to the development team, user surveys 
+revealed that this process confused users. To this end, the functionality of 
+these user changeable fields was updated to require the user to select enter 
+following the entrance of a new value into the field. The following user 
+feedback revealed that this change in functionality resulted in a better 
+product.\\
 
-\textbf{Requirement \#13/14}: Testing revealed that many users felt the need to enter impossible values into user changeable variables. For example, many users attempted to simulate generations of cars with negative amounts of cars per generation. Others simply attempted to enter strings of text into these fields. GrateBox, at the time incapable of processing these invalid inputs, failed as a result. The development team quickly implemented error messages and try/catch exceptions into the code in order to thwart user attempts to circumvent the functionality of the program.\\
+\textbf{Requirement \#13/14}: Testing revealed that many users felt the need to 
+enter impossible values into user changeable variables. For example, many users 
+attempted to simulate generations of cars with negative amounts of cars per 
+generation. Others simply attempted to enter strings of text into these fields. 
+GrateBox, at the time incapable of processing these invalid inputs, failed as a 
+result. The development team quickly implemented error messages and try/catch 
+exceptions into the code in order to thwart user attempts to circumvent the 
+functionality of the program.\\
 
-\textbf{Requirement \#18}: The algorithm that was designed to determine at what exact point along the road a car was deemed to be non-moving evolved over the course of the testing process. The first set of tests illuminated the need for larger health bars for each car to account for some cars stopping temporarily along the road as they attempted to circumvent terrain challenges. This was followed by a number of bugs in Java's graphics libraries, which caused cars to be deemed non-moving far before the graphics indicated this. These bugs were eventually ironed out of the program.
+\textbf{Requirement \#18}: The algorithm that was designed to determine at what 
+exact point along the road a car was deemed to be non-moving evolved over the 
+course of the testing process. The first set of tests illuminated the need for 
+larger health bars for each car to account for some cars stopping temporarily 
+along the road as they attempted to circumvent terrain challenges. This was 
+followed by a number of bugs in Java's graphics libraries, which caused cars to 
+be deemed non-moving far before the graphics indicated this. These bugs were 
+eventually ironed out of the program.
 
 \section{Nonfunctional Requirements Evaluation}
 
-An evaluation of non-functional requirements reveals near complete coverage by the non-functional test cases. The tests written for GrateBox caught problems and  potential improvements in GrateBox that were resolved by the development team. Those will be discussed below.\\
+An evaluation of non-functional requirements reveals near complete coverage by 
+the non-functional test cases. The tests written for GrateBox caught problems 
+and  potential improvements in GrateBox that were resolved by the development 
+team. Those will be discussed below.\\
 
-Non-functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these non-functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration. While many non-functional requirements required only software test to validate, many required timed tests by user volunteers and user feedback collected through surveys. The exact details of the survey can be found in the Test Plan document linked at the beginning of this document.\\
+Non-functional requirements are listed by the number given to them in the 
+Software Requirements Specification document. Note that these non-functional 
+requirements are laid out in more detail in the SRS document linked above, and 
+it should be referred to for further elaboration. While many non-functional 
+requirements required only software test to validate, many required timed tests 
+by user volunteers and user feedback collected through surveys. The exact 
+details of the survey can be found in the Test Plan document linked at the 
+beginning of this document.\\
 
 \subsection{Look and Feel Requirements}
 
-\textbf{Requirement \#21}: The need for GrateBox to be attractive to a student audience was of crucial importance to GrateBox's success. Initial releases of GrateBox however were met with hostility by users surveyed. To this end, another look was taken at technologies necessary to aid in increasing the aesthetic appeal of GrateBox. Bootstrap was chosen as a result of this feedback and was incorporated into GrateBox. User surveys following the update revealed a marked increase in user support of the product's appearance.\\
+\textbf{Requirement \#21}: The need for GrateBox to be attractive to a student 
+audience was of crucial importance to GrateBox's success. Initial releases of 
+GrateBox however were met with hostility by users surveyed. To this end, another 
+look was taken at technologies necessary to aid in increasing the aesthetic 
+appeal of GrateBox. Bootstrap was chosen as a result of this feedback and was 
+incorporated into GrateBox. User surveys following the update revealed a marked 
+increase in user support of the product's appearance.\\
 
-\textbf{Requirement \#22}: The importance of maintaining an education and professional outlook was identified early, and Grate did its utmost to ensure that this style was projected by the product, and it was felt that the program did in fact project this style during initial releases. While this sentiment was shared by most users surveyed, many also recommended that the look and feel of GrateBox could be improved by enabling additional options for the user to reduce the confusion the original releases could project. In particular, many users requested the ability to pause the simulation to allow them to utilise GrateBox at their own pace rather than a pace set by the program. With the goal of reducing confusion, a pause button was added, along with a clearer input method for user changeable parameters 
+\textbf{Requirement \#22}: The importance of maintaining an education and 
+professional outlook was identified early, and Grate did its utmost to ensure 
+that this style was projected by the product, and it was felt that the program 
+did in fact project this style during initial releases. While this sentiment was 
+shared by most users surveyed, many also recommended that the look and feel of 
+GrateBox could be improved by enabling additional options for the user to reduce 
+the confusion the original releases could project. In particular, many users 
+requested the ability to pause the simulation to allow them to utilise GrateBox 
+at their own pace rather than a pace set by the program. With the goal of 
+reducing confusion, a pause button was added, along with a clearer input method 
+for user changeable parameters 
 
 \subsection{Usability and Humanity Requirements}
 
-\textbf{Requirement \#23}: Being an educational tool, it was of the utmost importance that GrateBox be easy to use. To this end, a set of tasks was set before users to be completed within a set time frame, to judge the program's ease of use. While most users were able to complete the tasks in a timely manner, some were not. These users had problems understanding exactly what fitness values were in practical terms, and so could not utilize the program to the fullest. To remedy this, Grate incorporated a more detailed and nuanced explanation of the program's fitness value, and the program's ease of use increased greatly as a result.\\
+\textbf{Requirement \#23}: Being an educational tool, it was of the utmost 
+importance that GrateBox be easy to use. To this end, a set of tasks was set 
+before users to be completed within a set time frame, to judge the program's 
+ease of use. While most users were able to complete the tasks in a timely 
+manner, some were not. These users had problems understanding exactly what 
+fitness values were in practical terms, and so could not utilize the program to 
+the fullest. To remedy this, Grate incorporated a more detailed and nuanced 
+explanation of the program's fitness value, and the program's ease of use 
+increased greatly as a result.\\
 
-\textbf{Requirement \#24}: If a learning tool is to be successful, it must allow for some degree of user engagement, and Grate aimed to accomplish this with GrateBox by allowing for a degree of personalization by the user. The mutation rate, population size, and number of parents of each set of generations was fully customizable by the user from the very earliest releases, however while users could update these values and see the changes in the simulations that resulted from these updates, many could not grasp exactly what the changes they were making were changing in real terms. To this end Grate incorporated written explanations of each user changeable field to help the educational process GrateBox attempted to induce.\\
+\textbf{Requirement \#24}: If a learning tool is to be successful, it must allow 
+for some degree of user engagement, and Grate aimed to accomplish this with 
+GrateBox by allowing for a degree of personalization by the user. The mutation 
+rate, population size, and number of parents of each set of generations was 
+fully customizable by the user from the very earliest releases, however while 
+users could update these values and see the changes in the simulations that 
+resulted from these updates, many could not grasp exactly what the changes they 
+were making were changing in real terms. To this end Grate incorporated written 
+explanations of each user changeable field to help the educational process 
+GrateBox attempted to induce.\\
 
-\textbf{Requirement \#25}: It was always intended for GrateBox to be composed of only a single web page with very simple commands so that even users with no experience with the program could operate it. Our testing revealed that users were able to easily learn how to use the products minimal functionalities. While some users had problems understanding the exact effects of these functionalities (see requirements 23 and 24), none were incapable of operating them.
+\textbf{Requirement \#25}: It was always intended for GrateBox to be composed of 
+only a single web page with very simple commands so that even users with no 
+experience with the program could operate it. Our testing revealed that users 
+were able to easily learn how to use the products minimal functionalities. While 
+some users had problems understanding the exact effects of these functionalities 
+(see requirements 23 and 24), none were incapable of operating them.
 
 \subsection{Performance Requirements}
 
-\textbf{Requirement \#26}: In order to maintain user attention, the speed of GrateBox had to be such that the user would not grow board of waiting for the product. Manual testing by the testing team revealed that the program did in fact meet or surpass our metrics for speed defined in the requirements, and most users surveyed agreed with this assessment. Testing the speed of the program however revealed the need to remove a significant amount of useless code from the API GrateBox utilized in order to further reduce GrateBox's runtime.\\
+\textbf{Requirement \#26}: In order to maintain user attention, the speed of 
+GrateBox had to be such that the user would not grow board of waiting for the 
+product. Manual testing by the testing team revealed that the program did in 
+fact meet or surpass our metrics for speed defined in the requirements, and most 
+users surveyed agreed with this assessment. Testing the speed of the program 
+however revealed the need to remove a significant amount of useless code from 
+the API GrateBox utilized in order to further reduce GrateBox's runtime.\\
 
-\textbf{Requirement \#27}: As a learning tool, GrateBox's precision was of the utmost importance. If the user believes that an educational program they are using is inaccurate, they will likely doubt the veracity of what is being taught to them. To this end, the product was made to display all values to the precision outlined in the requirements, however testing demonstrated several accuracy errors in final calculations of values. These resulted from the use of both integers and floats in the same mathematical equations. These errors were fixed in the final product. The actual testing process also revealed the need to switch our sorting method from a heap sort to a quick sort, as heap sorting methods proved overly difficult to verify with automated testing.
+\textbf{Requirement \#27}: As a learning tool, GrateBox's precision was of the 
+utmost importance. If the user believes that an educational program they are 
+using is inaccurate, they will likely doubt the veracity of what is being taught 
+to them. To this end, the product was made to display all values to the 
+precision outlined in the requirements, however testing demonstrated several 
+accuracy errors in final calculations of values. These resulted from the use of 
+both integers and floats in the same mathematical equations. These errors were 
+fixed in the final product. The actual testing process also revealed the need to 
+switch our sorting method from a heap sort to a quick sort, as heap sorting 
+methods proved overly difficult to verify with automated testing.
 
 \subsection{Robustness, Maintainability, and Compatibility}
 
-\textbf{Robustness}: While no formal robustness testing was conducted by Grate, several informal robustness tests were conducted over the lifetime of the development cycle. The most important of these were tests run to simply see how many generations GrateBox could run for before encountering errors. Grate was very thankful these tests were undertaken, as memory leak issues were encountered resulting in the sudden collapse of GrateBox after 4 generations of automobiles. The source of these errors was tracked to the API. Following extensive modification of elements of GrateBox's API, the program now runs for a significant amount of time before encountering problems, long enough that only the most dedicated and fanatic of users could possibly encounter them.\\
+\textbf{Robustness}: While no formal robustness testing was conducted by Grate, 
+several informal robustness tests were conducted over the lifetime of the 
+development cycle. The most important of these were tests run to simply see how 
+many generations GrateBox could run for before encountering errors. Grate was 
+very thankful these tests were undertaken, as memory leak issues were 
+encountered resulting in the sudden collapse of GrateBox after 4 generations of 
+automobiles. The source of these errors was tracked to the API. Following 
+extensive modification of elements of GrateBox's API, the program now runs for a 
+significant amount of time before encountering problems, long enough that only 
+the most dedicated and fanatic of users could possibly encounter them.\\
 
-\textbf{Requirement \#28}: The need for GrateBox to be easy to update and upgrade was made clear before Grate even began the development process, as it was believed making this a priority early on in the development process would make the development process itself all the more easy. Ultimately, informal discussions with other software developers and internal testing saw the almost absolute removal of constant values in the GrateBox code. These were replaced with variable values, greatly adding to GrateBox's longevity as a software product.\\
+\textbf{Requirement \#28}: The need for GrateBox to be easy to update and 
+upgrade was made clear before Grate even began the development process, as it 
+was believed making this a priority early on in the development process would 
+make the development process itself all the more easy. Ultimately, informal 
+discussions with other software developers and internal testing saw the almost 
+absolute removal of constant values in the GrateBox code. These were replaced 
+with variable values, greatly adding to GrateBox's longevity as a software 
+product.\\
 
-\textbf{Compatibility}: One benefit of programming in such a common language as JavaScript was the overwhelming compatibility of the programming language, and the use of HTML for the final website design also aided in improving GrateBox's compatibility. No compatibility problems were encountered during the testing process for and device with JavaScript installed, verifying the fantastic compatibility of GrateBox.
+\textbf{Compatibility}: One benefit of programming in such a common language as 
+JavaScript was the overwhelming compatibility of the programming language, and 
+the use of HTML for the final website design also aided in improving GrateBox's 
+compatibility. No compatibility problems were encountered during the testing 
+process for and device with JavaScript installed, verifying the fantastic 
+compatibility of GrateBox.
 
 \subsection{Legal Requirements}
 
-While no legal requirements existed for this project, as all software utilized was fully open sourced, a software license was created by the recommendation of a surveyed user to be safe.
+While no legal requirements existed for this project, as all software utilized 
+was fully open sourced, a software license was created by the recommendation of 
+a surveyed user to be safe.
 
 \subsection{Health and Safety Requirements}
 
-While no formal health and safety testing was undertaken, as the health and safety risks of this project were deemed to be too minimal to warrant such testing, users were informally asked throughout the survey process if they had concerns regarding the GrateBox project when it came to health and safety. No users had any concerns. While no significant health and safety risks could be identified, Grate made the effort to identify a set of potential user problems given extreme conditions (this list can be seen in section 4.3.3 of the test plan).
+While no formal health and safety testing was undertaken, as the health and 
+safety risks of this project were deemed to be too minimal to warrant such 
+testing, users were informally asked throughout the survey process if they had 
+concerns regarding the GrateBox project when it came to health and safety. No 
+users had any concerns. While no significant health and safety risks could be 
+identified, Grate made the effort to identify a set of potential user problems 
+given extreme conditions (this list can be seen in section 4.3.3 of the test 
+plan).
 
 \section{Comparison to Existing Implementation}
 
-The original implementation contained no testing of its own. This is somewhat understandable given the seemingly overnight creation of the original product. As such Grate's test cases have nothing to compare to in the original implementation. Were there such tests to compare to, Grate would compare the coverage, results, and random inputs of the existing implementation's test cases to those of Grate. Grate would also search for missing elements of one implementation that are present in the other, to see if Grate's implementation has missed a crucial component of the existing implementation.\\
+The original implementation contained no testing of its own. This is somewhat 
+understandable given the seemingly overnight creation of the original product. 
+As such Grate's test cases have nothing to compare to in the original 
+implementation. Were there such tests to compare to, Grate would compare the 
+coverage, results, and random inputs of the existing implementation's test cases 
+to those of Grate. Grate would also search for missing elements of one 
+implementation that are present in the other, to see if Grate's implementation 
+has missed a crucial component of the existing implementation.\\
 
-One test conducted by Grate (GR-1.1) required a visual comparison to the original implementation. This 
-comparison helped validate the results of the test. The test in question was GR-1.1 on the Test Plan document. 
+One test conducted by Grate (GR-1.1) required a visual comparison to the 
+original implementation. This 
+comparison helped validate the results of the test. The test in question was 
+GR-1.1 on the Test Plan document. 
 
 \section{Unit Testing}
 
@@ -143,14 +295,21 @@ The tests.js file contains the source code for all testing. The Test.html file
 contains the output of this code. All test were conducted using the third party 
 testing software QUnit, outlined in the Design document.\\
 
-Most of the unit testing was focused on ensuring the validity of the genetic algorithm and the car creation and manipulation elements of GrateBox, as graphical aspects of GrateBox proved far more difficult to test with unit testing.\\
+Most of the unit testing was focused on ensuring the validity of the genetic 
+algorithm and the car creation and manipulation elements of GrateBox, as 
+graphical aspects of GrateBox proved far more difficult to test with unit 
+testing.\\
 
-Overall, these unit tests served to guarantee a level of functionality across builds, and did not account for non-functional requirements, as these were better suited to manual testing with user feedback.
+Overall, these unit tests served to guarantee a level of functionality across 
+builds, and did not account for non-functional requirements, as these were 
+better suited to manual testing with user feedback.
 
 \section{Changes Due to Testing}
 
 Several changes were made to GrateBox as a result of testing. They have been 
-divided below according to their related requirements. Many changes were made on a requirement by requirement basis, and these can be seen in sections 1 and 2 of this document.
+divided below according to their related requirements. Many changes were made on 
+a requirement by requirement basis, and these can be seen in sections 1 and 2 of 
+this document.
 
 \subsection{Changes to functional requirements}
 
@@ -204,7 +363,10 @@ constrictions, further elaboration on GrateBox could utilise image analysing on
 a pixel by pixel basis to improve the quality of the graphical output. Although 
 the overall value of such a time investment is questionable.\\
 
-Outline below are all of our individual test cases, along with their names, initial states, inputs and expected outputs. A test was deemed to be successful if the expected output was the actual output. Only successful tests are listed here.
+Outline below are all of our individual test cases, along with their names, 
+initial states, inputs and expected outputs. A test was deemed to be successful 
+if the expected output was the actual output. Only successful tests are listed 
+here.
 
 \subsection{Specific System Tests}
 
@@ -219,109 +381,136 @@ Outline below are all of our individual test cases, along with their names, init
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Mutation rate of 0\% leading to error\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation and 0\% mutation rate with negative value for carsArray\\
+\textbf{Input:} & Pre generated car generation and 0\% mutation rate with 
+negative value for carsArray\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of three cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation 
+of three cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 3 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Selecting top two offspring with generation of three cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top two offspring with generation of 
+three cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 2 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 2 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top two cars\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of only one offspring for next generation with generation of three cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of only one offspring for 
+next generation with generation of three cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 1 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 1 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of three cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next 
+generation with generation of three cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 0 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of three cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for 
+next generation with generation of three cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of -1 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of four cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation 
+of four cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 3 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of five offspring for next generation with generation of four cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of five offspring for next 
+generation with generation of four cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 5 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 5 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of four cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next 
+generation with generation of four cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of 0 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of four cars\\
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for 
+next generation with generation of four cars\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
+\textbf{Input:} & Pre generated car generation with input of -1 for 
+selectNextGeneration\\
 \textbf{Expected Output:} & \\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with two valid wheels\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of standard car generation module\\
+\textbf{Input:} & Pre determined random seed and run of standard car generation 
+module\\
 \textbf{Expected Output:} & Two valid wheel placements on a car\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with two valid wheel radii\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of standard car generation module\\
+\textbf{Input:} & Pre determined random seed and run of standard car generation 
+module\\
 \textbf{Expected Output:} & Two valid wheel radius values on a car\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with vertex positions\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of standard car generation module\\
+\textbf{Input:} & Pre determined random seed and run of standard car generation 
+module\\
 \textbf{Expected Output:} & Valid vertex creation and positions\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with vertex angles\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of standard car generation module\\
+\textbf{Input:} & Pre determined random seed and run of standard car generation 
+module\\
 \textbf{Expected Output:} & Valid vertex angle creation and assignments\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with wheels\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
+\textbf{Input:} & Pre determined random seed and run of invalid car generation 
+module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with wheel radii\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
+\textbf{Input:} & Pre determined random seed and run of invalid car generation 
+module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with vertex positions\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
+\textbf{Input:} & Pre determined random seed and run of invalid car generation 
+module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with vertex angles\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
+\textbf{Input:} & Pre determined random seed and run of invalid car generation 
+module\\
 \textbf{Expected Output:} &Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
@@ -338,7 +527,8 @@ Outline below are all of our individual test cases, along with their names, init
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car graphics\\
-\textbf{Initial State:} & Pre generated car object with inaccurate index values\\
+\textbf{Initial State:} & Pre generated car object with inaccurate index 
+values\\
 \textbf{Input:} & Car object run through graphics module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
@@ -362,37 +552,47 @@ Outline below are all of our individual test cases, along with their names, init
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Correct fitness values at locations\\
-\textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
-\textbf{Input:} & Fitness value determination module run for series of car locations from simultation\\
+\textbf{Initial State:} & Generation of cars created and simulation run to 
+determine fitness\\
+\textbf{Input:} & Fitness value determination module run for series of car 
+locations from simultation\\
 \textbf{Expected Output:} & Valid corresponding fitness values\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid fitness values at locations\\
-\textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
-\textbf{Input:} & Invalid fitness value determination module run for series of car locations from simulation\\
+\textbf{Initial State:} & Generation of cars created and simulation run to 
+determine fitness\\
+\textbf{Input:} & Invalid fitness value determination module run for series of 
+car locations from simulation\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Highest fitness value from fitness values\\
-\textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
-\textbf{Input:} & Fitness value determination module run to determine highest fitness from several cars\\
+\textbf{Initial State:} & Generation of cars created and simulation run to 
+determine fitness\\
+\textbf{Input:} & Fitness value determination module run to determine highest 
+fitness from several cars\\
 \textbf{Expected Output:} & Highest fitness value from series of cars\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid highest fitness values\\
-\textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
-\textbf{Input:} & Invalid fitness value determination module run to determine highest fitness from several cars\\
+\textbf{Initial State:} & Generation of cars created and simulation run to 
+determine fitness\\
+\textbf{Input:} & Invalid fitness value determination module run to determine 
+highest fitness from several cars\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Valid health of cars\\
-\textbf{Initial State:} & Generation of cars created with pre set health values\\
+\textbf{Initial State:} & Generation of cars created with pre set health 
+values\\
 \textbf{Input:} & Cars run through simulation\\
 \textbf{Expected Output:} & Cars terminated when health reaches zero\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid health of cars\\
-\textbf{Initial State:} & Generation of cars created with invalid pre set health values\\
+\textbf{Initial State:} & Generation of cars created with invalid pre set health 
+values\\
 \textbf{Input:} & Cars run through simulation\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
@@ -400,43 +600,52 @@ Outline below are all of our individual test cases, along with their names, init
 \rule{0pt}{1.5em}\textbf{Name:} & Valid text to user display\\
 \textbf{Initial State:} & Generation of cars created and simulation running\\
 \textbf{Input:} & Chromosome and fitness modules commanded to send text to GUI\\
-\textbf{Expected Output:} & GUI properly displays text and displayed text is valid\\[0.6em]
+\textbf{Expected Output:} & GUI properly displays text and displayed text is 
+valid\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid text to user display\\
 \textbf{Initial State:} & Generation of cars created and simulation running\\
-\textbf{Input:} & Invalid chromosome and invalid fitness modules commanded to send text to GUI\\
+\textbf{Input:} & Invalid chromosome and invalid fitness modules commanded to 
+send text to GUI\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & User operability pre user guide\\
 \textbf{Initial State:} & GrateBox not open or downloaded on machine\\
-\textbf{Input:} & Users prompted to open GrateBox on their own without instructions\\
+\textbf{Input:} & Users prompted to open GrateBox on their own without 
+instructions\\
 \textbf{Expected Output:} & User opens GrateBox on machine\\[0.6em]
 \textbf{Result of Test:} & Fail\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & User operability post user guide\\
 \textbf{Initial State:} & GrateBox not open or downloaded on machine\\
-\textbf{Input:} & Users prompted to open GrateBox on their own without instructions but with user guide\\
+\textbf{Input:} & Users prompted to open GrateBox on their own without 
+instructions but with user guide\\
 \textbf{Expected Output:} & User opens GrateBox on machine\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & User task execution\\
 \textbf{Initial State:} & GrateBox open on user\\
-\textbf{Input:} & User prompted to complete arbitrary set of four tasks within one minute\\
+\textbf{Input:} & User prompted to complete arbitrary set of four tasks within 
+one minute\\
 \textbf{Expected Output:} & Task completion in alloted time frame\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Performance evaluation 1\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Simultaneous beginning of timer and execution of car generation, mutation, and display\\
-\textbf{Expected Output:} & Valid execution of car generation, mutation, and display within 20 seconds\\[0.6em]
+\textbf{Input:} & Simultaneous beginning of timer and execution of car 
+generation, mutation, and display\\
+\textbf{Expected Output:} & Valid execution of car generation, mutation, and 
+display within 20 seconds\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Performance evaluation 2\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Entrance of several randomly selected final numerical values from GrateBox\\
-\textbf{Expected Output:} & Pre determined and hand calculated value match those randomly selected, validating GrateBox algorithms\\[0.6em]
+\textbf{Input:} & Entrance of several randomly selected final numerical values 
+from GrateBox\\
+\textbf{Expected Output:} & Pre determined and hand calculated value match those 
+randomly selected, validating GrateBox algorithms\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \end{longtable}
 \end{center}
@@ -551,11 +760,17 @@ automated and unit testing. While not every unit test possible was executed,
 most were, and Grate feels that this coverage metric was reached, as a large 
 majority of our actual code contains corresponding tests to validate it. \\
 
-The modularized nature of our code reduced the overall usefulness of larger coverage 
+The modularized nature of our code reduced the overall usefulness of larger 
+coverage 
 tests. For example, the inclusion of the genetic algorithm in a test for 
 graphical validity achieves very little, as the modularized nature of the code 
 requires little to no interaction between these two modules.\\
 
-It is harder to define coverage for non-functional testing; however Grate has undertaken great efforts through surveys and manual testing to guarantee the most complete product possible in terms of look and feel, usability, and robustness. And as seen in section 2 of this document,  the metrics we set out to reach have been achieved.
+It is harder to define coverage for non-functional testing; however Grate has 
+undertaken great efforts through surveys and manual testing to guarantee the 
+most complete product possible in terms of look and feel, usability, and 
+robustness. And as seen in section 2 of this document,  the metrics we set out 
+to reach have been achieved.
 \end{document}
+
 
