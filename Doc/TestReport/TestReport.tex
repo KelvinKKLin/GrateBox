@@ -45,13 +45,14 @@
 \listoftables
 \listoffigures
 
-\begin{table}[bp]
+\begin{table}[h]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 Dec 6 & 1.0 & Document creation\\
 Dec 7 & 1.1 & Document completion\\
+Dec 8 & 1.2 & Final document edits\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -548,11 +549,13 @@ Population generation algorithms module. Tested with the GA tests.
 In the Test Plan document, Grate endeavoured to achieve 70\% coverage with our 
 automated and unit testing. While not every unit test possible was executed, 
 most were, and Grate feels that this coverage metric was reached, as a large 
-majority of our actual code contains corresponding tests to validate it. The 
-modularized nature of our code reduced the overall usefulness of larger coverage 
+majority of our actual code contains corresponding tests to validate it. \\
+
+The modularized nature of our code reduced the overall usefulness of larger coverage 
 tests. For example, the inclusion of the genetic algorithm in a test for 
 graphical validity achieves very little, as the modularized nature of the code 
-requires little to no interaction between these two modules.
+requires little to no interaction between these two modules.\\
 
+It is harder to define coverage for non-functional testing; however Grate has undertaken great efforts through surveys and manual testing to guarantee the most complete product possible in terms of look and feel, usability, and robustness. And as seen in section 2 of this document,  the metrics we set out to reach have been achieved.
 \end{document}
 
