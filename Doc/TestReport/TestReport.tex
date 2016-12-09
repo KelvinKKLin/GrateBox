@@ -211,10 +211,60 @@ Outline below are all of our individual test cases, along with their names, init
 \begin{center}
 \begin{longtable}{ l | p{10cm} }
 \hline
-\rule{0pt}{1.5em}\textbf{Name:} & Placeholder\\
-\textbf{Initial State:} & Placeholder\\
-\textbf{Input:} & Placeholder\\
-\textbf{Expected Output:} & Placeholder\\[0.6em]
+\rule{0pt}{1.5em}\textbf{Name:} & Mutation rate of 0\%\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation and 0\% mutation rate\\
+\textbf{Expected Output:} & The same generation as the input\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Mutation rate of 0\% leading to error\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation and 0\% mutation rate with negative value for carsArray\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of three cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
+\textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top two offspring with generation of three cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 2 for selectNextGeneration\\
+\textbf{Expected Output:} & Correct selection of top two cars\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of only one offspring for next generation with generation of three cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 1 for selectNextGeneration\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of three cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of three cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of four cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
+\textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of five offspring for next generation with generation of four cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 5 for selectNextGeneration\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of four cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of four cars\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
+\textbf{Expected Output:} & \\[0.6em]
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & \\
 \textbf{Initial State:} & \\
