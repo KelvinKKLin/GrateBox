@@ -72,13 +72,13 @@ respectively.
 
 \section{Functional Requirements Evaluation}
 
-An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs and erros that may have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
+An evaluation of functional requirements reveals near complete coverage by the functional test cases. The tests written for GrateBox caught bugs and errors that may have gone otherwise unnoticed by the development team. Those will be discussed below. Many of the more mundane or generic functional requirements were fulfilled well before testing began, so they will not be addressed, as their verification would be redundant at this point. \\
 
 Functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration.\\
 
 \textbf{Requirement \#5/6}: Testing revealed inconsistent masses across similar cars in different generations. This was revealed to be a conceptual problem with the code. Initially, mass was treated as a fixed value common to all cars. While this technically fulfilled the functional requirements for mass, later generations would trend towards the extremes of and eventually past the range of viable mass values dictated by the requirements. The development team elected to remedy this problem by making the mass value of cars a variable dependant on density and volume. With a constant density value set across all cars, and a much stricter range of possible volumes that cars could possess, mass values in test cases after this fix fulfilled these mass requirements far more consistently.\\
 
-\textbf{Requirement \#8}: While testing did not reveal a problem with the actual display of fitness values required by this requirement, it did reveal a flaw in the creation of these values. Initially, the fitness of a car was determined by the distance along the x-axis of the road that the car had traveled. This solution did not account for vertical displacement, which became ever more important as GrateBox incorporated more sloped roads, to the point where many cars that were technically traveling a shorter distance along the road were receiving higher fitness values, skewing the results and threatening the integrity of GrateBox itself. The development team was quick to implement a more nuanced fitness algorithm that rated cars off of both their vertical and horizontal displacement and also accounted for the lifetime and durability of the car.\\
+\textbf{Requirement \#8}: While testing did not reveal a problem with the actual display of fitness values required by this requirement, it did reveal a flaw in the creation of these values. Initially, the fitness of a car was determined by the distance along the x-axis of the road that the car had travelled. This solution did not account for vertical displacement, which became ever more important as GrateBox incorporated more sloped roads, to the point where many cars that were technically travelling a shorter distance along the road were receiving higher fitness values, skewing the results and threatening the integrity of GrateBox itself. The development team was quick to implement a more nuanced fitness algorithm that rated cars off of both their vertical and horizontal displacement and also accounted for the lifetime and durability of the car.\\
 
 \textbf{Requirement \#10/11}: Whenever the user enters a new value into any of the fields that are able to be changed by the user, a new simulation begins with those values. While this seemed obvious to the development team, user surveys revealed that this process confused users. To this end, the functionality of these user changeable fields was updated to require the user to select enter following the entrance of a new value into the field. The following user feedback revealed that this change in functionality resulted in a better product.\\
 
@@ -90,17 +90,17 @@ Functional requirements are listed by the number given to them in the Software R
 
 An evaluation of non-functional requirements reveals near complete coverage by the non-functional test cases. The tests written for GrateBox caught problems and  potential improvements in GrateBox that were resolved by the development team. Those will be discussed below.\\
 
-Non-functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these non-functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration. While many non-functional requirements required only software test to validate, many required timed tests by user volunteers and user feedback collected through surveys. The exact details of the survey can be found in the Test Plan document linked at teh beggining of this document.\\
+Non-functional requirements are listed by the number given to them in the Software Requirements Specification document. Note that these non-functional requirements are laid out in more detail in the SRS document linked above, and it should be referred to for further elaboration. While many non-functional requirements required only software test to validate, many required timed tests by user volunteers and user feedback collected through surveys. The exact details of the survey can be found in the Test Plan document linked at the beginning of this document.\\
 
 \subsection{Look and Feel Requirements}
 
-\textbf{Requirement \#21}: The need for GrateBox to be attractive to a student audience was of crucial importance to GrateBox's success. Initial releases of GrateBox however were met with hostility by users surveyed. To this end, another look was taken at technologies necessary to aid in increasing the aesthetic appeal of GrateBox. BootStrap was chosen as a result of this feedback and was incorporated into GrateBox. User surveys following the update revealed a marked increase in user support of the product's appearance.\\
+\textbf{Requirement \#21}: The need for GrateBox to be attractive to a student audience was of crucial importance to GrateBox's success. Initial releases of GrateBox however were met with hostility by users surveyed. To this end, another look was taken at technologies necessary to aid in increasing the aesthetic appeal of GrateBox. Bootstrap was chosen as a result of this feedback and was incorporated into GrateBox. User surveys following the update revealed a marked increase in user support of the product's appearance.\\
 
-\textbf{Requirement \#22}: The importance of maintaining an education and professional outlook was identified early, and Grate did its upmost to ensure that this style was projected by the product, and it was felt that the program did in fact project this style during initial releases. While this sentiment was shared by most users surveyed, many also recommended that the look and feel of GrateBox could be improved by enabling additional options for the user to reduce the confusion the original releases could project. In particular, many users requested the ability to pause the simulation to allow them to utilise GrateBox at their own pace rather than a pace set by the program. With the goal of reducing confusion, a pause button was added, along with a clearer input method for user changeable parameters 
+\textbf{Requirement \#22}: The importance of maintaining an education and professional outlook was identified early, and Grate did its utmost to ensure that this style was projected by the product, and it was felt that the program did in fact project this style during initial releases. While this sentiment was shared by most users surveyed, many also recommended that the look and feel of GrateBox could be improved by enabling additional options for the user to reduce the confusion the original releases could project. In particular, many users requested the ability to pause the simulation to allow them to utilise GrateBox at their own pace rather than a pace set by the program. With the goal of reducing confusion, a pause button was added, along with a clearer input method for user changeable parameters 
 
 \subsection{Usability and Humanity Requirements}
 
-\textbf{Requirement \#23}: Being an educational tool, it was of the upmost importance that GrateBox be easy to use. To this end, a set of tasks was set before users to be completed within a set time frame, to judge the program's ease of use. While most users were able to complete the tasks in a timely manner, some were not. These users had problems understanding exactly what fitness values were in practical terms, and so could not utilize the program to the fullest. To remedy this, Grate incorporated a more detailed and nuanced explanation of the program's fitness value, and the program's ease of use increased greatly as a result.\\
+\textbf{Requirement \#23}: Being an educational tool, it was of the utmost importance that GrateBox be easy to use. To this end, a set of tasks was set before users to be completed within a set time frame, to judge the program's ease of use. While most users were able to complete the tasks in a timely manner, some were not. These users had problems understanding exactly what fitness values were in practical terms, and so could not utilize the program to the fullest. To remedy this, Grate incorporated a more detailed and nuanced explanation of the program's fitness value, and the program's ease of use increased greatly as a result.\\
 
 \textbf{Requirement \#24}: If a learning tool is to be successful, it must allow for some degree of user engagement, and Grate aimed to accomplish this with GrateBox by allowing for a degree of personalization by the user. The mutation rate, population size, and number of parents of each set of generations was fully customizable by the user from the very earliest releases, however while users could update these values and see the changes in the simulations that resulted from these updates, many could not grasp exactly what the changes they were making were changing in real terms. To this end Grate incorporated written explanations of each user changeable field to help the educational process GrateBox attempted to induce.\\
 
@@ -110,7 +110,7 @@ Non-functional requirements are listed by the number given to them in the Softwa
 
 \textbf{Requirement \#26}: In order to maintain user attention, the speed of GrateBox had to be such that the user would not grow board of waiting for the product. Manual testing by the testing team revealed that the program did in fact meet or surpass our metrics for speed defined in the requirements, and most users surveyed agreed with this assessment. Testing the speed of the program however revealed the need to remove a significant amount of useless code from the API GrateBox utilized in order to further reduce GrateBox's runtime.\\
 
-\textbf{Requirement \#27}: As a learning tool, GrateBox's precision was of the upmost importance. If the user believes that an educational program they are using is inaccurate, they will likely doubt the veracity of what is being taught to them. To this end, the product was made to display all values to the precision outlined in the requirements, however testing demonstrated several accuracy errors in final calculations of values. These resulted from the use of both integers and floats in the same mathematical equations. These errors were fixed in the final product. The actual testing process also revealed the need to switch our sorting method from a heap sort to a quick sort, as heap sorting methods proved overly difficult to verify with automated testing.
+\textbf{Requirement \#27}: As a learning tool, GrateBox's precision was of the utmost importance. If the user believes that an educational program they are using is inaccurate, they will likely doubt the veracity of what is being taught to them. To this end, the product was made to display all values to the precision outlined in the requirements, however testing demonstrated several accuracy errors in final calculations of values. These resulted from the use of both integers and floats in the same mathematical equations. These errors were fixed in the final product. The actual testing process also revealed the need to switch our sorting method from a heap sort to a quick sort, as heap sorting methods proved overly difficult to verify with automated testing.
 
 \subsection{Robustness, Maintainability, and Compatibility}
 
@@ -139,7 +139,7 @@ comparison helped validate the results of the test. The test in question was GR-
 
 All unit testing for this project can be found in the test folder found 
 \href{https://gitlab.cas.mcmaster.ca/linkk4/GrateBox/tree/master/src/test}{here}. 
-The tests.java file contains the source code for all testing. The Test.html file 
+The tests.js file contains the source code for all testing. The Test.html file 
 contains the output of this code. All test were conducted using the third party 
 testing software QUnit, outlined in the Design document.\\
 
@@ -174,7 +174,7 @@ require ten or more generations for a moderately successful car to emerge.
 
 User feedback told Grate that the UI of GrateBox was too minimal, and that look 
 and feel requirements were not being met. To this end, an html visual enhancer, 
-BootStrap, was used to satisfy this user need. Users opinions' of GrateBox's 
+Bootstrap, was used to satisfy this user need. Users opinions' of GrateBox's 
 look and feel increased dramatically following this change.\\
 
 It was observed during user trials that many users had trouble grasping the 
@@ -399,13 +399,13 @@ Outline below are all of our individual test cases, along with their names, init
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Valid text to user display\\
 \textbf{Initial State:} & Generation of cars created and simulation running\\
-\textbf{Input:} & Chomrosome and fitness modules commanded to send text to GUI\\
+\textbf{Input:} & Chromosome and fitness modules commanded to send text to GUI\\
 \textbf{Expected Output:} & GUI properly displays text and displayed text is valid\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid text to user display\\
 \textbf{Initial State:} & Generation of cars created and simulation running\\
-\textbf{Input:} & Invalid chomosome and invalid fitness modules commanded to send text to GUI\\
+\textbf{Input:} & Invalid chromosome and invalid fitness modules commanded to send text to GUI\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
@@ -429,7 +429,7 @@ Outline below are all of our individual test cases, along with their names, init
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Performance evaluation 1\\
 \textbf{Initial State:} & None\\
-\textbf{Input:} & Simultaneous beggining of timer and exectution of car generation, mutation, and display\\
+\textbf{Input:} & Simultaneous beginning of timer and execution of car generation, mutation, and display\\
 \textbf{Expected Output:} & Valid execution of car generation, mutation, and display within 20 seconds\\[0.6em]
 \textbf{Result of Test:} & Passed\\
 \hline
