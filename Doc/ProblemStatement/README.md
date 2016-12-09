@@ -2,4 +2,6 @@
 
 The folders and files for this folder are as follows:
 
-Describe ...
+ProblemStatement.pdf - The problem statement
+
+ProblemStatement.tex - The LaTEX file for the problem statement

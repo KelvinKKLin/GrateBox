@@ -5,5 +5,7 @@
 *.log
 *.lot
 *.out
-*.syntex.gz
+*.synctex.gz
 *.toc
+*.lof
+*.dvi
