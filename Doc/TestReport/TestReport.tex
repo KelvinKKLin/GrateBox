@@ -207,7 +207,6 @@ Outline below are all of our individual test cases, along with their names, init
 
 \subsection{Specific System Tests}
 
-
 \begin{center}
 \begin{longtable}{ l | p{10cm} }
 \hline
@@ -215,175 +214,243 @@ Outline below are all of our individual test cases, along with their names, init
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation and 0\% mutation rate\\
 \textbf{Expected Output:} & The same generation as the input\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Mutation rate of 0\% leading to error\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation and 0\% mutation rate with negative value for carsArray\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of three cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Selecting top two offspring with generation of three cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 2 for selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top two cars\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of only one offspring for next generation with generation of three cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 1 for selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of three cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of three cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Selecting top three offspring with generation of four cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 3 for selectNextGeneration\\
 \textbf{Expected Output:} & Correct selection of top three cars\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of five offspring for next generation with generation of four cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 5 for selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of no offspring for next generation with generation of four cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of 0 for selectNextGeneration\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid selection of negative offspring for next generation with generation of four cars\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre generated car generation with input of -1 for selectNextGeneration\\
 \textbf{Expected Output:} & \\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with two valid wheels\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of standard car generation module\\
 \textbf{Expected Output:} & Two valid wheel placements on a car\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with two valid wheel radii\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of standard car generation module\\
 \textbf{Expected Output:} & Two valid wheel radius values on a car\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with vertex positions\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of standard car generation module\\
 \textbf{Expected Output:} & Valid vertex creation and positions\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car generation with vertex angles\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of standard car generation module\\
 \textbf{Expected Output:} & Valid vertex angle creation and assignments\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with wheels\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with wheel radii\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with vertex positions\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car generation with vertex angles\\
 \textbf{Initial State:} & None\\
 \textbf{Input:} & Pre determined random seed and run of invalid car generation module\\
 \textbf{Expected Output:} &Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car chromosome return\\
 \textbf{Initial State:} & Generation of cars generated\\
 \textbf{Input:} & Chromosome generation module run\\
 \textbf{Expected Output:} & Valid chromosome\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Car graphics\\
 \textbf{Initial State:} & Pre generated car object\\
 \textbf{Input:} & Car object run through graphics module\\
 \textbf{Expected Output:} & Valid car generated as expected on screen\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car graphics\\
 \textbf{Initial State:} & Pre generated car object with inaccurate index values\\
 \textbf{Input:} & Car object run through graphics module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid car graphics 2\\
 \textbf{Initial State:} & Pre generated car object with negative index values\\
 \textbf{Input:} & Car object run through graphics module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Road graphics\\
 \textbf{Initial State:} & Pre generated road\\
 \textbf{Input:} & Road put through graphics module\\
 \textbf{Expected Output:} & Valid road created as expected on screen\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid road graphics\\
 \textbf{Initial State:} & Pre generated road\\
 \textbf{Input:} & Road put through graphics module\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Correct fitness values at locations\\
 \textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
 \textbf{Input:} & Fitness value determination module run for series of car locations from simultation\\
 \textbf{Expected Output:} & Valid corresponding fitness values\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid fitness values at locations\\
 \textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
 \textbf{Input:} & Invalid fitness value determination module run for series of car locations from simulation\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Highest fitness value from fitness values\\
 \textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
 \textbf{Input:} & Fitness value determination module run to determine highest fitness from several cars\\
 \textbf{Expected Output:} & Highest fitness value from series of cars\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & Invalid highest fitness values\\
 \textbf{Initial State:} & Generation of cars created and simulation run to determine fitness\\
 \textbf{Input:} & Invalid fitness value determination module run to determine highest fitness from several cars\\
 \textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Valid health of cars\\
+\textbf{Initial State:} & Generation of cars created with pre set health values\\
+\textbf{Input:} & Cars run through simulation\\
+\textbf{Expected Output:} & Cars terminated when health reaches zero\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid health of cars\\
+\textbf{Initial State:} & Generation of cars created with invalid pre set health values\\
+\textbf{Input:} & Cars run through simulation\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Valid text to user display\\
+\textbf{Initial State:} & Generation of cars created and simulation running\\
+\textbf{Input:} & Chomrosome and fitness modules commanded to send text to GUI\\
+\textbf{Expected Output:} & GUI properly displays text and displayed text is valid\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Invalid text to user display\\
+\textbf{Initial State:} & Generation of cars created and simulation running\\
+\textbf{Input:} & Invalid chomosome and invalid fitness modules commanded to send text to GUI\\
+\textbf{Expected Output:} & Error message displayed\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & User operability pre user guide\\
+\textbf{Initial State:} & GrateBox not open or downloaded on machine\\
+\textbf{Input:} & Users prompted to open GrateBox on their own without instructions\\
+\textbf{Expected Output:} & User opens GrateBox on machine\\[0.6em]
+\textbf{Result of Test:} & Fail\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & User operability post user guide\\
+\textbf{Initial State:} & GrateBox not open or downloaded on machine\\
+\textbf{Input:} & Users prompted to open GrateBox on their own without instructions but with user guide\\
+\textbf{Expected Output:} & User opens GrateBox on machine\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & User task execution\\
+\textbf{Initial State:} & GrateBox open on user\\
+\textbf{Input:} & User prompted to complete arbitrary set of four tasks within one minute\\
+\textbf{Expected Output:} & Task completion in alloted time frame\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Performance evaluation 1\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Simultaneous beggining of timer and exectution of car generation, mutation, and display\\
+\textbf{Expected Output:} & Valid execution of car generation, mutation, and display within 20 seconds\\[0.6em]
+\textbf{Result of Test:} & Passed\\
+\hline
+\rule{0pt}{1.5em}\textbf{Name:} & Performance evaluation 2\\
+\textbf{Initial State:} & None\\
+\textbf{Input:} & Entrance of several randomly selected final numerical values from GrateBox\\
+\textbf{Expected Output:} & Pre determined and hand calculated value match those randomly selected, validating GrateBox algorithms\\[0.6em]
+\textbf{Result of Test:} & Passed\\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & \\
-\textbf{Initial State:} & \\
+\textbf{Initial State:} & None\\
 \textbf{Input:} & \\
 \textbf{Expected Output:} & \\[0.6em]
+\textbf{Result of Test:} & \\
 \hline
 \rule{0pt}{1.5em}\textbf{Name:} & \\
-\textbf{Initial State:} & \\
+\textbf{Initial State:} & None\\
 \textbf{Input:} & \\
 \textbf{Expected Output:} & \\[0.6em]
-\hline
-\rule{0pt}{1.5em}\textbf{Name:} & \\
-\textbf{Initial State:} & \\
-\textbf{Input:} & \\
-\textbf{Expected Output:} & \\[0.6em]
-\hline
-\rule{0pt}{1.5em}\textbf{Name:} & \\
-\textbf{Initial State:} & \\
-\textbf{Input:} & \\
-\textbf{Expected Output:} & \\[0.6em]
-\hline
-\rule{0pt}{1.5em}\textbf{Name:} & \\
-\textbf{Initial State:} & \\
-\textbf{Input:} & \\
-\textbf{Expected Output:} & \\[0.6em]
+\textbf{Result of Test:} & \\
 \end{longtable}
 \end{center}
-
-
 
 \section{Trace to Requirements}
 
