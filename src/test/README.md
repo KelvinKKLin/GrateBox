@@ -1,4 +1,4 @@
-# tests Folder
+# test Folder
 
 The folders and files for this folder are as follows:
 
